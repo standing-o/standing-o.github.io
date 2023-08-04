@@ -37,16 +37,17 @@ copyright:
   # Displayed in the footer
   brief: Alguns direitos reservados.
   verbose: >-
-    Exceto onde indicado de outra forma, as postagens do blog neste site são licenciadas sob a 
+    Exceto onde indicado de outra forma, as postagens do blog neste site são licenciadas sob a
     Creative Commons Attribution 4.0 International (CC BY 4.0) License pelo autor.
 
-meta: Feito com :PLATFORM usando o tema :THEME.
+meta: Feito com :PLATFORM usando o tema :THEME
 
 not_found:
   statment: Desculpe, a página não foi encontrada.
-  hint_template: :HEAD_BAK para tentar encontrar novamente, ou procure na :ARCHIVES_PAGE.
-  head_back: Vá para a página inicial
-  archives_page: Página de arquivos
+
+notification:
+  update_found: Uma nova versão do conteúdo está disponível.
+  update: atualização
 
 # ----- Posts related labels -----
 
@@ -69,8 +70,6 @@ post:
     share_link:
       title: Copie o link
       succeed: Link copiado com sucesso!
-  # pinned prompt of posts list on homepage
-  pin_prompt: Fixado
 
 # categories page
 categories:
