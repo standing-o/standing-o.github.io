@@ -2,37 +2,43 @@
 * The syntax highlight.
 */
 
-@import 'colors/light-syntax';
-@import 'colors/dark-syntax';
+@import "colors/light-syntax";
+@import "colors/dark-syntax";
 
 html {
   @media (prefers-color-scheme: light) {
     &:not([data-mode]),
-    &[data-mode='light'] {
+    [data-mode=light] {
       @include light-syntax;
     }
 
-    &[data-mode='dark'] {
+    &[data-mode=dark] {
       @include dark-syntax;
     }
   }
 
   @media (prefers-color-scheme: dark) {
     &:not([data-mode]),
-    &[data-mode='dark'] {
+    &[data-mode=dark] {
       @include dark-syntax;
     }
 
-    &[data-mode='light'] {
+    &[data-mode=light] {
       @include light-syntax;
     }
   }
 }
 
-/* -- code snippets -- */
+/* -- Codes Snippet -- */
+
+$code-radius: 6px;
 
 %code-snippet-bg {
-  background-color: var(--highlight-bg-color);
+  background: var(--highlight-bg-color);
+}
+
+%code-snippet-radius {
+  border-radius: $code-radius;
 }
 
 %code-snippet-padding {
@@ -41,13 +47,16 @@ html {
 }
 
 .highlighter-rouge {
+  @extend %code-snippet-bg;
+  @extend %code-snippet-radius;
+
   color: var(--highlighter-rouge-color);
   margin-top: 0.5rem;
   margin-bottom: 1.2em; /* Override BS Inline-code style */
 }
 
 .highlight {
-  @extend %rounded;
+  @extend %code-snippet-radius;
   @extend %code-snippet-bg;
 
   @at-root figure#{&} {
@@ -63,12 +72,11 @@ html {
     font-size: $code-font-size;
     line-height: 1.4rem;
     word-wrap: normal; /* Fixed Safari overflow-x */
-    color: var(--code-snippets-color);
   }
 
   table {
     td pre {
-      overflow: visible; /* Fixed iOS safari overflow-x */
+      overflow: visible;  /* Fixed iOS safari overflow-x */
       word-break: normal; /* Fixed iOS safari linenos code break */
     }
   }
@@ -79,22 +87,29 @@ html {
     text-align: right;
     color: var(--highlight-lineno-color);
     -webkit-user-select: none;
+    -khtml-user-select: none;
     -moz-user-select: none;
-    -o-user-select: none;
     -ms-user-select: none;
+    -o-user-select: none;
     user-select: none;
   }
+
+  /* set the dollar sign to non-selectable */
+  .gp {
+    user-select: none;
+  }
+
 } /* .highlight */
 
 code {
   -webkit-hyphens: none;
   -ms-hyphens: none;
+  -moz-hyphens: none;
   hyphens: none;
 
   &.highlighter-rouge {
     font-size: $code-font-size;
     padding: 3px 5px;
-    word-break: break-word;
     border-radius: 4px;
     background-color: var(--inline-code-bg);
   }
@@ -118,6 +133,10 @@ code {
   blockquote & {
     color: inherit;
   }
+
+  .highlight > & {
+    color: transparent;
+  }
 }
 
 td.rouge-code {
@@ -132,27 +151,16 @@ td.rouge-code {
     border-bottom: none !important;
     pointer-events: none;
   }
-}
 
-div[class^='language-'] {
-  @extend %rounded;
-  @extend %code-snippet-bg;
-
-  box-shadow: var(--language-border-color) 0 0 0 1px;
-
-  .post-content > & {
-    @include ml-mr(-1.25rem);
-
-    border-radius: 0;
-  }
 }
 
 /* Hide line numbers for default, console, and terminal code snippets */
 div {
-  &.nolineno,
-  &.language-plaintext,
-  &.language-console,
-  &.language-terminal {
+  &[class^='highlighter-rouge'],
+  &.language-plaintext.highlighter-rouge,
+  &.language-console.highlighter-rouge,
+  &.language-terminal.highlighter-rouge,
+  &.nolineno {
     pre.lineno {
       display: none;
     }
@@ -168,19 +176,35 @@ div {
 
   $code-header-height: 2.25rem;
 
+  border-top-left-radius: $code-radius;
+  border-top-right-radius: $code-radius;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: $code-header-height;
-  margin-left: 1rem;
-  margin-right: 0.5rem;
+
+  &::before {
+    $dot-size: 0.75rem;
+    $dot-margin: 0.5rem;
+
+    content: "";
+    display: inline-block;
+    margin-left: 1rem;
+    width: $dot-size;
+    height: $dot-size;
+    border-radius: 50%;
+    background-color: var(--code-header-muted-color);
+    box-shadow:
+      ($dot-size + $dot-margin) 0 0 var(--code-header-muted-color),
+      ($dot-size + $dot-margin) * 2 0 0 var(--code-header-muted-color);
+  }
 
   /* the label block */
   span {
     /* label icon */
     i {
       font-size: 1rem;
-      margin-right: 0.5rem;
+      margin-right: 0.4rem;
       color: var(--code-header-icon-color);
 
       &.small {
@@ -205,9 +229,9 @@ div {
   /* clipboard */
   button {
     @extend %cursor-pointer;
-    @extend %rounded;
 
     border: 1px solid transparent;
+    border-radius: $code-radius;
     height: $code-header-height;
     width: $code-header-height;
     padding: 0;
@@ -227,10 +251,6 @@ div {
       }
     }
 
-    &:focus {
-      outline: none;
-    }
-
     &:not([timeout]):hover {
       background-color: rgba(128, 128, 128, 0.37);
 
@@ -238,33 +258,30 @@ div {
         color: white;
       }
     }
-  }
-}
 
-@media all and (min-width: 576px) {
-  div[class^='language-'] {
-    .post-content > & {
-      @include ml-mr(0);
-
-      border-radius: $base-radius;
+    &:focus {
+      outline: none;
     }
 
-    .code-header {
-      @include ml-mr(0);
+  }
 
-      &::before {
-        $dot-size: 0.75rem;
-        $dot-margin: 0.5rem;
+}
 
-        content: '';
-        display: inline-block;
-        margin-left: 1rem;
-        width: $dot-size;
-        height: $dot-size;
-        border-radius: 50%;
-        background-color: var(--code-header-muted-color);
-        box-shadow: ($dot-size + $dot-margin) 0 0 var(--code-header-muted-color),
-          ($dot-size + $dot-margin) * 2 0 0 var(--code-header-muted-color);
+@media all and (max-width: 576px) {
+  .post-content {
+    > div[class^='language-'] {
+      @include ml-mr(-1.25rem);
+
+      border-radius: 0;
+
+      .highlight {
+        padding-left: 0.25rem;
+      }
+
+      .code-header {
+        border-radius: 0;
+        padding-left: 0.4rem;
+        padding-right: 0.5rem;
       }
     }
   }
