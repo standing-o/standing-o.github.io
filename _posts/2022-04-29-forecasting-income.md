@@ -4,6 +4,12 @@ date: 2022-04-29 17:26:00 +/-TTTT
 categories: [Competition, Dacon]
 tags: [데이콘, dacon, 소득예측, classification, lightgbm, xgboost, ensemble, voting]
 ---
+----------------
+
+
+- 본 포스팅은 데이콘의 `인구 데이터 기반 소득 예측 경진대회`에 참여하여 작성한 코드이며, 간단한 데이터 전처리 및 **EDA**, **LightGBM**과 **XGBoost**로 **Ensemble** 모델링 등의 내용을 포함하고 있습니다.
+- 코드실행은 Google Colab의 GPU, Standard RAM 환경에서 진행했습니다.  
+➔ [데이콘에서 읽기](https://dacon.io/competitions/official/235892/codeshare/4865?page=1&dtype=recent)
 
 <head>
   <style>
@@ -75,14 +81,6 @@ tags: [데이콘, dacon, 소득예측, classification, lightgbm, xgboost, ensemb
 
   </style>
 </head>
-
-----------------
-
-
-- 본 포스팅은 데이콘의 `인구 데이터 기반 소득 예측 경진대회`에 참여하여 작성한 코드이며, 간단한 데이터 전처리 및 **EDA**, **LightGBM**과 **XGBoost**로 **Ensemble** 모델링 등의 내용을 포함하고 있습니다.
-- 코드실행은 Google Colab의 GPU, Standard RAM 환경에서 진행했습니다.  
-➔ [데이콘에서 읽기](https://dacon.io/competitions/official/235892/codeshare/4865?page=1&dtype=recent)
-
 
 
 # **인구 데이터 기반 소득 예측**
