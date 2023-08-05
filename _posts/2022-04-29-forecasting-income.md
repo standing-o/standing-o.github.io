@@ -4,12 +4,15 @@ date: 2022-04-29 17:26:00 +/-TTTT
 categories: [Competition, Dacon]
 tags: [데이콘, dacon, 소득예측, classification, lightgbm, xgboost, ensemble, voting]
 ---
+
 ----------------
 
 
 - 본 포스팅은 데이콘의 `인구 데이터 기반 소득 예측 경진대회`에 참여하여 작성한 코드이며, 간단한 데이터 전처리 및 **EDA**, **LightGBM**과 **XGBoost**로 **Ensemble** 모델링 등의 내용을 포함하고 있습니다.
-- 코드실행은 Google Colab의 GPU, Standard RAM 환경에서 진행했습니다.  
+- 코드실행은 Google Colab의 GPU, Standard RAM 환경에서 진행했습니다.
 ➔ [데이콘에서 읽기](https://dacon.io/competitions/official/235892/codeshare/4865?page=1&dtype=recent)
+
+
 
 # **인구 데이터 기반 소득 예측**
 
@@ -108,25 +111,25 @@ train.head()
 
 <pre>
    id  age workclass  fnlwgt     education  education_num      marital_status  \
-0   0   32   Private  309513    Assoc-acdm             12  Married-civ-spouse   
-1   1   33   Private  205469  Some-college             10  Married-civ-spouse   
-2   2   46   Private  149949  Some-college             10  Married-civ-spouse   
-3   3   23   Private  193090     Bachelors             13       Never-married   
-4   4   55   Private   60193       HS-grad              9            Divorced   
+0   0   32   Private  309513    Assoc-acdm             12  Married-civ-spouse
+1   1   33   Private  205469  Some-college             10  Married-civ-spouse
+2   2   46   Private  149949  Some-college             10  Married-civ-spouse
+3   3   23   Private  193090     Bachelors             13       Never-married
+4   4   55   Private   60193       HS-grad              9            Divorced
 
         occupation   relationship   race     sex  capital_gain  capital_loss  \
-0     Craft-repair        Husband  White    Male             0             0   
-1  Exec-managerial        Husband  White    Male             0             0   
-2     Craft-repair        Husband  White    Male             0             0   
-3     Adm-clerical      Own-child  White  Female             0             0   
-4     Adm-clerical  Not-in-family  White  Female             0             0   
+0     Craft-repair        Husband  White    Male             0             0
+1  Exec-managerial        Husband  White    Male             0             0
+2     Craft-repair        Husband  White    Male             0             0
+3     Adm-clerical      Own-child  White  Female             0             0
+4     Adm-clerical  Not-in-family  White  Female             0             0
 
-   hours_per_week native_country  target  
-0              40  United-States       0  
-1              40  United-States       1  
-2              40  United-States       0  
-3              30  United-States       0  
-4              40  United-States       0  
+   hours_per_week native_country  target
+0              40  United-States       0
+1              40  United-States       1
+2              40  United-States       0
+3              30  United-States       0
+4              40  United-States       0
 </pre>
 
 ```python
@@ -134,7 +137,7 @@ pr=train.profile_report()
 pr.to_file('/content/drive/MyDrive/Forecasting_income/pr_report.html')
 ```
 
-📝 Pandas profiling을 활용하면 아래와 같이 데이터 프레임을 쉽고 효율적으로 탐색할 수 있습니다. 
+📝 Pandas profiling을 활용하면 아래와 같이 데이터 프레임을 쉽고 효율적으로 탐색할 수 있습니다.
 
 ![pandas_profiling1](/assets/img/for_post/20220429-1.png)
 ![pandas_profiling2](/assets/img/for_post/20220429-2.png)
@@ -143,7 +146,7 @@ pr.to_file('/content/drive/MyDrive/Forecasting_income/pr_report.html')
 
 #### **High Correlation**
 
-1. `relationship` - `sex` 
+1. `relationship` - `sex`
 
 2. `age` - `marital.status`
 
@@ -166,10 +169,10 @@ pr.to_file('/content/drive/MyDrive/Forecasting_income/pr_report.html')
 
 - Categorical (9) : `workclass`, `education`, `marital.status`, `occupation`, `relationship`, `race`, `sex`, `native.country`, `target`
 
-  
+
 #### **Note**
 
-📝 `workclass`와 `occupation`이 같은 비율 (10.5%)의 missing value를 가지므로 확인해 볼 필요가 있습니다.  
+📝 `workclass`와 `occupation`이 같은 비율 (10.5%)의 missing value를 가지므로 확인해 볼 필요가 있습니다.
 
 📝 또한, `native.country`는 583(3.3%) missing value를 가지므로 행을 삭제해주겠습니다.
 
@@ -184,24 +187,24 @@ train.info()
 <class 'pandas.core.frame.DataFrame'>
 RangeIndex: 17480 entries, 0 to 17479
 Data columns (total 16 columns):
- #   Column          Non-Null Count  Dtype 
----  ------          --------------  ----- 
- 0   id              17480 non-null  int64 
- 1   age             17480 non-null  int64 
+ #   Column          Non-Null Count  Dtype
+---  ------          --------------  -----
+ 0   id              17480 non-null  int64
+ 1   age             17480 non-null  int64
  2   workclass       15644 non-null  object
- 3   fnlwgt          17480 non-null  int64 
+ 3   fnlwgt          17480 non-null  int64
  4   education       17480 non-null  object
- 5   education_num   17480 non-null  int64 
+ 5   education_num   17480 non-null  int64
  6   marital_status  17480 non-null  object
  7   occupation      15637 non-null  object
  8   relationship    17480 non-null  object
  9   race            17480 non-null  object
  10  sex             17480 non-null  object
- 11  capital_gain    17480 non-null  int64 
- 12  capital_loss    17480 non-null  int64 
- 13  hours_per_week  17480 non-null  int64 
+ 11  capital_gain    17480 non-null  int64
+ 12  capital_loss    17480 non-null  int64
+ 13  hours_per_week  17480 non-null  int64
  14  native_country  16897 non-null  object
- 15  target          17480 non-null  int64 
+ 15  target          17480 non-null  int64
 dtypes: int64(8), object(8)
 memory usage: 2.1+ MB
 </pre>
@@ -226,56 +229,56 @@ train[train["workclass"].isnull()]
 
 <pre>
           id  age workclass  fnlwgt     education  education_num  \
-15081  15081   90       NaN   77053       HS-grad              9   
-15082  15082   66       NaN  186061  Some-college             10   
-15084  15084   51       NaN  172175     Doctorate             16   
-15086  15086   61       NaN  135285       HS-grad              9   
-15087  15087   71       NaN  100820       HS-grad              9   
-...      ...  ...       ...     ...           ...            ...   
-17475  17475   35       NaN  320084     Bachelors             13   
-17476  17476   30       NaN   33811     Bachelors             13   
-17477  17477   71       NaN  287372     Doctorate             16   
-17478  17478   41       NaN  202822       HS-grad              9   
-17479  17479   72       NaN  129912       HS-grad              9   
+15081  15081   90       NaN   77053       HS-grad              9
+15082  15082   66       NaN  186061  Some-college             10
+15084  15084   51       NaN  172175     Doctorate             16
+15086  15086   61       NaN  135285       HS-grad              9
+15087  15087   71       NaN  100820       HS-grad              9
+...      ...  ...       ...     ...           ...            ...
+17475  17475   35       NaN  320084     Bachelors             13
+17476  17476   30       NaN   33811     Bachelors             13
+17477  17477   71       NaN  287372     Doctorate             16
+17478  17478   41       NaN  202822       HS-grad              9
+17479  17479   72       NaN  129912       HS-grad              9
 
            marital_status occupation   relationship                race  \
-15081             Widowed        NaN  Not-in-family               White   
-15082             Widowed        NaN      Unmarried               Black   
-15084       Never-married        NaN  Not-in-family               White   
-15086  Married-civ-spouse        NaN        Husband               White   
-15087  Married-civ-spouse        NaN        Husband               White   
-...                   ...        ...            ...                 ...   
-17475  Married-civ-spouse        NaN           Wife               White   
-17476       Never-married        NaN  Not-in-family  Asian-Pac-Islander   
-17477  Married-civ-spouse        NaN        Husband               White   
-17478           Separated        NaN  Not-in-family               Black   
-17479  Married-civ-spouse        NaN        Husband               White   
+15081             Widowed        NaN  Not-in-family               White
+15082             Widowed        NaN      Unmarried               Black
+15084       Never-married        NaN  Not-in-family               White
+15086  Married-civ-spouse        NaN        Husband               White
+15087  Married-civ-spouse        NaN        Husband               White
+...                   ...        ...            ...                 ...
+17475  Married-civ-spouse        NaN           Wife               White
+17476       Never-married        NaN  Not-in-family  Asian-Pac-Islander
+17477  Married-civ-spouse        NaN        Husband               White
+17478           Separated        NaN  Not-in-family               Black
+17479  Married-civ-spouse        NaN        Husband               White
 
           sex  capital_gain  capital_loss  hours_per_week native_country  \
-15081  Female             0          4356              40  United-States   
-15082  Female             0          4356              40  United-States   
-15084    Male             0          2824              40  United-States   
-15086    Male             0          2603              32  United-States   
-15087    Male             0          2489              15  United-States   
-...       ...           ...           ...             ...            ...   
-17475  Female             0             0              55  United-States   
-17476  Female             0             0              99  United-States   
-17477    Male             0             0              10  United-States   
-17478  Female             0             0              32  United-States   
-17479    Male             0             0              25  United-States   
+15081  Female             0          4356              40  United-States
+15082  Female             0          4356              40  United-States
+15084    Male             0          2824              40  United-States
+15086    Male             0          2603              32  United-States
+15087    Male             0          2489              15  United-States
+...       ...           ...           ...             ...            ...
+17475  Female             0             0              55  United-States
+17476  Female             0             0              99  United-States
+17477    Male             0             0              10  United-States
+17478  Female             0             0              32  United-States
+17479    Male             0             0              25  United-States
 
-       target  
-15081       0  
-15082       0  
-15084       1  
-15086       0  
-15087       0  
-...       ...  
-17475       1  
-17476       0  
-17477       1  
-17478       0  
-17479       0  
+       target
+15081       0
+15082       0
+15084       1
+15086       0
+15087       0
+...       ...
+17475       1
+17476       0
+17477       1
+17478       0
+17479       0
 
 [1836 rows x 16 columns]
 </pre>
@@ -310,7 +313,7 @@ fill_na = train['workclass'].isna()
 </pre>
 
 ```python
-df_train = train.dropna()  
+df_train = train.dropna()
 
 print(sum(df_train['workclass'].isna()))
 print(sum(df_train['occupation'].isna()))
@@ -329,56 +332,56 @@ df_train
 
 <pre>
           id  age     workclass  fnlwgt     education  education_num  \
-0          0   32       Private  309513    Assoc-acdm             12   
-1          1   33       Private  205469  Some-college             10   
-2          2   46       Private  149949  Some-college             10   
-3          3   23       Private  193090     Bachelors             13   
-4          4   55       Private   60193       HS-grad              9   
-...      ...  ...           ...     ...           ...            ...   
-15076  15076   35       Private  337286       Masters             14   
-15077  15077   36       Private  182074  Some-college             10   
-15078  15078   50  Self-emp-inc  175070   Prof-school             15   
-15079  15079   39       Private  202937  Some-college             10   
-15080  15080   33       Private   96245    Assoc-acdm             12   
+0          0   32       Private  309513    Assoc-acdm             12
+1          1   33       Private  205469  Some-college             10
+2          2   46       Private  149949  Some-college             10
+3          3   23       Private  193090     Bachelors             13
+4          4   55       Private   60193       HS-grad              9
+...      ...  ...           ...     ...           ...            ...
+15076  15076   35       Private  337286       Masters             14
+15077  15077   36       Private  182074  Some-college             10
+15078  15078   50  Self-emp-inc  175070   Prof-school             15
+15079  15079   39       Private  202937  Some-college             10
+15080  15080   33       Private   96245    Assoc-acdm             12
 
            marital_status       occupation   relationship                race  \
-0      Married-civ-spouse     Craft-repair        Husband               White   
-1      Married-civ-spouse  Exec-managerial        Husband               White   
-2      Married-civ-spouse     Craft-repair        Husband               White   
-3           Never-married     Adm-clerical      Own-child               White   
-4                Divorced     Adm-clerical  Not-in-family               White   
-...                   ...              ...            ...                 ...   
-15076       Never-married  Exec-managerial  Not-in-family  Asian-Pac-Islander   
-15077            Divorced     Adm-clerical  Not-in-family               White   
-15078  Married-civ-spouse   Prof-specialty        Husband               White   
-15079            Divorced     Tech-support  Not-in-family               White   
-15080  Married-civ-spouse   Prof-specialty        Husband               White   
+0      Married-civ-spouse     Craft-repair        Husband               White
+1      Married-civ-spouse  Exec-managerial        Husband               White
+2      Married-civ-spouse     Craft-repair        Husband               White
+3           Never-married     Adm-clerical      Own-child               White
+4                Divorced     Adm-clerical  Not-in-family               White
+...                   ...              ...            ...                 ...
+15076       Never-married  Exec-managerial  Not-in-family  Asian-Pac-Islander
+15077            Divorced     Adm-clerical  Not-in-family               White
+15078  Married-civ-spouse   Prof-specialty        Husband               White
+15079            Divorced     Tech-support  Not-in-family               White
+15080  Married-civ-spouse   Prof-specialty        Husband               White
 
           sex  capital_gain  capital_loss  hours_per_week native_country  \
-0        Male             0             0              40  United-States   
-1        Male             0             0              40  United-States   
-2        Male             0             0              40  United-States   
-3      Female             0             0              30  United-States   
-4      Female             0             0              40  United-States   
-...       ...           ...           ...             ...            ...   
-15076    Male             0             0              40  United-States   
-15077    Male             0             0              45  United-States   
-15078    Male             0             0              45  United-States   
-15079  Female             0             0              40         Poland   
-15080    Male             0             0              50  United-States   
+0        Male             0             0              40  United-States
+1        Male             0             0              40  United-States
+2        Male             0             0              40  United-States
+3      Female             0             0              30  United-States
+4      Female             0             0              40  United-States
+...       ...           ...           ...             ...            ...
+15076    Male             0             0              40  United-States
+15077    Male             0             0              45  United-States
+15078    Male             0             0              45  United-States
+15079  Female             0             0              40         Poland
+15080    Male             0             0              50  United-States
 
-       target  
-0           0  
-1           1  
-2           0  
-3           0  
-4           0  
-...       ...  
-15076       0  
-15077       0  
-15078       1  
-15079       0  
-15080       0  
+       target
+0           0
+1           1
+2           0
+3           0
+4           0
+...       ...
+15076       0
+15077       0
+15078       1
+15079       0
+15080       0
 
 [15081 rows x 16 columns]
 </pre>
@@ -425,56 +428,56 @@ train_df
 
 <pre>
           id  age     workclass  fnlwgt     education  education_num  \
-0          0   32       Private  309513    Assoc-acdm             12   
-1          1   33       Private  205469  Some-college             10   
-2          2   46       Private  149949  Some-college             10   
-3          3   23       Private  193090     Bachelors             13   
-4          4   55       Private   60193       HS-grad              9   
-...      ...  ...           ...     ...           ...            ...   
-15043  15076   35       Private  337286       Masters             14   
-15044  15077   36       Private  182074  Some-college             10   
-15045  15078   50  Self-emp-inc  175070   Prof-school             15   
-15046  15079   39       Private  202937  Some-college             10   
-15047  15080   33       Private   96245    Assoc-acdm             12   
+0          0   32       Private  309513    Assoc-acdm             12
+1          1   33       Private  205469  Some-college             10
+2          2   46       Private  149949  Some-college             10
+3          3   23       Private  193090     Bachelors             13
+4          4   55       Private   60193       HS-grad              9
+...      ...  ...           ...     ...           ...            ...
+15043  15076   35       Private  337286       Masters             14
+15044  15077   36       Private  182074  Some-college             10
+15045  15078   50  Self-emp-inc  175070   Prof-school             15
+15046  15079   39       Private  202937  Some-college             10
+15047  15080   33       Private   96245    Assoc-acdm             12
 
            marital_status       occupation   relationship                race  \
-0      Married-civ-spouse     Craft-repair        Husband               White   
-1      Married-civ-spouse  Exec-managerial        Husband               White   
-2      Married-civ-spouse     Craft-repair        Husband               White   
-3           Never-married     Adm-clerical      Own-child               White   
-4                Divorced     Adm-clerical  Not-in-family               White   
-...                   ...              ...            ...                 ...   
-15043       Never-married  Exec-managerial  Not-in-family  Asian-Pac-Islander   
-15044            Divorced     Adm-clerical  Not-in-family               White   
-15045  Married-civ-spouse   Prof-specialty        Husband               White   
-15046            Divorced     Tech-support  Not-in-family               White   
-15047  Married-civ-spouse   Prof-specialty        Husband               White   
+0      Married-civ-spouse     Craft-repair        Husband               White
+1      Married-civ-spouse  Exec-managerial        Husband               White
+2      Married-civ-spouse     Craft-repair        Husband               White
+3           Never-married     Adm-clerical      Own-child               White
+4                Divorced     Adm-clerical  Not-in-family               White
+...                   ...              ...            ...                 ...
+15043       Never-married  Exec-managerial  Not-in-family  Asian-Pac-Islander
+15044            Divorced     Adm-clerical  Not-in-family               White
+15045  Married-civ-spouse   Prof-specialty        Husband               White
+15046            Divorced     Tech-support  Not-in-family               White
+15047  Married-civ-spouse   Prof-specialty        Husband               White
 
           sex  capital_gain  capital_loss  hours_per_week native_country  \
-0        Male             0             0              40  United-States   
-1        Male             0             0              40  United-States   
-2        Male             0             0              40  United-States   
-3      Female             0             0              30  United-States   
-4      Female             0             0              40  United-States   
-...       ...           ...           ...             ...            ...   
-15043    Male             0             0              40  United-States   
-15044    Male             0             0              45  United-States   
-15045    Male             0             0              45  United-States   
-15046  Female             0             0              40         Poland   
-15047    Male             0             0              50  United-States   
+0        Male             0             0              40  United-States
+1        Male             0             0              40  United-States
+2        Male             0             0              40  United-States
+3      Female             0             0              30  United-States
+4      Female             0             0              40  United-States
+...       ...           ...           ...             ...            ...
+15043    Male             0             0              40  United-States
+15044    Male             0             0              45  United-States
+15045    Male             0             0              45  United-States
+15046  Female             0             0              40         Poland
+15047    Male             0             0              50  United-States
 
-       target  
-0           0  
-1           1  
-2           0  
-3           0  
-4           0  
-...       ...  
-15043       0  
-15044       0  
-15045       1  
-15046       0  
-15047       0  
+       target
+0           0
+1           1
+2           0
+3           0
+4           0
+...       ...
+15043       0
+15044       0
+15045       1
+15046       0
+15047       0
 
 [15048 rows x 16 columns]
 </pre>
@@ -535,25 +538,25 @@ la_train.head()
 
 <pre>
    id  age  workclass  fnlwgt  education  education_num  marital_status  \
-0   0   32          2  309513          7             12               2   
-1   1   33          2  205469         15             10               2   
-2   2   46          2  149949         15             10               2   
-3   3   23          2  193090          9             13               4   
-4   4   55          2   60193         11              9               0   
+0   0   32          2  309513          7             12               2
+1   1   33          2  205469         15             10               2
+2   2   46          2  149949         15             10               2
+3   3   23          2  193090          9             13               4
+4   4   55          2   60193         11              9               0
 
    occupation  relationship  race  sex  capital_gain  capital_loss  \
-0           2             0     4    1           0.0           0.0   
-1           3             0     4    1           0.0           0.0   
-2           2             0     4    1           0.0           0.0   
-3           0             3     4    0           0.0           0.0   
-4           0             1     4    0           0.0           0.0   
+0           2             0     4    1           0.0           0.0
+1           3             0     4    1           0.0           0.0
+2           2             0     4    1           0.0           0.0
+3           0             3     4    0           0.0           0.0
+4           0             1     4    0           0.0           0.0
 
-   hours_per_week  native_country  target  
-0              40              38       0  
-1              40              38       1  
-2              40              38       0  
-3              30              38       0  
-4              40              38       0  
+   hours_per_week  native_country  target
+0              40              38       0
+1              40              38       1
+2              40              38       0
+3              30              38       0
+4              40              38       0
 </pre>
 
 📝 앞서 수행한 pandas profiling report의 alert를 참고하여 상관계수를 계산했습니다.
@@ -569,20 +572,20 @@ la_train[['age','marital_status', 'relationship', 'sex', 'occupation', 'workclas
 
 <pre>
                      age  marital_status  relationship       sex  occupation  \
-age             1.000000       -0.271955     -0.240331  0.087515   -0.007994   
-marital_status -0.271955        1.000000      0.180281 -0.124481    0.023856   
-relationship   -0.240331        0.180281      1.000000 -0.590077   -0.052109   
-sex             0.087515       -0.124481     -0.590077  1.000000    0.061443   
-occupation     -0.007994        0.023856     -0.052109  0.061443    1.000000   
-workclass       0.081100       -0.044000     -0.070512  0.078764    0.010194   
+age             1.000000       -0.271955     -0.240331  0.087515   -0.007994
+marital_status -0.271955        1.000000      0.180281 -0.124481    0.023856
+relationship   -0.240331        0.180281      1.000000 -0.590077   -0.052109
+sex             0.087515       -0.124481     -0.590077  1.000000    0.061443
+occupation     -0.007994        0.023856     -0.052109  0.061443    1.000000
+workclass       0.081100       -0.044000     -0.070512  0.078764    0.010194
 
-                workclass  
-age              0.081100  
-marital_status  -0.044000  
-relationship    -0.070512  
-sex              0.078764  
-occupation       0.010194  
-workclass        1.000000  
+                workclass
+age              0.081100
+marital_status  -0.044000
+relationship    -0.070512
+sex              0.078764
+occupation       0.010194
+workclass        1.000000
 </pre>
 
 ```python
@@ -602,10 +605,10 @@ native_country   0.079063       0.097485  0.126654        1.000000
 
 ```python
 stat = stats.chi2_contingency(la_train[['race', 'native_country']].values, correction=False)[0]
-obs = np.sum(la_train[['race', 'native_country']].values) 
-mini = min(la_train[['race', 'native_country']].values.shape)-1 
+obs = np.sum(la_train[['race', 'native_country']].values)
+mini = min(la_train[['race', 'native_country']].values.shape)-1
 
-# Cramer's V 
+# Cramer's V
 V = np.sqrt((stat/(obs*mini)))
 print(V)
 ```
@@ -770,7 +773,7 @@ LGBClassifier = lgb.LGBMClassifier(random_state = seed_num)
 ```python
 lgbm = LGBClassifier.fit(train_x.values,
                        train_y.values.ravel(),
-                       eval_set = [(train_x.values, train_y), (val_x.values, val_y)], 
+                       eval_set = [(train_x.values, train_y), (val_x.values, val_y)],
                        eval_metric ='auc', early_stopping_rounds = 1000,
                        verbose = True)
 ```
@@ -784,7 +787,7 @@ XGBClassifier = xgb.XGBClassifier(max_depth = 6, learning_rate = 0.01, n_estimat
 ```python
 xgb = XGBClassifier.fit(train_x.values,
                        train_y.values.ravel(),
-                       eval_set = [(train_x.values, train_y), (val_x.values, val_y)], 
+                       eval_set = [(train_x.values, train_y), (val_x.values, val_y)],
                        eval_metric = 'auc', early_stopping_rounds = 1000,
                        verbose = True)
 ```
@@ -827,7 +830,7 @@ print(metrics.classification_report(v_val_y_pred, val_y))
 
            0       0.93      0.89      0.91      1800
            1       0.63      0.72      0.68       458
-    
+
     accuracy                           0.86      2258
    macro avg       0.78      0.81      0.79      2258
 weighted avg       0.87      0.86      0.86      2258
@@ -849,9 +852,9 @@ plt.show()
 ![corr](/assets/img/for_post/20220429-4.png){: width="400" height="400" }
 
 
-📝 Soft Voting을 진행했음에도 성능이 향상되지 않았습니다. 
+📝 Soft Voting을 진행했음에도 성능이 향상되지 않았습니다.
 
-📝 두 모델의 예측은 높은 상관관계를 가지고 있었기에 앙상블 이전보다 성능이 향상되지 않았다고 해석할 수 있습니다.  
+📝 두 모델의 예측은 높은 상관관계를 가지고 있었기에 앙상블 이전보다 성능이 향상되지 않았다고 해석할 수 있습니다.
 
 (조금 더 공부가 필요할것 같습니다 😂😂)
 
