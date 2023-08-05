@@ -8,9 +8,9 @@ tags: [데이콘, dacon, 소비예측, regression, lightgbm, xgboost, elasticnet
 --------------------------------
 
 
-- 본 포스팅은 간단한 데이터 전처리 및 EDA와 Ensemble(Elasticnet, LightGBM, XGBoost) 등의 내용을 포함하고 있습니다.
-- 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.
-➔ [데이콘에서 읽기](https://dacon.io/codeshare/4881)
+- 본 포스팅은 간단한 데이터 전처리 및 EDA와 Ensemble(Elasticnet, LightGBM, XGBoost) 등의 내용을 포함하고 있습니다.  
+- 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
+➔ [데이콘에서 읽기](https://dacon.io/codeshare/4881)  
 
 
 
@@ -109,32 +109,32 @@ train.head()
 </pre>
 <pre>
    id  Year_Birth   Education Marital_Status   Income  Kidhome  Teenhome  \
-0   0        1974      Master       Together  46014.0        1         1
-1   1        1962  Graduation         Single  76624.0        0         1
-2   2        1951  Graduation        Married  75903.0        0         1
-3   3        1974       Basic        Married  18393.0        1         0
-4   4        1946         PhD       Together  64014.0        2         1
+0   0        1974      Master       Together  46014.0        1         1   
+1   1        1962  Graduation         Single  76624.0        0         1   
+2   2        1951  Graduation        Married  75903.0        0         1   
+3   3        1974       Basic        Married  18393.0        1         0   
+4   4        1946         PhD       Together  64014.0        2         1   
 
   Dt_Customer  Recency  NumDealsPurchases  ...  NumStorePurchases  \
-0  21-01-2013       21                 10  ...                  8
-1  24-05-2014       68                  1  ...                  7
-2  08-04-2013       50                  2  ...                  9
-3  29-03-2014        2                  2  ...                  3
-4  10-06-2014       56                  7  ...                  5
+0  21-01-2013       21                 10  ...                  8   
+1  24-05-2014       68                  1  ...                  7   
+2  08-04-2013       50                  2  ...                  9   
+3  29-03-2014        2                  2  ...                  3   
+4  10-06-2014       56                  7  ...                  5   
 
    NumWebVisitsMonth  AcceptedCmp3  AcceptedCmp4  AcceptedCmp5  AcceptedCmp1  \
-0                  7             0             0             0             0
-1                  1             1             0             0             0
-2                  3             0             0             0             0
-3                  8             0             0             0             0
-4                  7             0             0             0             1
+0                  7             0             0             0             0   
+1                  1             1             0             0             0   
+2                  3             0             0             0             0   
+3                  8             0             0             0             0   
+4                  7             0             0             0             1   
 
-   AcceptedCmp2  Complain  Response  target
-0             0         0         0     541
-1             0         0         0     899
-2             0         0         0     901
-3             0         0         0      50
-4             0         0         0     444
+   AcceptedCmp2  Complain  Response  target  
+0             0         0         0     541  
+1             0         0         0     899  
+2             0         0         0     901  
+3             0         0         0      50  
+4             0         0         0     444  
 
 [5 rows x 22 columns]
 </pre>
@@ -285,7 +285,7 @@ for i in numeric_fts:
   train_outlier_ind.extend(train_outlier_list)
 
 train_outlier_ind = Counter(train_outlier_ind)
-train_multi_outliers = list(k for k,j in train_outlier_ind.items() if j > 2)
+train_multi_outliers = list(k for k,j in train_outlier_ind.items() if j > 2)  
 
 print("The number of train outliers :", len(train_multi_outliers))
 ```
@@ -451,9 +451,9 @@ test_dataset = df_test.copy()
 
 #### **3-(1) `Dt_Customer` 변수 : 날짜 데이터 다루기**
 
-📝 `Dt_Customer` 변수는 회사 등록일을 뜻합니다. 회사에 등록한 시점에 대한 정보를 유지하면서 모델링에 사용할 수 있는 새 수치형 변수를 만들려고합니다.
+📝 `Dt_Customer` 변수는 회사 등록일을 뜻합니다. 회사에 등록한 시점에 대한 정보를 유지하면서 모델링에 사용할 수 있는 새 수치형 변수를 만들려고합니다.  
 
-↪ 가장 과거 시점의 회사 등록일로부터 며칠이 지났는지를 뜻하는 `Pass_Customer`변수를 새롭게 생성합니다.
+↪ 가장 과거 시점의 회사 등록일로부터 며칠이 지났는지를 뜻하는 `Pass_Customer`변수를 새롭게 생성합니다. 
 
 
 ```python
@@ -466,7 +466,7 @@ train_dataset["Dt_Customer"]
 2       08-04-2013
 3       29-03-2014
 4       10-06-2014
-           ...
+           ...    
 1103    31-03-2013
 1104    21-10-2013
 1105    16-12-2013
@@ -488,7 +488,7 @@ train_dataset["Dt_Customer"]
 2      2013-04-08
 3      2014-03-29
 4      2014-06-10
-          ...
+          ...    
 1103   2013-03-31
 1104   2013-10-21
 1105   2013-12-16
@@ -543,8 +543,8 @@ train_dataset["Year_Birth"].head()
 ```
 
 <pre>
-Minimum birth : 1893
-Maximum birth : 1996
+Minimum birth : 1893 
+Maximum birth : 1996 
 
 </pre>
 <pre>
@@ -574,8 +574,8 @@ Name: Age, dtype: int64
 
 #### **3-(3) `AcceptedCmp(1~5)` 와 `Response` 변수로 새 Feature 생성**
 
-📝 위 여섯개의 변수는 고객이 1~5 번째와 마지막 캠페인에서 제안을 수락한 경우 1, 아닌경우 0 값을 가집니다.
-📝 이 변수들을 활용하여 캠페인에서 제안을 수락한 횟수를 나타내는 `AcceptCount` 변수를 새롭게 생성하겠습니다.
+📝 위 여섯개의 변수는 고객이 1~5 번째와 마지막 캠페인에서 제안을 수락한 경우 1, 아닌경우 0 값을 가집니다.  
+📝 이 변수들을 활용하여 캠페인에서 제안을 수락한 횟수를 나타내는 `AcceptCount` 변수를 새롭게 생성하겠습니다.  
 
 
 
@@ -600,13 +600,13 @@ print("Minimum count :", train_dataset["AcceptCount"].min(), "\nMaximum count :"
 ```
 
 <pre>
-Minimum count : 0
-Maximum count : 5
+Minimum count : 0 
+Maximum count : 5 
 
 </pre>
 
-📝 train 데이터에서 캠페인 제안을 여섯번 모두 수락한 경우는 없는것을 확인할 수 있습니다.
-📝 원래의 변수와 `target`과의 상관관계를 확인하겠습니다.
+📝 train 데이터에서 캠페인 제안을 여섯번 모두 수락한 경우는 없는것을 확인할 수 있습니다.  
+📝 원래의 변수와 `target`과의 상관관계를 확인하겠습니다.  
 
 
 
@@ -616,24 +616,24 @@ train_dataset[['Year_Birth', 'AcceptedCmp1','AcceptedCmp2','AcceptedCmp3','Accep
 
 <pre>
               Year_Birth  AcceptedCmp1  AcceptedCmp2  AcceptedCmp3  \
-Year_Birth      1.000000     -0.050053     -0.034204      0.066802
-AcceptedCmp1   -0.050053      1.000000      0.198530      0.052213
-AcceptedCmp2   -0.034204      0.198530      1.000000      0.052513
-AcceptedCmp3    0.066802      0.052213      0.052513      1.000000
-AcceptedCmp4   -0.111485      0.184717      0.328941     -0.083690
-AcceptedCmp5   -0.010873      0.379563      0.192139      0.060890
-Response       -0.012304      0.268577      0.201945      0.194275
-target         -0.136035      0.361102      0.129995      0.040736
+Year_Birth      1.000000     -0.050053     -0.034204      0.066802   
+AcceptedCmp1   -0.050053      1.000000      0.198530      0.052213   
+AcceptedCmp2   -0.034204      0.198530      1.000000      0.052513   
+AcceptedCmp3    0.066802      0.052213      0.052513      1.000000   
+AcceptedCmp4   -0.111485      0.184717      0.328941     -0.083690   
+AcceptedCmp5   -0.010873      0.379563      0.192139      0.060890   
+Response       -0.012304      0.268577      0.201945      0.194275   
+target         -0.136035      0.361102      0.129995      0.040736   
 
-              AcceptedCmp4  AcceptedCmp5  Response    target
-Year_Birth       -0.111485     -0.010873 -0.012304 -0.136035
-AcceptedCmp1      0.184717      0.379563  0.268577  0.361102
-AcceptedCmp2      0.328941      0.192139  0.201945  0.129995
-AcceptedCmp3     -0.083690      0.060890  0.194275  0.040736
-AcceptedCmp4      1.000000      0.313120  0.189849  0.256784
-AcceptedCmp5      0.313120      1.000000  0.336610  0.458208
-Response          0.189849      0.336610  1.000000  0.242760
-target            0.256784      0.458208  0.242760  1.000000
+              AcceptedCmp4  AcceptedCmp5  Response    target  
+Year_Birth       -0.111485     -0.010873 -0.012304 -0.136035  
+AcceptedCmp1      0.184717      0.379563  0.268577  0.361102  
+AcceptedCmp2      0.328941      0.192139  0.201945  0.129995  
+AcceptedCmp3     -0.083690      0.060890  0.194275  0.040736  
+AcceptedCmp4      1.000000      0.313120  0.189849  0.256784  
+AcceptedCmp5      0.313120      1.000000  0.336610  0.458208  
+Response          0.189849      0.336610  1.000000  0.242760  
+target            0.256784      0.458208  0.242760  1.000000  
 </pre>
 
 ```python
@@ -649,15 +649,15 @@ print(np.corrcoef(day, train_dataset['target']))
 
 <pre>
 [[ 1.         -0.15940385]
- [-0.15940385  1.        ]]
+ [-0.15940385  1.        ]] 
 
 [[1.         0.03764911]
- [0.03764911 1.        ]]
+ [0.03764911 1.        ]] 
 
 [[1.         0.01891694]
  [0.01891694 1.        ]]
 </pre>
-📝 새로 생성한 변수와 `target`과의 상관관계를 확인하겠습니다.
+📝 새로 생성한 변수와 `target`과의 상관관계를 확인하겠습니다.  
 
 
 
@@ -672,11 +672,11 @@ Age                 0.012309  1.000000     0.043180  0.136035
 AcceptCount        -0.080152  0.043180     1.000000  0.444114
 target             -0.174969  0.136035     0.444114  1.000000
 </pre>
-📝 정리하자면, `Pass_Customer`-`target`의 상관계수 절댓값이 `Dt_Customer`(`year`, `month`, `day`)-`target` 보다 조금 더 크다는 것을 확인할 수 있습니다.
+📝 정리하자면, `Pass_Customer`-`target`의 상관계수 절댓값이 `Dt_Customer`(`year`, `month`, `day`)-`target` 보다 조금 더 크다는 것을 확인할 수 있습니다.  
 
-📝 또한, 당연하게도 `Year_Birth`를 `Age` 변수로 바꾼것은 상관관계에 아무런 영향도 주지 못했습니다.
+📝 또한, 당연하게도 `Year_Birth`를 `Age` 변수로 바꾼것은 상관관계에 아무런 영향도 주지 못했습니다.  
 
-📝 `AcceptCount`는 `target`과 어느정도 상관관계가 있습니다.
+📝 `AcceptCount`는 `target`과 어느정도 상관관계가 있습니다.  
 
 
 
@@ -688,7 +688,7 @@ test_data = test_dataset.copy()
 
 ## **4. One-Hot Encoding**
 
-📝 `Education`, `Marital_Status` 변수의 one-hot encoding을 진행했습니다.
+📝 `Education`, `Marital_Status` 변수의 one-hot encoding을 진행했습니다.  
 
 
 
@@ -752,7 +752,7 @@ Length of train column : 27
 Length of test column : 26
 </pre>
 
-📝 train 데이터의 `target` 컬럼을 제외하고는 train과 test의 열길이가 같도록 one-hot encoding이 잘 진행된것을 확인할 수 있습니다.
+📝 train 데이터의 `target` 컬럼을 제외하고는 train과 test의 열길이가 같도록 one-hot encoding이 잘 진행된것을 확인할 수 있습니다.  
 
 
 
@@ -762,52 +762,52 @@ train_data.head()
 
 <pre>
     Income  Kidhome  Teenhome  Recency  NumDealsPurchases  NumWebPurchases  \
-0  46014.0        1         1       21           2.258975                7
-1  76624.0        0         1       68          -0.801066                5
-2  75903.0        0         1       50           0.146388                6
-3  18393.0        1         0        2           0.146388                3
-4  64014.0        2         1       56           1.846930                8
+0  46014.0        1         1       21           2.258975                7   
+1  76624.0        0         1       68          -0.801066                5   
+2  75903.0        0         1       50           0.146388                6   
+3  18393.0        1         0        2           0.146388                3   
+4  64014.0        2         1       56           1.846930                8   
 
    NumCatalogPurchases  NumStorePurchases  NumWebVisitsMonth  Complain  ...  \
-0                    1                  8                  7         0  ...
-1                   10                  7                  1         0  ...
-2                    6                  9                  3         0  ...
-3                    0                  3                  8         0  ...
-4                    2                  5                  7         0  ...
+0                    1                  8                  7         0  ...   
+1                   10                  7                  1         0  ...   
+2                    6                  9                  3         0  ...   
+3                    0                  3                  8         0  ...   
+4                    2                  5                  7         0  ...   
 
    Education_Master  Education_PhD  Marital_Status_Absurd  \
-0                 1              0                      0
-1                 0              0                      0
-2                 0              0                      0
-3                 0              0                      0
-4                 0              1                      0
+0                 1              0                      0   
+1                 0              0                      0   
+2                 0              0                      0   
+3                 0              0                      0   
+4                 0              1                      0   
 
    Marital_Status_Alone  Marital_Status_Divorced  Marital_Status_Married  \
-0                     0                        0                       0
-1                     0                        0                       0
-2                     0                        0                       1
-3                     0                        0                       1
-4                     0                        0                       0
+0                     0                        0                       0   
+1                     0                        0                       0   
+2                     0                        0                       1   
+3                     0                        0                       1   
+4                     0                        0                       0   
 
    Marital_Status_Single  Marital_Status_Together  Marital_Status_Widow  \
-0                      0                        1                     0
-1                      1                        0                     0
-2                      0                        0                     0
-3                      0                        0                     0
-4                      0                        1                     0
+0                      0                        1                     0   
+1                      1                        0                     0   
+2                      0                        0                     0   
+3                      0                        0                     0   
+4                      0                        1                     0   
 
-   Marital_Status_YOLO
-0                    0
-1                    0
-2                    0
-3                    0
-4                    0
+   Marital_Status_YOLO  
+0                    0  
+1                    0  
+2                    0  
+3                    0  
+4                    0  
 
 [5 rows x 27 columns]
 </pre>
 ## **5. Modeling**
 
-📝 train x 데이터와 target 데이터를 나눠줍니다.
+📝 train x 데이터와 target 데이터를 나눠줍니다.  
 
 
 
@@ -824,9 +824,9 @@ def nmae(true, pred):
     return score
 ```
 
-📝 Lasso, Ridge regression은 Linear regression에 규제를 적용하는 방법입니다. 저는 이 두 모델의 규제를 모두 적용할 수 있는 **Elastic-Net**을 사용했습니다.
+📝 Lasso, Ridge regression은 Linear regression에 규제를 적용하는 방법입니다. 저는 이 두 모델의 규제를 모두 적용할 수 있는 **Elastic-Net**을 사용했습니다.  
 
-📝 또한 **LightGBM, XGBoost** 모델을 사용했고, 최종적으로 세 모델을 활용하여 **Ensemble**을 진행했습니다.
+📝 또한 **LightGBM, XGBoost** 모델을 사용했고, 최종적으로 세 모델을 활용하여 **Ensemble**을 진행했습니다.  
 
 
 ### **Elastic-Net**
@@ -865,8 +865,8 @@ GridSearchCV(cv=RepeatedKFold(n_repeats=5, n_splits=5, random_state=42),
 </pre>
 
 ```python
-elasticnet = ela_gsearch.best_estimator_
-ela_grid_results = pd.DataFrame(ela_gsearch.cv_results_)
+elasticnet = ela_gsearch.best_estimator_        
+ela_grid_results = pd.DataFrame(ela_gsearch.cv_results_)  
 ela_pred = elasticnet.predict(train_x)
 ```
 
@@ -913,8 +913,8 @@ GridSearchCV(cv=RepeatedKFold(n_repeats=1, n_splits=5, random_state=42),
 </pre>
 
 ```python
-xgb = xgb_gsearch.best_estimator_
-xgb_grid_results = pd.DataFrame(xgb_gsearch.cv_results_)
+xgb = xgb_gsearch.best_estimator_        
+xgb_grid_results = pd.DataFrame(xgb_gsearch.cv_results_)  
 xgb_pred = xgb.predict(train_x)
 
 print("train nmae of xgb :", nmae(train_y.values, xgb_pred))
@@ -957,8 +957,8 @@ GridSearchCV(cv=RepeatedKFold(n_repeats=1, n_splits=5, random_state=42),
 </pre>
 
 ```python
-lgbm = lgbm_gsearch.best_estimator_
-lgbm_grid_results = pd.DataFrame(lgbm_gsearch.cv_results_)
+lgbm = lgbm_gsearch.best_estimator_        
+lgbm_grid_results = pd.DataFrame(lgbm_gsearch.cv_results_)  
 lgbm_pred = lgbm.predict(train_x)
 
 print("train nmae of lgbm :", nmae(train_y.values, lgbm_pred))
@@ -989,6 +989,6 @@ train nmae of blended model: 1.0298941681188711
 
 --------------------------
 
-감사합니다 :)
+감사합니다 :)  
 도움이 됐길 바랍니다👍👍
 

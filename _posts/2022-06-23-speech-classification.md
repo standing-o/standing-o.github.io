@@ -5,11 +5,10 @@ categories: [Competition, Dacon]
 tags: [데이콘, dacon, 음성분류, speech, classification, data-augmentation, feature-extraction]
 ---
 
-
 ------------------
 
-- 본 포스팅은 음성 데이터에 대한 data augmentation과 feature extraction 등의 내용을 포함하고 있습니다.
-- 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.
+- 본 포스팅은 음성 데이터에 대한 data augmentation과 feature extraction 등의 내용을 포함하고 있습니다.  
+- 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
 ➔ [데이콘에서 읽기](https://dacon.io/competitions/official/235905/codeshare/5209)
 
 
@@ -101,7 +100,7 @@ print(samples)
 [0.00013066 0.00016804 0.00014106 ... 0.00017342 0.00017514 0.        ]
 </pre>
 
-📝 한 음성의 spectrogram을 생성하겠습니다.
+📝 한 음성의 spectrogram을 생성하겠습니다.  
 ↪ Short term Fourier transform (STFT)의 magnitude를 db 스케일로 변환하여 spectrogram을 생성합니다.
 
 
@@ -113,7 +112,7 @@ Xdb = librosa.amplitude_to_db(abs(X))
 
 plt.figure(figsize=(12, 3))
 plt.title('001.wav spectrogram | Length : ' + str(len(samples)))
-librosa.display.specshow(Xdb, sr = sample_rate, x_axis='time', y_axis='hz')
+librosa.display.specshow(Xdb, sr = sample_rate, x_axis='time', y_axis='hz')   
 plt.colorbar()
 plt.show()
 ```
@@ -193,7 +192,7 @@ Min : [7139]
 
 ## **2. Data augmentation**
 
-📝 원래의 음성데이터에 새로운 perturbation 들을 추가하여 새로운 음성데이터를 생성합니다. (모델의 일반화 능력 향상을 위함)
+📝 원래의 음성데이터에 새로운 perturbation 들을 추가하여 새로운 음성데이터를 생성합니다. (모델의 일반화 능력 향상을 위함)  
 ↪ Noise 추가, time stretching, pitch 변환
 
 
@@ -228,13 +227,13 @@ def pitch(sample, sampling_rate, pitch_factor = 0.8):
 
 #### **2. Chroma_shift**
 
-↪ Waveform 또는 power spectrogram으로 생성한 chromagram.
+↪ Waveform 또는 power spectrogram으로 생성한 chromagram. 
 
 #### **3. Mel spectrum**
 
-↪ 오디오 신호(time domain)에 Fast Fourier Transform (FFT) -> Spectrum (frequency domain)
+↪ 오디오 신호(time domain)에 Fast Fourier Transform (FFT) -> Spectrum (frequency domain)  
 
-↪ Spectrum + 필터링 (Mel filter bank) -> Mel spectrum
+↪ Spectrum + 필터링 (Mel filter bank) -> Mel spectrum  
 
 #### **4. MFCC (Mel-Frequency Cepstral Coefficient)**
 
@@ -252,7 +251,7 @@ def extract_features(sample):
     # ZCR
     result = np.array([])
     zcr = np.mean(librosa.feature.zero_crossing_rate(y = sample).T, axis=0)
-    result=np.hstack((result, zcr))
+    result=np.hstack((result, zcr)) 
 
     # Chroma_stft
     stft = np.abs(librosa.stft(sample))
@@ -261,15 +260,15 @@ def extract_features(sample):
 
     # MelSpectogram
     mel = np.mean(librosa.feature.melspectrogram(y = sample, sr = sample_rate).T, axis=0)
-    result = np.hstack((result, mel))
+    result = np.hstack((result, mel)) 
 
     # MFCC
     mfcc = np.mean(librosa.feature.mfcc(y = sample, sr = sample_rate).T, axis=0)
-    result = np.hstack((result, mfcc))
+    result = np.hstack((result, mfcc)) 
 
     # Root Mean Square Value
     rms = np.mean(librosa.feature.rms(y = sample).T, axis=0)
-    result = np.hstack((result, rms))
+    result = np.hstack((result, rms)) 
 
     return result
 ```
@@ -282,22 +281,22 @@ def extract_features(sample):
 def get_features(path):
 
     sample, sample_rate = librosa.load(path)
-
+    
     # without augmentation
     res1 = extract_features(sample)
     result = np.array(res1)
-
+    
     # sample with noise
     noise_sample = noise(sample)
     res2 = extract_features(noise_sample)
-    result = np.vstack((result, res2))
-
+    result = np.vstack((result, res2)) 
+    
     # sample with stretching and pitching
     str_sample = stretch(sample)
     sample_stretch_pitch = pitch(str_sample, sample_rate)
     res3 = extract_features(sample_stretch_pitch)
-    result = np.vstack((result, res3))
-
+    result = np.vstack((result, res3)) 
+    
     return result
 ```
 
@@ -331,6 +330,6 @@ Shape of Y: (1200,)
 [1] Speech Emotion Recognition by SHIVAM BURNWAL, https://www.kaggle.com/code/shivamburnwal/speech-emotion-recognition
 ```
 ------------------
-읽어주셔서 감사합니다 :)
+읽어주셔서 감사합니다 :)  
 도움이 됐길 바랍니다 👍👍
 

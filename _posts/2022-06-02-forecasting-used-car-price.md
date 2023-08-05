@@ -8,8 +8,8 @@ tags: [데이콘, dacon, 중고차가격예측, regression, catboost, randomfore
 --------------
 
 
-- 본 포스팅은 feature engineering과 ensemble (catboost, random forest, gradient boosting) 등의 내용을 포함하고 있습니다.
-- 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.
+- 본 포스팅은 feature engineering과 ensemble (catboost, random forest, gradient boosting) 등의 내용을 포함하고 있습니다.  
+- 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
 ➔ [데이콘에서 읽기](https://dacon.io/competitions/official/235901/codeshare/5089?page=1&dtype=recent)
 
 
@@ -77,7 +77,7 @@ scikit-learn version: 0.23.2
 
 ```python
 # reproducibility
-seed_num = 42
+seed_num = 42 
 np.random.seed(seed_num)
 rn.seed(seed_num)
 os.environ['PYTHONHASHSEED']=str(seed_num)
@@ -100,18 +100,18 @@ train.head()
 </pre>
 <pre>
    id                          title  odometer location    isimported  \
-0   0                   Toyota RAV 4     18277   Lagos   Foreign Used
-1   1            Toyota Land Cruiser        10    Lagos          New
-2   2  Land Rover Range Rover Evoque     83091    Lagos  Foreign Used
-3   3                   Lexus ES 350     91524    Lagos  Foreign Used
-4   4                   Toyota Venza     94177    Lagos  Foreign Used
+0   0                   Toyota RAV 4     18277   Lagos   Foreign Used   
+1   1            Toyota Land Cruiser        10    Lagos          New    
+2   2  Land Rover Range Rover Evoque     83091    Lagos  Foreign Used   
+3   3                   Lexus ES 350     91524    Lagos  Foreign Used   
+4   4                   Toyota Venza     94177    Lagos  Foreign Used   
 
-           engine transmission    fuel  paint  year    target
-0  4-cylinder(I4)    automatic  petrol    Red  2016  13665000
-1  4-cylinder(I4)    automatic  petrol  Black  2019  33015000
-2  6-cylinder(V6)    automatic  petrol    Red  2012   9915000
-3  4-cylinder(I4)    automatic  petrol   Gray  2007   3815000
-4  6-cylinder(V6)    automatic  petrol    Red  2010   7385000
+           engine transmission    fuel  paint  year    target  
+0  4-cylinder(I4)    automatic  petrol    Red  2016  13665000  
+1  4-cylinder(I4)    automatic  petrol  Black  2019  33015000  
+2  6-cylinder(V6)    automatic  petrol    Red  2012   9915000  
+3  4-cylinder(I4)    automatic  petrol   Gray  2007   3815000  
+4  6-cylinder(V6)    automatic  petrol    Red  2010   7385000  
 </pre>
 
 ```python
@@ -131,7 +131,7 @@ pr
 
 #### **High cardinality**
 
-`title`, `paint`
+`title`, `paint`  
 
 ↪ 중복도가 낮은 데이터
 
@@ -252,30 +252,30 @@ train_df
 
 <pre>
        id                          title  odometer location    isimported  \
-0       0                   Toyota RAV 4     18277   Lagos   Foreign Used
-1       1            Toyota Land Cruiser        10    Lagos          New
-2       2  Land Rover Range Rover Evoque     83091    Lagos  Foreign Used
-3       3                   Lexus ES 350     91524    Lagos  Foreign Used
-4       4                   Toyota Venza     94177    Lagos  Foreign Used
-..    ...                            ...       ...      ...           ...
-970  1010                 Toyota Corolla     46768    Lagos  Foreign Used
-971  1011                   Toyota Camry     31600    Abuja  Foreign Used
-972  1012                   Toyota Camry     96802    Abuja  Foreign Used
-973  1013                   Lexus GX 460    146275    Lagos  Foreign Used
-974  1014                         DAF CF         0    Lagos  Locally used
+0       0                   Toyota RAV 4     18277   Lagos   Foreign Used   
+1       1            Toyota Land Cruiser        10    Lagos          New    
+2       2  Land Rover Range Rover Evoque     83091    Lagos  Foreign Used   
+3       3                   Lexus ES 350     91524    Lagos  Foreign Used   
+4       4                   Toyota Venza     94177    Lagos  Foreign Used   
+..    ...                            ...       ...      ...           ...   
+970  1010                 Toyota Corolla     46768    Lagos  Foreign Used   
+971  1011                   Toyota Camry     31600    Abuja  Foreign Used   
+972  1012                   Toyota Camry     96802    Abuja  Foreign Used   
+973  1013                   Lexus GX 460    146275    Lagos  Foreign Used   
+974  1014                         DAF CF         0    Lagos  Locally used   
 
-             engine transmission    fuel   paint  year    target
-0    4-cylinder(I4)    automatic  petrol     Red  2016  13665000
-1    4-cylinder(I4)    automatic  petrol   Black  2019  33015000
-2    6-cylinder(V6)    automatic  petrol     Red  2012   9915000
-3    4-cylinder(I4)    automatic  petrol    Gray  2007   3815000
-4    6-cylinder(V6)    automatic  petrol     Red  2010   7385000
-..              ...          ...     ...     ...   ...       ...
-970  4-cylinder(I4)    automatic  petrol   Black  2014   5415000
-971  4-cylinder(I4)    automatic  petrol  Silver  2011   3615000
-972  4-cylinder(I4)    automatic  petrol   Black  2011   3415000
-973  6-cylinder(V6)    automatic  petrol    Gold  2013  14315000
-974  6-cylinder(V6)       manual  diesel   white  1998  10015000
+             engine transmission    fuel   paint  year    target  
+0    4-cylinder(I4)    automatic  petrol     Red  2016  13665000  
+1    4-cylinder(I4)    automatic  petrol   Black  2019  33015000  
+2    6-cylinder(V6)    automatic  petrol     Red  2012   9915000  
+3    4-cylinder(I4)    automatic  petrol    Gray  2007   3815000  
+4    6-cylinder(V6)    automatic  petrol     Red  2010   7385000  
+..              ...          ...     ...     ...   ...       ...  
+970  4-cylinder(I4)    automatic  petrol   Black  2014   5415000  
+971  4-cylinder(I4)    automatic  petrol  Silver  2011   3615000  
+972  4-cylinder(I4)    automatic  petrol   Black  2011   3415000  
+973  6-cylinder(V6)    automatic  petrol    Gold  2013  14315000  
+974  6-cylinder(V6)       manual  diesel   white  1998  10015000  
 
 [975 rows x 11 columns]
 </pre>
@@ -310,7 +310,7 @@ print("# outliers to drop :", len(outlier_ind))
 
 ### 2-(2). Correlation
 
-📝 앞서 수행한 pandas profiling report의 alert를 참고하여 상관계수를 계산했습니다.
+📝 앞서 수행한 pandas profiling report의 alert를 참고하여 상관계수를 계산했습니다.  
 
 📝 Categorical 데이터를 라벨인코더를 통해 수치형으로 변환한 후 상관관계를 확인합니다.
 
@@ -343,10 +343,10 @@ plt.show()
 
 ### **3-(1). `company` 컬럼 생성**
 
-📝 `title` 변수 값들의 앞부분에는 공통적으로 자동차 회사의 이름이 오는것을 확인할 수 있습니다.
+📝 `title` 변수 값들의 앞부분에는 공통적으로 자동차 회사의 이름이 오는것을 확인할 수 있습니다.  
 
-📝 split 함수를 사용하여 첫번째 띄어쓰기를 기준으로 회사명 데이터를 추출하고 새 컬럼을 생성해주겠습니다.
-📝 `company` 컬럼의 계급을 훈련 데이터의 `target`값 기준으로 나눠주겠습니다.
+📝 split 함수를 사용하여 첫번째 띄어쓰기를 기준으로 회사명 데이터를 추출하고 새 컬럼을 생성해주겠습니다.  
+📝 `company` 컬럼의 계급을 훈련 데이터의 `target`값 기준으로 나눠주겠습니다.  
 
 
 
@@ -379,13 +379,13 @@ print("#fts :", len(df_test['company'].unique()), '\n')
  'Mazda' 'Lincoln' 'Kia' 'Acura' 'DAF' 'Man' 'Isuzu' 'IVM' 'Porsche'
  'MINI' 'GMC' 'Iveco' 'Scania' 'Volkswagen' 'GAC' 'IVECO' 'Mack' 'Peugeot'
  'Rolls-Royce' 'MAN-VOLKSWAGEN' 'Jeep' 'ALPINA' 'Bentley' 'JMC']
-#fts : 39
+#fts : 39 
 
 ['Mercedes-Benz' 'Honda' 'Toyota' 'Iveco' 'Lexus' 'Nissan' 'Volkswagen'
  'Jeep' 'Ford' 'BMW' 'Mack' 'Land' 'Hyundai' 'Peugeot' 'Volvo' 'Infiniti'
  'Acura' 'Man' 'Fiat' 'MINI' 'DAF' 'Mazda' 'Porsche' 'Mitsubishi'
  'Chevrolet' 'Kia' 'Pontiac' 'Rolls-Royce']
-#fts : 28
+#fts : 28 
 
 </pre>
 
@@ -454,13 +454,13 @@ def company_fix(train_df, df, companys):
       company_ind = companys[np.where(company_h>=c*5)]
     elif c==0:
       company_ind = companys[np.where(company_h<(c+1)*5)]
-    else:
+    else:  
       company_ind = companys[np.where((company_h>=c*5)&(company_h<(c+1)*5))]
-
+    
     for i in range(len(company_ind)):
       df.loc[(df['company'] == company_ind[i]), 'company'] = c+1
 
-
+      
 ```
 
 
@@ -725,7 +725,7 @@ train_df['engine']
 2      6-cylinder(V6)
 3      4-cylinder(I4)
 4      6-cylinder(V6)
-            ...
+            ...      
 970    4-cylinder(I4)
 971    4-cylinder(I4)
 972    4-cylinder(I4)
@@ -736,9 +736,9 @@ Name: engine, Length: 975, dtype: object
 
 ```python
 def engine_fix(df):
-  df.loc[((df['engine'] != "8-cylinder(V8)") & (df['engine'] != "4-cylinder(H4)") & (df['engine'] != "6-cylinder(I6)") &
+  df.loc[((df['engine'] != "8-cylinder(V8)") & (df['engine'] != "4-cylinder(H4)") & (df['engine'] != "6-cylinder(I6)") & 
           (df['engine'] != "6-cylinder(V6)") & (df['engine'] != "4-cylinder(I4)") & (df['engine'] != "5-cylinder(I5)") & (df['engine'] != "3-cylinder(I3)") & (df['engine'] != "2-cylinder(I2)")), 'engine'] = 2
-
+    
   df.loc[(df['engine'] == "2-cylinder(I2)"), 'engine'] = 1
   df.loc[(df['engine'] == "3-cylinder(I3)"), 'engine'] = 1
   df.loc[(df['engine'] == "5-cylinder(I5)"), 'engine'] = 1
@@ -845,29 +845,29 @@ title :
  'Lexus ES 330' 'Honda Insight' 'Toyota Vitz' 'Isuzu CABSTER'
  'Mercedes-Benz C 63 AMG' 'Mercedes-Benz SL 400' 'Volkswagen 17.22'
  'DAF CF']
-#fts : 185
+#fts : 185 
 
 location :
 ['Lagos' 'Abuja' 'Ogun' 'FCT' 'Accra' 'other' 'Abia' 'Adamawa ']
-#fts : 8
+#fts : 8 
 
 isimported :
 ['Foreign Used' 'New ' 'Locally used']
-#fts : 3
+#fts : 3 
 
 transmission :
 ['automatic' 'manual']
-#fts : 2
+#fts : 2 
 
 fuel :
 ['petrol' 'diesel']
-#fts : 2
+#fts : 2 
 
 paint :
 ['red' 'black' 'gray' 'white' 'blue' 'black/red' 'dark blue' 'dark gray'
  'brown' 'green' 'purple' 'gold' 'cream' 'beige' 'dark green' 'yellow'
  'wine' 'light blue' 'light gray']
-#fts : 19
+#fts : 19 
 
 </pre>
 
@@ -913,30 +913,30 @@ title :
  'Rolls-Royce Ghost' 'Ford Fusion' 'Lexus GS 300' 'Ford Transit'
  'Hyundai Azera' 'Mitsubishi L200' 'Mercedes-Benz DUMP TRUCK'
  'Mercedes-Benz WATER TANKER' 'Kia Rio' 'Man BOCKMANN' 'Lexus GX 470']
-#fts : 124
+#fts : 124 
 
 location :
 ['Abuja' 'Lagos' 'Ogun' 'Mushin' 'other' 'Arepo ogun state ' 'Abia']
-#fts : 7
+#fts : 7 
 
 isimported :
 ['New ' 'Foreign Used' 'Locally used']
-#fts : 3
+#fts : 3 
 
 transmission :
 ['automatic' 'manual']
-#fts : 2
+#fts : 2 
 
 fuel :
 ['petrol' 'diesel']
-#fts : 2
+#fts : 2 
 
 paint :
 ['white' 'black' 'dark gray' 'red' 'gray' 'blue' 'gold' 'green' 'cream'
  'brown' 'yellow' 'dark green' 'white and green' 'light gray' 'wine'
  'blac' 'dark blue' 'golf' 'indigo ink pearl' 'gray and black'
  'classic gray met(1f7)' 'beige' 'mint green']
-#fts : 23
+#fts : 23 
 
 </pre>
 
@@ -1079,46 +1079,46 @@ compare_models()
 
 <pre>
                                     Model           MAE           MSE  \
-catboost               CatBoost Regressor  2.052122e+06  3.032507e+13
-gbr           Gradient Boosting Regressor  2.215648e+06  3.169851e+13
-rf                Random Forest Regressor  2.132068e+06  3.173878e+13
-et                  Extra Trees Regressor  2.235193e+06  3.563028e+13
-ridge                    Ridge Regression  3.439487e+06  4.245590e+13
-dt                Decision Tree Regressor  2.503733e+06  3.621137e+13
-omp           Orthogonal Matching Pursuit  3.249912e+06  4.415962e+13
-lr                      Linear Regression  3.577824e+06  4.495084e+13
-llar         Lasso Least Angle Regression  3.479438e+06  4.552524e+13
-lasso                    Lasso Regression  3.562897e+06  4.500952e+13
-lightgbm  Light Gradient Boosting Machine  3.335596e+06  4.506558e+13
-en                            Elastic Net  4.823784e+06  7.191481e+13
-ada                    AdaBoost Regressor  5.726544e+06  6.274745e+13
-knn                 K Neighbors Regressor  5.217788e+06  8.947216e+13
-br                         Bayesian Ridge  5.853927e+06  9.663452e+13
-huber                     Huber Regressor  5.072447e+06  1.106676e+14
-dummy                     Dummy Regressor  6.606546e+06  1.206503e+14
-par          Passive Aggressive Regressor  6.787941e+06  1.124849e+14
-lar                Least Angle Regression  7.229185e+28  7.044768e+59
+catboost               CatBoost Regressor  2.052122e+06  3.032507e+13   
+gbr           Gradient Boosting Regressor  2.215648e+06  3.169851e+13   
+rf                Random Forest Regressor  2.132068e+06  3.173878e+13   
+et                  Extra Trees Regressor  2.235193e+06  3.563028e+13   
+ridge                    Ridge Regression  3.439487e+06  4.245590e+13   
+dt                Decision Tree Regressor  2.503733e+06  3.621137e+13   
+omp           Orthogonal Matching Pursuit  3.249912e+06  4.415962e+13   
+lr                      Linear Regression  3.577824e+06  4.495084e+13   
+llar         Lasso Least Angle Regression  3.479438e+06  4.552524e+13   
+lasso                    Lasso Regression  3.562897e+06  4.500952e+13   
+lightgbm  Light Gradient Boosting Machine  3.335596e+06  4.506558e+13   
+en                            Elastic Net  4.823784e+06  7.191481e+13   
+ada                    AdaBoost Regressor  5.726544e+06  6.274745e+13   
+knn                 K Neighbors Regressor  5.217788e+06  8.947216e+13   
+br                         Bayesian Ridge  5.853927e+06  9.663452e+13   
+huber                     Huber Regressor  5.072447e+06  1.106676e+14   
+dummy                     Dummy Regressor  6.606546e+06  1.206503e+14   
+par          Passive Aggressive Regressor  6.787941e+06  1.124849e+14   
+lar                Least Angle Regression  7.229185e+28  7.044768e+59   
 
-                  RMSE            R2    RMSLE          MAPE  TT (Sec)
-catboost  4.874472e+06  7.763000e-01   0.3940  2.705000e-01     5.786
-gbr       4.992229e+06  7.507000e-01   0.3991  3.435000e-01     0.201
-rf        4.964929e+06  7.477000e-01   0.3567  2.637000e-01     0.797
-et        5.401867e+06  7.073000e-01   0.3660  2.627000e-01     0.872
-ridge     5.963903e+06  6.569000e-01   0.8327  9.147000e-01     0.036
-dt        5.587945e+06  6.550000e-01   0.4376  2.988000e-01     0.027
-omp       6.123065e+06  6.337000e-01   0.8006  7.729000e-01     0.020
-lr        6.188975e+06  6.291000e-01   0.7927  9.623000e-01     0.349
-llar      6.215977e+06  6.243000e-01   0.8050  9.201000e-01     0.084
-lasso     6.206766e+06  6.219000e-01   0.7581  9.474000e-01     0.072
-lightgbm  6.324969e+06  5.892000e-01   0.5592  4.798000e-01     0.091
-en        7.970752e+06  3.732000e-01   0.8749  1.184900e+00     0.103
-ada       7.697862e+06  3.293000e-01   0.9726  1.669600e+00     0.149
-knn       8.988560e+06  1.959000e-01   0.8459  1.057700e+00     0.071
-br        9.334507e+06  1.286000e-01   1.0131  1.458200e+00     0.048
-huber     9.854927e+06  9.680000e-02   0.8858  8.251000e-01     0.079
-dummy     1.044993e+07 -6.330000e-02   1.1069  1.864000e+00     0.013
-par       1.019090e+07 -1.097000e-01   1.1548  1.859500e+00     0.026
-lar       2.657465e+29 -6.320727e+45  28.3450  1.132970e+22     0.113
+                  RMSE            R2    RMSLE          MAPE  TT (Sec)  
+catboost  4.874472e+06  7.763000e-01   0.3940  2.705000e-01     5.786  
+gbr       4.992229e+06  7.507000e-01   0.3991  3.435000e-01     0.201  
+rf        4.964929e+06  7.477000e-01   0.3567  2.637000e-01     0.797  
+et        5.401867e+06  7.073000e-01   0.3660  2.627000e-01     0.872  
+ridge     5.963903e+06  6.569000e-01   0.8327  9.147000e-01     0.036  
+dt        5.587945e+06  6.550000e-01   0.4376  2.988000e-01     0.027  
+omp       6.123065e+06  6.337000e-01   0.8006  7.729000e-01     0.020  
+lr        6.188975e+06  6.291000e-01   0.7927  9.623000e-01     0.349  
+llar      6.215977e+06  6.243000e-01   0.8050  9.201000e-01     0.084  
+lasso     6.206766e+06  6.219000e-01   0.7581  9.474000e-01     0.072  
+lightgbm  6.324969e+06  5.892000e-01   0.5592  4.798000e-01     0.091  
+en        7.970752e+06  3.732000e-01   0.8749  1.184900e+00     0.103  
+ada       7.697862e+06  3.293000e-01   0.9726  1.669600e+00     0.149  
+knn       8.988560e+06  1.959000e-01   0.8459  1.057700e+00     0.071  
+br        9.334507e+06  1.286000e-01   1.0131  1.458200e+00     0.048  
+huber     9.854927e+06  9.680000e-02   0.8858  8.251000e-01     0.079  
+dummy     1.044993e+07 -6.330000e-02   1.1069  1.864000e+00     0.013  
+par       1.019090e+07 -1.097000e-01   1.1548  1.859500e+00     0.026  
+lar       2.657465e+29 -6.320727e+45  28.3450  1.132970e+22     0.113  
 </pre>
 <pre>
 <catboost.core.CatBoostRegressor at 0x7f9eb6f53c50>
@@ -1140,7 +1140,7 @@ blended_model = blend_models(estimator_list = [catboost, rf, gbr])
 
 <pre>
                MAE           MSE          RMSE      R2   RMSLE    MAPE
-Fold
+Fold                                                                  
 0     3.368465e+06  1.239934e+14  1.113523e+07  0.6025  0.3779  0.3052
 1     1.523530e+06  7.672571e+12  2.769941e+06  0.8638  0.3379  0.2818
 2     1.430990e+06  6.330266e+12  2.516002e+06  0.8527  0.3042  0.2395
@@ -1169,6 +1169,6 @@ pred = prediction['Label']
 ```
 
 -------------------
-읽어주셔서 감사합니다 :)
+읽어주셔서 감사합니다 :)  
 도움이 됐길 바랍니다👍👍
 
