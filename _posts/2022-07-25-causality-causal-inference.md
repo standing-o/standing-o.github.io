@@ -3,7 +3,7 @@ title: "인과 | Causality 와 인과추론 | Causal inference"
 date: 2022-07-25 17:00:00 +/-TTTT
 categories: [Causal inference]
 tags: [lg-aimers, causality, scm, back-door, do-calculus]
-use_math: true
+math: true
 ---
 
 
@@ -58,7 +58,7 @@ use_math: true
   - Find a set $$Z$$ s.t. it can sufficiently explain 'confounding' between $$X$$ and $$Y$$. Then, 
 
   $$
-  P(y|do(x))=\sum_Z{P(y|x,z)P(z)}"
+  P(y|do(x))=\sum_Z{P(y|x,z)P(z)}
   $$
 
 - **<u>Definition</u>ㅣBack-door criterion**
@@ -78,7 +78,7 @@ use_math: true
 - Adjusting for the direct parents of Sprinkler, we have:
   
 $$
-P(\text{wt}|do(\text{sp}))=\sum_\text{sn}P(\text{wt}|\text{sp,sn})P(\text{sn})=...=\sum_\text{rn}P(\text{wt}|\text{sp,rn})P(\text{rn})
+P(\text{wt}|do(\text{sp}))=\sum_\text{sn}P(\text{wt}|\text{sp,sn})P(\text{sn})=\cdots=\sum_\text{rn}P(\text{wt}|\text{sp,rn})P(\text{rn})
 $$
 
 

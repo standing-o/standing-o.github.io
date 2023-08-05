@@ -3,7 +3,7 @@ title: "Cloud Computing과 Google Cloud"
 date: 2022-08-21 17:00:00 +/-TTTT
 categories: [Google Cloud, Kubernetes]
 tags: [gcp, kubernetes, gke]
-use_math: true
+math: true
 ---
 
 

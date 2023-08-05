@@ -3,7 +3,7 @@ title: "Google Kubernetes Engine(GKE) 란?"
 date: 2022-08-28 17:00:00 +/-TTTT
 categories: [Google Cloud, Kubernetes]
 tags: [gcp, kubernetes, gke]
-use_math: true
+math: true
 ---
 
 

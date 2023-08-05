@@ -3,6 +3,7 @@ title: "비지도학습 | Unsupervised learning 과 딥러닝"
 date: 2022-07-17 17:00:00 +/-TTTT
 categories: [Machine learning, Basic]
 tags: [lg-aimers, unsupervised-learning]
+math: true
 ---
 
 

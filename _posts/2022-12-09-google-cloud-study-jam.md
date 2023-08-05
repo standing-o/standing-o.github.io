@@ -3,7 +3,7 @@ title: "2022 구글 클라우드 스터디잼 수료 후기 | AI&ML 중급/심�
 date: 2022-12-09 13:00:00 +/-TTTT
 categories: [Review, Extracurricular Activity]
 tags: [google-cloud-study-jam, 구글클라우드스터디잼, kubernetes]
-use_math: true
+math: true
 ---
 
 
@@ -14,7 +14,7 @@ use_math: true
 
 
 
-![GCPJ](/assets/img/for_post/20221209-1.jpeg){: width="75%" height="75%"} 
+![GCPJ](/assets/img/for_post/20221209-1.jpeg)
 
 # **2022 구글 클라우드 스터디잼 이란?**
 
@@ -86,9 +86,9 @@ use_math: true
 
 - 다섯 개 과정을 통해 얻게된 Qwiklab 뱃지들과 코세라 수료증들.. 모아두고 보니 뿌듯하네요 😂😂
 
-![GCPJ_badge](/assets/img/for_post/20221209-2.png){: width="75%" height="75%"} 
+![GCPJ_badge](/assets/img/for_post/20221209-2.png)
 
-![coursera](/assets/img/for_post/20221209-3.png){: width="75%" height="75%"} 
+![coursera](/assets/img/for_post/20221209-3.png)
 
 
 
@@ -99,7 +99,7 @@ use_math: true
 
 
 
-![GCPJ_souvenir](/assets/img/for_post/20221209-4.jpg){: width="75%" height="75%"} 
+![GCPJ_souvenir](/assets/img/for_post/20221209-4.jpg)
 
 
 

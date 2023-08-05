@@ -3,6 +3,7 @@ title: "지도학습 | Supervised learning 이란? (SVM, ANN, Ensemble)"
 date: 2022-07-15 17:00:00 +/-TTTT
 categories: [Machine learning, Basic]
 tags: [lg-aimers, supervised-learning, svm, ann, ensemble]
+math: true
 ---
 
 
@@ -107,7 +108,7 @@ $$
 J(\theta_0,\theta_1)=\frac{1}{2m}\sum_{i=1}^{m}(h_\theta(x^{(i)})-y^{(i)})^2
 $$
 
-➔ $$minimize_{\theta_0, \theta_1} J(\theta_0, \theta_1)$$
+➔ $$\text{minimize}_{\theta_0, \theta_1} J(\theta_0, \theta_1)$$
 
 
 

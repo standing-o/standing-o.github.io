@@ -3,7 +3,7 @@ title: "2022 데이터 크리에이터 캠프 최우수상 수상 후기"
 date: 2022-12-06 17:00:00 +/-TTTT
 categories: [Review, Extracurricular Activity]
 tags: [data-creator-camp, 데이터크리에이터캠프]
-use_math: true
+math: true
 ---
 
 
@@ -14,7 +14,7 @@ use_math: true
 
 
 
-![data_creator_award](/assets/img/for_post/20221206-2.png){: width="75%" height="75%"} 
+![data_creator_award](/assets/img/for_post/20221206-2.png)
 
 - DAMS (Data Analysis Math Statistics) 팀 최우수상 🎉🎉 감사합니다 👍👍
 
@@ -31,7 +31,7 @@ use_math: true
 
 
 
-![data_creator_poster](/assets/img/for_post/20221206-1.png){: width="80%" height="80%"} 
+![data_creator_poster](/assets/img/for_post/20221206-1.png)
 
 
 
@@ -63,9 +63,9 @@ use_math: true
 
   - 아래와 같이 진행 상황과 모델 학습계획을 정리했습니다.
 
-    ![notion_ex](/assets/img/for_post/20221206-3.png){: width="80%" height="80%"} 
+    ![notion_ex](/assets/img/for_post/20221206-3.png)
 
-    ![notion_training](/assets/img/for_post/20221206-5.png){: width="80%" height="80%"} 
+    ![notion_training](/assets/img/for_post/20221206-5.png)
 
 - 주최 측에서 Colab Pro 환경을 제공 해주셔서 더 편하게 모델링 할 수 있었습니다 :)
 
@@ -103,13 +103,13 @@ use_math: true
 
   - 학습 데이터에서 실사 영상을 제거할 때 Self supervised learning 을 활용했는데요, 이에 대한 survey 논문을 정리하여 팀원들에게 공유하고 함께 공부했습니다.
 
-    ![ssl_pdf](/assets/img/for_post/20221206-7.png){: width="75%" height="75%"} 
+    ![ssl_pdf](/assets/img/for_post/20221206-7.png)
 
 
 
 - 본선은 한국지능정보사회진흥원 스마트 스퀘어에서 오후 1시에 시작했습니다. 발표 순서는 당일 추첨으로 결정됐고, 저희는 대학부 7번째로 발표했습니다 :)
 
-![presentation](/assets/img/for_post/20221206-8.jpg){: width="50%" height="50%"} ![presentation2](/assets/img/for_post/20221206-9.jpg){: width="50%" height="50%"}
+![presentation](/assets/img/for_post/20221206-8.jpg) ![presentation2](/assets/img/for_post/20221206-9.jpg)
 
 
 
@@ -118,7 +118,7 @@ use_math: true
 - 발표 시간은 5분으로 짧았지만 다행히 발표자 친구가 모든 내용을 잘 발표해 주었습니다. :cry::cry: 발표가 끝나면 팀원들 전체가 무대 위로 올라가서 심사위원 분들께 질문을 받게 되는데, 운좋게도 예상 질문을 벗어난 질문이 없었기에 논리적으로 잘 대답했던 것 같습니다.
 - 5시 정도에 시상식이 진행되었는데 정말 너무 떨리더라구요.. **DAMS 팀은 최우수상을 수상하게 되었습니다!** 감사합니다 🥳🥳
 
-![award](/assets/img/for_post/20221206-10.jpg){: width="80%" height="80%"} 
+![award](/assets/img/for_post/20221206-10.jpg)
 
 
 
