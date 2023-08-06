@@ -1,6 +1,6 @@
 ---
 title: "Vision Transformer (ViT)"
-date: 2023-06-24 13:00:00 +/-TTTT
+date: 2023-02-09 13:00:00 +/-TTTT
 categories: [Deep Learning, Computer Vision]
 tags: [vision-transformer, vit, transformer, attention]
 math: true
@@ -14,7 +14,7 @@ math: true
 | [An image is worth 16x16 words: Transformers for image recognition at scale](https://github.com/standing-o/Machine_Learning_Paper_Review/issues/15)
 
 # **Overview**
-<img src='https://gaussian37.github.io/assets/img/dl/concept/vit/0.png'>
+![VIT](/assets/img/for_post/20230209-1.png)
 
 - Image Patch Sequence를 Input으로 하여 기존의 Transformer 구조를 거의 그대로 Vision에 활용함
 - CNN에 비해 Inductive Bias가 부족함
