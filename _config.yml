@@ -26,7 +26,7 @@ description: >- # used by seo meta and the atom feed
   말하는 감자
 
 # fill in the protocol & hostname for your site, e.g., 'https://username.github.io'
-url: "https://standing-o.github.io"
+url: "https://standing-o.github.io/"
 
 github:
   username: standing-o # change to your github username
@@ -38,7 +38,7 @@ social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
   name: Seoyoung OH
-  email: osyoung540@gmail.com # change to your email address
+  email: osyoung540@domain.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
     - https://twitter.com/username # change to your twitter homepage
@@ -53,7 +53,7 @@ google_site_verification: # fill in to your verification string
 # The end of `jekyll-seo-tag` settings
 
 google_analytics:
-  id: 'UA-232878072-1'# fill in your Google Analytics ID
+  id: 'UA-232878072-1' # fill in your Google Analytics ID
 
 # Prefer color scheme setting.
 #
@@ -88,8 +88,8 @@ comments:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
-    repo: standing-o/standing-o.github.io
-    issue_term: pathname # < url | pathname | title | ...>
+    repo: # <gh-username>/<repo>
+    issue_term: # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
     repo: # <gh-username>/<repo>
