@@ -7,7 +7,7 @@ toc: true
 ---
 
 ## 👉 [**<u>Portfolio</u>**](https://special-grip-6f7.notion.site/Seoyoung-Oh-2a6b295b15b4435bb7b945bb07a572ae)
-## 👉 [**<u>Study Roadmap</u>**](#fire-study-roadmap-fire)
+## 👉 [**<u>Study Roadmap</u>**](#study-roadmap)
 
 -----------------------
 # **Seoyoung OH**
@@ -115,8 +115,8 @@ Email : osyoung540@gmail.com | eileen1426@naver.com
 - 워드프로세서
 
 --------------------------------
-# :fire: **Study Roadmap** :fire: 
-- 데이터 과학과 수학을 공부하기 위한 나만의 로드맵
+# **Study Roadmap**
+➔ 데이터 과학과 수학을 공부하기 위한 나만의 로드맵
 
 - [x] Completed :laughing:
 - [ ] In-Progress :joy:
