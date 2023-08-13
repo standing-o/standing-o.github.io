@@ -11,9 +11,7 @@ tags: [데이콘, dacon, 음성분류, speech, classification, data-augmentation
 - 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
 ➔ [데이콘에서 읽기](https://dacon.io/competitions/official/235905/codeshare/5209)
 
-
-
-# **음성 분류**
+  
 
 ## **0. Import Packages**
 

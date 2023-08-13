@@ -14,8 +14,6 @@ math: true
 - Keyword : Kubernetes, GKE, deployment, pod networking, volume
 
 
-
-# **Kubernetes Workload**
 ## **`kubectl` command**
 - `Kubectl` : 관리자가 kubernetes cluster를 제어하는 데 사용하는 유틸리티
 - `Kubectl` transforms your command-line entires into API calls

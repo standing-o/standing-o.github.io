@@ -15,7 +15,7 @@ math: true
 
 
 
-# **Kubernetes architecture**
+## **Kubernetes architecture**
 - Kubernetes objects : persistent entities representing the state of the cluster
   - Object spec : 만들려는 각 객체에 대해 객체 사양을 kubernetes에 제공
   - Object status : current state described by kubernetes

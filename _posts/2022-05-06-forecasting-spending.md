@@ -12,9 +12,7 @@ tags: [데이콘, dacon, 소비예측, regression, lightgbm, xgboost, elasticnet
 - 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
 ➔ [데이콘에서 읽기](https://dacon.io/codeshare/4881)  
 
-
-
-# **소비자 데이터 기반 소비 예측**
+  
 
 ## **0. Import Packages**
 

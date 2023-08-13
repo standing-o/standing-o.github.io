@@ -15,8 +15,6 @@ math: true
 
 
 
-# **지도학습 | Supervised learning 이란? (SVM, ANN, Ensemble)**
-
 ## **지도학습 <sup>Supervised learning</sup>**
 
 - Given a set of labeled examples $$(x^1, y^1),...,(x^N, y^N)$$, learn a mapping function g : X ➔ Y, s.t. given an unseen sample x', associated output y' is predicted.

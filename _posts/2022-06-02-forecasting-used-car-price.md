@@ -12,9 +12,7 @@ tags: [데이콘, dacon, 중고차가격예측, regression, catboost, randomfore
 - 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
 ➔ [데이콘에서 읽기](https://dacon.io/competitions/official/235901/codeshare/5089?page=1&dtype=recent)
 
-
-
-# **중고차 가격 예측**
+  
 
 ## **0. Import Packages**
 

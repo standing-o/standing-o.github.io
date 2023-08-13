@@ -14,8 +14,6 @@ math: true
 - Keyword : Container, container image
 
 
-
-# **Container and Container image**
 ## **Containers**
 - Dedicated server (Application code, dependencies, kernel, hardware) ➔  Virtual machine (Application code, dependencies, kernel, hardware + hypervisor)
   - 어플리케이션을 실제 컴퓨터에 배포   

@@ -15,8 +15,6 @@ math: true
 
 
 
-# **비지도학습 | Unsupervised learning 과 딥러닝**
-
 ## **In traditional machine learning**
 
 - K-means clustering

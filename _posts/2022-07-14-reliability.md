@@ -15,8 +15,6 @@ math: true
 
 
 
-# **신뢰성 | Reliability 이해하기**
-
 ## **신뢰성 <sup>Reliability</sup>**
 
 - 주어진 작동 환경에서 주어진 시간 동안 시스템이 고유의 기능을 수행할 확률
@@ -102,7 +100,7 @@ math: true
 
 
 
-### **연속형 수명분포**
+## **연속형 수명분포**
 
 - 지수 분포 <sup>Exponential distribution</sup>
 
@@ -143,7 +141,7 @@ math: true
 
 
 
-### **이산형 분포**
+## **이산형 분포**
 
 - 이항 분포 <sup>Binomial distribution</sup>
   - n개의 독립적인 베르누이 시행을 $$X_1,...,X_n$$라 하고, 각각 X가 1일 확률을 P라 하면, $$Y = X_1 + ... +  X_n$$은 모수 n과 p를 갖는 이항분포를 가짐
@@ -154,7 +152,7 @@ math: true
 
 
 
-### **보전도 <sup>Maintainability</sup>**
+## **보전도 <sup>Maintainability</sup>**
 
 - 보전의 목적 : 안전하고 경제적으로 운전될 수 있는 조건으로 장비유지
 - 사후보전 <sup>Breakdown maintenance</sup> : 점검 및 정기교환을 전혀 하지 않고 장비고장 후 수리

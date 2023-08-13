@@ -14,9 +14,6 @@ math: true
 - Keyword : Causality, SCM, Back-door, Do-calculus
 
 
-
-# **인과 | Causality 와 인과추론 | Causal inference**
-
 ## **Causality**
 
 - Influence by shich one event, process, state, or object a contributes to the production of another event, process, state, or object where the cause is partly responsible for the effect, and the effect is partly dependent on the cause.
@@ -31,7 +28,7 @@ math: true
 
 
 
-### **Structural causal model (SCM)**
+## **Structural causal model (SCM)**
 
 - SCM $$M = <U,V,F,P(U)>$$ provides a formal framework.
 - SCM induces observational, interventional, and counterfactual distributions.
@@ -42,7 +39,7 @@ math: true
 
 
 
-#### **Remark**
+### **Remark**
 
 - Identifiability : causal effect may be computable from existing observational data for some causal graphs.
 - In a Markovian case an singleton X, a causal effect can be easily derivable by canceling output $$P(x\mid{pa_x})$$
@@ -51,7 +48,7 @@ math: true
 
 --------------------
 
-### **Back-door Criterion**
+## **Back-door Criterion**
 
 - **<u>Definition</u>**ㅣ**Back-door**
 
@@ -70,7 +67,7 @@ math: true
 
 
 
-#### **Back-door sets as substitutes of the direct parents of X**
+### **Back-door sets as substitutes of the direct parents of X**
 
 - Rain satisfies the back-door criterion relative to Sprinkler ans Wet:
   - (i) Rain is not descendant of Sprinkler, and
@@ -84,7 +81,7 @@ $$
 
 ---------------------
 
-### **Rules of Do-calculus**
+## **Rules of Do-calculus**
 
 - Backdoor criterion results in a very specific form of indentification formula.
 
@@ -121,7 +118,7 @@ $$
 
 ---------------------------------------------
 
-### **Modern identification tasks**
+## **Modern identification tasks**
 
 - Experimental conditions ➔ **Generalized identification**
 

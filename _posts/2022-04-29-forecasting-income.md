@@ -14,9 +14,6 @@ tags: [데이콘, dacon, 소득예측, classification, lightgbm, xgboost, ensemb
 
 
 
-# **인구 데이터 기반 소득 예측**
-
-
 ## **0. Import Packages**
 
 ```python

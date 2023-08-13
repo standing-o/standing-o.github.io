@@ -15,7 +15,7 @@ math: true
 
 
 
-# **Cloud Computing and Google Cloud**
+## **Cloud Computing and Google Cloud**
 - Computing resources가 On-demand self-service로 제공됨   
 ➔ 사람 개입없이 필요한 처리 능력, 스토리지 네트워크 확보 가능
 - Broad network access

@@ -14,8 +14,6 @@ math: true
 - Keyword : Kubernetes, GKE, cloud function, cloud run
 
 
-
-# **Google Kubenetes Engine**
 ## **Kubernetes**
 - Container 인프라를 더 효과적으로 관리하기 위함
 - Kubernetes : container 인프라를 on-premise 또는 클라우드에서 조정, 관리 가능
