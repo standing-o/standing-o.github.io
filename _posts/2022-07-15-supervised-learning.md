@@ -1,7 +1,7 @@
 ---
 title: "지도학습 | Supervised learning 이란? (SVM, ANN, Ensemble)"
 date: 2022-07-15 17:00:00 +/-TTTT
-categories: [Machine learning, Basic]
+categories: [AI Theory, Machine Learning]
 tags: [lg-aimers, supervised-learning, svm, ann, ensemble]
 math: true
 ---

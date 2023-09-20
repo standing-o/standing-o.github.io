@@ -1,7 +1,7 @@
 ---
 title: "인과 | Causality 와 인과추론 | Causal inference"
 date: 2022-07-25 17:00:00 +/-TTTT
-categories: [Causal inference]
+categories: [AI Theory, Causal inference]
 tags: [lg-aimers, causality, scm, back-door, do-calculus]
 math: true
 ---

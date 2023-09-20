@@ -1,7 +1,7 @@
 ---
 title: "Google Kubernetes 워크로드"
 date: 2022-12-06 17:00:00 +/-TTTT
-categories: [Google Cloud, Kubernetes]
+categories: [Cloud, Google Cloud Platform (GCP)]
 tags: [gcp, kubernetes, gke, kubectl]
 math: true
 ---

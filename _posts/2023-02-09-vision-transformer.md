@@ -1,7 +1,7 @@
 ---
 title: "Vision Transformer (ViT)"
 date: 2023-02-09 13:00:00 +/-TTTT
-categories: [Deep Learning, Computer Vision]
+categories: [AI Theory, Computer Vision]
 tags: [vision-transformer, vit, transformer, attention]
 math: true
 ---

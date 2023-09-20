@@ -1,7 +1,7 @@
 ---
 title: "Container와 Container image"
 date: 2022-08-25 17:00:00 +/-TTTT
-categories: [Google Cloud, Kubernetes]
+categories: [Cloud, Google Cloud Platform (GCP)]
 tags: [gcp, kubernetes, container, container-image]
 math: true
 ---
