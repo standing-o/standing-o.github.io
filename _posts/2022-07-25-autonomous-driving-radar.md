@@ -2,7 +2,7 @@
 title: "자율주행과 레이더센서"
 date: 2022-07-25 17:00:00 +/-TTTT
 categories: [Domain knowledge]
-tags: [lg-aimers, 자율주행, radar]
+tags: [lg-aimers, radar]
 math: true
 ---
 
@@ -10,7 +10,7 @@ math: true
 
 ------------------
 
-- 본 포스팅은 자율주행과 radar에 대한 기술과 동향을 소개하고 있습니다.
+- 자율주행과 radar에 대한 기술과 동향을 소개합니다.
 - Keyword : 자율주행, Radar
 
 

@@ -10,7 +10,7 @@ math: true
 
 ------------------------
 
-- 본 포스팅은 Kubernetes의 배포와 포드 네트워킹, 볼륨에 대한 내용을 포함하고 있습니다.
+- Kubernetes의 배포와 포드 네트워킹, 볼륨에 대한 내용을 공부합니다.
 - Keyword : Kubernetes, GKE, deployment, pod networking, volume
 
 

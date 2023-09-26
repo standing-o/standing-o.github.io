@@ -10,7 +10,7 @@ math: true
 
 --------------------------
 
-- 본 포스팅은 compute engine, resource, 그리고 GCP billing에 대한 내용을 포함하고 있습니다.
+- Compute engine, Resource, 그리고 GCP billing에 대한 내용을 포함합니다.
 - Keyword : Google cloud, compute engine, resource, billing
 
 

@@ -2,13 +2,13 @@
 title: "[Dacon] 소비자 데이터 기반 소비 예측 경진대회"
 date: 2022-05-06 16:00:00 +/-TTTT
 categories: [Competition, Dacon]
-tags: [데이콘, dacon, 소비예측, regression, lightgbm, xgboost, elasticnet, ensemble]
+tags: [dacon, regression, lightgbm, xgboost, elasticnet, ensemble]
 ---
 
 --------------------------------
 
 
-- 본 포스팅은 간단한 데이터 전처리 및 EDA와 Ensemble(Elasticnet, LightGBM, XGBoost) 등의 내용을 포함하고 있습니다.  
+- 데이콘의 소비 예측 대회에 대한 간단한 데이터 전처리 및 EDA와 Ensemble(Elasticnet, LightGBM, XGBoost) 을 설명합니다.
 - 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
 ➔ [데이콘에서 읽기](https://dacon.io/codeshare/4881)  
 

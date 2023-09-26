@@ -2,12 +2,12 @@
 title: "[Dacon] 음성 분류 경진대회"
 date: 2022-06-23 17:00:00 +/-TTTT
 categories: [Competition, Dacon]
-tags: [데이콘, dacon, 음성분류, speech, classification, data-augmentation, feature-extraction]
+tags: [dacon, speech, classification, data-augmentation, feature-extraction]
 ---
 
 ------------------
 
-- 본 포스팅은 음성 데이터에 대한 data augmentation과 feature extraction 등의 내용을 포함하고 있습니다.  
+- 음성 데이터에 대한 data augmentation과 feature extraction 등의 내용을 포함합니다.
 - 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
 ➔ [데이콘에서 읽기](https://dacon.io/competitions/official/235905/codeshare/5209)
 

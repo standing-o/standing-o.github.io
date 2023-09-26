@@ -8,7 +8,7 @@ math: true
 
 
 ------------------------
-- 이 게시글은 GPU 환경에서 Tensorflow 가속기를 활용하는 방법들을 소개합니다.
+- GPU 환경에서 Tensorflow 가속기를 활용하는 방법들을 정리합니다.
 - Keyword : Tensorflow, Distributed Training, GPU Acceleration
 
 

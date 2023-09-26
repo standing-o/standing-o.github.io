@@ -10,7 +10,7 @@ math: true
 
 --------------------------
 
-- 본 포스팅은 Google Kubernetes와 cloud function 및 cloud run에 대한 내용을 포함하고 있습니다.
+- Google Kubernetes와 Cloud Function 및 Cloud Run을 설명합니다.
 - Keyword : Kubernetes, GKE, cloud function, cloud run
 
 

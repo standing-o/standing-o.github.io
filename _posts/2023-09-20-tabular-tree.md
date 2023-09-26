@@ -9,7 +9,7 @@ toc: true
 
 
 ------------------------
-- 본 포스팅은 정형 데이터에 딥러닝이 적절하지 않은 이유와 Tree 기반 모델의 장점을 소개합니다.
+- 정형 데이터에 딥러닝이 적절하지 않은 이유와 Tree 기반 모델의 장점을 알아봅시다.
 - Keyword : Tabular data, Tree-based model, Inductive bias
 
 

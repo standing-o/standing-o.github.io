@@ -10,7 +10,7 @@ math: true
 
 -------------------------
 
-- 본 포스팅은 GKE의 구조 및 object management에 대한 내용을 포함하고 있습니다.
+- GKE의 구조 및 Object Management를 알아봅시다.
 - Keyword : Kubernetes, GKE, object management
 
 

@@ -10,7 +10,7 @@ math: true
 
 ---------------------------
 
-- 본 포스팅은 container와 container image에 대한 내용들을 소개하고 있습니다.
+- Container와 Container Image에 대한 개념을 정리합니다.
 - Keyword : Container, container image
 
 

@@ -2,13 +2,13 @@
 title: "[Dacon] 중고차 가격 예측 경진대회"
 date: 2022-06-02 20:00:00 +/-TTTT
 categories: [Competition, Dacon]
-tags: [데이콘, dacon, 중고차가격예측, regression, catboost, randomforest, gradient-boosting, ensemble, pycaret]
+tags: [dacon, regression, catboost, randomforest, gradient-boosting, ensemble, pycaret]
 ---
 
 --------------
 
 
-- 본 포스팅은 feature engineering과 ensemble (catboost, random forest, gradient boosting) 등의 내용을 포함하고 있습니다.  
+- 데이콘의 중고차 가격 예측 문제에 대해 feature engineering과 ensemble (catboost, random forest, gradient boosting) 를 활용한 방법을 공유합니다. 
 - 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
 ➔ [데이콘에서 읽기](https://dacon.io/competitions/official/235901/codeshare/5089?page=1&dtype=recent)
 

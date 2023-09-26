@@ -8,7 +8,7 @@ math: true
 
 
 ------------------------
-- 이 게시글은 Vision Transformer (ViT) 의 기본 원리와 구조, 수식을 소개합니다.
+- Vision Transformer (ViT) 의 기본 원리와 구조, 수식을 소개합니다.
 - 여러 ViT 기반 모델들 (BEIT, CCT, CvT, DeiT, MobileViT, PvT, Swin Transformer, T2T-VIT, Deformable ViT)에 대한 내용을 포함하고 있습니다.
 - Keyword : Vision Transformer, ViT, BEIT, CCT, CVT, DeiT, MobileViT, PvT, Swin Transformer, T2T-VIT, Deformable
 

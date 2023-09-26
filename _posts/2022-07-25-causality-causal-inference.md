@@ -10,7 +10,7 @@ math: true
 
 -----------------------
 
-- 본 포스팅은 인과, 인과추론의 개념과 관련 이론 (Back-door, Do-calculus) 들을 소개하고 있습니다.
+- 인과, 인과추론의 개념과 관련 이론 (Back-door, Do-calculus) 들을 알아봅시다.
 - Keyword : Causality, SCM, Back-door, Do-calculus
 
 

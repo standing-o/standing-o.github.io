@@ -10,7 +10,7 @@ math: true
 
 --------------------------
 
-- 본 포스팅은 인공지능의 지도학습 개념과 그 종류 (선형모델, SVM, ANN) 에 대한 내용을 포함하고 있습니다.
+- 인공지능의 지도학습 개념과 그 종류 (선형모델, SVM, ANN) 를 정리합니다.
 - Keyword : Supervised learning, overfitting, underfitting, linear model, SVM, ANN, ensemble
 
 
