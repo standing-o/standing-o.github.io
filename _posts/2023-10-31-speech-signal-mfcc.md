@@ -41,7 +41,7 @@ signal = signal[0:int(3 * sample_rate)]
 ![fig2](/assets/img/for_post/20231031-1.png)
 
 
-## 음성 분석을 위한 특성 추출 (Feature Extraction) | MFCC
+## **음성 분석을 위한 특성 추출 (Feature Extraction) | MFCC**
 - 사람의 내는 소리 및 음소 (phoneme) 는 혀, 치아 등의 성도 (vocal track) 에 따라 다르게 표현됩니다. 
 - 성도의 모양은 Short-time Power Spectrum의 포락선 (envelope) 으로 표현될 수 있으며, MFCC는 이 포락선을 정확하게 포함하기 위해서 생성됩니다.
   - 스펙트럼 포락선은 주파수-진폭 평면의 곡선입니다.
@@ -233,6 +233,5 @@ mfcc -= (np.mean(mfcc, axis=0) + 1e-8)
 }
 
 [2] Speech Emotion Recognition, https://www.kaggle.com/code/shivamburnwal/speech-emotion-recognition
-
 [3] Mel Frequency Cepstral Coefficient (MFCC) tutorial, http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/
 ```
