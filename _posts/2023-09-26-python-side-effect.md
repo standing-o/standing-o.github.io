@@ -1,5 +1,5 @@
 ---
-title: "Side Effect in Python"
+title: "파이썬의 부작용 | Side Effect in Python"
 date: 2023-09-26 13:00:00 +/-TTTT
 categories: [Programming, Python]
 tags: [tabular, tree, random-forest, gradient-boosting, inductive-bias]

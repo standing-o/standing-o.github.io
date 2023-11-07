@@ -1,5 +1,5 @@
 ---
-title: "Tensorflow Acceleration | 텐서플로우 가속"
+title: "텐서플로우 가속 | Tensorflow Acceleration"
 date: 2023-09-16 13:00:00 +/-TTTT
 categories: [AI Framework, Tensorflow]
 tags: [tensorflow, distributed-training]
