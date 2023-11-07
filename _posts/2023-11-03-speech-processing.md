@@ -9,6 +9,11 @@ toc: true
 
 
 ------------------------
+- 음성데이터에 대한 전처리, 특성 추출 및 증강 기법을 정리합니다.
+- Keyword: Trimming, Padding, Spectrogram, Melspectrogram, MFCC, SpecAugment
+
+
+## **Overview**
 - 음성 데이터에 대한 Feature Extraction은 음성 관련 모델링에서 중요한 과정 중 하나입니다. 
 - Feature Extraction 에는 여러 기법이 사용되며, 음성 신호를 효율적으로 표현하고 노이즈를 감소시켜 머신러닝/딥러닝 모델링에 적합한 형태로 변환시켜 줍니다.
 - 파이썬 라이브러리를 통해 간단하게 음성의 특성을 추출하는 방법 및 여러 전처리 방식들을 소개하겠습니다.
@@ -298,5 +303,6 @@ def SpecAugment(spec, T=time_mask, F=freq_mask, time_mask_num=n_time_mask, freq_
         spec[t0 : t0 + t] = 0
     return spec
 ```
+
 -------------------
 - 이러한 기법들을 비교하면서 모델에 맞는 특성을 선택하여 사용한다면 예측 성능을 향상시킬 수 있습니다.
