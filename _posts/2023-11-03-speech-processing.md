@@ -5,6 +5,13 @@ categories: [AI Theory, Audio]
 tags: [speech, audio, voice, mfcc, spectrogram, melspectrogram]
 math: true
 toc: true
+author: seoyoung
+img_path: /assets/img/for_post/
+pin: true
+image:
+  path: 20231103-t.png
+  alt: ""
+description: 음성데이터에 대한 전처리, 특성 추출 및 증강 기법을 정리합니다. | Trimming, Padding, Spectrogram, Melspectrogram, MFCC, SpecAugment
 ---
 
 
@@ -66,7 +73,7 @@ def trimming(data, sampling_rate, top_db = 60):
     return trim_data
 ```
 
-![fig1](/assets/img/for_post/20231103-1.png)
+![fig1](20231103-1.png)
 
 ### **Random Padding**
 - 음성 데이터들의 길이가 서로 다른 경우 Melspectrogram, MFCC 모두 길이가 다르므로, 고정 사이즈를 정하고 랜덤으로 앞과 뒤에 Padding을 해줍니다.
@@ -93,7 +100,7 @@ def padding(x, reqlen=100000):
         return np.pad(x, (left_pad, right_pad), 'wrap')
 ```
 
-![fig2](/assets/img/for_post/20231103-2.png)
+![fig2](20231103-2.png)
 
 ## **2. Audio Feature Extraction**
 ### **Spectrogram**
@@ -152,7 +159,7 @@ mel_spectrogram = nn.Sequential(
 mel = mel_spectrogram(sample_data)
 ```
 
-![fig3](/assets/img/for_post/20231103-3.png)
+![fig3](20231103-3.png)
 
 - `win_length`가 커질수록 주파수 성분에 대한 해상도는 높아지지만, 시간 성분에 대한 해상도는 낮아집니다.
 - `win_length`가 작은 경우에는 주파수 성분에 대한 해상도는 낮아지지만, 시간 성분에 대한 해상도는 높아지게 됩니다.
@@ -230,7 +237,7 @@ stacked_mels = torch.stack([mels_1, mels_2, mels_3, mels_4], dim=0)
 stacked_mels = (stacked_mels - stacked_mels.mean(dim=[1, 2], keepdim=True)) / 20 + cali
 ```
 
-![fig4](/assets/img/for_post/20231103-4.png)
+![fig4](20231103-4.png)
 
 ## **3. Data Augmentation**
 

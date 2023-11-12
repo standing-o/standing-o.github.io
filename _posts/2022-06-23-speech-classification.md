@@ -2,7 +2,7 @@
 title: "[Dacon] 음성 분류 경진대회"
 date: 2022-06-23 17:00:00 +/-TTTT
 categories: [Competition, Dacon]
-tags: [dacon, speech, classification, data-augmentation, feature-extraction]
+tags: [speech, classification, data-augmentation, feature-extraction, dacon, ai-competition]
 ---
 
 ------------------

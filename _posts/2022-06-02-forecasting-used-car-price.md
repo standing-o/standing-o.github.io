@@ -2,7 +2,7 @@
 title: "[Dacon] 중고차 가격 예측 경진대회"
 date: 2022-06-02 20:00:00 +/-TTTT
 categories: [Competition, Dacon]
-tags: [dacon, regression, catboost, randomforest, gradient-boosting, ensemble, pycaret]
+tags: [regression, catboost, randomforest, gradient-boosting, ensemble, pycaret, dacon, ai-competition]
 ---
 
 --------------
