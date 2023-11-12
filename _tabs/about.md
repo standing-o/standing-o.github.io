@@ -30,7 +30,7 @@ Email : osyoung540@gmail.com | eileen1426@naver.com
   - **과학계산 연구실(Scientific Computing Lab) 석사 연구생** | Advisor : Prof.Gwangil Kim  
   ➔ Time-series Forecasting with Deep Learning, Graph Theory, Dynamical Modeling  
    ➔ **Master thesis** : Deep learning approach of the US stock market analysis and its explanation using correlation networks  
-   ➔ **Publication** : [Han, Hyeji, Gwangil Kim, and Seoyoung Oh. A modified prey-predator model with coupled rates of change](http://ksiam-editor.s3.amazonaws.com/1640587303242-jksiam-2021v25p312.pdf)
+   ➔ **Publication** : [Han, Hyeji, Gwangil Kim, and Seoyoung Oh. A modified prey-predator model with coupled rates of change](https://koreascience.kr/article/JAKO202106758753099.pdf)
  
    
 - **경상대학교 수학과 학사**
@@ -38,7 +38,7 @@ Email : osyoung540@gmail.com | eileen1426@naver.com
   
   - **과학계산 연구실(Scientific Computing Lab) 학부 연구생** | Advisor : Prof.Seunggyu Lee  
   ➔ Pattern Formation in PDEs, Neural Network, Feature Engineering, Segmentation  
-   ➔ **Publication** : [Seoyoung Oh and Seunggyu Lee, Extracting insights of classification for Turing pattern with feature engineering](http://ksiam-editor.s3.amazonaws.com/1601252749955-jksiam-2020v24p321.pdf)
+   ➔ **Publication** : [Seoyoung Oh and Seunggyu Lee, Extracting insights of classification for Turing pattern with feature engineering](https://koreascience.kr/article/JAKO202028959353470.pdf)
 
 ## <u>Extracurricular Activities</u>
 
@@ -190,7 +190,7 @@ Email : osyoung540@gmail.com | eileen1426@naver.com
 ### <u>Mathematics</u>
 - [x] [Principles of mathematical analysis](https://books.google.co.kr/books?id=iifvAAAAMAAJ&q=Principles+of+mathematical+analysis&dq=Principles+of+mathematical+analysis&hl=ko&sa=X&redir_esc=y) <sup>book</sup>
 - [x] [Vector Calculus](https://books.google.co.kr/books?id=lowpAQAAMAAJ&q=vector+calculus+barr&dq=vector+calculus+barr&hl=ko&sa=X&redir_esc=y) <sup>book</sup>
-- [x] [Convex Optimization](http://thuvien.thanglong.edu.vn:8080/dspace/bitstream/TLU-123456789/113/1/TVS.000513-%20Convex%20optimization%20Stephen%20Boyd-TT.pdf) <sup>book</sup>
+- [x] Convex Optimization <sup>book</sup>
 - [x] [Partial Differential Equations for Scientists and Engineers](https://www.maa.org/publications/maa-reviews/partial-differential-equations-for-scientists-and-engineers) <sup>book</sup>
 - [x] [Differential Equations, Dynamical Systems, and an Introduction to Chaos](https://math.as.uky.edu/sites/default/files/MA%20481.Differential%20Equations.SP2018.Prosper.pdf) <sup>book</sup>
 - [ ] [Simulation and modeling of natural processes](https://www.coursera.org/learn/modeling-simulation-natural-processes) <sup>coursera</sup>
