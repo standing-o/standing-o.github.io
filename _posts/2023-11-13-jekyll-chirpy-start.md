@@ -1,6 +1,6 @@
 ---
 title: "Chirpy Theme로 Jekyll 기반 깃허브 블로그 시작하기"
-date: 2023-11-13 20:00:00 +/-TTTT
+date: 2023-11-13 00:00:00 +/-TTTT
 categories: [Programming, Blogging]
 tags: [jekyll, chirpy, ruby, github-blog]
 math: true
@@ -17,13 +17,13 @@ description: Jekyll의 Chirpy Theme로 깃허브 블로그를 시작하는 방�
 - Jekyll의 Chirpy Theme로 깃허브 블로그를 시작하는 방법을 소개합니다.
 
 
-## Introduction
+## **Introduction**
 - Jekyll는 Ruby 언어로 개발된 정적 사이트 생성기 입니다. HTML 기반으로 커스텀이 용이하며 다양한 템플릿이 있습니다.
 - 그중에서도 [`Chirpy`](https://chirpy.cotes.page/) 템플릿은 기능이 풍부하고 미니멀한 오픈소스 테마입니다. 
 
 
-## Chirpy 테마로 블로그 시작하기
-### 1. Chirpy Starter Clone 합니다.
+## **Chirpy 테마로 블로그 시작하기**
+### **1. Chirpy Starter Clone 합니다.**
 
 - 공식 페이지에서 소개하기를, [`chirpy-starter`](https://github.com/cotes2020/chirpy-starter)를 사용하는 경우 업그레이드가 용이하며 관련 없는 프로젝트 파일을 격리 가능하다는 장점이 있고, [`jekyll-theme-chirpy`](https://github.com/cotes2020/jekyll-theme-chirpy) 를 사용하면 맞춤형 개발에는 편리하지만 업그레이드가 어렵다는 특징이 있다고 합니다.
 - 저는 jekyll에 익숙하지 않기에 [`chirpy-starter`](https://github.com/cotes2020/chirpy-starter) 를 활용하여 블로그를 시작했습니다.
@@ -34,7 +34,7 @@ git clone https://github.com/cotes2020/chirpy-starter.git
 
 
 
-### 2. 왼쪽 하단 소셜 아이콘의 설정을 수정합니다.
+### **2. 왼쪽 하단 소셜 아이콘의 설정을 수정합니다.**
 
 - `_data/contact.yml` 파일에서 수정합니다.
 - 파일에 지정된 연락처 옵션을 켜고 끌 수 있습니다.
@@ -48,7 +48,7 @@ git clone https://github.com/cotes2020/chirpy-starter.git
 
 
 
-### 3. 스타일시트 사용자를 정의합니다.
+### **3. 스타일시트 사용자를 정의합니다.**
 
 - `jekyll-theme-chirpy`에서 `assets/css/jekyll-theme-chirpy.scss`, `_sass/main.scss`, `_sass/addon/variables.scss`, `_sass/variables-hook.scss`를 같은 경로로 복사합니다.
 - `_sass/addon/variables.scss`에서 블로그 페이지 구성요소 및 폰트 등을 수정해줍니다.
@@ -68,9 +68,8 @@ $font-family-heading: Lato, 'Microsoft Yahei', sans-serif !default;
 
 
 
-### 4. `_config.yml` 파일을 수정합니다.
-
-- 사이트의 기본 세팅을 아래와 같이 해줍니다.
+### **4. Site Configuration을 설정합니다.**
+- `_config.yml` 파일을 수정합니다.
   - `timezone`: Asia/Seoul
   - `title`: 블로그 타이틀
   - `tagline` : 왼쪽 타이틀 아래 부타이틀
@@ -81,7 +80,7 @@ $font-family-heading: Lato, 'Microsoft Yahei', sans-serif !default;
 
 
 
-### 5. 로컬에서 블로그를 빌드합니다.
+### **5. 로컬에서 블로그를 빌드합니다.**
 
 - [Ruby](https://www.ruby-lang.org/ko/documentation/installation/#rubyinstaller)를 설치합니다.
 
@@ -102,7 +101,7 @@ $font-family-heading: Lato, 'Microsoft Yahei', sans-serif !default;
 
 
 
-### 6. 게시글을 작성합니다.
+### **6. 게시글을 작성합니다.**
 
 - 게시글 파일은 `_posts` 폴더 내에 위치합니다.
 - 게시글은 markdown 형식을 기본으로 지원합니다.
