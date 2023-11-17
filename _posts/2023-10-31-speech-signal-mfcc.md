@@ -294,4 +294,4 @@ mfcc -= (np.mean(mfcc, axis=0) + 1e-8)
 }    
 
 2. [Speech Emotion Recognition](https://www.kaggle.com/code/shivamburnwal/speech-emotion-recognition)
-3. [Mel Frequency Cepstral Coefficient (MFCC) tutorial](http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/)
+3. [Mel Frequency Cepstral Coefficient (MFCC) tutorial](http://www.practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/)

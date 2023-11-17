@@ -151,6 +151,6 @@ tf.config.run_functions_eagerly(True)
 
 
 ## References
-1. [Tensorflow Guide - Performance](www.tensorflow.org/guide/)
+1. [Tensorflow Guide - Performance](https://www.tensorflow.org/guide/)
 2. [Side Effect in Python](https://ecoagi.ai/topics/Python/side-effect-in-python)
 

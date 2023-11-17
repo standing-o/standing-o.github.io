@@ -319,4 +319,4 @@ with strategy.scope():
 &nbsp;
 
 ## Reference
-1. [Tensorflow Guide - Accelerators](www.tensorflow.org/guide/)
+1. [Tensorflow Guide - Accelerators](https://www.tensorflow.org/guide/)
