@@ -13,6 +13,8 @@ description: 음성 데이터에 대한 data augmentation과 feature extraction 
 > 음성 데이터에 대한 data augmentation과 feature extraction 등의 내용을 포함합니다. 
 {: .prompt-info }
 
+음성 분류 경진대회는 음성 데이터를 기반으로 숫자를 분류하는 대회입니다.
+
 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
 
 ➔ [데이콘에서 읽기](https://dacon.io/competitions/official/235905/codeshare/5209)

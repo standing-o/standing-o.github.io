@@ -11,8 +11,10 @@ description: 소비 예측, Elasticnet, LightGBM, XGBoost
 --------------------------------
 
 
-> 데이콘의 소비 예측 대회에 대한 간단한 데이터 전처리 및 EDA와 Ensemble(Elasticnet, LightGBM, XGBoost) 을 설명합니다.
+> 데이콘의 소비 예측 대회에 대한 간단한 데이터 전처리 및 EDA와 Ensemble (Elasticnet, LightGBM, XGBoost)을 설명합니다.
 {: .prompt-info }
+
+소비 예측 대회는 소비자 데이터셋을 이용해 소비량을 예측하는 대회입니다.
 
 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
 
