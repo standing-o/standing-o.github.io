@@ -5,19 +5,29 @@ categories: [AI Theory, Audio]
 tags: [speech, audio, voice, filter-bank, mfcc, spectrogram, melspectrogram]
 math: true
 toc: true
+author: seoyoung
+img_path: /assets/img/for_post/
+pin: false
+image:
+  path: 20231103-t.jpg
+  alt: ""
+description: 음성 신호의 개념과 MFCC 기법 | Speech, Filter Bank, MFCC, Power Spectrogram, Mel Spectrogram
 ---
 
 
 ------------------------
-- 음성 신호의 개념과 MFCC 기법을 자세히 알아봅시다.
-- Keyword: Speech, Filter Bank, MFCC, Power Spectrogram, Mel Spectrogram
+> 음성 신호의 개념과 MFCC 기법을 자세히 알아봅시다.
+{: .prompt-info }
 
+Speech Emotion Recognition (SER)과 같은 task를 위해 머신러닝/딥러닝 모델을 개발하는 경우에, 일반적으로 음성 데이터를 MFCC와 같은 Feature로 변환하여 활용합니다.
 
+이는 음성 내용을 식별하는데 적합한 오디오 구성 요소를 강조하고 배경 소음과 같은 다른 항목들을 삭제하기 위함입니다.
 
-## **Overview**
-- Speech Emotion Recognition (SER)과 같은 task를 위해 머신러닝/딥러닝 모델을 개발하는 경우에, 일반적으로 음성 데이터를 MFCC와 같은 Feature로 변환하여 활용합니다.
-  - 음성 내용을 식별하는데 적합한 오디오 구성 요소를 강조하고 배경 소음과 같은 다른 항목들을 삭제하기 위함입니다.
-- 음성 데이터에 대한 Feature Extraction 기법 중 주요 개념을 소개하겠습니다.
+음성 데이터에 대한 Feature Extraction 기법 중 주요 개념을 소개하겠습니다.
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **음성 신호란? (Audio Signal)**
 - 음성 신호는 아래와 같이 시간, 진폭, 주파수 세가지 domain으로 이루어져 있습니다.
@@ -25,7 +35,13 @@ toc: true
   - **Amplitude (진폭) Domain**: 음성 신호의 강도를 나타냅니다.
   - **Frequency (주파수) Domain**: 음성 신호 주파수의 크기와 분포를 나타냅니다.
 
-![fig1](/assets/img/for_post/20231031-0.jpg)
+![fig1](20231031-0.jpg)
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+
 
 - 음성 데이터는 샘플링 과정을 통해 소리로부터 수집되며 보통 sample rate와 data라는 두가지 요소로 구성됩니다. 
 - Sample rate는 초당 샘플링 횟수를 의미하며, 높은 sample rate 일수록 더 높은 음질의 음성 파일이 저장됩니다.
@@ -38,7 +54,12 @@ sample_rate, signal = scipy.io.wavfile.read('test.wav')
 signal = signal[0:int(3 * sample_rate)]
 ```
 
-![fig2](/assets/img/for_post/20231031-1.png)
+![fig2](20231031-1.png)
+
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 
 ## **음성 분석을 위한 특성 추출 (Feature Extraction) | MFCC**
@@ -49,11 +70,15 @@ signal = signal[0:int(3 * sample_rate)]
 - 이 외에도 아래의 특성들을 음성 데이터 분석에 활용할 수 있습니다.
   - Zero Cross Rate, Spectral Centroid, Spectral Spread, Spectral Entropy, Spectral Flux, Chroma Vector, Chroma Deviation
 
+&nbsp;
+&nbsp;
+&nbsp;
+
 
 ### **Filter Bank**
 - 먼저 Filter Bank를 계산한 뒤 몇가지 추가 단계를 거쳐 MFCC를 얻을 수 있습니다.
 
-#### **1. Pre-emphasis Filter를 적용하여 고주파를 증폭하기**
+#### 1. Pre-emphasis Filter를 적용하여 고주파를 증폭하기
 - $y(t) = x(t) - \alpha x(t-1)$ where $\alpha = 0.95, 0.97$
 - 신호에 Pre-emphasis filter를 적용하여 고주파 대역의 진폭을 증가시키고 낮은 대역의 진폭은 감소시킵니다.
 - 제한된 컴퓨팅 자원으로 개발해야했던 과거에 보편적으로 사용되었습니다. 현대에서는 잘 사용하지 않으며 mean normalization 등으로 대체합니다.
@@ -68,10 +93,15 @@ pre_emphasis = 0.97
 emphasized_signal = np.append(signal[0], signal[1:] - pre_emphasis * signal[:-1])
 ```
 
-![fig3](/assets/img/for_post/20231031-2.png)
+![fig3](20231031-2.png)
 
 
-#### **2. 신호를 프레임으로 분할 (Framing)**
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+#### 2. 신호를 프레임으로 분할 (Framing)
 - 신호는 short-time 프레임으로 분할합니다.
 - 신호 내의 주파수는 시간에 따라 변하기 때문에, 신호 전체에 푸리에 변환을 사용하게 되면 시간에 따른 주파수 형태를 잃게 됩니다.
   - 따라서, 신호 내 주파수가 short-time 동안 안정적이라고 가정합니다.
@@ -99,11 +129,16 @@ frames = pad_signal[indices.astype(np.int32, copy=False)]
 
 print("Shape of Frames:", np.shape(frames))
 ```
-```shell
-Shape of Frames: (328, 1200)
-```
 
-#### **3. Window 함수 적용**
+<pre>
+    Shape of Frames: (328, 1200)
+</pre>
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+#### 3. Window 함수 적용
 - Hamming Window 함수 적용
 
 $w[x] = 0.54 - 0.46 \cos (\frac{w\pi n}{N-1})$ where $0<=n<=N-1,$
@@ -112,9 +147,14 @@ $\text{N is the window length.}$
 ```python
 frames *= np.hamming(frame_length)
 ```
+
 - FFT가 데이터가 무한하다고 가정하는 것을 보정하고 주파수 영역에서의 정보를 누출 (Leakage)을 줄입니다.
 
-#### **4. 각 프레임에 대해 Short-time Fourier Transform (STFT)를 수행하여 Power Spectrum을 계산합니다.**
+&nbsp;
+&nbsp;
+&nbsp;
+
+#### 4. 각 프레임에 대해 Short-time Fourier Transform (STFT)를 수행하여 Power Spectrum을 계산합니다.
 - 귀에 들어오는 소리의 주파수에 따라 다양한 지점에서 달팽이관이 진동하며, 진동하는 달팽이관의 위치에 따라 여러 신경이 활성화되어 특정 주파수가 있다는 사실을 뇌에 알립니다.
   - Power Spectrum은 이와 유사한 작업을 수행하여 각 프레임에 어떤 주파수가 있는지 식별합니다.
 - 고속 푸리에 변환 (FFT, Fast Fourier Transform)을 통해 음성 신호를 주파수 도메인으로 변환하여 스펙트럼을 얻을 수 있습니다.
@@ -130,7 +170,12 @@ mag_frames = np.absolute(np.fft.rfft(frames, NFFT))  # Magnitude of the FFT
 pow_frames = ((1.0 / NFFT) * ((mag_frames) ** 2))  # Power Spectrum
 ```
 
-#### **5. Power Spectrum을 Mel Scale에서의 Filter Bank로 변환합니다.**
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+#### 5. Power Spectrum을 Mel Scale에서의 Filter Bank로 변환합니다.
 - 달팽이관은 밀접한 두 주파수 사이의 차이를 식별할 수 없기에, Power Spectrum에는 불필요한 정보가 많이 포함되어 있습니다.
   - 따라서 Mel Filter Banck를 활용하여 Power Spectrum Bin들을 수집하여 합산하고, 각 주파수 영역에 얼마나 많은 에너지가 존재하는지를 분석합니다.
   - 주파수가 높아질수록 Filter는 더 넓어지고 변화에 덜 민감해집니다.
@@ -144,7 +189,7 @@ pow_frames = ((1.0 / NFFT) * ((mag_frames) ** 2))  # Power Spectrum
 
 - Filter Bank 내 각 필터는 삼각형 모형이며, 중심 주파수에서의 response가 1이고 주변 두 필터의 중심 주파수에 도달할 때 까지 선형적으로 감소하여 response가 0이 됩니다.
 
-![fig4](/assets/img/for_post/20231031-3.jpg)
+![fig4](20231031-3.jpg)
 
 - 우리는 선형 규모의 소리를 듣지 못하기 때문에, 사람이 실제로 듣는 것과 밀접하게 로그를 취해줍니다.
 
@@ -171,10 +216,13 @@ filter_banks = np.where(filter_banks == 0, np.finfo(float).eps, filter_banks)  #
 filter_banks = 20 * np.log10(filter_banks)  # dB
 ```
 
-![fig5](/assets/img/for_post/20231031-4.png)
+![fig5](20231031-4.png)
 
+&nbsp;
+&nbsp;
+&nbsp;
 
-#### **7. Mean Normalization**
+#### 6. Mean Normalization
 - Mel-scaled Filter Bank 특성을 원한다면 해당 과정은 스킵하셔도 됩니다.
 - 스펙트럼을 균형있게 해주며 SNR을 향상시키기 위해 각 계수의 평균을 모든 프레임에서 빼는 계산을 수행합니다.
 
@@ -182,8 +230,12 @@ filter_banks = 20 * np.log10(filter_banks)  # dB
 filter_banks -= (numpy.mean(filter_banks, axis=0) + 1e-8)
 ```
 
+&nbsp;
+&nbsp;
+&nbsp;
+
 ### **MFCC (Mel-Frequency Cepstral Coefficients)**
-#### **1. 이전 단계에서 계산한 Filter Bank에 Discrete Cosine Transform (DCT)를 적용한 후 결과로 나온 계수들 중 일부만 보존합니다.**
+#### 1. 이전 단계에서 계산한 Filter Bank에 Discrete Cosine Transform (DCT)를 적용한 후 결과로 나온 계수들 중 일부만 보존합니다.
 - Filter Bank는 높은 상관관계를 가질 수 있는데 이는 머신러닝/딥러닝 알고리즘에 치명적입니다.
   - 따라서, Filter Bank 계수의 상관관계를 제거하고 Filter Bank의 압축된 표현을 DCT를 통해 얻습니다.
   - DCT는 에너지를 역상관시킵니다.
@@ -196,7 +248,11 @@ num_ceps = 12
 mfcc = dct(filter_banks, type=2, axis=1, norm='ortho')[:, 1 : (num_ceps + 1)]  # Keep 2-13
 ```
 
-#### **2. MFCC내 큰 계수들을 강조하거나 무시하는 데  Sinusoidal liftering을 적용할 수 있습니다.**
+&nbsp;
+&nbsp;
+&nbsp;
+
+#### 2. MFCC내 큰 계수들을 강조하거나 무시하는 데  Sinusoidal liftering을 적용할 수 있습니다.
 - 노이즈가 있는 환경에서 더 정확한 음성 인식이 가능합니다.
 
 ```python
@@ -208,30 +264,34 @@ mfcc *= lift  #*
 
 print("Shape of MFCCs:", np.shape(mfcc))
 ```
+<pre>
+    Shape of MFCCs: (328, 12)
+</pre>
 
-```shell
-Shape of MFCCs: (328, 12)
-```
+![fig6](20231031-5.png)
 
-![fig6](/assets/img/for_post/20231031-5.png)
+&nbsp;
+&nbsp;
+&nbsp;
 
-#### **3. Mean Normalization**
+#### 3. Mean Normalization
 
 ```python
 mfcc -= (np.mean(mfcc, axis=0) + 1e-8)
 ```
 
+&nbsp;
+&nbsp;
+&nbsp;
 
-#### **References**
-```shell
-[1]
-@misc{fayek2016,
-  title   = "Speech Processing for Machine Learning: Filter banks, Mel-Frequency Cepstral Coefficients (MFCCs) and What's In-Between",
-  author  = "Haytham M. Fayek",
-  year    = "2016",
-  url     = "https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html"
-}
+## References
 
-[2] Speech Emotion Recognition, https://www.kaggle.com/code/shivamburnwal/speech-emotion-recognition
-[3] Mel Frequency Cepstral Coefficient (MFCC) tutorial, http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/
-```
+1. @misc{fayek2016,    
+  title   = "Speech Processing for Machine Learning: Filter banks, Mel-Frequency Cepstral Coefficients (MFCCs) and What's In-Between",    
+  author  = "Haytham M. Fayek",    
+  year    = "2016",    
+  url     = "https://haythamfayek.com/2016/04/21/speech-processing-for-machine-learning.html"    
+}    
+
+2. [Speech Emotion Recognition](https://www.kaggle.com/code/shivamburnwal/speech-emotion-recognition)
+3. [Mel Frequency Cepstral Coefficient (MFCC) tutorial](http://practicalcryptography.com/miscellaneous/machine-learning/guide-mel-frequency-cepstral-coefficients-mfccs/)

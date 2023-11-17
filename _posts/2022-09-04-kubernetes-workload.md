@@ -4,15 +4,22 @@ date: 2022-12-06 17:00:00 +/-TTTT
 categories: [Cloud, Google Cloud Platform (GCP)]
 tags: [gcp, kubernetes, gke, kubectl]
 math: true
+author: seoyoung
+img_path: /assets/img/for_post/
+description: Kubernetes의 배포와 포드 네트워킹, 볼륨 | Kubernetes, GKE, deployment, pod networking, volume
 ---
-
-
-
 ------------------------
 
-- Kubernetes의 배포와 포드 네트워킹, 볼륨에 대한 내용을 공부합니다.
-- Keyword : Kubernetes, GKE, deployment, pod networking, volume
+> Kubernetes의 배포와 포드 네트워킹, 볼륨에 대한 내용을 공부합니다.
+{: .prompt-info }
 
+kubectl은 Kubernetes 클러스터를 관리하는 데 사용되는 유틸리티로, 명령어를 API 호출로 변환하여 클러스터의 상태를 제어합니다.
+
+Deployment는 Pod의 상태를 관리하며, Pod 간 네트워킹은 IP 주소를 기반으로 하며, Volumes를 통해 Pod에 저장 공간을 제공합니다.
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **`kubectl` command**
 - `Kubectl` : 관리자가 kubernetes cluster를 제어하는 데 사용하는 유틸리티
@@ -34,7 +41,10 @@ math: true
   - Name : type에 정의된 객체를 지정
 
 
------------------
+&nbsp;
+&nbsp;
+&nbsp;
+
 ## **Deployments**
 - Deployments declare th state of Pods
   - Pod 사양을 업데이트 할 때마다 변경된 deployment 버전과 일치하는 새 ReplicaSet이 생성   
@@ -49,9 +59,12 @@ math: true
   - Progressing state, complete state, failed state
 
 
---------------
+&nbsp;
+&nbsp;
+&nbsp;
+
 ## **Pod networking**
-- Pod : a group of containers with shared storage and networking
+- **Pod** : a group of containers with shared storage and networking
   - Kubernetes의 'pod별 IP' 모델을 기반     
   ➔ 각 pod에 단일 IP 주소가 할당되고 pod 내의 container는 해당 IP 주소를 포함하여 동일한 네트워크 namespace를 공유
 - Your workload doesn't run in an single pod
@@ -69,9 +82,12 @@ math: true
   - VPC 기반 GKE 클러스터는 pod에 대해 별도의 별칭 IP 범위도 생성
 
 
-------------------
+&nbsp;
+&nbsp;
+&nbsp;
+
 ## **Volumes**
-### **Kubernetes offers storage abstraction options**
+### Kubernetes offers storage abstraction options
 - Volumes
   - Volumes are the method by which you attach storage to a pod
   - Some volumes are ephemeral
@@ -85,9 +101,10 @@ math: true
 
 
 
-----
+&nbsp;
+&nbsp;
+&nbsp;
 
-#### **References**
-```
-[1] Getting Started with Google Kubernetes Engine, Coursera
-```
+## Reference
+
+1. [Getting Started with Google Kubernetes Engine, Coursera](https://www.coursera.org/learn/google-kubernetes-engine)

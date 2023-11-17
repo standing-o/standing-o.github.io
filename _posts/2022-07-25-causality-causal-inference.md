@@ -4,15 +4,25 @@ date: 2022-07-25 17:00:00 +/-TTTT
 categories: [AI Theory, Causal inference]
 tags: [lg-aimers, causality, scm, back-door, do-calculus]
 math: true
+author: seoyoung
+img_path: /assets/img/for_post/
+description: 인과, 인과추론 | Causality, SCM, Back-door, Do-calculus
 ---
 
 
 
 -----------------------
 
-- 인과, 인과추론의 개념과 관련 이론 (Back-door, Do-calculus) 들을 알아봅시다.
-- Keyword : Causality, SCM, Back-door, Do-calculus
+> 인과, 인과추론의 개념과 관련 이론 (Back-door, Do-calculus) 들을 알아봅시다.
+{: .prompt-info }
 
+구조적 인과 모델(SCM)은 관측과 개입을 통해 인과 관계를 설명하는데 도움을 줍니다. 
+
+Back-door 기준은 인과 관계를 확인하고 혼동을 줄이는 데 도움이 되며, Do-계산법은 확률을 처리하는 데 유용한 규칙을 제공합니다. 
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **Causality**
 
@@ -26,7 +36,9 @@ math: true
   - ML : currently focused on learning correlations
   - DS : capture, process, analyze, communicate with data
 
-
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **Structural causal model (SCM)**
 
@@ -39,14 +51,14 @@ math: true
 
 
 
-### **Remark**
+### Remark
 
 - Identifiability : causal effect may be computable from existing observational data for some causal graphs.
 - In a Markovian case an singleton X, a causal effect can be easily derivable by canceling output $$P(x\mid{pa_x})$$
 
-
-
---------------------
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **Back-door Criterion**
 
@@ -67,7 +79,7 @@ math: true
 
 
 
-### **Back-door sets as substitutes of the direct parents of X**
+### Back-door sets as substitutes of the direct parents of X
 
 - Rain satisfies the back-door criterion relative to Sprinkler ans Wet:
   - (i) Rain is not descendant of Sprinkler, and
@@ -78,8 +90,9 @@ $$
 P(\text{wt}|do(\text{sp}))=\sum_\text{sn}P(\text{wt}|\text{sp,sn})P(\text{sn})=\cdots=\sum_\text{rn}P(\text{wt}|\text{sp,rn})P(\text{rn})
 $$
 
-
----------------------
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **Rules of Do-calculus**
 
@@ -115,8 +128,9 @@ $$
 - Do-calculus is a set of rules to manipulate observational or interventional probabilites. (Do-calculus is complete)
 
 
-
----------------------------------------------
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **Modern identification tasks**
 
@@ -144,15 +158,14 @@ $$
 - Responding conditons ➔ Recovering from **missingness**
 
 
+&nbsp;
+&nbsp;
+&nbsp;
 
-----
+## Reference
+> 본 포스팅은 LG Aimers 프로그램에서 학습한 내용을 기반으로 작성된것입니다. (전체 내용 X)
+{: .prompt-warning }
 
-#### **References**
-- 본 포스팅은 `LG Aimers` 프로그램에 참가하여 학습한 내용을 기반으로 작성된것입니다. (전체내용 X)
+1. LG Aimers AI Essential Course Module 5. 인과추론, 서울대학교 이상학 교수 
 
-➔ [`LG Aimers` 바로가기](https://www.lgaimers.ai/)
-
-```
-[1] LG Aimers AI Essential Course Module 5.인과추론, 서울대학교 이상학 교수 
-```
 

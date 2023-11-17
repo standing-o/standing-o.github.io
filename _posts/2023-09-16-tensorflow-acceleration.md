@@ -4,21 +4,30 @@ date: 2023-09-16 13:00:00 +/-TTTT
 categories: [AI Framework, Tensorflow]
 tags: [tensorflow, distributed-training]
 math: true
+author: seoyoung
+img_path: /assets/img/for_post/
+description: Tensorflow 가속기를 활용하는 방법 | Tensorflow, Distributed Training, GPU Acceleration
 ---
 
 
 ------------------------
-- GPU 환경에서 Tensorflow 가속기를 활용하는 방법들을 정리합니다.
-- Keyword : Tensorflow, Distributed Training, GPU Acceleration
+> GPU 환경에서 Tensorflow 가속기를 활용하는 방법들을 정리합니다.
+{: .prompt-tip }
 
+TensorFlow는 기본적으로 CPU를 사용하여 수치 연산을 처리하지만 대규모 데이터나 복잡한 모델을 다룰 때는 GPU, TPU와 같은 가속기를 활용하여 연산을 가속할 수 있습니다.
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **Distributed Training**
 ### `tf.distribute.Strategy`
 - Multiple GPU, machine, TPU에 분산 훈련 가능
 - Tensorflow 2버전에서 `tf.function`으로 그래프 실행
+
 #### Synchronous vs Asynchronous Training
-- Synchronous : 모든 trainer는 sync 입력 데이터의 다른 슬라이스에 대해 훈련 후 각 단계에서 gradient를 집계
-- Asynchronous : 모든 trainer는 입력 데이터를 독립적으로 훈련 후 파라미터를 async로 업데이트
+- **Synchronous** : 모든 trainer는 sync 입력 데이터의 다른 슬라이스에 대해 훈련 후 각 단계에서 gradient를 집계
+- **Asynchronous** : 모든 trainer는 입력 데이터를 독립적으로 훈련 후 파라미터를 async로 업데이트
 
 ### `tf.distribute.MirroredStrategy`
 - 단일 머신에 여러 GPU를 사용하는 sync 분산 훈련 지원
@@ -27,25 +36,34 @@ math: true
   - 동일한 업데이트를 적용하며 서로 sync를 유지
 - 여러 장치에 변수의 변경사항을 전달하기 위해 all-reduce 알고리즘 사용
 - TensorFlow에 표시되는 모든 GPU를 사용하고 NCCL을 장치 간 통신 수단으로 사용하는 MirroredStrategy 인스턴스 생성
+
 ```python
 mirrored_strategy = tf.distribute.MirroredStrategy()
 ```
+
 - 일부 GPU만 사용
+
 ```python
 mirrored_strategy = tf.distribute.MirroredStrategy(devices=["/gpu:0", "/gpu:1"])
 ```
+
 - 장치 간 통신을 재정의
   - Options : `tf.distribute.NcclAllReduce` (Default), `tf.distribute.HierarchicalCopyAllReduce`, `tf.distribute.ReductionToOneDevice`
+
 ```python
 mirrored_strategy = tf.distribute.MirroredStrategy(
     cross_device_ops=tf.distribute.HierarchicalCopyAllReduce())
 ```
+
 - Multiple Workers -> `tf.distribute.MultiWorkerMirroredStrategy`
 
+&nbsp;
+&nbsp;
+&nbsp;
 
 ### `tf.distribute.Strategy` with Keras `model.fit`
 - `tf.distribute.Strategy`는 `tf.keras`에 통합됨
-- `MirroredStrategy` strategy.scope()는 훈련을 분산할 때 사용할 strategy을 Keras에 표시함 
+- `MirroredStrategy` strategy.scope()는 훈련을 분산할 때 사용할 strategy을 Keras에 표시함      
   -> Model/Optimizer/Metric을 생성하면 일반 변수 대신 분산 변수를 생성 가능.
 
 ```python
@@ -66,6 +84,10 @@ import numpy as np
 inputs, targets = np.ones((100, 1)), np.ones((100, 1))
 model.fit(inputs, targets, epochs=2, batch_size=10) # 각 배치가 여러 복제본에 균등하게 분할
 ```
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ```python
 # Compute a global batch size using a number of replicas.
@@ -124,6 +146,9 @@ for dist_inputs in dist_dataset:
 # for _ in range(10):
 #   print(distributed_train_step(next(iterator)))
 ```
+&nbsp;
+&nbsp;
+&nbsp;
 
 ### `TF_CONFIG` 환경 변수를 설정
 ```python
@@ -135,6 +160,10 @@ os.environ["TF_CONFIG"] = json.dumps({
    "task": {"type": "worker", "index": 1}
 })
 ```
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **GPU Acceleration**
 - TensorFlow가 GPU를 사용하고 있는지 확인
@@ -166,14 +195,14 @@ c = tf.matmul(a, b)
 print(c)
 ```
 
-```text
-Executing op _EagerConst in device /job:localhost/replica:0/task:0/device:GPU:0
-Executing op _EagerConst in device /job:localhost/replica:0/task:0/device:GPU:0
-Executing op MatMul in device /job:localhost/replica:0/task:0/device:GPU:0
-tf.Tensor(
-[[22. 28.]
- [49. 64.]], shape=(2, 2), dtype=float32)
-```
+<pre>
+    Executing op _EagerConst in device /job:localhost/replica:0/task:0/device:GPU:0
+    Executing op _EagerConst in device /job:localhost/replica:0/task:0/device:GPU:0
+    Executing op MatMul in device /job:localhost/replica:0/task:0/device:GPU:0
+    tf.Tensor(
+    [[22. 28.]
+     [49. 64.]], shape=(2, 2), dtype=float32)
+</pre>
 
 - 장치 수동 할당
 
@@ -183,6 +212,10 @@ tf.debugging.set_log_device_placement(True)
 with tf.device('/CPU:0'):
   a = tf.constant([[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]])
 ```
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ### GPU 메모리 제한
 - Tensorflow는 모든 GPU의 거의 모든 메모리를 프로세스가 볼 수 있도록 매핑
@@ -216,6 +249,12 @@ if gpus:
     # Memory growth must be set before GPUs have been initialized
     print(e)
 ```
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+
 - `tf.config.set_logical_device_configuration` 으로 가상 GPU 설정 후 GPU 할당 전체 메모리 제한
 
 ```python
@@ -232,6 +271,10 @@ if gpus:
     # Virtual devices must be set before GPUs have been initialized
     print(e)
 ```
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ### Multiple GPU
 - 단일 GPU가 있는 시스템에서 개발하는 경우, 가상 기기로 여러 GPU를 시뮬레이션 가능
@@ -252,6 +295,10 @@ if gpus:
     print(e)
 ```
 
+&nbsp;
+&nbsp;
+&nbsp;
+
 - `tf.distribute.Strategy` 사용
   - 입력 데이터를 나누고 모델의 복사본을 각 GPU에서 실행 -> Data Parallelism
 
@@ -267,7 +314,9 @@ with strategy.scope():
                 optimizer=tf.keras.optimizers.SGD(learning_rate=0.2))
 ```
 
-#### Reference
-```text
-[1] Tensorflow Guide - Accelerators, www.tensorflow.org/guide/
-```
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Reference
+1. [Tensorflow Guide - Accelerators](www.tensorflow.org/guide/)

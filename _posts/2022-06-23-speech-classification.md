@@ -3,27 +3,27 @@ title: "[Dacon] 음성 분류 경진대회"
 date: 2022-06-23 17:00:00 +/-TTTT
 categories: [Competition, Dacon]
 tags: [speech, classification, data-augmentation, feature-extraction, dacon, ai-competition]
+author: seoyoung
+img_path: /assets/img/for_post/
+description: 음성 데이터에 대한 data augmentation과 feature extraction | speech classification
 ---
 
 ------------------
 
-- 음성 데이터에 대한 data augmentation과 feature extraction 등의 내용을 포함합니다.
-- 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
+> 음성 데이터에 대한 data augmentation과 feature extraction 등의 내용을 포함합니다. 
+{: .prompt-info }
+
+코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
+
 ➔ [데이콘에서 읽기](https://dacon.io/competitions/official/235905/codeshare/5209)
 
-  
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **0. Import Packages**
+- 주요 라이브러리 불러오기
 
-
-```python
-from google.colab import drive
-drive.mount('/content/drive')
-```
-
-<pre>
-Mounted at /content/drive
-</pre>
 ```python
 import numpy as np
 import pandas as pd
@@ -43,30 +43,24 @@ warnings.filterwarnings("ignore")
 %matplotlib inline
 ```
 
-
-```python
-# reproducibility
-
-def all_seed(seed_num):
-    np.random.seed(seed_num)
-    rn.seed(seed_num)
-    os.environ['PYTHONHASHSEED']=str(seed_num)
-    # tf.random.set_seed(seed_num)
-
-seed_num = 42
-all_seed(seed_num)
-```
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **1. Load and explore dataset**
 
-
+- 데이터 불러오기 
 
 ```python
 train = pd.read_csv('/content/drive/MyDrive/Speech_classification/train.csv')
 test = pd.read_csv('/content/drive/MyDrive/Speech_classification/test.csv')
 ```
 
-- 📝 한 음성의 waveplot을 확인해보겠습니다.
+&nbsp;
+&nbsp;
+&nbsp;
+
+- 한 음성의 waveplot을 확인해보겠습니다.
 
 
 
@@ -86,7 +80,11 @@ plt.title('001.wav | Length : ' + str(len(samples)))
 plt.show()
 ```
 
-![waveplot](/assets/img/for_post/20220623-1.png)
+![waveplot](20220623-1.png)
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ```python
 print(sample_rate)
@@ -94,11 +92,15 @@ print(samples)
 ```
 
 <pre>
-22050
-[0.00013066 0.00016804 0.00014106 ... 0.00017342 0.00017514 0.        ]
+    22050
+    [0.00013066 0.00016804 0.00014106 ... 0.00017342 0.00017514 0.        ]
 </pre>
 
-📝 한 음성의 spectrogram을 생성하겠습니다.  
+&nbsp;
+&nbsp;
+&nbsp;
+
+- 한 음성의 spectrogram을 생성하겠습니다.  
 ↪ Short term Fourier transform (STFT)의 magnitude를 db 스케일로 변환하여 spectrogram을 생성합니다.
 
 
@@ -115,24 +117,26 @@ plt.colorbar()
 plt.show()
 ```
 
-![spectrogram](/assets/img/for_post/20220623-2.png)
-
-📝 `train.csv`에는 `train` 폴더의 음성 파일 이름과 라벨 컬럼이 포함되어 있습니다. `label` 컬럼은 0~9 정수로 구성됩니다.
+![spectrogram](20220623-2.png)
 
 
+&nbsp;
+&nbsp;
+&nbsp;
 
+- `train.csv`에는 `train` 폴더의 음성 파일 이름과 라벨 컬럼이 포함되어 있습니다. `label` 컬럼은 0~9 정수로 구성됩니다.
 
 ```python
 train.head()
 ```
 
 <pre>
-  file_name  label
-0   001.wav      9
-1   002.wav      0
-2   004.wav      1
-3   005.wav      8
-4   006.wav      0
+      file_name  label
+    0   001.wav      9
+    1   002.wav      0
+    2   004.wav      1
+    3   005.wav      8
+    4   006.wav      0
 </pre>
 
 ```python
@@ -140,12 +144,14 @@ print(train['label'].unique())
 ```
 
 <pre>
-[9 0 1 8 7 4 5 2 6 3]
+    [9 0 1 8 7 4 5 2 6 3]
 </pre>
 
-📝 데이터가 클래스 균형을 이루고 있습니다.
+&nbsp;
+&nbsp;
+&nbsp;
 
-
+- 데이터가 클래스 균형을 이루고 있습니다.
 
 ```python
 plt.figure(figsize=(12, 8))
@@ -157,43 +163,46 @@ plt.xlabel("Label", fontsize = 14)
 plt.show()
 ```
 
-![count](/assets/img/for_post/20220623-3.png)
+![count](20220623-3.png)
 
 ```python
 file_name = train['file_name']
 train_path = '/content/drive/MyDrive/Speech_classification/dataset/train/'
 ```
 
-📝 데이터들의 길이가 모두 다릅니다.
+&nbsp;
+&nbsp;
+&nbsp;
 
-
+- 데이터들의 길이가 모두 다릅니다.
 
 ```python
 all_shape = []
 for f in file_name:
   data, sample_rate = librosa.load(train_path + f, sr = 20000)
   all_shape.append(data.shape)
-```
 
-
-```python
 print(all_shape[:5])
 print("Max :", np.max(all_shape, axis = 0))
 print("Min :", np.min(all_shape, axis = 0))
 ```
 
 <pre>
-[(12740,), (13126,), (12910,), (9753,), (17572,)]
-Max : [19466]
-Min : [7139]
+    [(12740,), (13126,), (12910,), (9753,), (17572,)]
+    Max : [19466]
+    Min : [7139]
 </pre>
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **2. Data augmentation**
 
-📝 원래의 음성데이터에 새로운 perturbation 들을 추가하여 새로운 음성데이터를 생성합니다. (모델의 일반화 능력 향상을 위함)  
+- 원래의 음성데이터에 새로운 perturbation 들을 추가하여 새로운 음성데이터를 생성합니다.
+  - 모델의 일반화 능력 향상을 위함
+
 ↪ Noise 추가, time stretching, pitch 변환
-
-
 
 
 ```python
@@ -214,10 +223,13 @@ def pitch(sample, sampling_rate, pitch_factor = 0.8):
     return pitch_sample
 ```
 
+&nbsp;
+&nbsp;
+&nbsp;
+
 ## **3. Feature Extraction**
 
-📝 모델링에 사용하면 도움이 될만한 몇가지 feature extraction 방법을 소개하겠습니다.
-
+- 모델링에 사용하면 도움이 될만한 몇가지 feature extraction 방법을 소개하겠습니다.
 
 #### **1. Zero Crossing Rate (ZCR)**
 
@@ -240,9 +252,6 @@ def pitch(sample, sampling_rate, pitch_factor = 0.8):
 #### **5. RMS (Root Mean Square)**
 
 ↪ 오디오 평균 음량 측정
-
-
-
 
 ```python
 def extract_features(sample):
@@ -271,9 +280,11 @@ def extract_features(sample):
     return result
 ```
 
-📝 Noise 추가, time stretching, pitching 방법들을 통해 음성 데이터 하나 당 (1, 162) 크기의 feature를 (3, 162) 로 증강합니다.
+&nbsp;
+&nbsp;
+&nbsp;
 
-
+- Noise 추가, time stretching, pitching 방법들을 통해 음성 데이터 하나 당 (1, 162) 크기의 feature를 (3, 162) 로 증강합니다.
 
 ```python
 def get_features(path):
@@ -298,6 +309,9 @@ def get_features(path):
     return result
 ```
 
+&nbsp;
+&nbsp;
+&nbsp;
 
 ```python
 labels = train['label']
@@ -307,10 +321,7 @@ for f, label in zip(file_name, labels):
     for fe in feature:
         x.append(fe)
         y.append(label)
-```
 
-
-```python
 X = np.array(x)
 Y = np.array(y)
 
@@ -319,15 +330,15 @@ print("Shape of Y:", np.shape(Y))
 ```
 
 <pre>
-Shape of X: (1200, 162)
-Shape of Y: (1200,)
+    Shape of X: (1200, 162)
+    Shape of Y: (1200,)
 </pre>
 
-#### **Reference**
-```
-[1] Speech Emotion Recognition by SHIVAM BURNWAL, https://www.kaggle.com/code/shivamburnwal/speech-emotion-recognition
-```
-------------------
-읽어주셔서 감사합니다 :)  
-도움이 됐길 바랍니다 👍👍
+&nbsp;
+&nbsp;
+&nbsp;
+
+## Reference
+
+1. [Speech Emotion Recognition by SHIVAM BURNWAL](https://www.kaggle.com/code/shivamburnwal/speech-emotion-recognition)
 

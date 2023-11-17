@@ -4,19 +4,27 @@ date: 2023-02-09 13:00:00 +/-TTTT
 categories: [AI Theory, Computer Vision]
 tags: [vision-transformer, vit, transformer, attention]
 math: true
+author: seoyoung
+img_path: /assets/img/for_post/
+description: Vision Transformer (ViT) 의 기본 원리와 구조 | Vision Transformer, ViT, BEIT, CCT, CVT, DeiT, MobileViT, PvT, Swin Transformer, T2T-VIT, Deformable
 ---
 
 
 ------------------------
-- Vision Transformer (ViT) 의 기본 원리와 구조, 수식을 소개합니다.
-- 여러 ViT 기반 모델들 (BEIT, CCT, CvT, DeiT, MobileViT, PvT, Swin Transformer, T2T-VIT, Deformable ViT)에 대한 내용을 포함하고 있습니다.
-- Keyword : Vision Transformer, ViT, BEIT, CCT, CVT, DeiT, MobileViT, PvT, Swin Transformer, T2T-VIT, Deformable
+> Vision Transformer (ViT) 의 기본 원리와 구조, 수식을 소개합니다.
+{: .prompt-info }
+
+여러 ViT 기반 모델들 (BEIT, CCT, CvT, DeiT, MobileViT, PvT, Swin Transformer, T2T-VIT, Deformable ViT)에 대한 내용을 포함합니다.
 
 `Original Paper Review` 
 | [An image is worth 16x16 words: Transformers for image recognition at scale](https://github.com/standing-o/Machine_Learning_Paper_Review/issues/15)
 
+&nbsp;
+&nbsp;
+&nbsp;
+
 ## **Overview**
-![VIT](/assets/img/for_post/20230209-1.png)
+![VIT](20230209-1.png)
 
 - Image Patch Sequence를 Input으로 하여 기존의 Transformer 구조를 거의 그대로 Vision에 활용함
 - CNN에 비해 Inductive Bias가 부족함    
@@ -25,6 +33,10 @@ math: true
 - 적은 데이터로 학습할 경우, Resnet50보다 성능이 더 떨어짐
 - Imagenet 21K (1400만 장), JFT-300M (3억 장) 으로 Pre-training, CIFAR-10 (6만 장) 으로 Transfer Learning
 - Pretrained model의 크기는 약 300MB
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **Formulation**
 ### **1. Input**
@@ -56,13 +68,17 @@ $$z_0= [x_{cls}; x^1_p E; x^2_p E; \cdots ; x^N_p] \in \mathbb{R}^{(N+1)\times D
     
 $$z_0= [x_{cls}; x^1_p E; x^2_p E; \cdots ; x^N_p] + E_{pos} \in \mathbb{R}^{(N+1)\times D} \quad \text{where} \quad E_{pos} \in \mathbb{R}^{(N+1)\times D}$$
 
+&nbsp;
+&nbsp;
+&nbsp;
+
 ### **2. Transformer Encoder**
 #### 2-1. Multi-Head Self Attention (MSA)
 - Query(q), Key(k), Value(v) 간의 관계를 추출
     
 $$q = z \cdot w_q, \,\, k=z\cdot w_k, \,\, v = z \cdot w_v \quad \text{where} \quad w_q, w_k, w_v \in \mathbb{R}^{D \times D_h}$$
     
-- Self-Attention 
+- **Self-Attention** 
   - A : Attention score matrix
   - Attention score가 value(v)와 곱해지면서 query(q)와 key(k)의 연관성이 value(v)에 반영됨 ➔ 중요도 반영
   - D<sub>h</sub><sup>1/2</sup> 로 나누는 이유는 Softmax 값이 작은 gradient를 가지는 것을 방지하기 위함
@@ -100,6 +116,9 @@ $$\text{where} \quad LN(z^j_i) = \gamma \frac{z^j_i - \mu_i}{\sqrt{\sigma^2_i + 
 $$\hat{y} = LN(z^0_L) \in \mathbb{R}^C \quad \text{where} \quad z^0_L \in \mathbb{R}^D \quad (z_L \in \mathbb{R}^{(N+1) \times D})$$
     
 
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **ViT Variants**
 ### **BEIT** (Bidirectional Encoder representation from Image Transformers)

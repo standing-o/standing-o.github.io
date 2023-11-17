@@ -7,24 +7,22 @@ math: true
 toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
-pin: true
-image:
-  path: 20231103-t.png
-  alt: ""
-description: 음성데이터에 대한 전처리, 특성 추출 및 증강 기법을 정리합니다. | Trimming, Padding, Spectrogram, Melspectrogram, MFCC, SpecAugment
+description: 음성데이터에 대한 전처리, 특성 추출 및 증강 기법 | Trimming, Padding, Spectrogram, Melspectrogram, MFCC, SpecAugment
 ---
 
 
 ------------------------
-- 음성데이터에 대한 전처리, 특성 추출 및 증강 기법을 정리합니다.
-- Keyword: Trimming, Padding, Spectrogram, Melspectrogram, MFCC, SpecAugment
 
+> 음성데이터에 대한 전처리, 특성 추출 및 증강 기법을 정리합니다.
+{: .prompt-info }
 
-## **Overview**
 - 음성 데이터에 대한 Feature Extraction은 음성 관련 모델링에서 중요한 과정 중 하나입니다. 
 - Feature Extraction 에는 여러 기법이 사용되며, 음성 신호를 효율적으로 표현하고 노이즈를 감소시켜 머신러닝/딥러닝 모델링에 적합한 형태로 변환시켜 줍니다.
 - 파이썬 라이브러리를 통해 간단하게 음성의 특성을 추출하는 방법 및 여러 전처리 방식들을 소개하겠습니다.
 
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **0. 음성 데이터 불러오기**
 
@@ -49,8 +47,12 @@ data, sample_rate = torchaudio.load(path)
 - `data`: 오디오 파일의 파형 데이터를 배열로 반환한 것입니다.
 - `sample_rate` : 오디오 데이터의 샘플링 속도, 초당 샘플링된 음성 데이터 포인트의 수, Hz단위
 
+&nbsp;
+&nbsp;
+&nbsp;
+
 ## **1. Audio Preprocessing**
-### **Trimming**
+### Trimming
 - 60dB 이하를 무음으로 처리합니다.
   - `top_db`: 음성 신호의 최대 소음 레벨을 나타내는 변수로 이 값보다 작은 레벨의 소음은 삭제됩니다.
   - `frame_length`: 프레임 길이를 나타내는 변수로, 음성 데이터를 프레임으로 나눌 때 사용됩니다.
@@ -75,7 +77,11 @@ def trimming(data, sampling_rate, top_db = 60):
 
 ![fig1](20231103-1.png)
 
-### **Random Padding**
+&nbsp;
+&nbsp;
+&nbsp;
+
+### Random Padding
 - 음성 데이터들의 길이가 서로 다른 경우 Melspectrogram, MFCC 모두 길이가 다르므로, 고정 사이즈를 정하고 랜덤으로 앞과 뒤에 Padding을 해줍니다.
 - `reqlen`: 필요한 최종 데이터 길이
   - 입력 데이터의 길이가 `reqlen`보다 길 경우, `reqlen`에 맞게 데이터를 잘라서 반환합니다.
@@ -102,8 +108,12 @@ def padding(x, reqlen=100000):
 
 ![fig2](20231103-2.png)
 
+&nbsp;
+&nbsp;
+&nbsp;
+
 ## **2. Audio Feature Extraction**
-### **Spectrogram**
+### Spectrogram
 - Shape: [주파수 방향 성분 수 (n_fft / 2 + 1, `0Hz` 부터 `sample_rate`의 절반), Time 방향 성분 수]
   - `sample_rate`의 절반인 이유: Nyquist frequency
 - `torchaudio`, `nn.Sequential`
@@ -128,7 +138,11 @@ spectrogram = nn.Sequential(
 spec = spectrogram(sample_data)
 ```
 
-### **Melspectrogram**
+&nbsp;
+&nbsp;
+&nbsp;
+
+### Melspectrogram
 - 음성데이터를 Frequency, Time의 2차원 도메인으로 변환합니다.
 - Shape: [주파수 방향 성분 수, Time 방향 성분 수]
 - `librosa.feature.melspectrogram`
@@ -142,6 +156,10 @@ S = librosa.feature.melspectrogram(data, sr=sample_rate, n_mels=40)
 log_S = librosa.power_to_db(S, ref=np.max)
 librosa.display.specshow(log_S, sr=sr)  # x axis: Time, y axis: Frequency
 ```
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 - `torchaudio`, `nn.Sequential`
   - `n_mels`: 적용할 mel filter의 개수를 의미합니다.
@@ -165,14 +183,22 @@ mel = mel_spectrogram(sample_data)
 - `win_length`가 작은 경우에는 주파수 성분에 대한 해상도는 낮아지지만, 시간 성분에 대한 해상도는 높아지게 됩니다.
 - `n_fft`를 높이면 주파수 성분의 수는 증가하지만 실제 주파수의 해상도는 증가하지 않습니다.
 
-### **MFCC**
+&nbsp;
+&nbsp;
+&nbsp;
+
+### MFCC
 
 ```python
 mfcc = librosa.feature.mfcc(data, sr=sample_rate, n_mels=40)
 librosa.display.specshow(mfcc, sr=sample_rate)  # x axis: Time, y axis: MFCC coefficients
 ```
 
-### **Stacked Melspectrogram**
+&nbsp;
+&nbsp;
+&nbsp;
+
+### Stacked Melspectrogram
 - Melspectrogram의 1차 미분과 2차 미분을 채널로 Stacking 하여 음성에 대한 변화율 정보를 포함하는 데이터를 생성합니다.
 
 ```python
@@ -214,7 +240,11 @@ def stacked_melspectrogram(data):
     return np.array(extracted_features)
 ```
 
-### **Multi-Resolution Melspectrogram**
+&nbsp;
+&nbsp;
+&nbsp;
+
+### Multi-Resolution Melspectrogram
 - 4가지의 서로 다른 `win_length`로 다양한 해상도를 가진 Melspectrogram들을 Stack하고 Normalize 합니다.
 
 ```python
@@ -239,9 +269,13 @@ stacked_mels = (stacked_mels - stacked_mels.mean(dim=[1, 2], keepdim=True)) / 20
 
 ![fig4](20231103-4.png)
 
+&nbsp;
+&nbsp;
+&nbsp;
+
 ## **3. Data Augmentation**
 
-### **Noising**
+### Noising
 - 랜덤 노이즈를 추가합니다.
 
 ```python
@@ -252,7 +286,11 @@ def noising(data,noise_factor):
     return augmented_data
 ```
 
-### **Shifting**
+&nbsp;
+&nbsp;
+&nbsp;
+
+### Shifting
 - 좌우로 이동시킵니다.
 
 ```python
@@ -273,7 +311,11 @@ def shifting(data, sampling_rate, shift_max, shift_direction):
     return augmented_data
 ```
 
-### **Pitch**
+&nbsp;
+&nbsp;
+&nbsp;
+
+### Pitch
 - 피치를 조절합니다.
 
 ```python
@@ -281,7 +323,11 @@ def change_pitch(data, sampling_rate, pitch_factor):
     return librosa.effects.pitch_shift(data, sampling_rate, pitch_factor)
 ```
 
-### **SpecAugment**
+&nbsp;
+&nbsp;
+&nbsp;
+
+### SpecAugment
 - `feat_size` 및 `seq_len`을 계산하여 spectrogram의 크기를 가져옵니다.
 - `freq_mask`를 적용하여 주어진 `freq_mask_num`만큼 주파수 축에서 일부 주파수를 무작위로 제거하여 데이터를 변형합니다.
 - `time_mask`를 적용하여 주어진 `time_mask_num`만큼 시간 축에서 일부 시간적인 정보를 무작위로 제거하여 데이터를 변형합니다.
@@ -310,6 +356,8 @@ def SpecAugment(spec, T=time_mask, F=freq_mask, time_mask_num=n_time_mask, freq_
         spec[t0 : t0 + t] = 0
     return spec
 ```
+&nbsp;
+&nbsp;
+&nbsp;
 
--------------------
-- 이러한 기법들을 비교하면서 모델에 맞는 특성을 선택하여 사용한다면 예측 성능을 향상시킬 수 있습니다.
+이러한 기법들을 비교하면서 모델에 맞는 특성을 선택하여 사용한다면 예측 성능을 향상시킬 수 있습니다.

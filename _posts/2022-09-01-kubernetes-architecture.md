@@ -4,16 +4,27 @@ date: 2022-09-01 17:00:00 +/-TTTT
 categories: [Cloud, Google Cloud Platform (GCP)]
 tags: [gcp, kubernetes, gke]
 math: true
+author: seoyoung
+img_path: /assets/img/for_post/
+description: GKE의 구조 및 Object Management | Kubernetes, GKE, object management
 ---
 
 
 
 -------------------------
 
-- GKE의 구조 및 Object Management를 알아봅시다.
-- Keyword : Kubernetes, GKE, object management
+> GKE의 구조 및 Object Management를 알아봅시다.
+{: .prompt-info }
 
+Kubernetes Controller는 Cluster의 상태를 원하는 상태와 일치시킵니다.
 
+Kubernetes는 컨트롤 플레인과 노드에서 실행되는 컨트롤 플레인 컴포넌트의 집합으로 이루어져 있습니다.
+
+GKE는 컨트롤 플레인을 추상화하여 감추어줍니다. manifest 파일을 사용하여 원하는 상태를 선언할 수 있습니다.
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **Kubernetes architecture**
 - Kubernetes objects : persistent entities representing the state of the cluster
@@ -25,14 +36,16 @@ math: true
   ➔ Kubernetes는 각 pod에 고유한 IP 주소를 할당; pod 내의 모든 container는 네트워크 namespaces를 공유   
 - Desired state compared to current state
   - Kubernetes가 원하는 상태를 지정했다고 가정했을 때, 해당 상태를 나타내는 하나 이상의 객체를 만들고 유지하도록 kubernetes에 지시하여 작업을 실행   
-    ➔ kubernetes는 원하는 상태를 현재 상태와 비교 ➔ kubernetes의 제어영역이 cluster 상태를 지속적으로 모니터링하여 상태를 수정
+    ➔ kubernetes는 원하는 상태를 현재 상태와 비교     
+    ➔ kubernetes의 제어영역이 cluster 상태를 지속적으로 모니터링하여 상태를 수정
 
 
 
-### **Cooperating processes make a kubernetes cluster work**
+### Cooperating processes make a kubernetes cluster work
 - 제어영역 : 한 컴퓨터 ➔ 전체 클러스터를 조정 
 - 노드 : 다른 컴퓨터 ➔ pod를 실행
-- kube-APIserver : 사용자가 직접 상호작용하는 단일 구성요소 ➔ cluster 상태를 보거나 변경하는 명령어를 수락하는 것   
+- kube-APIserver : 사용자가 직접 상호작용하는 단일 구성요소      
+➔ cluster 상태를 보거나 변경하는 명령어를 수락하는 것   
 ➔ `kubectl` : kube-APIserver에 연결, 통신   
 ➔ `etcd` : cluster의 데이터베이스 ➔ cluster 상태를 안정적으로 저장   
 ➔ `kube-scheduler` : pod를 노드에 예약   
@@ -42,7 +55,7 @@ math: true
 
 
 
-### **Google kubernetes engine**
+### Google kubernetes engine
 - GKE manages all the control plane components
   - GKE는 사용자를 대신하여 모든 제어 영역 구성요소를 관리
   - 모든 kubernetes 환경에서 노드는 kubernetes 자체가 아닌 cluster 관리자가 외부에서 만듬
@@ -52,7 +65,8 @@ math: true
 - Zonal versus regional clusters
   - 더 많은 노드를 추가하고 app의 여러 복제본을 배포하면 app의 가용성이 일정 수준까지 향상
   - 전체 컴퓨팅 영역이 다운된다면?   
-  ➔ GKE regional cluster 사용 ➔ app의 가용성이 단일 region 내의 여러 영역에서 유지되도록함
+  ➔ GKE regional cluster 사용      
+  ➔ app의 가용성이 단일 region 내의 여러 영역에서 유지되도록함
   - GKE에서 regional cluster을 구성하려는 목적 : cluster에서 실행 중인 app이 영역 손실을 견뎌낼 수 있도록 하기위함
 - A regional or zonal GKE cluster can also be set up as a private cluster
   - Google cloud 제품이 cluster 제어 영역에 access 가능
@@ -65,7 +79,7 @@ math: true
 
 
 
-### **Object management**
+### Object management
 - 모든 kubernetes 객체는 고유한 이름과 고유 식별자로 구분됨
 - Objects are defined in a YAML file
   - Kubernetes가 만들고 유지할 객체를 manifest 파일을 사용하여 정의
@@ -74,7 +88,8 @@ math: true
   - `metadata` : 객체를 식별가능하도록 이름, 고유 ID, namespace를 사용
   - `spec` : pod의 manifest 파일에서 pod의 container image를 정의하는 필드
   - YAML 파일은 버전 관리 저장소에 저장   
-  ➔ GCP 고객은 cloud source repositories를 사용 ➔ 다른 GCP resource와 동일한 방식으로 해당 파일의 권한을 제어가능
+  ➔ GCP 고객은 cloud source repositories를 사용      
+  ➔ 다른 GCP resource와 동일한 방식으로 해당 파일의 권한을 제어가능
 - Object names
   - Kubernetes 객체를 만들 때 이름을 고유한 문자열로 지정
   - Cluster의 수명 주기 중에 만든 모든 객체에는 kubernetes에서 생성된 고유 ID(UID)가 할당
@@ -98,8 +113,9 @@ math: true
 
 
 
-### **Kubernetes architecture**
-- App을 설계하고 있으며 지연 시간을 최소화하기 위해 container가 가능한 한 서로 가까이 있기를 원함 ➔ 동일 pod에 container 배치
+### Kubernetes architecture
+- App을 설계하고 있으며 지연 시간을 최소화하기 위해 container가 가능한 한 서로 가까이 있기를 원함 
+  - 동일 pod에 container 배치
 - (EX) 첫 번째 영역의 기본 풀에 4개의 머신이 있는 새 kubernetes engine regional cluster를 배포하고 영역 수를 기본값으로 둠.    
 ➔ 계정에 대해 배포되는 compute engine machine 개수 : 12
 - Kubernetes cluster에서 실행 중인 프로덕션 app이 test 및 staging 배포의 영향을 받지 않는지 확인해야함 ➔ production app을 위한 resource의 우선순위를 지정하려면? : test, staging, production을 위한 namespace를 구성하고, test 및 staging namespace에 특정된 kubernetes resource 할당량을 구성
@@ -108,20 +124,13 @@ math: true
 - App의 여러 복사본을 배포하여 이 복사본 전체에 트래픽 부하를 분산하려고 합니다. 이 app의 pod를 cluster의 production namespace에 배포하는 방법: 실행할 복제본 수를 지정하는 배포 manifest 제작
 
 
--------------------
-## **Summary**
-- Kubernetes controllers keep the cluster state matching the desired state.
-- Kubernetes consists of al family of control plane components, running on the control plane and the nodes.
-- GKE abstracts away the control plane.
-- Declare the state you want using manifest files.
 
+&nbsp;
+&nbsp;
+&nbsp;
 
+## Reference
 
+1. [Getting Started with Google Kubernetes Engine, Coursera](https://www.coursera.org/learn/google-kubernetes-engine)
 
-----
-
-#### **References**
-```
-[1] Getting Started with Google Kubernetes Engine, Coursera
-```
 
