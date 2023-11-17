@@ -1,7 +1,6 @@
 #  The contact options.
 
-- type: github
-  icon: "fab fa-github"
+
 
 #- type: twitter
 #  icon: "fa-brands fa-x-twitter"
@@ -9,6 +8,14 @@
 - type: email
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
+
+- type: instagram1
+  icon: 'fa-brands fa-square-instagram'   # icons powered by <https://fontawesome.com/>
+  url:  'https://www.instagram.com/osy540/'
+
+- type: instagram2
+  icon: 'fa-solid fa-palette'   # icons powered by <https://fontawesome.com/>
+  url:  'https://www.instagram.com/grim_540/'
 
 #- type: rss
 #  icon: "fas fa-rss"
@@ -23,15 +30,17 @@
   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
   url:  'https://www.linkedin.com/in/seoyoung-oh-309a24200/'
 
-- type: instagram1
-  icon: 'fa-brands fa-square-instagram'   # icons powered by <https://fontawesome.com/>
-  url:  'https://www.instagram.com/osy540/'
+- type: github
+  icon: "fab fa-github"
+  url:  'https://github.com/standing-o'
 
-- type: instagram2
-  icon: 'fa-solid fa-palette'   # icons powered by <https://fontawesome.com/>
-  url:  'https://www.instagram.com/grim_540/'
+- type: notion
+  icon: "fa-solid fa-rocket"
+  url:  'https://special-grip-6f7.notion.site/Seoyoung-Oh-2a6b295b15b4435bb7b945bb07a572ae'
 
-                # Fill with your Linkedin homepage
+- type: cv
+  icon: "fa-solid fa-user-graduate"
+  url:  'https://drive.google.com/file/d/1OjteReBVmUsjkPZkqQe6A6MwNP94NBJ4/view?usp=sharing'
 
 #- type: stack-overflow
 #  icon: 'fab fa-stack-overflow'
