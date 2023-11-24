@@ -1,5 +1,5 @@
 ---
-title: "Google Kubernetes 워크로드"
+title: "구글 쿠버네티스 워크로드 | Google Kubernetes Workload"
 date: 2022-12-06 17:00:00 +/-TTTT
 categories: [Cloud, Google Cloud Platform (GCP)]
 tags: [gcp, kubernetes, gke, kubectl]

@@ -1,5 +1,5 @@
 ---
-title: "자율주행과 레이더센서"
+title: "자율주행과 레이더센서 | Autonomous Driving"
 date: 2022-07-25 17:00:00 +/-TTTT
 categories: [Domain knowledge]
 tags: [lg-aimers, radar]

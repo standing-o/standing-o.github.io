@@ -1,5 +1,5 @@
 ---
-title: "음성 신호 | Speech Signal 와 MFCC"
+title: "음성 신호와 MFCC | Speech Signal and Spectral Features"
 date: 2023-10-31 17:00:00 +/-TTTT
 categories: [AI Theory, Audio]
 tags: [speech, audio, voice, filter-bank, mfcc, spectrogram, melspectrogram]

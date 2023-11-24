@@ -1,5 +1,5 @@
 ---
-title: "신뢰성 | Reliability 이해하기"
+title: "신뢰성 이해하기 | Reliability"
 date: 2022-07-14 17:00:00 +/-TTTT
 categories: [Domain knowledge]
 tags: [lg-aimers, reliability]

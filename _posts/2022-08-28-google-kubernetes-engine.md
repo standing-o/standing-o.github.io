@@ -1,5 +1,5 @@
 ---
-title: "Google Kubernetes Engine(GKE) 란?"
+title: "구글 쿠버네티스 엔진이란? | Google Kubernetes Engine(GKE)"
 date: 2022-08-28 17:00:00 +/-TTTT
 categories: [Cloud, Google Cloud Platform (GCP)]
 tags: [gcp, kubernetes, gke]

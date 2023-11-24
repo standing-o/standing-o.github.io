@@ -1,5 +1,5 @@
 ---
-title: "비지도학습 | Unsupervised learning 과 딥러닝"
+title: "비지도학습과 딥러닝 | Unsupervised learning"
 date: 2022-07-17 17:00:00 +/-TTTT
 categories: [AI Theory, Machine Learning]
 tags: [lg-aimers, unsupervised-learning]

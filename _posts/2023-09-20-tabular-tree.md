@@ -1,5 +1,5 @@
 ---
-title: "정형 | Tabular 데이터에는 딥러닝이 부적절한 이유"
+title: "정형데이터에는 딥러닝이 부적절한 이유 | Tabular Data, Deep Learning"
 date: 2023-09-20 13:00:00 +/-TTTT
 categories: [AI Theory, Machine Learning]
 tags: [tabular, tree, random-forest, gradient-boosting, inductive-bias]

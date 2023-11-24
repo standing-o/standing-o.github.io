@@ -1,5 +1,5 @@
 ---
-title: "Cloud Computing과 Google Cloud"
+title: "클라우드 컴퓨팅과 구글 클라우드 | Cloud Computing and Google Cloud"
 date: 2022-08-21 17:00:00 +/-TTTT
 categories: [Cloud, Google Cloud Platform (GCP)]
 tags: [gcp, kubernetes, gke]

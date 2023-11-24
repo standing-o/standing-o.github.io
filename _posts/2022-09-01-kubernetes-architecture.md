@@ -1,5 +1,5 @@
 ---
-title: "Google Kubernetes의 구조"
+title: "구글 쿠버네티스의 구조 | Google Kubernetes"
 date: 2022-09-01 17:00:00 +/-TTTT
 categories: [Cloud, Google Cloud Platform (GCP)]
 tags: [gcp, kubernetes, gke]
