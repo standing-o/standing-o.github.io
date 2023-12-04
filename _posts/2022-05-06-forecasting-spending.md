@@ -287,7 +287,7 @@ df_test = test.copy()
 &nbsp;
 &nbsp;
 
-#### 2-(1). Outliers
+### (1). Outliers
 
 - `id`와 `target`을 제외한 numerical 데이터의 outlier 들을 IQR method를 활용하여 찾아줍니다.
 
@@ -319,7 +319,7 @@ print("The number of train outliers :", len(train_multi_outliers))
 &nbsp;
 &nbsp;
 
-#### 2-(2). Transformation
+### (2). Transformation
 
 - 왜곡된 분포는 모델 학습에 안좋은 영향을 줄 수 있습니다. 높은 skewness를 가지고 있는 `NumDealsPurchases` 변수에 대하여 몇가지 transformation을 진행하려합니다.
 
@@ -441,7 +441,7 @@ df_test['NumDealsPurchases'] = test_x_yj
 &nbsp;
 &nbsp;
 
-### 2-(3). Correlation
+### (3). Correlation
 
 - 앞서 수행한 pandas profiling report의 alert를 참고하여 상관계수를 계산했습니다.
 
@@ -485,7 +485,7 @@ test_dataset = df_test.copy()
 &nbsp;
 
 ## **3. Feature Engineering**
-#### 3-(1) `Dt_Customer` 변수 : 날짜 데이터 다루기
+### (1) `Dt_Customer` 변수 : 날짜 데이터 다루기
 - `Dt_Customer` 변수는 회사 등록일을 뜻합니다. 회사에 등록한 시점에 대한 정보를 유지하면서 모델링에 사용할 수 있는 새 수치형 변수를 만들려고합니다.
 
 ↪ 가장 과거 시점의 회사 등록일로부터 며칠이 지났는지를 뜻하는 `Pass_Customer`변수를 새롭게 생성합니다. 
@@ -577,7 +577,7 @@ train_dataset["Pass_Customer"].head()
 &nbsp;
 &nbsp;
 
-#### 3-(2) `Year_Birth` to `Age`
+### (2) `Year_Birth` to `Age`
 
 - `Year_Birth` 변수를 활용하여 고객의 나이를 뜻하는 `Age` 변수를 새롭게 생성했습니다.
 
@@ -626,7 +626,7 @@ train_dataset["Age"].head()
 &nbsp;
 &nbsp;
 
-#### 3-(3) `AcceptedCmp(1~5)` 와 `Response` 변수로 새 Feature 생성
+### (3) `AcceptedCmp(1~5)` 와 `Response` 변수로 새 Feature 생성
 
 - 위 여섯개의 변수는 고객이 1~5 번째와 마지막 캠페인에서 제안을 수락한 경우 1, 아닌경우 0 값을 가집니다.  
 

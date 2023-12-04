@@ -233,25 +233,25 @@ def pitch(sample, sampling_rate, pitch_factor = 0.8):
 
 - 모델링에 사용하면 도움이 될만한 몇가지 feature extraction 방법을 소개하겠습니다.
 
-#### **1. Zero Crossing Rate (ZCR)**
+#### **(1) Zero Crossing Rate (ZCR)**
 
 ↪ 특정 프레임이 지속 기간 동안의 신호의 부호(sign) 변화율 i.e. 신호의 부호가 바뀌는 비율
 
-#### **2. Chroma_shift**
+#### **(2) Chroma_shift**
 
 ↪ Waveform 또는 power spectrogram으로 생성한 chromagram. 
 
-#### **3. Mel spectrum**
+#### **(3) Mel spectrum**
 
 ↪ 오디오 신호(time domain)에 Fast Fourier Transform (FFT) -> Spectrum (frequency domain)  
 
 ↪ Spectrum + 필터링 (Mel filter bank) -> Mel spectrum  
 
-#### **4. MFCC (Mel-Frequency Cepstral Coefficient)**
+#### **(4) MFCC (Mel-Frequency Cepstral Coefficient)**
 
 ↪ Mel spectrum에서 Cepstral 분석을 통해 고유한 특성을 추출함
 
-#### **5. RMS (Root Mean Square)**
+#### **(5) RMS (Root Mean Square)**
 
 ↪ 오디오 평균 음량 측정
 
