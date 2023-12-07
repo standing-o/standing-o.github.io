@@ -221,7 +221,7 @@ df_test = test.copy()
 &nbsp;
 &nbsp;
 
-### (1). Outliers
+### (1) Outliers
 
 ```python
 fig, ax = plt.subplots(1, 2, figsize=(18,5))
@@ -326,7 +326,7 @@ print("# outliers to drop :", len(outlier_ind))
 &nbsp;
 &nbsp;
 
-### (2). Correlation
+### (2) Correlation
 
 - 앞서 수행한 pandas profiling report의 alert를 참고하여 상관계수를 계산했습니다.  
 
@@ -354,7 +354,7 @@ plt.show()
 &nbsp;
 
 ## **3. Feature Engineering**
-### (1). `company` 컬럼 생성
+### (1) `company` 컬럼 생성
 
 - `title` 변수 값들의 앞부분에는 공통적으로 자동차 회사의 이름이 오는것을 확인할 수 있습니다.
 - split 함수를 사용하여 첫번째 띄어쓰기를 기준으로 회사명 데이터를 추출하고 새 컬럼을 생성해주겠습니다.  
@@ -514,7 +514,7 @@ df_test['company'].unique()
 &nbsp;
 &nbsp;
 
-### (2). `paint`
+### (2) `paint`
 
 - 뒤죽박죽인 `paint` 변수를 고쳐주겠습니다.
 
@@ -655,7 +655,7 @@ print(len(df_test['paint'].unique()))
 &nbsp;
 &nbsp;
 
-### (3). `location`
+### (3) `location`
 
 - `location` 변수도 고쳐주겠습니다.
 
@@ -708,7 +708,7 @@ print(len(df_test['location'].unique()))
 &nbsp;
 &nbsp;
 
-### (4). `engine`
+### (4) `engine`
 - `engine` 변수를 수치형으로 바꿔주겠습니다.
 
 ```python
@@ -795,7 +795,7 @@ print(len(df_test['engine'].unique()))
 &nbsp;
 &nbsp;
 
-### (5). dropping
+### (5) dropping
 
 - train과 test 데이터의 `title`, `location`, `paint` 변수의 값 종류 및 길이가 일치하지 않습니다.
 

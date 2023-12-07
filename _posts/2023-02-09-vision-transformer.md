@@ -40,30 +40,30 @@ description: Vision Transformer (ViT) 의 기본 원리와 구조 | Vision Trans
 
 ## **Formulation**
 ### **1. Input**
-#### 1-1 Image
+#### (1) Image
 - (C, H, W) = (Channel, Height, Width)
     
 $$x\in\mathbb{R}^{C\times{H}\times{W}}$$
     
 
-#### 1-2. Flatten
+#### (2) Flatten
 - P : 패치 사이즈,  N : 이미지 당 패치의 개수
      
 $$x_p \in \mathbb{R}^{N \times (P^2 C)} \quad \text{where} \quad N=\frac{HW}{P^2}$$
 
-#### 1-3. Linear Projection
+#### (3) Linear Projection
 - D : Latent Vector의 크기
      
 $$[x^1_p E; x^2_p E; \cdots ; x^N_p] \in \mathbb{R}^{N \times D} \quad \text{where} \quad E \in \mathbb{R}^{(P^2 C)\times D}$$
 
-#### 1-4. Insert the Class Token
+#### (4) Insert the Class Token
 - BERT의 class token과 유사함 ➔ Embedding patch들 앞에 학습가능한 token을 추가함    
   ➔ Class token x<sub>cls</sub> 은 Transformer의 여러 Encoder 층을 거쳐 z<sup>0</sup><sub>L</sub>로 나오게 됨    
   ➔ 이는 이미지에 대한 Representation Vector    
 
 $$z_0= [x_{cls}; x^1_p E; x^2_p E; \cdots ; x^N_p] \in \mathbb{R}^{(N+1)\times D}$$
 
-#### 1-5. Add the Positional Encoding
+#### (5) Add the Positional Encoding
 (in progress)
     
 $$z_0= [x_{cls}; x^1_p E; x^2_p E; \cdots ; x^N_p] + E_{pos} \in \mathbb{R}^{(N+1)\times D} \quad \text{where} \quad E_{pos} \in \mathbb{R}^{(N+1)\times D}$$
@@ -73,7 +73,7 @@ $$z_0= [x_{cls}; x^1_p E; x^2_p E; \cdots ; x^N_p] + E_{pos} \in \mathbb{R}^{(N+
 &nbsp;
 
 ### **2. Transformer Encoder**
-#### 2-1. Multi-Head Self Attention (MSA)
+#### (1) Multi-Head Self Attention (MSA)
 - Query(q), Key(k), Value(v) 간의 관계를 추출
     
 $$q = z \cdot w_q, \,\, k=z\cdot w_k, \,\, v = z \cdot w_v \quad \text{where} \quad w_q, w_k, w_v \in \mathbb{R}^{D \times D_h}$$
@@ -89,11 +89,11 @@ $$q = z \cdot w_q, \,\, k=z\cdot w_k, \,\, v = z \cdot w_v \quad \text{where} \q
     
 $$\text{MSA}(z) = [SA_1(z); SA_2(z); \cdots ; SA_k(z)]U_{msa} \quad \text{where} \quad U_{msa} \in (k, D_h, D)$$
 
-#### 2-2. Multi-Layer Perceptron (MLP)
+#### (2) Multi-Layer Perceptron (MLP)
 - Pre-training : 1개의 Hidden layer 사용
 - Fine-tuning : 1개의 Linear Layer 사용
 
-#### 2-3. Encoder with L layers
+#### (3) Encoder with L layers
 - L  : layer 개수
 
 - `Layer Normalization ➔ Multi-head Self Attention ➔ Skip Connection`

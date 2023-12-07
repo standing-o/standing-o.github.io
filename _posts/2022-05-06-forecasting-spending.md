@@ -287,7 +287,7 @@ df_test = test.copy()
 &nbsp;
 &nbsp;
 
-### (1). Outliers
+### (1) Outliers
 
 - `id`와 `target`을 제외한 numerical 데이터의 outlier 들을 IQR method를 활용하여 찾아줍니다.
 
@@ -319,7 +319,7 @@ print("The number of train outliers :", len(train_multi_outliers))
 &nbsp;
 &nbsp;
 
-### (2). Transformation
+### (2) Transformation
 
 - 왜곡된 분포는 모델 학습에 안좋은 영향을 줄 수 있습니다. 높은 skewness를 가지고 있는 `NumDealsPurchases` 변수에 대하여 몇가지 transformation을 진행하려합니다.
 
@@ -441,7 +441,7 @@ df_test['NumDealsPurchases'] = test_x_yj
 &nbsp;
 &nbsp;
 
-### (3). Correlation
+### (3) Correlation
 
 - 앞서 수행한 pandas profiling report의 alert를 참고하여 상관계수를 계산했습니다.
 
