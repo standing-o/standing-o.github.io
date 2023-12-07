@@ -2,7 +2,7 @@
 title: "텐서플로우 가속 | Tensorflow Acceleration"
 date: 2023-09-16 13:00:00 +/-TTTT
 categories: [AI Framework, Tensorflow]
-tags: [tensorflow, distributed-training]
+tags: [tensorflow, distributed-training, gpu-acceleration]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
