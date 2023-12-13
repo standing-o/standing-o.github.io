@@ -239,13 +239,13 @@ _Image Caption_
 #### 사이트맵 플러그인으로 사이트맵 생성
 - Gemfile에 `jekyll-sitemap` 플러그인을 추가합니다.
 
-```
+```text
 gem "jekyll-sitemap"
 ```
 
 - 아래 명령어로 플러그인을 설치합니다.
 
-```commandline
+```terminal
 bundle install
 ```
 
@@ -256,7 +256,7 @@ plugins:
   - jekyll-sitemap
 ```
 
-- `사이트 주소/sitemap.xml` 로 접속하여 사이트맵을 확인할 수 있습니다.
+- `블로그 주소/sitemap.xml` 로 접속하여 사이트맵을 확인할 수 있습니다.
 
 &nbsp;
 &nbsp;
