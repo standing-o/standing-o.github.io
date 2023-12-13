@@ -236,6 +236,28 @@ _Image Caption_
 
 - `http://{github-username}.github.io`{: .filepath} 에 접속해서 블로그를 확인할 수 있습니다.
 
+#### 사이트맵 플러그인으로 사이트맵 생성
+- Gemfile에 `jekyll-sitemap` 플러그인을 추가합니다.
+
+```
+gem "jekyll-sitemap"
+```
+
+- 아래 명령어로 플러그인을 설치합니다.
+
+```commandline
+bundle install
+```
+
+- `_config.yml` 파일에 해당 플러그인을 추가합니다.
+
+```yaml
+plugins:
+  - jekyll-sitemap
+```
+
+- `사이트 주소/sitemap.xml` 로 접속하여 사이트맵을 확인할 수 있습니다.
+
 &nbsp;
 &nbsp;
 &nbsp;
