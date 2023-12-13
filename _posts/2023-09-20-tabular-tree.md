@@ -96,7 +96,7 @@ description: 정형 데이터에 딥러닝이 적절하지 않은 이유, 트리
 &nbsp;
 &nbsp;
 
-## **해석 3. 데이터는 회전 (Rotation) 에 Invariant 하지 않다.**
+## **해석 3. 데이터는 회전 <sup>Rotation</sup> 에 Invariant 하지 않다.**
 - 딥러닝 모델은 학습 및 테스트 과정에서 데이터의 Feature에 회전을 적용해도 결과가 변경되지 않습니다 (Rotationally Invariant 함).
 - 하지만 Tree 기반 모델들은 이러한 회전에 대해 Invariant 하지 않습니다. 즉, 데이터의 방향에 포함된 정보가 손실 될 가능성이 있습니다.
 - 아래 Figure를 보면, Feature들을 회전했을 때 딥러닝 모델들에 비해 Tree 기반 모델들의 성능이 더 크게 떨어집니다. 

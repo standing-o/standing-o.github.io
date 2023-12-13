@@ -14,7 +14,7 @@ description: Google cloud, compute engine, resource, billing
 
 --------------------------
 
-> Compute engine, Resource, 그리고 GCP billing에 대한 내용을 포함합니다.
+> Compute Engine, Resource, 그리고 GCP Billing에 대한 내용을 포함합니다.
 {: .prompt-info }
 
 클라우드 컴퓨팅은 필요할 때 요청하여 사용하며, 사용한 만큼 비용을 지불하는 서비스를 말합니다. 
@@ -64,7 +64,7 @@ description: Google cloud, compute engine, resource, billing
 &nbsp;
 &nbsp;
 
-## **Resource management**
+## **Resource Management**
 - Google cloud는 multi-region, region, zone을 통해 resource를 제공
   - Multi-region : America, Europe, Asia-Pacific ➔ divided into regions
   - Region : 같은 대륙 내에서 독립된 지리적 위치, region 내에서 네트워크 연결이 빠름   

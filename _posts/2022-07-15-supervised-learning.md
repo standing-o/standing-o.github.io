@@ -35,7 +35,7 @@ description: 지도학습 | Supervised learning, overfitting, underfitting, line
 
 
 
-### Problem formulation
+### Problem Formulation
 
 - $$X = R^d$$ is an input space
   - $$X = R^d$$ : a d-dimensional Euclidean space
@@ -50,7 +50,7 @@ description: 지도학습 | Supervised learning, overfitting, underfitting, line
 
 
 
-### Model generalization
+### Model Generalization
 
 - Learning is an ill-posed problem; data is limited to find a unique solution
 - Generalization (goal) : a model needs to perform well on unseen data
@@ -153,7 +153,7 @@ $$
 
 
 
-#### Gradient descent algorithm
+#### Gradient Descent Algorithm
 
 $$
 \theta_{new}=\theta_{old}-\alpha\frac{\partial}{\partial\theta}J(\theta)
@@ -276,7 +276,7 @@ $$
 $$
 
 
-### Kernel trick (not linearly separable)
+### Kernel Trick (not linearly separable)
 
 - **Polynomials**:
 
@@ -301,7 +301,7 @@ $$
 &nbsp;
 &nbsp;
 
-## **Artificial neural network (ANN)**
+## **Artificial Neural Network (ANN)**
 
 - Needs elaborated training schemes to improve performance
 
@@ -320,7 +320,7 @@ $$
 
 
 
-### Back propagation
+### Back Propagation
 
 - **Back propagation** barely changes lower-layer parameters (vanishing gradient)
 - Breakthrough
@@ -335,7 +335,7 @@ $$
 &nbsp;
 &nbsp;
 
-### Performance evaluation
+### Performance Evaluation
 
 - **Accuracy** = (TP+TN)/ALL
 - **Precision** = TP/(TP+FP)
@@ -349,7 +349,7 @@ $$
 
 
 
-### Error measure
+### Error Measure
 
 - The error measure should be specified by the user 
 
@@ -359,7 +359,7 @@ $$
 &nbsp;
 &nbsp;
 
-## **Ensemble learning**
+## **Ensemble Learning**
 
 - Predict class label for unseen data by aggregating a set of predictions : different classifiers (experts) learned from the training data
 - Make a decision with a voting

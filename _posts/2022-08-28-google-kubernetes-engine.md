@@ -1,5 +1,5 @@
 ---
-title: "구글 쿠버네티스 엔진이란? | Google Kubernetes Engine(GKE)"
+title: "구글 쿠버네티스 엔진이란? | Google Kubernetes Engine (GKE)"
 date: 2022-08-28 17:00:00 +/-TTTT
 categories: [Cloud, Google Cloud Platform (GCP)]
 tags: [gcp, kubernetes, gke]
@@ -51,7 +51,7 @@ Cloud Build를 활용하여 컨테이너를 생성하고, 해당 컨테이너를
 &nbsp;
 &nbsp;
 
-## **Google Kubernetes engine (GKE)**
+## **Google Kubernetes Engine (GKE)**
 - Kubernetes is powerful, but managing the infrastructure is a full-time job   
 ➔ Google cloud 내에서 유용한 기능 : GKE
 - GKE를 사용하면 GCP에서 container화된 app을 위해 kubernetes 환경을 배포, 관리, 확장 가능
@@ -85,7 +85,7 @@ Cloud Build를 활용하여 컨테이너를 생성하고, 해당 컨테이너를
 &nbsp;
 &nbsp;
 
-## **Computing options**
+## **Computing Options**
 - Fully customizable virtual machines
 - Persistent disks and optional local SSDs
 - Global load balancing and autoscaling

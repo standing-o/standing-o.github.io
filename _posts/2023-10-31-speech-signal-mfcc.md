@@ -29,7 +29,7 @@ Speech Emotion Recognition (SER)과 같은 task를 위해 머신러닝/딥러닝
 &nbsp;
 &nbsp;
 
-## **음성 신호란? (Audio Signal)**
+## **음성 신호란? <sup>Audio Signal</sup>**
 - 음성 신호는 아래와 같이 시간, 진폭, 주파수 세가지 domain으로 이루어져 있습니다.
   - **Time (시간) Domain**: 음성 신호는 연속적인 샘플 값으로 표현됩니다.
   - **Amplitude (진폭) Domain**: 음성 신호의 강도를 나타냅니다.
@@ -62,7 +62,7 @@ signal = signal[0:int(3 * sample_rate)]
 &nbsp;
 
 
-## **음성 분석을 위한 특성 추출 (Feature Extraction) | MFCC**
+## **음성 분석을 위한 특성 추출 <sup>Feature Extraction</sup> | MFCC**
 - 사람의 내는 소리 및 음소 (phoneme) 는 혀, 치아 등의 성도 (vocal track) 에 따라 다르게 표현됩니다. 
 - 성도의 모양은 Short-time Power Spectrum의 포락선 (envelope) 으로 표현될 수 있으며, MFCC는 이 포락선을 정확하게 포함하기 위해서 생성됩니다.
   - 스펙트럼 포락선은 주파수-진폭 평면의 곡선입니다.
@@ -101,7 +101,7 @@ emphasized_signal = np.append(signal[0], signal[1:] - pre_emphasis * signal[:-1]
 &nbsp;
 
 
-#### 2. 신호를 프레임으로 분할 (Framing)
+#### 2. 신호를 프레임으로 분할 <sup>Framing</sup>
 - 신호는 short-time 프레임으로 분할합니다.
 - 신호 내의 주파수는 시간에 따라 변하기 때문에, 신호 전체에 푸리에 변환을 사용하게 되면 시간에 따른 주파수 형태를 잃게 됩니다.
   - 따라서, 신호 내 주파수가 short-time 동안 안정적이라고 가정합니다.
@@ -252,7 +252,7 @@ mfcc = dct(filter_banks, type=2, axis=1, norm='ortho')[:, 1 : (num_ceps + 1)]  #
 &nbsp;
 &nbsp;
 
-#### 2. MFCC내 큰 계수들을 강조하거나 무시하는 데  Sinusoidal liftering을 적용할 수 있습니다.
+#### 2. MFCC내 큰 계수들을 강조하거나 무시하는 데  Sinusoidal Liftering을 적용할 수 있습니다.
 - 노이즈가 있는 환경에서 더 정확한 음성 인식이 가능합니다.
 
 ```python

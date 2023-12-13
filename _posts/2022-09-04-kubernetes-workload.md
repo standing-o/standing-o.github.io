@@ -21,7 +21,7 @@ Deployment는 Pod의 상태를 관리하며, Pod 간 네트워킹은 IP 주소�
 &nbsp;
 &nbsp;
 
-## **`kubectl` command**
+## **kubectl Command**
 - `Kubectl` : 관리자가 kubernetes cluster를 제어하는 데 사용하는 유틸리티
 - `Kubectl` transforms your command-line entires into API calls
   - `kubectl`은 명령줄 입력 내용은 API 호출로 전환한 후 선택한 kubernetes cluster 내 kubeAPI 서버로 전송
@@ -63,7 +63,7 @@ Deployment는 Pod의 상태를 관리하며, Pod 간 네트워킹은 IP 주소�
 &nbsp;
 &nbsp;
 
-## **Pod networking**
+## **Pod Networking**
 - **Pod** : a group of containers with shared storage and networking
   - Kubernetes의 'pod별 IP' 모델을 기반     
   ➔ 각 pod에 단일 IP 주소가 할당되고 pod 내의 container는 해당 IP 주소를 포함하여 동일한 네트워크 namespace를 공유

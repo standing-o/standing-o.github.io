@@ -24,7 +24,7 @@ description: 비지도학습 | Unsupervised learning
 &nbsp;
 &nbsp;
 
-## **In traditional machine learning**
+## **In Traditional Machine Learning**
 
 - K-means clustering
 - Hierarchical clustering
@@ -40,9 +40,9 @@ description: 비지도학습 | Unsupervised learning
 &nbsp;
 &nbsp;
 
-## **In Deep learing**
+## **In Deep Learing**
 
-### Feature engineering vs. Representation learning
+### Feature Engineering vs. Representation Learning
 
 - **Feature engineering**
   - By human
@@ -55,7 +55,7 @@ description: 비지도학습 | Unsupervised learning
 
 
 
-### Modern unsupervised learning
+### Modern Unsupervised Learning
 
 - High dimensional data
 - Difficult concepts ➔ Not well understood, but surprisingly good performance
@@ -64,7 +64,7 @@ description: 비지도학습 | Unsupervised learning
 
 
 
-### Representation in deep learning
+### Representation in Deep Learning
 
 - Deep learning representation is under constrained
   - Simple SGD can find one of the useful networks
@@ -79,7 +79,7 @@ description: 비지도학습 | Unsupervised learning
 
 
 
-### Angle information
+### Angle Information
 
 - 0 ~ 2&pi;
   - Algorithm thinks : 0 and 2&pi; are different / 0 and 1.9&pi; are far
@@ -89,13 +89,13 @@ description: 비지도학습 | Unsupervised learning
 
 
 
-### Spatial information
+### Spatial Information
 
 - Goal : Represent as mathematical object
 
 
 
-### Human representation problems
+### Human Representation Problems
 
 - Human can understand
 - Human can design with a goal
@@ -104,7 +104,7 @@ description: 비지도학습 | Unsupervised learning
 
 
 
-### A well defined task
+### A Well Defined Task
 
 - Typically, only on attribute of interest is considered as y
   - Imagenet - class
@@ -119,7 +119,7 @@ description: 비지도학습 | Unsupervised learning
   
   
 
-### Information bottleneck
+### Information Bottleneck
 
 - For a well defined supervised task, what should h<sub>i</sub> and h<sub>2</sub> satisfy?
 - Good representation - a vague concept (Unsupervised)
@@ -138,7 +138,7 @@ description: 비지도학습 | Unsupervised learning
 &nbsp;
 &nbsp;
 
-## **Unsupervised representation learning**
+## **Unsupervised Representation Learning**
 
 - Unsupervised performance ≈ supervised performance
   - For linear evaluation

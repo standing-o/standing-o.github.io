@@ -64,7 +64,7 @@ Docker와 같은 소프트웨어를 사용하여 컨테이너 이미지를 빌�
 &nbsp;
 &nbsp;
 
-## **Container image**
+## **Container Image**
 - Image : app과 종속 항목   
 ➔ Container : 실행중인 image instance    
 ➔ 소프트웨어를 container image로 빌드하면 개발자는 손쉽게 app을 패키징/제공 가능    

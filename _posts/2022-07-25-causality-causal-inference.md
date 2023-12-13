@@ -40,7 +40,7 @@ Back-door 기준은 인과 관계를 확인하고 혼동을 줄이는 데 도움
 &nbsp;
 &nbsp;
 
-## **Structural causal model (SCM)**
+## **Structural Causal Model (SCM)**
 
 - SCM $$M = <U,V,F,P(U)>$$ provides a formal framework.
 - SCM induces observational, interventional, and counterfactual distributions.
@@ -132,7 +132,7 @@ $$
 &nbsp;
 &nbsp;
 
-## **Modern identification tasks**
+## **Modern Identification Tasks**
 
 - Experimental conditions ➔ **Generalized identification**
 

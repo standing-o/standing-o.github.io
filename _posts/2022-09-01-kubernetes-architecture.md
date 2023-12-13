@@ -1,5 +1,5 @@
 ---
-title: "구글 쿠버네티스의 구조 | Google Kubernetes"
+title: "구글 쿠버네티스의 구조 | Google Kubernetes Architecture"
 date: 2022-09-01 17:00:00 +/-TTTT
 categories: [Cloud, Google Cloud Platform (GCP)]
 tags: [gcp, kubernetes, gke]
@@ -26,7 +26,7 @@ GKE는 컨트롤 플레인을 추상화하여 감추어줍니다. manifest 파�
 &nbsp;
 &nbsp;
 
-## **Kubernetes architecture**
+## **Kubernetes Architecture**
 - Kubernetes objects : persistent entities representing the state of the cluster
   - Object spec : 만들려는 각 객체에 대해 객체 사양을 kubernetes에 제공
   - Object status : current state described by kubernetes
