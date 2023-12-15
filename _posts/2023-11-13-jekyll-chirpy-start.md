@@ -228,7 +228,7 @@ _Image Caption_
 &nbsp;
 &nbsp;
 
-### 7. 깃허브에 블로그 배포하기
+### 7. 깃허브에 블로그를 배포합니다.
 
 - `{github-username}.github.io`{: .filepath} 라는 이름의 레포지토리를 생성하고 위의 파일들을 모두 push 합니다.
 
