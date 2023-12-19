@@ -41,8 +41,8 @@ Transformer는 순차적인 구조를 사용하지 않기에 입력 시퀀스의
 
 ## **Positional Encoding Formulation**
 - **<u>Definition</u>**ㅣ**Positional Encoding**
-  - 입력 시퀀스 $$\mathbb{w} = (w_0, \cdots, w_{L-1})$$, 위치(픽셀) $$pos \in [0, L-1]$$ 에 대한 단어 $$w$$에 대하여,       
-모델의 입력 벡터 차원 $$d_{\text{model}}=4$$ 라고 할때 4차원 임베딩 $$e_w$$ 에 대하여 모델에 들어가는 임베딩 $$e'_{w}$$ 는 다음과 같이 정의됩니다.
+  - 위치(픽셀) $$pos \in [0, L-1]$$ 와 단어 $$w$$에 대하여,       
+모델의 입력 벡터 차원 $$d_{\text{model}}=4$$ 라고 할때 4차원 임베딩 $$e_w$$ 에 대한 모델에 들어가는 임베딩 $$e'_{w}$$ 는 다음과 같이 정의됩니다.
   
 
   $$
@@ -55,7 +55,7 @@ Transformer는 순차적인 구조를 사용하지 않기에 입력 시퀀스의
   
   - 각 임베딩에 Positional Encoding을 더하기 위해 위치 임베딩의 차원을 단어 임베딩의 차원과 동일하게 유지합니다. $$(d_{\text{word embedding}} =d_{\text{positional embedding}})$$
   - 각 주파수에 대한 사인/코사인 함수들의 쌍으로 이해할 수 있습니다.
-  - 10000은 `Attention is all you need` [^ref1] 의 저자가 설정한 값입니다.
+  - $$10000$$은 `Attention is all you need` [^ref1] 의 저자가 설정한 값입니다.
 
 &nbsp;
 &nbsp;
@@ -121,7 +121,7 @@ _The 128-dimensional positonal encoding for a sentence with the maximum lenght o
   - 또한 **Sinusoidal Function**은 인접한 time step 사이의 거리가 **대칭** 형태를 띈다는 특징을 가지며, 이는 시간에 따라 적절하게 **감소**합니다.
 
 ![fig3](20231204-3.png){: width="600"}
-  - 이러한 사인 및 코사인 함수는 주기적이기 때문에 시퀀스 길이에 상관엇이 항상 동일한 범위 ([-1,1])를 갖습니다.
+  - 이러한 사인 및 코사인 함수는 주기적이기 때문에 시퀀스 길이에 상관없이 항상 동일한 범위 $$[-1,1]$$ 를 가집니다.
 &nbsp;
 &nbsp;
 &nbsp;
