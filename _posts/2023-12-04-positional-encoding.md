@@ -122,6 +122,7 @@ _The 128-dimensional positonal encoding for a sentence with the maximum lenght o
 
 ![fig3](20231204-3.png){: width="600"}
   - 이러한 사인 및 코사인 함수는 주기적이기 때문에 시퀀스 길이에 상관없이 항상 동일한 범위 $$[-1,1]$$ 를 가집니다.
+
 &nbsp;
 &nbsp;
 &nbsp;
@@ -169,6 +170,10 @@ _The 128-dimensional positonal encoding for a sentence with the maximum lenght o
 - 개선하기 위해 다음과 같은 방법이 제안되었습니다.
   - **Learned positional encoding**: Positional encoding을 학습 가능한 벡터로 대체합니다.
   - **Relative positional encoding**: 픽셀 또는 패치의 상대적인 위치 정보를 입력 데이터에 추가합니다.
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ----------------
 ## References
