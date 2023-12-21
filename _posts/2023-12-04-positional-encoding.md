@@ -32,7 +32,7 @@ Transformer는 순차적인 구조를 사용하지 않기에 입력 시퀀스의
   - 각 time step (문장 내 단어의 위치) 에 대해 고유한 인코딩을 출력해야 합니다.
   - 두 time step 사이의 거리는 문장의 길이와 상관없이 일관되어야 합니다.
   - 값들은 문장의 길이와 상관없이 bounded 되어야 합니다.
-- **Positional Encoding**은 위 기준들을 충족하면서, scalar가 아닌 위치 정보를 포함하는 차원 벡터로 정의됩니다.
+- **Positional Encoding**은 위 기준들을 충족하면서, 위치 정보를 포함하는 벡터로 정의됩니다.
   - 또한, 이 벡터는 모델 자체에 통합되지 않고 문장 내 각 단어의 위치에 대한 정보를 제공하는데 사용됩니다.
 
 &nbsp;
@@ -79,7 +79,7 @@ Transformer는 순차적인 구조를 사용하지 않기에 입력 시퀀스의
   _A sin curve and vary “pos” (on the x-axis) [^ref3]_
 
   - $$\frac{pos}{10000^{2i/d_{\text{model}}}}$$는 픽셀 또는 패치의 위치를 나타냅니다. 픽셀 또는 패치의 위치에 따라 $$sin(x)$$ 와 $$cos(x)$$ 의 값이 달라집니다.
-  - $$\frac{1}{10000^{2k/d}}$$ 에 해당하는 주파수는 벡터 차원을 따라 감소하며 $$2 \pi$$ 부터 $$ 10000 \times 2 \pi$$ 파장의 기하학적인 수열을 생성합니다.
+  - $$\frac{1}{10000^{2i/d}}$$ 에 해당하는 주파수는 벡터 차원을 따라 감소하며 $$2 \pi$$ 부터 $$ 10000 \times 2 \pi$$ 파장의 기하학적인 수열을 생성합니다.
 
 ![fig2](20231204-2.png){: width="700"}
 _The 128-dimensional positonal encoding for a sentence with the maximum lenght of 50 [^ref4]_
@@ -127,7 +127,7 @@ _The 128-dimensional positonal encoding for a sentence with the maximum lenght o
 &nbsp;
 &nbsp;
 
-## Positional Embedding 을 더하는 이유
+## **Positional Embedding 을 더하는 이유**
 - 위치 임베딩을 더하지 않고 연결 하려면 projection 에 대한 추가 매개변수들이 필요하며 이는 더 많은 메모리 사용을 야기합니다.
 - 하지만 위 이유 외에도 더하는 것의 이점을 직관적으로 설명하는 의견 [^ref5]이 있습니다.
   - Attention에서는 두 단어 임베딩 $$x, y$$ 을 각각 Query와 Key 행렬에 통과시키고, 결과 Query와 Key 벡터의 유사성을 내적으로 비교합니다.
