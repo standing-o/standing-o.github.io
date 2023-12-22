@@ -199,3 +199,6 @@ plugins:
   - jekyll-seo-tag
   - jekyll-sitemap
   - jekyll-feed
+
+feed:
+  path: https://standing-o.github.io//feed.atom
