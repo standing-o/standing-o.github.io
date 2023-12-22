@@ -6,6 +6,7 @@ gem "jekyll-theme-chirpy", "~> 6.2", ">= 6.2.3"
 
 gem 'jekyll-seo-tag'
 gem "jekyll-sitemap"
+gem 'jekyll-feed'
 
 group :test do
   gem "html-proofer", "~> 4.4"
