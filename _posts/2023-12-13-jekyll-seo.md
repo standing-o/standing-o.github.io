@@ -50,13 +50,13 @@ Search Engine Optimization (SEO)는 검색 엔진에서 게시글이 상위에 �
 &nbsp;
 &nbsp;
 
-## 주요 SEO 방법
+## SEO 방법
 ### 사이트맵 <sup>Sitemap</sup>
 - **Sitemap**은 웹 사이트의 페이지 구조를 검색 엔진에게 알려주는 XML 형식의 파일이나 페이지의 집합이며, 웹 사이트의 모든 중요한 페이지 및 그 구조에 대한 정보들을 포함하고 있습니다.
 - 검색 엔진 크롤러에게 어떤 페이지를 색인하고 어떤 페이지를 무시해야 하는지에 대한 지침을 제공하여 SEO에 도움을 줍니다.
 - 웹 사이트의 구조를 설명하고 오류를 식별하여 검색 엔진이 웹 사이트를 더 효과적으로 이해하고 사용자에게 더 나은 검색 결과를 제공할 수 있도록 합니다.
 
-![fig1](20231213-1.png){: width="700"}
+![fig1](20231213-1.png){: width="600"}
 _https://standing-o.github.io/sitemap.xml_
 
 ### RSS <sup>Really Simple Syndication</sup>
