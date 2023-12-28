@@ -7,11 +7,12 @@ toc: true
 ---
 
 # [**오 서 영 | Seoyoung Oh**](https://special-grip-6f7.notion.site/Seoyoung-Oh-2a6b295b15b4435bb7b945bb07a572ae)       
-안녕하세요, 오서영입니다. **데이터 사이언티스트, 머신러닝 엔지니어** 1년차로 일하고 있습니다.
+안녕하세요, 오서영입니다.       
+**데이터 사이언티스트, 머신러닝 엔지니어** 1년차로 일하고 있습니다.      
 
 - 꾸준히 공부하고 블로그에 기록합니다.
 - AI 논문을 읽고 종종 [**여기**](https://github.com/standing-o/Machine_Learning_Paper_Review)에 정리합니다.
-- 한번씩 [**AI 대회**](https://github.com/standing-o/my_DACON)에 참여하여 새 도메인을 공부하곤 합니다.
+- 한번씩 [**AI 대회**](https://github.com/standing-o/my_DACON)에 참여하여 새로운 도메인을 공부하곤 합니다.
 
 &nbsp;
 &nbsp;
