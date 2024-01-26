@@ -6,7 +6,7 @@ comments: false
 toc: true
 ---
 
-# [**오 서 영 | Seoyoung Oh**](https://special-grip-6f7.notion.site/Seoyoung-Oh-2a6b295b15b4435bb7b945bb07a572ae)       
+# [**오서영 | Seoyoung Oh**](https://special-grip-6f7.notion.site/Seoyoung-Oh-2a6b295b15b4435bb7b945bb07a572ae)       
 안녕하세요, 오서영입니다.       
 **데이터 사이언티스트, 머신러닝 엔지니어** 1년차로 일하고 있습니다.      
 
@@ -82,7 +82,8 @@ toc: true
  | [`Certificate`](https://coursera.org/share/654e453def5bab8c5757c67ed9387d05)
 - [x] [Convolutional Neural Networks](https://www.coursera.org/learn/convolutional-neural-networks) <sup>coursera</sup>
  | [`Certificate`](https://coursera.org/share/a1f2efff00d8cf1093d5db1f92f8b15d)
-- [ ] [Sequence Models](https://www.coursera.org/learn/nlp-sequence-models) <sup>coursera</sup>
+- [x] [Sequence Models](https://www.coursera.org/learn/nlp-sequence-models) <sup>coursera</sup>
+ | [`Certificate`](https://coursera.org/share/c5c85b0292eb38960f887346325cd0dc)
 - [x] [Dive into Deep Learning](https://d2l.ai/) <sup>book</sup>
 - [x] [Transformer Models and BERT Model](https://www.cloudskillsboost.google/course_templates/538) <sup>qwiklabs</sup>
  | [`Certificate`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306816?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
