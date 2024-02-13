@@ -1,7 +1,7 @@
 ---
 title: "[Dacon] 인구 데이터 기반 소득 예측 경진대회"
 date: 2022-04-29 17:26:00 +/-TTTT
-categories: [Competition, Dacon]
+categories: [Extracurricular Activities, Competition]
 tags: [classification, lightgbm, xgboost, ensemble, voting, dacon, ai-competition]
 author: seoyoung
 img_path: /assets/img/for_post/

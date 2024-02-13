@@ -1,7 +1,7 @@
 ---
 title: "2022 데이터 크리에이터 캠프 최우수상 수상 후기 | Data Creator Camp"
 date: 2022-12-06 17:00:00 +/-TTTT
-categories: [Review, Extracurricular Activity]
+categories: [Extracurricular Activities, Review]
 tags: [data-creator-camp, ai-competition]
 math: true
 author: seoyoung

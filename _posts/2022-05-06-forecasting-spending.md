@@ -1,7 +1,7 @@
 ---
 title: "[Dacon] 소비자 데이터 기반 소비 예측 경진대회"
 date: 2022-05-06 16:00:00 +/-TTTT
-categories: [Competition, Dacon]
+categories: [Extracurricular Activities, Competition]
 tags: [regression, lightgbm, xgboost, elasticnet, ensemble, dacon, ai-competition]
 author: seoyoung
 img_path: /assets/img/for_post/

@@ -1,7 +1,7 @@
 ---
 title: "2022 구글 클라우드 스터디잼 수료 후기 | AI&ML 중급/심화, 쿠버네티스 입문/중급/심화 과정"
 date: 2022-12-09 13:00:00 +/-TTTT
-categories: [Review, Extracurricular Activity]
+categories: [Extracurricular Activities, Review]
 tags: [google-cloud-study-jam, kubernetes]
 math: true
 author: seoyoung
