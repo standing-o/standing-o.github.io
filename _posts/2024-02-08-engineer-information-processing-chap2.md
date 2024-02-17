@@ -2,13 +2,13 @@
 title: "정보처리기사 필기 | 2. 소프트웨어 개발"
 date: 2024-02-02 00:00:00 +/-TTTT
 categories: [Extracurricular Activities, Certification]
-tags: [정보처리기사, platform, os, network, dbms, uml, agile, ui, module, oop, design-pattern, eai, esb, middle-ware]
+tags: [정보처리기사, data-structure, er-diagram, dbms, orm, apm, ide, drm, test-case, xml]
 math: true
 toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 pin: false
-description: 소프트웨어 설계 | 요구사항 확인, 화면 설계, 애플리케이션 설계, 인터페이스 설계
+description: 소프트웨어 개발 | 데이터 입출력 구현, 통합 구현, 제품 소프트웨어 패키징, 애플리케이션 테스트 관리, 인터페이스 구현
 ---
 
 > 자격증 정보처리기사 필기의 "Chapter 2. 소프트웨어 개발" 내용을 요약합니다.
