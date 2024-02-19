@@ -87,31 +87,31 @@ description: 소프트웨어 설계 | 요구사항 확인, 화면 설계, 애플
   - **1계층, 물리적 계층** <sup>Physical Layer</sup> ㅣ 물리적 연결 (랜, 동축, 광케이블) 을 위한 계층, 비트 스트림 데이터 전송
     - 데이터 전송 신호 운반에 요구되는 하드웨어 특성을 정의하여 전압 레벨, 인터페이스 핀의 위치가 정의
     - 기계적 (시스템과 주변장치 사이의 연결), 전기적 (전위 규격과 전위 변화의 타이밍), 기능적 (각 신호에 의미를 부여하여 수행)
-    - 프로토콜: RS-232C, V.24, X.21, V.35
+    - **프로토콜**: RS-232C, V.24, X.21, V.35
   - **2계층, 데이터링크 계층** <sup>Data Link Layer</sup> ㅣ 네트워크 개체들 간 데이터 전달 및 흐름제어 담당, 프레임 전송 단위
     - 스위치, 브리지
-    - 프로토콜: SDLC, HDLC, SLDP, PPP, SLIP, 이더넷
+    - **프로토콜**: SDLC, HDLC, SLDP, PPP, SLIP, 이더넷
   - **3계층, 네트워크 계층** <sup>Network Layer</sup> ㅣ 라우팅, 흐름 제어, 세그멘테이션, 오류 제어 등을 수행, 패킷 단위
     - 라우터, IP
-    - 프로토콜: X-25, IP/ICMP
+    - **프로토콜**: X-25, IP/ICMP
   - **4계층, 전송 계층** <sup>Transport Layer</sup> ㅣ 통신의 양 끝단 사용자들의 신뢰성 있는 전송을 보장, 세그먼트 단위, 음성/데이터 정보를 실제로 교환
     - PSTN, PSDN, ISDN, B-ISDN
-    - 프로토콜: TCP/UDP, SCTP
-  - **5계층, 세션 계층** <sup>Session Layer</sup> ㅣ 종단 간의 세션의 연결과 종료에 대한 역할, 데이터/메세지 단위
-    - 프로토콜: SSH/TLS
+    - **프로토콜**: TCP/UDP, SCTP
+  - **5계층, 세션 계층** <sup>Session LayerHTTP/FTP ㅣ 종단 간의 세션의 연결과 종료에 대한 역할, 데이터/메세지 단위
+    - **프로토콜**: SSH/TLS
   - **6계층, 표현 계층** <sup>Presentation Layer</sup> ㅣ 종단 간의 데이터 변환, 압축, 압축 해제, 암/복호화 담당, 데이터/메세지 단위
-    - 프로토콜: JPEG/MPEG, ASN.1, BER
+    - **프로토콜**: JPEG/MPEG, ASN.1, BER
   - **7계층, 응용 계층** <sup>Application  Layer</sup> ㅣ 사용자가 네트워크에 접근하여 여러 응용 서비스를 제공, 데이터/메세지 단위
-    - 프로토콜: TCP/IP (FTP, SMTP, HTTP, TELNET), OSI (FTAM, CMIP)
+    - **프로토콜**: TCP/IP (FTP, SMTP, HTTP, TELNET), OSI (FTAM, CMIP)
 
-- OSI 7 계층 데이터 단위
+- **OSI 7 계층 데이터 단위**
   - 계층에 상관없이 사용할 때는 통칭하여 PDU (Protocol Data Unit)이라고 부름
-  - APDU (Application Protocol Data Unit): 응용 계층에서 사용하는 데이터의 단위
-  - PPDU (Presentation Protocol Data Unit): 표현 계층에서 사용하는 데이터의 단위
-  - SPDU (Session Protocol Data Unit): 세션 계층에서 사용하는 데이터의 단위
-  - TPDU (Transport Protocol Data Unit): 전송 계층에서 사용하는 데이터의 단위, TCP에서는 세그먼트, UDP에서는 데이터 그램
-  - NPDU (Network Protocol Data Unit): 네트워크 계층에서 사용하는 데이터의 단위, 패킷
-  - DPDU (Data Link Protocol Data Unit): 데이터 링크 계층에서 사용하는 데이터의 단위, 프레임
+  - **APDU <sup>Application Protocol Data Unit</sup>**: 응용 계층에서 사용하는 데이터의 단위
+  - **PPDU <sup>Presentation Protocol Data Unit</sup>**: 표현 계층에서 사용하는 데이터의 단위
+  - **SPDU <sup>Session Protocol Data Unit</sup>**: 세션 계층에서 사용하는 데이터의 단위
+  - **TPDU <sup>Transport Protocol Data Unit</sup>**: 전송 계층에서 사용하는 데이터의 단위, TCP에서는 세그먼트, UDP에서는 데이터 그램
+  - **NPDU <sup>Network Protocol Data Unit</sup>**: 네트워크 계층에서 사용하는 데이터의 단위, 패킷
+  - **DPDU <sup>Data Link Protocol Data Unit</sup>**: 데이터 링크 계층에서 사용하는 데이터의 단위, 프레임
 
 
 &nbsp;
