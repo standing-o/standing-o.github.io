@@ -444,7 +444,7 @@ description: 소프트웨어 개발 | 데이터 입출력 구현, 통합 구현,
     - **입력 명세 <sup>Input Specification</sup>**: 입력 값 또는 테스트 조건
     - **출력 명세 <sup>Output Specification</sup>**: 기대 되는 출력 값 결과
     - **환경 설정**: 테스트 수행 시 필요한 HW, SW 환경
-    - **특수 절차 도구 <sup>Special Procedure Requirements**</sup>: 수행 시 특별히 요구되는 절차
+    - **특수 절차 도구 <sup>Special Procedure Requirements</sup>**: 수행 시 특별히 요구되는 절차
     - **의존성 기술 <sup>Inter-case Dependencies</sup>**: 테스트 케이스 간의 의존성
 
 &nbsp;
