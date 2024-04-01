@@ -12,7 +12,7 @@ description: Tensorflow 가속기를 활용하는 방법 | Tensorflow, Distribut
 
 ------------------------
 > GPU 환경에서 Tensorflow 가속기를 활용하는 방법들을 정리합니다.
-{: .prompt-tip }
+{: .prompt-info }
 
 TensorFlow는 기본적으로 CPU를 사용하여 수치 연산을 처리하지만 대규모 데이터나 복잡한 모델을 다룰 때는 GPU, TPU와 같은 가속기를 활용하여 연산을 가속할 수 있습니다.
 

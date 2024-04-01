@@ -64,7 +64,8 @@ $$[x^1_p E; x^2_p E; \cdots ; x^N_p] \in \mathbb{R}^{N \times D} \quad \text{whe
 $$z_0= [x_{cls}; x^1_p E; x^2_p E; \cdots ; x^N_p] \in \mathbb{R}^{(N+1)\times D}$$
 
 #### (5) Add the Positional Encoding
-- [Positional Encoding 이란?](https://standing-o.github.io/posts/positional-encoding/)
+> [Positional Encoding 이란?](https://standing-o.github.io/posts/positional-encoding/)
+{: .prompt-tip }
     
 $$z_0= [x_{cls}; x^1_p E; x^2_p E; \cdots ; x^N_p] + E_{pos} \in \mathbb{R}^{(N+1)\times D} \quad \text{where} \quad E_{pos} \in \mathbb{R}^{(N+1)\times D}$$
 
