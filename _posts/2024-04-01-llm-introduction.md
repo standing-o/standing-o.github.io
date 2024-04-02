@@ -160,7 +160,7 @@ Prompt와 Completion을 통해 모델을 조작하고 다양한 작업을 수행
 &nbsp;
 
 
-### **트랜스포머를 활용한 텍스트 생성**
+### **Transformer를 활용한 텍스트 생성 <sup>Text Generation</sup>**
 
 #### 번역 <sup>Translation</sup>: Sequence-to-sequence task
 1. 네트워크를 훈련하는 데 사용된 동일한 Tokenizer를 사용하여 입력 단어를 토큰화합니다.
@@ -304,7 +304,7 @@ Prompt와 Completion을 통해 모델을 조작하고 다양한 작업을 수행
 &nbsp;
 
 
-## **생성 AI 생명주기 <sup>Life Cycle</sup>**
+## **LLM Project 수행 과정**
 
 #### 1. 사용 사례 정의
 - 가능한 한 정확하고 좁은 범위로 정의합니다.
