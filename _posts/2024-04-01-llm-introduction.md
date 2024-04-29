@@ -1,5 +1,5 @@
 ---
-title: "LLM 및 Gen AI 프로젝트 입문 | LLM, Generative AI"
+title: "LLM 및 Gen AI 프로젝트 입문"
 date: 2024-04-01 00:00:00 +/-TTTT
 categories: [AI Theory, Natural Language Processing (NLP)]
 tags: [llm, gen-ai, generative-ai, prompt, in-context-learning, transformer]
