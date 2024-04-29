@@ -117,24 +117,6 @@ _The landscape of vector databases [^ref1] [^ref2] [^ref3]_
 
 #### 예시 [^ref6]
 - 의미 검색 애플리케이션에 최적화를 위한 Sentence Transformer 사용
-- Closed_qa 카테고리에 초점을 맞춘 Databricks-Dolly 데이터 셋 사용
-
-```python
-from datasets import load_dataset
-
-train_dataset = load_dataset("databricks/databricks-dolly-15k", split='train')
-closed_qa_dataset = train_dataset.filter(lambda example: example['category'] == 'closed_qa')
-
-'''
-{
-  "instruction": "When was Tomoaki Komorida born?",
-  "context": "Komorida was born in Kumamoto Prefecture on July 10, 1981. After graduating from high school, he joined the J1 League club Avispa Fukuoka in 2000. His career involved various positions and clubs, from a midfielder at Avispa Fukuoka to a defensive midfielder and center back at clubs such as Oita Trinita, Montedio Yamagata, Vissel Kobe, and Rosso Kumamoto. He also played for Persela Lamongan in Indonesia before returning to Japan and joining Giravanz Kitakyushu, retiring in 2012.",
-  "response": "Tomoaki Komorida was born on July 10, 1981.",
-  "category": "closed_qa"
-}
-'''
-```
-
 - 각 명령어 셋과 해당 컨텍스트에 대한 단어 임베딩을 생성하고 이를 벡터 데이터베이스인 ChromaDB에 통합
   - 각 데이터 세트 항목에 대해 LLM 프롬프트에서 검색을 위한 문서 역할을 하는 컨텍스트와 함께 결합된 명령 및 컨텍스트 필드의 임베딩을 생성하고 저장
 
