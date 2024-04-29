@@ -7,7 +7,7 @@ math: true
 toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
-pin: true
+pin: false
 image:
   path: 20230920-t.png
   alt: ""
