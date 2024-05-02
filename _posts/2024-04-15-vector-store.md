@@ -131,7 +131,7 @@ collection = self.client.create_collection(name=collection_name)
 for i, item in enumerate(dataset):
     # combined_text = "instruction" + "context"
     embeddings = embedding_model.encode(combined_text).tolist()
-    collection.add(embeddings=[embeddings], documents=["context], ids=["id"])
+    collection.add(embeddings=[embeddings], documents=["context"], ids=["id"])
 
 query_embeddings = embedding_model.encode(query).tolist()
 collection.query(query_embeddings=query_embeddings, n_results=n_results)
