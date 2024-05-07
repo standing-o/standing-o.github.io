@@ -104,7 +104,7 @@ ChromaDB, Weaviate, Qdrant, Pinecone, Faiss 등 다양한 벡터 데이터베이
 ## **Vector DB Variation**
 
 ![fig1](20240415-1.png){: width="700"}
-_The landscape of vector databases [^ref1] [^ref2] [^ref3]_
+_The landscape of vector databases [^ref1]_
 
 
 
@@ -115,7 +115,7 @@ _The landscape of vector databases [^ref1] [^ref2] [^ref3]_
 - 사용이 단순하며 LLM 프로젝트에 쉽게 통합 가능
 - LangChain 및 LlamaIndex 지원
 
-#### 예시 [^ref6]
+#### 예시 [^ref2]
 - 의미 검색 애플리케이션에 최적화를 위한 Sentence Transformer 사용
 - 각 명령어 셋과 해당 컨텍스트에 대한 단어 임베딩을 생성하고 이를 벡터 데이터베이스인 ChromaDB에 통합
   - 각 데이터 세트 항목에 대해 LLM 프롬프트에서 검색을 위한 문서 역할을 하는 컨텍스트와 함께 결합된 명령 및 컨텍스트 필드의 임베딩을 생성하고 저장
@@ -203,7 +203,7 @@ enriched_answer = falcon_model.generate_answer(user_question, context=context)
 - 자체 호스팅하고 관리할 수 있는 옵션을 제공하는 동시에 Weaviate Cloud에서 서버리스, 자체 클라우드 또는 Azure, AWS 및 GCP 내부에서 사용할 수 있는 클라우드 솔루션을 제공
 - OpenAI, Cohere, HuggingFace 제공
 
-#### 예시 [^ref4]
+#### 예시 [^ref3]
 - Weaviate 클라이언트를 벡터 데이터베이스 인스턴스에 연결하는 것으로 구성
   - OpenAI , Cohere 또는 Hugging Face의 임베딩 모델 또는 LLM을 사용하는 경우 이 단계에서 API 키를 제공하여 통합을 활성화함
 
@@ -289,7 +289,7 @@ response = (
 - OpenAPI v3와 다양한 언어에 대한 클라이언트 제공
 
 
-#### 예시 [^ref5]
+#### 예시 [^ref4]
 - Sentence Transformer를 이용한 임베딩 생성
 
 ```python
@@ -424,15 +424,10 @@ client.recommend(
 #### References
 
 [^ref1]: [Why You Shouldn’t Invest In Vector Databases?](https://blog.det.life/why-you-shouldnt-invest-in-vector-databases-c0cd3f59d23c)
-    
-[^ref2]: [The Top 5 Vector Databases](https://www.datacamp.com/blog/the-top-5-vector-databases)
-    
-[^ref3]: [Integrating Vector Databases with LLMs: A Hands-On Guide](https://www.qwak.com/post/utilizing-llms-with-embedding-stores)
+     
+[^ref2]: [Integrating Vector Databases with LLMs: A Hands-On Guide](https://www.qwak.com/post/utilizing-llms-with-embedding-stores)
 
-[^ref4]: [From prototype to production: Vector databases in generative AI applications](https://stackoverflow.blog/2023/10/09/from-prototype-to-production-vector-databases-in-generative-ai-applications/)
+[^ref3]: [From prototype to production: Vector databases in generative AI applications](https://stackoverflow.blog/2023/10/09/from-prototype-to-production-vector-databases-in-generative-ai-applications/)
 
-[^ref5]: [Large Language Models and Vector Databases for News Recommendations](https://towardsdatascience.com/large-language-models-and-vector-databases-for-news-recommendations-6f9348fd4030)
-
-[^ref6]: [Integrating Vector Databases with LLMs: A Hands-On Guide](https://www.qwak.com/post/utilizing-llms-with-embedding-stores)
-
+[^ref4]: [Large Language Models and Vector Databases for News Recommendations](https://towardsdatascience.com/large-language-models-and-vector-databases-for-news-recommendations-6f9348fd4030)
     
