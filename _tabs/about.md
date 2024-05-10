@@ -8,7 +8,7 @@ toc: true
 
 # [**오서영 | Seoyoung Oh**](https://special-grip-6f7.notion.site/Seoyoung-Oh-2a6b295b15b4435bb7b945bb07a572ae)       
 안녕하세요, 오서영입니다.       
-**데이터 사이언티스트, 머신러닝 엔지니어** 1년차로 일하고 있습니다.      
+**데이터 사이언티스트, 머신러닝 엔지니어** 2년차로 꾸준히 공부하고 있습니다.      
 
 - 꾸준히 공부하고 블로그에 기록합니다.
 - AI 논문을 읽고 종종 [**여기**](https://github.com/standing-o/Machine_Learning_Paper_Review)에 정리합니다.
@@ -33,10 +33,9 @@ toc: true
 - **Terenz (주식회사 테렌즈)** | 2023.02 - 현재        
   ➔ AI Team Senior Researcher | AI팀 선임연구원       
   ➔ Data Scientist, Machine Learning Engineer 직무        
-  ➔ AI 암 진단 플랫폼, 음성대화 인터페이스 및 챗봇, 문서 텍스트 크롤링
 
 ## <u>Education</u>
-- **경상국립대학교 대학원 수학과 해석학 및 응용수학 전공 석사과정**
+- **경상국립대학교 대학원 수학과 해석학 및 응용수학 전공 석사**
  | 2021.03 - 2023.02    
   ➔ Time-series Forecasting with Deep Learning, Graph Theory, Dynamical Modeling
    
