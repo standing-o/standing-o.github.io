@@ -32,10 +32,10 @@ AI를 활용한 의료 이미지 분석 분야에서는 머신러닝 및 딥러�
 
 
 ## **Introduction**
-- 1970년부터 1990년 즈음에는 저수준의 픽셀 처리와 수학적 모델링을 기반으로 한 **Rule-based** system 및 전문가 시스템이 널리 활용됨
+- 1970년부터 1990년 즈음에는 저수준의 픽셀 처리와 수학적 모델링을 기반으로 한 **Rule-based system** 및 전문가 시스템이 널리 활용됨
 - 1990년대 후반부터는 지도학습과 같은 **기계 학습** 접근 방식이 활용되기 시작하였으며, 시스템은 사람이 디자인하고 예제 데이터를 사용하여 모델을 훈련함. 
 특히 연구자가 직접 이미지로부터 추출한 특성들 (Handcrafted features) 을 토대로 최적의 결정 경계를 도출함.
-- 딥러닝이 도입된 이후 컴퓨터가 데이터를 통해 최적의 특성을 스스로 학습하게 됨.
+- **딥러닝**이 도입된 이후 컴퓨터가 데이터를 통해 최적의 특성을 스스로 학습하게 됨.
   - 주로 이미지에 대하여 여러개의 층을 가진 CNN (Lenet, Alexnet 등)이 널리 사용되었으며, Imagenet 챌린지와 같은 성과를 토대로 의료 영상 분석 분야에서도 딥러닝 기법으로 연구 방향을 점진적으로 전환하게 됨. 
 - 주요 기술적 발전으로는 주성분 분석 (PCA), 이미지 패치 클러스터링, 사전 접근법 (Dictionary approaches), CNN (Convolutional neural network) 등의 기법이 있음.
 
@@ -179,6 +179,10 @@ _Formulations of the Naive bayes [^ref6]_
 ### **합성곱 신경망 <sup>Convolutional Neural Network, CNN</sup>**
 - 합성곱 (Convolution) layer, pooling layer, fully-connected layer로 구성됨
 - 주로 이미지 데이터를 입력으로 복잡한 Feature map을 학습하여 정보 영역 선택, 특징 추출, 분류 등의 task를 수행함.
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ![fig8](20240604-8.png){: width="800"}
 _Formulations of the deep learning models [^ref6]_
@@ -351,7 +355,7 @@ _Types of learning [^ref5]_
 
 ### **Detection**
 - Manual Detection은 환자에게 심각한 결과를 초래할 수 있는 여러 문제를 겪고 있어, 이러한 문제를 최소화 하기 위해 자동 감지가 필요함.
-- Detection Task는 주로 장기, 병변 및 랜드마크 위치를 지정해주는데 쓰이며, 특히 3D 데이터 파싱을 위해 다양한 접근 방식이 제안됨:
+- **Detection Task**는 주로 장기, 병변 및 랜드마크 위치를 지정해주는데 쓰이며, 특히 3D 데이터 파싱을 위해 다양한 접근 방식이 제안됨:
   - 3D 영역을 2D 직교 평면의 조합으로 처리함, 3개의 독립적인 2D MRI 슬라이스로 원거리 대퇴 표면의 랜드마크 식별, 2D CT 볼륨 파싱 후 3D 경계 상자를 식별하여 심장, 대동맥 궁, 하행 대동맥 근처의 ROI 식별.
 - 객체 또는 병변 탐지는 의료 진단 영역의 주요 부분이며, 임상의에게 많은 시간을 소모하게 함. 이를 AI를 통해 이미지 내 작은 병변의 위치를 지정하고 식별하는 것으로 해결.
 - 대부분의 탐지 시스템은 CNN을 사용하여 픽셀을 분류 후 후처리를 수행하며, 문맥적 또는 3D 정보를 포함하기에 Multi-stream CNN을 사용함.
@@ -371,9 +375,9 @@ _Types of learning [^ref5]_
 - **Segmentation Task**는 장기 및 하위 구조를 분할하여 부피 및 형태와 관련된 임상 파라미터의 정량적 분석을 가능하게 함.
   - 주요 접근법은 객체의 윤곽 또는 내부를 구성하는 폭셀(voxel)을 식별하는 것이고 일반적으로 U-net, V-net, RNN 등이 활용될 수 있음.
 - 3D 이미지를 직접적으로 처리하여 2D 이미지에 비해 더 정확한 Segmentation을 가능케 하는 3D CNN-based Segmentation 기법이 있음.
-  - Efficient dense training scheme: 전체 이미지를 사용하는 대신 인접한 이미지 패치를 사용하여 학습
+  - **Efficient dense training scheme**: 전체 이미지를 사용하는 대신 인접한 이미지 패치를 사용하여 학습
   - Deeper and more discriminative 3D-CNNs
-  - Dual pathway architecture: 여러 스케일에서 병렬로 처리.
+  - **Dual pathway architecture**: 여러 스케일에서 병렬로 처리.
 - Pereira et al. | 작은 CNN Kernel을 활용하여 글리오마 (가장 공격적인 뇌종양)를 분할하였음.
 - Avendi et al. | 딥러닝 구조를 결합한 심장 좌심실 분할을 통해 임상 평가에 중요한 지표를 제공.
 
@@ -455,8 +459,8 @@ _Types of learning [^ref5]_
   - Schlegl et al. (2015) | 리포트를 활용한 이미지 분류 정확도 개선
   - Kisilev et al. (2016) | 유방 병변에 대해 BI-RADS 기술어 예측.
   - Shin et al. (2015, 2016a) | PACS 시스템에서 추출한 대규모 데이터 세트의 방사선 보고서 및 이미지 간의 의미적 상호작용을 추출.
-- 잠재 디리클레 할당(LDA) 사용.
-  - Wang et al. (2016e) | LDA 사용.
+- 잠재 디리클레 할당(LDA) 사용
+  - Wang et al. (2016e) | LDA 사용
   - Shin et al. (2016a) | CNN을 이용하여 이미지의 레이블을 한 번에 하나씩 생성하고, 이를 사용하여 RNN을 훈련시켜 MeSH 키워드 시퀀스 생성.
 
 &nbsp;
@@ -502,7 +506,7 @@ _Generating image patches from one CT slide [^ref2], [^ref3]_
   - Multi-modal RBM을 통해 MRI와 PET 이미지의 High-level hidden feature을 찾고, 3D 패치에서 특징을 추출하여 다층 RBM으로 분류함.
   - AD 분류에서 RBM이 CNN보다 뛰어난 성능을 보여준다는 연구 결과가 있음.
 - **로컬 패치**를 활용하는 학습 기법은 로컬 패치에서 Representation으로, Representation에서 라벨로의 매핑을 학습함
-  - 로컬 패치가 해부학적 맥락 정보를 놓칠 수 있음. 이를 해결하기 위해 Ghafoorian et al.(2016b)은 패치 측면에서 샘플링 비율을 점진적으로 낮춰 더 넓은 맥락을 포괄
+  - Ghafoorian et al.(2016b) | 로컬 패치가 해부학적 맥락 정보를 놓칠 수 있기에, 패치 측면에서 샘플링 비율을 점진적으로 낮춰 더 넓은 맥락을 포괄함.
 - 또 다른 접근법은 Multi-scale 분석 및 Fully-connected layer에서의 표현 융합
 - 뇌 종양을 분할하기위해 딥러닝 기반 Segmentation 모델이 활용됨.
   - 종양 패치 이미지를 통해 Two-pathway 또는 Cascaded 구조 기반 CNN을 학습하여 비종양, 괴사, 부종, 증강 종양 등으로 세분화함.
@@ -529,8 +533,8 @@ _Two pathways and cascaded architectures [^ref2], [^ref4]_
   - 색상 정규화
 
 - **<u>사례: 조직병리학 (Histopathology)</u>**
-  - Janowczyk et al. (2016a): H&E 염색 이미지를 대상으로한 Stain normalization를 위한 Deep sparse AE 기법을 소개.
-  - Sethi et al. (2016): CNN 기반 조직 분류에 색상 정규화의 중요성을 강조.
+  - Janowczyk et al. (2016a) | H&E 염색 이미지를 대상으로한 Stain normalization를 위한 Deep sparse AE 기법을 소개.
+  - Sethi et al. (2016) | CNN 기반 조직 분류에 색상 정규화의 중요성을 강조.
 - 유방암 병리 이미지 분석에 DeepMitosis라고 불리는 50개 층의 CNN을 활용하여 TP/FP에 대한 확률 점수를 추정한 연구가 진행됨.
 
 
@@ -628,7 +632,7 @@ _Two pathways and cascaded architectures [^ref2], [^ref4]_
   - **비지도 학습**: 매우 큰 양의 라벨이 없는 데이터를 사용 가능.
   - Variational Auto Encoder (VAE)
   - 생성적 적대 신경망 (GANs)
-  - 설**명 가능성 (Explainable AI, XAI)**: '블랙 박스'로 설명되지 않는 딥러닝 문제를 해결하기 위한 다양한 기법들
+  - **설명 가능성 (Explainable AI, XAI)**: '블랙 박스'로 설명되지 않는 딥러닝 문제를 해결하기 위한 다양한 기법들
     - 역전파, Captioning 작업, Bayesian 통계와의 결합을 통해 신뢰할 수 없는 예측을 할 때 이를 파악하는 능력
 
 - **주요 연구 성과**
@@ -644,7 +648,7 @@ _Two pathways and cascaded architectures [^ref2], [^ref4]_
 
 ## **Challenges**
 - **대규모 데이터셋 부족**: 훈련 데이터셋이 부족
-  - PACS 시스템: 서양 병원의 방사선과에서 사용된 PACS 시스템은 수백만 장의 이미지를 저장하고 있어 데이터 양의 상당한 축적이 가능
+  - **PACS 시스템**: 서양 병원의 방사선과에서 사용된 PACS 시스템은 수백만 장의 이미지를 저장하고 있어 데이터 양의 상당한 축적이 가능
 - **Labeling (Annotation) 어려움**: PACS 시스템은 방사선 의사가 작성한 자유 텍스트 보고서를 저장하고 있으나 이를 자동화된 방식으로 정확한 레이블로 전환하는 것은 매우 복잡
   - 전문가가 직접 이미지를 라벨링하는 경우, 비용과 시간이 많이 소모
   - 단층 촬영 이미지 분할을 위해 3D 슬라이스별 주석을 달아야 하는 경우가 많으며, 이는 매우 많은 시간을 필요로 함.
@@ -660,7 +664,7 @@ _Two pathways and cascaded architectures [^ref2], [^ref4]_
 - **의료 영상 분석의 도전 과제**
   - 3D 흑백이나 다중 채널 이미지와 같은 대부분의 의료 영상에서는 사전 훈련된 네트워크나 아키텍처가 존재하지 않아 새롭게 개발된 네트워크가 필요함.
   - 의료 영상에는 비등방성 복셀 크기, 다양한 채널 간의 작은 등록 오류, 다양한 강도 범위와 같은 고유한 문제가 있음.
-  - 분류 문제로 제기할 수 없는 작업들도 종종 존재하며, 이 경우 비딥러닝 방법 (Counting, segmentation, regression)으로 후처리가 필요함.
+  - 분류 문제로 제기할 수 없는 작업들도 종종 존재하며, 이 경우 비딥러닝 방법 (Counting, segmentation, regression) 으로 후처리가 필요함.
 
 
 
