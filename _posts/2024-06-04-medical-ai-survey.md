@@ -2,7 +2,7 @@
 title: "의료 인공지능의 모든 것 | Medical AI"
 date: 2024-06-04 00:00:00 +/-TTTT
 categories: [AI Theory, Medical AI]
-tags: []
+tags: [medical-ai, classification, detection, segmentation, registration, supervised-learning, svm, tree, xai]
 math: true
 toc: true
 author: seoyoung
