@@ -525,7 +525,7 @@ _Two pathways and cascaded architectures [^ref2], [^ref4]_
 
 
 
-## **Pathology and Microscopy**
+### **Pathology and Microscopy**
 - **<u>주요 도전과제</u>**
   - 핵 탐지, 세분화 및 분류
   - 대형 기관 세분화
