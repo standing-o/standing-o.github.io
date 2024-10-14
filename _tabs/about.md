@@ -25,23 +25,23 @@ toc: true
 
 ## <u>Interests</u>
 - **Machine Learning and Deep Learning**     
-| Time-series Forecasting, Computer Vision, NLP, Audio (Speech), Anomaly Detection, XAI
+| Medical AI, Time-series Forecasting, Computer Vision, LLM, Audio (Speech), Anomaly Detection, XAI
 - MLOps, Kafka, FastAPI, Docker, GCP, AWS
 - Dynamical Modeling, PDEs, Graph Theory
 
 ## <u>Working</u>
-- **Terenz (주식회사 테렌즈)** | 2023.02 - 현재        
+- **Terenz Co., Ltd. (주식회사 테렌즈)** | 2023.02 - 현재        
   ➔ AI Team Senior Researcher | AI팀 선임연구원       
   ➔ Data Scientist, Machine Learning Engineer 직무        
 
 ## <u>Education</u>
-- **경상국립대학교 대학원 수학과 해석학 및 응용수학 전공 석사**
+- **_석사_** :: **경상국립대학교 대학원 수학과 - 해석학 및 응용수학 전공**
  | 2021.03 - 2023.02    
   ➔ Time-series Forecasting with Deep Learning, Graph Theory, Dynamical Modeling
    
-- **경상대학교 수학과 학사**
+- **_학사_** :: **경상대학교 수학과**
  | 2019.11 - 2021.02    
-  ➔ Pattern Formation in PDEs, Neural Network, Feature Engineering, Segmentation  
+  ➔ Pattern Formation in PDEs, Neural Networks, Feature Engineering, Segmentation  
 
 &nbsp;
 &nbsp;
@@ -62,9 +62,9 @@ toc: true
  | [`Certificate`](https://coursera.org/share/28e4c0d5efe5122374333714b987a60e)
 - [x] [라온피플 머신러닝 아카데미](https://blog.naver.com/PostView.naver?blogId=laonple&logNo=220463627091&categoryNo=22&parentCategoryNo=0&viewDate=&currentPage=9&postListTopCurrentPage=&from=postList&userTopListOpen=true&userTopListCount=10&userTopListManageOpen=false&userTopListCurrentPage=9) <sup>blog</sup>
 - [x] [Interpretable Machine Learning](https://christophm.github.io/interpretable-ml-book/) <sup>book</sup>
-- [ ] [Pattern Recognition & Machine Learning](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/) <sup>book</sup>
 - [x] [Introduction to Responsible AI](https://www.cloudskillsboost.google/course_templates/554) <sup>qwiklabs</sup>
  | [`Certificate`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5305970?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
+- [ ] [Pattern Recognition & Machine Learning](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/) <sup>book</sup>
 
 
 ## <u>Time-series Forecasting</u>
@@ -102,6 +102,13 @@ toc: true
  | [`Certificate`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306870?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
 - [x] [Attention Mechanism](https://www.cloudskillsboost.google/course_templates/537) <sup>qwiklabs</sup>
  | [`Certificate`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306768?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
+- [x] [Generative AI with Large Language Models](https://www.coursera.org/learn/generative-ai-with-llms) <sup>coursera</sup>
+ | [`Certificate`](https://coursera.org/share/f20799e05ed70337fd920ff323966808)
+- [x] [Deep Learning: GANs and Variational Autoencoders](https://www.udemy.com/course/deep-learning-gans-and-variational-autoencoders/) <sup>udemy</sup>
+ | [`Certificate`](https://www.udemy.com/certificate/UC-2fecc074-8e95-4f23-a665-6cafed08ba65/)
+- [x] [딥러닝 차세대 혁신기술 - 물리 정보 신경망 입문과 Pytorch 실습](https://inf.run/UYvUz) <sup>inflearn</sup>
+ | [`Certificate`](https://www.inflearn.com/certificate/1411281-333480-12961930)
+
 
 ## <u>Deep Learning Framework</u>
 - [x] [Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning](https://www.coursera.org/learn/introduction-tensorflow) <sup>coursera</sup>
@@ -114,24 +121,35 @@ toc: true
 - [ ] [Generative Deep Learning with TensorFlow](https://www.coursera.org/learn/generative-deep-learning-with-tensorflow?specialization=tensorflow-advanced-techniques) <sup>coursera</sup>
 
 
-
 ## <u>MLOps</u>
 - [x] [MLOps for ALL](https://mlops-for-all.github.io/) <sup>post</sup>
 - [x] [머신러닝 오퍼레이션 자동화, MLOps by 변성윤님](https://zzsza.github.io/mlops/2018/12/28/mlops/) <sup>post</sup>
 - [x] [ML Engineer를 위한 MLOps](https://mlops-for-mle.github.io/tutorial/) <sup>post</sup>
-- [ ] [Introduction to Machine Learning in Production](https://www.coursera.org/learn/introduction-to-machine-learning-in-production?) <sup>coursera</sup>
-- [ ] [Machine Learning Data Lifecycle in Production](https://www.coursera.org/learn/machine-learning-data-lifecycle-in-production?specialization=machine-learning-engineering-for-production-mlops) <sup>coursera</sup>
-- [ ] [Machine Learning Modeling Pipelines in Production](https://www.coursera.org/learn/machine-learning-modeling-pipelines-in-production?specialization=machine-learning-engineering-for-production-mlops) <sup>coursera</sup>
-- [ ] [Deploying Machine Learning Models in Production](https://www.coursera.org/learn/deploying-machine-learning-models-in-production?specialization=machine-learning-engineering-for-production-mlops) <sup>coursera</sup>
-- [ ] [Machine Learning Operations](https://ml-ops.org/) <sup>post</sup>
-- [ ] [도커(Docker) 입문편 컨테이너 기초부터 서버 배포까지](https://www.44bits.io/ko/post/easy-deploy-with-docker) <sup>post</sup>
+- [x] [Machine Learning Operations](https://ml-ops.org/) <sup>post</sup>
+- [x] [Working with Advanced Docker Operations](https://www.udemy.com/course/working-with-advanced-docker-operations) <sup>udemy</sup>
+ | [`Certificate`](https://www.udemy.com/certificate/UC-3966c70f-488a-429e-9edb-e9c526eb7881/)
+- [x] [MLflow in Action - Master the art of MLOps using MLflow tool](https://www.udemy.com/course/mlflow-course/) <sup>udemy</sup>
+ | [`Certificate`](https://www.udemy.com/certificate/UC-f893216c-db42-4797-a3c0-b3c9d91fcc1d/)
+- [x] [Docker MasterClass : Docker - Compose - SWARM - DevOps 2024](https://www.udemy.com/course/docker-for-devops) <sup>udemy</sup>
+ | [`Certificate`](https://www.udemy.com/certificate/UC-d34cf66b-dc89-49b4-a522-a51d5243f504/)
+- [x] [실전도커: 도커로 나만의 딥러닝 클라우드 컴퓨터 만들기](https://inf.run/LnAFh) <sup>inflearn</sup>
+ | [`Certificate`](https://www.inflearn.com/certificate/1411281-332626-12961929)
+- [ ] [Python Essentials for MLOps](https://www.coursera.org/learn/python-mlops-duke) <sup>coursera</sup>
+- [ ] [DevOps, DataOps, MLOps](https://www.coursera.org/learn/devops-dataops-mlops-duke) <sup>coursera</sup>
+- [ ] [MLOps Platforms: Amazon SageMaker and Azure ML](https://www.coursera.org/learn/mlops-aws-azure-duke) <sup>coursera</sup>
+- [ ] [MLOps Tools: MLflow and Hugging Face](https://www.coursera.org/learn/mlops-mlflow-huggingface-duke) <sup>coursera</sup>
+- [ ] [Machine Learning in Production](https://www.coursera.org/learn/introduction-to-machine-learning-in-production) <sup>coursera</sup>
+- [ ] [Machine Learning Engineering Open Book](https://github.com/stas00/ml-engineering/tree/master) <sup>post</sup>
+
 
 ## <u>Database</u>
 - [x] [처음하는 MongoDB(몽고DB) 와 NoSQL(빅데이터) 데이터베이스 부트캠프 [입문부터 활용까지]](https://inf.run/rnmn) <sup>inflearn</sup>
  | [`Certificate`](https://drive.google.com/file/d/1I6uyWLyZYYElNazvgpNNSHu5ws0-3iES/view?usp=drivesdk)
 
+
 ## <u>Cloud</u>
 - [x] [그림으로 배우는 클라우드](https://books.google.co.kr/books?id=6aa_zQEACAAJ&dq=%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C+%EB%B0%B0%EC%9A%B0%EB%8A%94+%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C&hl=ko&sa=X&redir_esc=y) <sup>book</sup>
+
 
 #### <u>Google Cloud Platform (GCP)</u>
 - [x] [Google Cloud Essentials](https://www.cloudskillsboost.google/quests/23) <sup>qwiklabs</sup>
@@ -149,15 +167,24 @@ toc: true
 - [x] [Architecting with Google Kubernetes Engine: Production](https://www.coursera.org/learn/deploying-secure-kubernetes-containers-in-production) <sup>coursera</sup> 
 | [`Certificate`](https://coursera.org/share/027f7bade94a22c62c207624449964cb)
 
+
 #### <u>Amazon Web Services (AWS)</u>
+- [x] [아마존 웹 서비스 AWS Discovery Book](https://g.co/kgs/eBFdWmZ) <sup>book</sup>
+- [x] [AWS 배포 완벽가이드 (feat. Lightsail, Docker, ECS)](https://inf.run/phU7u) <sup>inflearn</sup>
+ | [`Certificate`](https://www.inflearn.com/certificate/1411281-331548-12961928)
+- [x] [처음 시작하는 Infrastructure as Code: AWS & 테라폼](https://inf.run/se7Wu) <sup>inflearn</sup>
+ | [`Certificate`](https://www.inflearn.com/certificate/1411281-325710-12961927)
+
 
 ## <u>Data Engineering</u>
-- [ ] [Introduction to Data Engineering](https://www.coursera.org/learn/introduction-to-data-engineering?specialization=data-warehouse-engineering) <sup>coursera</sup>
+- [x] [DE4E: Data Engineering for Everybody](https://pseudo-lab.github.io/data-engineering-for-everybody/intro.html#) <sup>post</sup>
+- [ ] [Introduction to Data Engineering](https://www.coursera.org/learn/introduction-to-data-engineering) <sup>coursera</sup>
 - [ ] [Cookbook by andkret](https://github.com/andkret/Cookbook) <sup>post</sup>
-- [ ] [DE4E: Data Engineering for Everybody](https://pseudo-lab.github.io/data-engineering-for-everybody/intro.html#) <sup>post</sup>
+
 
 ## <u>Algorithms & Data Structures</u>
 - [ ] [프로그래밍 대회에서 배우는 알고리즘 문제 해결 전략](https://book.algospot.com/) <sup>book</sup>
+
 
 ## <u>Programming</u>
 - [x] [CS50](https://www.edwith.org/cs50/joinLectures/15240) <sup>edwith</sup>
@@ -172,6 +199,7 @@ toc: true
 - [ ] [운영체제와 시스템 프로그래밍 by 널널한 개발자 TV](https://www.youtube.com/playlist?list=PLXvgR_grOs1DGFOeD792kHlRml0PhCe9l) <sup>youtube</sup>
 - [ ] [객체지향 프로그래밍과 디자인 패턴 by 널널한 개발자 TV](https://www.youtube.com/playlist?list=PLXvgR_grOs1CTu1t6_0C40SEF61Vv08s5) <sup>youtube</sup>
 - [ ] [네트워크 기초 이론 by 널널한 개발자 TV](https://www.youtube.com/playlist?list=PLXvgR_grOs1BFH-TuqFsfHqbh-gpMbFoy) <sup>youtube</sup>
+
 
 ## <u>Mathematics</u>
 - [x] [Principles of mathematical analysis](https://books.google.co.kr/books?id=iifvAAAAMAAJ&q=Principles+of+mathematical+analysis&dq=Principles+of+mathematical+analysis&hl=ko&sa=X&redir_esc=y) <sup>book</sup>
