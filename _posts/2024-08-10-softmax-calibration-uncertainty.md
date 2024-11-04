@@ -2,13 +2,13 @@
 title: "Softmax 함수 신뢰도와 딥러닝 예측의 불확실성 | Softmax Confidence and Uncertainty"
 date: 2024-08-10 00:00:00 +/-TTTT
 categories: [AI Theory, Machine Learning]
-tags: [deep-learning, softmax, ann, uncertainty, ]
+tags: [deep-learning, softmax, ann, uncertainty, calibration, histogram-binning, isotonic-regression, platt-scaling ]
 math: true
 toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 pin: false
-description: 소프트맥스 신뢰도, 확률, 예측과 불확실성 추정, 딥러닝 | Softmax Confidence and Uncertainty
+description: 소프트맥스 신뢰도, 확률, 예측과 불확실성 추정, 딥러닝, 캘리브레이션 | Softmax Confidence and Uncertainty, Calibration, Histogram Binning, Isotonic Regression, Platt Scaling
 ---
 
 > Softmax Calibration의 개념을 소개하고 수학적 정의를 설명하며, 방법론의 설명과 실습 코드를 제공합니다.
