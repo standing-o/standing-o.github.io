@@ -1,7 +1,7 @@
 ---
 title: "벡터 스토어와 LLM 활용하기 | Vector Store"
 date: 2024-04-15 00:00:00 +/-TTTT
-categories: [AI Theory, Natural Language Processing (NLP)]
+categories: [AI Theory, NLP & LLM]
 tags: [vector-store, vector-db, pinecone, weaviate, faiss, qdrant, llm]
 math: true
 toc: true
