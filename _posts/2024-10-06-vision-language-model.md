@@ -2,7 +2,7 @@
 title: "Vision Language Model (VLM) 입문하기 | Introduction to Vision-Language Modeling"
 date: 2024-10-06 00:00:00 +/-TTTT
 categories: [AI Theory, NLP and LLM]
-tags: []
+tags: [llm, prompt, vision-transformer, transformer, vit]
 math: true
 toc: true
 author: seoyoung

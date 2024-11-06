@@ -2,7 +2,7 @@
 title: "깃허브 블로그에서 구글 검색 엔진 최적화 하기 | Jekyll Google SEO"
 date: 2023-12-13 00:00:00 +/-TTTT
 categories: [Programming, Blogging]
-tags: [jekyll, google-seo, seo]
+tags: [jekyll, google-seo, seo, github-blog]
 math: true
 toc: true
 author: seoyoung

@@ -2,7 +2,7 @@
 title: "MLOps 공부 시작하기 | Introduction to MLOps"
 date: 2024-09-01 00:00:00 +/-TTTT
 categories: [AI Engineering, MLOps]
-tags: []
+tags: [mlops, ml-engineering, machine-learning, deployment, pipeline, platform, micro-operation, module, test-case]
 math: true
 toc: true
 author: seoyoung
