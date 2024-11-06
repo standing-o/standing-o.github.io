@@ -1,5 +1,5 @@
 ---
-title: "MLOps 입문하기 | Introduction to MLOps"
+title: "MLOps 공부 시작하기 | Introduction to MLOps"
 date: 2024-09-01 00:00:00 +/-TTTT
 categories: [AI Engineering, MLOps]
 tags: []

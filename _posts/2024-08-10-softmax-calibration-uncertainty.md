@@ -26,6 +26,8 @@ description: 소프트맥스 신뢰도, 확률, 예측과 불확실성 추정, �
 &nbsp;
 &nbsp;
 
+`Original Paper Review` 
+| [Understanding softmax confidence and uncertainty](https://github.com/standing-o/Machine_Learning_Paper_Review/issues/38)
 
 ## **Introduction**
 
