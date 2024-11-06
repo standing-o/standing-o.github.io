@@ -194,8 +194,9 @@ toc: true
 - [x] [The Data Scientist’s Toolbox](https://www.coursera.org/learn/data-scientists-tools) <sup>coursera</sup>
  | [`Certificate`](https://coursera.org/share/79bac7cae4c6922e520f0b106ff6e91f)
 - [x] [누구나 쉽게 이해할 수 있는 Git 입문](https://backlog.com/git-tutorial/kr/) <sup>book</sup>
+- [x] [모두를 위한 파이썬 : 필수 문법 배우기 Feat. 오픈소스 패키지 배포](https://inf.run/gbBi) <sup>inflearn</sup>
+ | [`Certificate`](https://www.inflearn.com/certificate/1184905-325780-11897998)
 - [ ] [고수가 되는 파이썬 : 동시성과 병렬성 문법 배우기 Feat. 멀티스레딩 vs 멀티프로세싱](https://inf.run/GpVZ) <sup>inflearn</sup>
-- [ ] [모두를 위한 파이썬 : 필수 문법 배우기 Feat. 오픈소스 패키지 배포](https://inf.run/gbBi) <sup>inflearn</sup>
 - [ ] [운영체제와 시스템 프로그래밍 by 널널한 개발자 TV](https://www.youtube.com/playlist?list=PLXvgR_grOs1DGFOeD792kHlRml0PhCe9l) <sup>youtube</sup>
 - [ ] [객체지향 프로그래밍과 디자인 패턴 by 널널한 개발자 TV](https://www.youtube.com/playlist?list=PLXvgR_grOs1CTu1t6_0C40SEF61Vv08s5) <sup>youtube</sup>
 - [ ] [네트워크 기초 이론 by 널널한 개발자 TV](https://www.youtube.com/playlist?list=PLXvgR_grOs1BFH-TuqFsfHqbh-gpMbFoy) <sup>youtube</sup>
