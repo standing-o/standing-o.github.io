@@ -40,7 +40,7 @@ toc: true
   ➔ Time-series Forecasting with Deep Learning, Graph Theory, Dynamical Modeling
    
 - **_학사_** :: **경상대학교 수학과**
- | 2019.11 - 2021.02    
+ | 2017.03 - 2021.02    
   ➔ Pattern Formation in PDEs, Neural Networks, Feature Engineering, Segmentation  
 
 &nbsp;
