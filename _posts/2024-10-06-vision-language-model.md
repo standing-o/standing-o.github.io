@@ -1,5 +1,5 @@
 ---
-title: "Vision Language Model (VLM) 입문하기 | Introduction to Vision-Language Modeling"
+title: "Vision Language Model (VLM) 이란? | Vision-Language Model"
 date: 2024-10-06 00:00:00 +/-TTTT
 categories: [AI Theory, NLP and LLM]
 tags: [llm, prompt, vision-transformer, transformer, vit]
@@ -11,7 +11,7 @@ pin: false
 image:
   path: 20241006-t.jpg
   alt: ""
-description: Vision Language Model (VLM) 입문하기 | Introduction to Vision-Language Modeling
+description: Vision Language Model (VLM) 이란? | Vision-Language Model
 ---
 
 > "An introduction to vision-language modeling. (Bordes, Florian, et al.)" 을 요약한 글이며, Vision Language Model의 개념과 장점들을 소개합니다. [^ref1]
