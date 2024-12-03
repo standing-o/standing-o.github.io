@@ -24,10 +24,15 @@ toc: true
 💻 [**Github**](https://github.com/standing-o) | 👩‍💻 [**Linkedin**](https://www.linkedin.com/in/seoyoung-oh-309a24200/) | 🎨 [**Instagram**](https://www.instagram.com/grim_540/) |
 
 ## <u>Interests</u>
-- **Machine Learning and Deep Learning**     
-| Medical AI, Time-series Forecasting, Computer Vision, LLM, Audio (Speech), Anomaly Detection, XAI
-- MLOps, Kafka, FastAPI, Docker, GCP, AWS
-- Dynamical Modeling, PDEs, Graph Theory
+- **Artificial Intelligence (ML/DL)**    
+| **Medical AI** <sup> Histo/Cyto Pathology </sup>, Computer Vision <sup>ViT, VLM</sup>, Time-series Forecasting <sup>LSTM, Transformer</sup>    
+| NLP <sup>LLM, SLM</sup>, Audio (Speech), OOD Detection, XAI
+
+- **MLops**    
+| Kafka, FastAPI, Docker, GCP, AWS
+
+- **Mathematical Modelling** <sup>Dynamics of ODE, PDEs</sup>    
+| Topological Data Analysis, Mathematical Data Science, Graph Theory
 
 ## <u>Working</u>
 - **Terenz Co., Ltd. (주식회사 테렌즈)** | 2023.02 - 현재        
@@ -35,11 +40,11 @@ toc: true
   ➔ Data Scientist, Machine Learning Engineer 직무        
 
 ## <u>Education</u>
-- **_석사_** :: **경상국립대학교 대학원 수학과 - 해석학 및 응용수학 전공**
+- `석사` :: **경상국립대학교 대학원 수학과 - 해석학 및 응용수학 전공**
  | 2021.03 - 2023.02    
   ➔ Time-series Forecasting with Deep Learning, Graph Theory, Dynamical Modeling
    
-- **_학사_** :: **경상대학교 수학과**
+- `학사` :: **경상대학교 수학과**
  | 2017.03 - 2021.02    
   ➔ Pattern Formation in PDEs, Neural Networks, Feature Engineering, Segmentation  
 
