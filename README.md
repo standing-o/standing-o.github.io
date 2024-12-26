@@ -52,5 +52,4 @@ Gems included by the bundle:
   * webrick (1.9.1)
   * yell (2.2.2)
   * zeitwerk (2.6.12)
-
 ```
