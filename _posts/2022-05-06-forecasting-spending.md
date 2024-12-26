@@ -2,19 +2,18 @@
 title: "[Dacon] 소비자 데이터 기반 소비 예측 경진대회"
 date: 2022-05-06 16:00:00 +/-TTTT
 categories: [Extracurricular Activities, Competition]
-tags: [regression, lightgbm, xgboost, elasticnet, ensemble, dacon, ai-competition]
+tags: [dacon, ai-competition, python, machine-learning, regression, lightgbm, xgboost, elasticnet, ensemble]
+math: true
+toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 소비 예측, Elasticnet, LightGBM, XGBoost
+description: 소비 예측 딥러닝, 소비 예측 머신러닝, 소비 예측 파이썬, Forecasting Spending, Elasticnet, LightGBM, XGBoost
 ---
 
 --------------------------------
 
-
-> 데이콘의 소비 예측 대회에 대한 간단한 데이터 전처리 및 EDA와 Ensemble (Elasticnet, LightGBM, XGBoost)을 설명합니다.
+> 데이콘의 "소비자 데이터 기반 소비 예측 경진대회"에 참여하여 작성한 글이며, 정형 데이터에 대한 EDA 과정과 머신러닝 회귀 모델들을 활용한 예측 방법을 소개합니다.
 {: .prompt-info }
-
-소비 예측 대회는 소비자 데이터셋을 이용해 소비량을 예측하는 대회입니다.
 
 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
 
@@ -24,6 +23,7 @@ description: 소비 예측, Elasticnet, LightGBM, XGBoost
 &nbsp;
 &nbsp;
 &nbsp;
+
 
 ## **0. Import Packages**
 
@@ -143,7 +143,7 @@ train.head()
 &nbsp;
 &nbsp;
 
-- 판다스 프로파일링 레포트 생성
+- Pandas Profiling Report 생성하기
 
 ```python
 pr = train.profile_report()
@@ -157,7 +157,8 @@ pr
 &nbsp;
 &nbsp;
 
-### Summary of Pandas profiling : Alert
+
+### **Summary of Pandas profiling : Alert**
 #### High Correlation
 - `Income`-`Kidhome`-`NumWebPurchases`-`NumStorePurchases`-`NumStorePurchases`-`NumWebVisitsMonth`-`AcceptedCmp1`-`AcceptedCmp5`-`target`
 - `NumDealsPurchases`-`Teenhome`
@@ -171,8 +172,11 @@ pr
 
 - Cardinality가 높다 <-> 중복되는 값이 적다
 
+&nbsp;
+&nbsp;
+&nbsp;
 
-## 2. EDA | Exploratory Data Analysis
+## **2. EDA | Exploratory Data Analysis**
 
 - `id` : 샘플 아이디, `Year_Birth` : 고객 생년월일, `Education` : 고객 학력
 
@@ -200,7 +204,7 @@ pr
 &nbsp;
 &nbsp;
 
-### Data Type
+### **Data Type**
 
 - Numeric (10) : `id`, `Year_Birth`, `Income`, `Recency`, `NumDealsPurchases`, `NumWebPurchases`, `NumCatalogPurchases`, `NumStorePurchases`, `NumWebVisitsMonth`, `target`
 - Categorical (12) : `Education`, `Marital_Status`, `Kidhome`, `Teenhome`, `Dt_Customer`, `AcceptedCmp(1~5)`, `Complain`, `Response`
@@ -287,9 +291,9 @@ df_test = test.copy()
 &nbsp;
 &nbsp;
 
-### (1) Outliers
+### **(1) Outliers**
 
-- `id`와 `target`을 제외한 numerical 데이터의 outlier 들을 IQR method를 활용하여 찾아줍니다.
+- `id`와 `target`을 제외한 수치적(Numerical) 데이터의 이상치(Outlier) 들을 IQR 기법을 활용하여 찾아줍니다.
 
 
 ```python
@@ -313,15 +317,15 @@ print("The number of train outliers :", len(train_multi_outliers))
     The number of train outliers : 0
 </pre>
 
-- Train 데이터에는 IQR method로 탐지되는 이상치가 없는것을 확인할 수 있습니다.
+- Train 데이터에는 IQR 기법으로 탐지되는 이상치가 없는 사실이 확인됩니다.
 
 &nbsp;
 &nbsp;
 &nbsp;
 
-### (2) Transformation
+### **(2) Transformation**
 
-- 왜곡된 분포는 모델 학습에 안좋은 영향을 줄 수 있습니다. 높은 skewness를 가지고 있는 `NumDealsPurchases` 변수에 대하여 몇가지 transformation을 진행하려합니다.
+- 왜곡된 분포는 모델 학습에 안좋은 영향을 줄 수 있습니다. 높은 왜도(Skewness)를 가지고 있는 `NumDealsPurchases` 변수에 대하여 몇가지 변환함수를 적용하겠습니다.
 
 ```python
 print(df_train[numeric_fts].skew())
@@ -413,8 +417,8 @@ plt.show()
 &nbsp;
 &nbsp;
 
-- 두 변환을 진행한 결과 모두 조금 더 정규분포 직선과 비슷해진것을 Q-Q Plot을 통해 확인 가능합니다.
-- 데이터 전처리에는 Yeo-Johnson transformation을 사용했습니다.
+- 조금 더 정규 분포 직선과 비슷해진 사실을 Q-Q Plot을 통해 확인 가능합니다.
+- 데이터 전처리에는 Yeo-Johnson Transformation을 사용했습니다.
 
 ```python
 df_train['NumDealsPurchases'] = x_yj
@@ -441,9 +445,9 @@ df_test['NumDealsPurchases'] = test_x_yj
 &nbsp;
 &nbsp;
 
-### (3) Correlation
+### **(3) Correlation**
 
-- 앞서 수행한 pandas profiling report의 alert를 참고하여 상관계수를 계산했습니다.
+- 앞서 수행한 Pandas Profiling Report의 Alert 섹션을 참고하여 상관계수를 계산했습니다.
 
 ```python
 corr_fts1 = ['Income', 'Kidhome', 'NumWebPurchases', 'NumCatalogPurchases', 'NumStorePurchases', 'NumWebVisitsMonth', 'AcceptedCmp1', 'AcceptedCmp5', 'target']
@@ -470,9 +474,9 @@ plt.show()
 
 ![corr2](20220506-6.png)
 
-- 독립변수 간의 높은 상관관계는 다중공선성을 유발하기 때문에 좋지 않습니다.
+- 독립 변수 간의 높은 상관 관계는 다중 공선성을 유발합니다.
 
-- 위 문제는 변수 선택, 차원 축소, 규제 등의 방법으로 해결할 수 있고, 저는 모델에 규제를 적용하거나 다중공선성의 영향을 적게 받는다고 생각되는 Decision Tree 베이스의 모델을 사용 할 예정입니다.
+- 해당 문제는 변수 선택, 차원 축소, 규제 등의 방법으로 해결할 수 있고, 필자는 모델에 규제를 주는 역할을 하면서 다중 공선성의 영향을 적게 받는다고 알려진 결정 트리(Decision Tree) 기반의 모델을 사용하겠습니다.
 
 
 ```python
@@ -485,10 +489,10 @@ test_dataset = df_test.copy()
 &nbsp;
 
 ## **3. Feature Engineering**
-### (1) `Dt_Customer` 변수 : 날짜 데이터 다루기
-- `Dt_Customer` 변수는 회사 등록일을 뜻합니다. 회사에 등록한 시점에 대한 정보를 유지하면서 모델링에 사용할 수 있는 새 수치형 변수를 만들려고합니다.
+### **(1) `Dt_Customer` 변수 : 날짜 데이터 다루기**
+- `Dt_Customer` 변수는 회사 등록일을 뜻 합니다. 회사에 등록된 시점에 대한 정보를 유지하면서 모델링에 사용할 수 있는 새 수치형 변수를 생성하겠습니다.
 
-↪ 가장 과거 시점의 회사 등록일로부터 며칠이 지났는지를 뜻하는 `Pass_Customer`변수를 새롭게 생성합니다. 
+↪ 가장 과거 시점의 회사 등록일로부터 며칠이 지났는지를 뜻하는 `Pass_Customer` 변수를 새롭게 생성합니다. 
 
 
 ```python
@@ -577,7 +581,7 @@ train_dataset["Pass_Customer"].head()
 &nbsp;
 &nbsp;
 
-### (2) `Year_Birth` to `Age`
+### **(2) `Year_Birth` to `Age`**
 
 - `Year_Birth` 변수를 활용하여 고객의 나이를 뜻하는 `Age` 변수를 새롭게 생성했습니다.
 
@@ -626,9 +630,9 @@ train_dataset["Age"].head()
 &nbsp;
 &nbsp;
 
-### (3) `AcceptedCmp(1~5)` 와 `Response` 변수로 새 Feature 생성
+### **(3) `AcceptedCmp(1~5)` 와 `Response` 변수로 새 Feature 생성**
 
-- 위 여섯개의 변수는 고객이 1~5 번째와 마지막 캠페인에서 제안을 수락한 경우 1, 아닌경우 0 값을 가집니다.  
+- 위 여섯개의 변수는 고객이 1~5 번째와 마지막 캠페인에서 제안을 수락한 경우 1, 아닌 경우 0 값을 가집니다.  
 
 - 이 변수들을 활용하여 캠페인에서 제안을 수락한 횟수를 나타내는 `AcceptCount` 변수를 새롭게 생성하겠습니다.  
 
@@ -663,9 +667,9 @@ print("Minimum count :", train_dataset["AcceptCount"].min(), "\nMaximum count :"
 &nbsp;
 &nbsp;
 
-- train 데이터에서 캠페인 제안을 여섯번 모두 수락한 경우는 없는것을 확인할 수 있습니다.  
+- Train 데이터에서 캠페인 제안을 여섯번 모두 수락한 경우는 없습니다.
 
-- 원래의 변수와 `target`과의 상관관계를 확인하겠습니다.  
+- 기존 변수와 `target`과의 상관 관계를 확인하겠습니다.  
 
 ```python
 train_dataset[['Year_Birth', 'AcceptedCmp1','AcceptedCmp2','AcceptedCmp3','AcceptedCmp4','AcceptedCmp5', 'Response','target']].corr()
@@ -723,7 +727,7 @@ print(np.corrcoef(day, train_dataset['target']))
 &nbsp;
 &nbsp;
 
-- 새로 생성한 변수와 `target`과의 상관관계를 확인하겠습니다.
+- 새로 생성한 변수와 `target`과의 상관 관계를 확인하겠습니다.
 
 ```python
 train_dataset[['Pass_Customer', 'Age', 'AcceptCount', 'target']].corr()
@@ -738,11 +742,11 @@ train_dataset[['Pass_Customer', 'Age', 'AcceptCount', 'target']].corr()
 </pre>
 
 
-- 정리하자면, `Pass_Customer`-`target`의 상관계수 절댓값이 `Dt_Customer`(`year`, `month`, `day`)-`target` 보다 조금 더 크다는 것을 확인할 수 있습니다.  
+- 정리하자면, `Pass_Customer`-`target` Pair에 대한 상관계수의 절댓값이 `Dt_Customer`(`year`, `month`, `day`)-`target`와 비교하자면 조금 더 크다는 사실을 알 수 있습니다.
 
-- 또한, 당연하게도 `Year_Birth`를 `Age` 변수로 바꾼것은 상관관계에 아무런 영향도 주지 못했습니다.  
+- 또한, 당연하게도 `Year_Birth`를 `Age` 변수로 바꾼 것은 상관 관계에 아무런 영향도 주지 못했습니다.  
 
-- `AcceptCount`는 `target`과 어느정도 상관관계가 있습니다.  
+- `AcceptCount`는 `target`과 어느정도 상관 관계가 있습니다.  
 
 
 ```python
@@ -750,10 +754,13 @@ train_data = train_dataset.copy()
 test_data = test_dataset.copy()
 ```
 
--------------
+&nbsp;
+&nbsp;
+&nbsp;
+
 ## **4. One-Hot Encoding**
 
-- `Education`, `Marital_Status` 변수의 one-hot encoding을 진행했습니다.  
+- `Education`과 `Marital_Status` 변수에 대한 원핫 인코딩(One-hot Encoding)을 진행했습니다.  
 
 
 
@@ -826,7 +833,7 @@ print("Length of test column :", len(test_data.columns))
 &nbsp;
 &nbsp;
 
-- train 데이터의 `target` 컬럼을 제외하고는 train과 test의 열길이가 같도록 one-hot encoding이 잘 진행된것을 확인할 수 있습니다.  
+- Train 데이터의 `target` 컬럼을 제외하고는, Train과 Test 데이터의 열 길이가 동일해지도록 원핫 인코딩이 잘 적용된 것을 확인할 수 있습니다.
 
 
 ```python
@@ -885,7 +892,7 @@ train_data.head()
 
 ## **5. Modeling**
 
-- train x 데이터와 target 데이터를 나눠줍니다.  
+- Input 데이터와 Target 데이터를 나눠줍니다.  
 
 ```python
 train_x = train_data.drop('target', axis = 1)
@@ -897,15 +904,15 @@ def nmae(true, pred):
     return score
 ```
 
-- Lasso, Ridge regression은 Linear regression에 규제를 적용하는 방법입니다. 저는 이 두 모델의 규제를 모두 적용할 수 있는 **Elastic-Net**을 사용했습니다.  
+- Lasso/Ridge 회귀는 선형 회귀(Linear Regression)에 규제를 적용하는 방법입니다. 필자는 이 두 모델의 규제 방식을 모두 적용할 수 있는 ElasticNet을 사용했습니다.  
 
-- 또한 **LightGBM, XGBoost** 모델을 사용했고, 최종적으로 세 모델을 활용하여 **Ensemble**을 진행했습니다.  
+- 추가적으로 LightGBM와 XGBoost 회귀 모델을 사용했고, 최종적으로 세 모델을 활용하여 앙상블(Ensemble)을 진행했습니다.  
 
 &nbsp;
 &nbsp;
 &nbsp;
 
-### Elastic-Net
+### **Elastic-Net**
 
 ```python
 ela_param_grid = {'alpha': np.arange(1e-4,1e-3,1e-4),
@@ -956,7 +963,7 @@ print("train nmae of elasticnet :", nmae(train_y.values, ela_pred))
 &nbsp;
 &nbsp;
 
-### XGBoost
+### **XGBoost**
 
 ```python
 xgb = XGBRegressor(objective='reg:squarederror', random_state = seed_num)
@@ -1006,7 +1013,7 @@ print("train nmae of xgb :", nmae(train_y.values, xgb_pred))
 &nbsp;
 &nbsp;
 
-### LightGBM
+### **LightGBM**
 
 ```python
 lgbm = LGBMRegressor(objective='regression', random_state = seed_num)
@@ -1055,7 +1062,8 @@ print("train nmae of lgbm :", nmae(train_y.values, lgbm_pred))
 &nbsp;
 &nbsp;
 
-### Blending Models - Ensemble
+### **Blending Models - Ensemble**
+- 앙상블 모델의 성능을 확인하면서 마무리합니다.
 
 ```python
 def blended_models(X):

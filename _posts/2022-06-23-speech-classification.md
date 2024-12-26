@@ -2,18 +2,19 @@
 title: "[Dacon] 음성 분류 경진대회"
 date: 2022-06-23 17:00:00 +/-TTTT
 categories: [Extracurricular Activities, Competition]
-tags: [speech, classification, data-augmentation, feature-extraction, dacon, ai-competition]
+tags: [dacon, ai-competition, python, deep-learning, speech, classification, data-augmentation, feature-engineering]
+math: true
+toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 음성 데이터에 대한 data augmentation과 feature extraction | speech classification
+description: 음성 데이터 전처리, 음성 데이터 딥러닝, 음성 데이터 분석, 음성 데이터 Data Augmentation, 음성 데이터 증강, 음성 데이터 Feature Extraction, 음성 데이터 분류
 ---
 
 ------------------
 
-> 음성 데이터에 대한 data augmentation과 feature extraction 등의 내용을 포함합니다. 
+> 데이콘의 "음성 분류 경진대회"에 참여하여 작성한 글이며, 음성 데이터에 대한 데이터 증강(Data Augmentation)과 음성 특성 추출(Feature Extraction) 구현 방법을 서술합니다.
 {: .prompt-info }
 
-음성 분류 경진대회는 음성 데이터를 기반으로 숫자를 분류하는 대회입니다.
 
 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
 
@@ -50,7 +51,6 @@ warnings.filterwarnings("ignore")
 &nbsp;
 
 ## **1. Load and explore dataset**
-
 - 데이터 불러오기 
 
 ```python
@@ -102,8 +102,8 @@ print(samples)
 &nbsp;
 &nbsp;
 
-- 한 음성의 spectrogram을 생성하겠습니다.  
-↪ Short term Fourier transform (STFT)의 magnitude를 db 스케일로 변환하여 spectrogram을 생성합니다.
+- 한 음성 샘플에 대한 Spectrogram을 생성하겠습니다.  
+↪ Short term Fourier transform (STFT)의 Magnitude를 DB-스케일로 변환하여 Spectrogram을 생성합니다.
 
 
 
@@ -126,7 +126,7 @@ plt.show()
 &nbsp;
 &nbsp;
 
-- `train.csv`에는 `train` 폴더의 음성 파일 이름과 라벨 컬럼이 포함되어 있습니다. `label` 컬럼은 0~9 정수로 구성됩니다.
+- `train.csv`에는 `train` 폴더에 위치한 음성 파일들의 이름과 라벨 컬럼이 포함되어 있습니다. `label` 컬럼은 0과 9사이의 정수로 구성됩니다.
 
 ```python
 train.head()
@@ -201,10 +201,9 @@ print("Min :", np.min(all_shape, axis = 0))
 
 ## **2. Data augmentation**
 
-- 원래의 음성데이터에 새로운 perturbation 들을 추가하여 새로운 음성데이터를 생성합니다.
-  - 모델의 일반화 능력 향상을 위함
+- 모델의 일반화 능력 향상을 위해, 기존의 음성데이터에 Perturbation을 추가하여 새 음성데이터를 생성합니다.
 
-↪ Noise 추가, time stretching, pitch 변환
+↪ Noise 추가, Time Stretching, Pitch 변환
 
 
 ```python
@@ -231,29 +230,29 @@ def pitch(sample, sampling_rate, pitch_factor = 0.8):
 
 ## **3. Feature Extraction**
 
-- 모델링에 사용하면 도움이 될만한 몇가지 feature extraction 방법을 소개하겠습니다.
+- 모델링에 사용할 만한 몇가지 Feature Extraction 방법을 소개하겠습니다.
 
-#### **(1) Zero Crossing Rate (ZCR)**
+#### (1) Zero Crossing Rate (ZCR)
 
-↪ 특정 프레임이 지속 기간 동안의 신호의 부호(sign) 변화율 i.e. 신호의 부호가 바뀌는 비율
+↪ 특정 프레임에서 신호의 부호(Sign)가 변경되는 빈도입니다. (i.e., 신호의 부호 변화율)
 
-#### **(2) Chroma_shift**
+#### (2) Chroma Shift*
 
-↪ Waveform 또는 power spectrogram으로 생성한 chromagram. 
+↪ 파형(Waveform) 또는 Power Spectrogram으로 생성한 크로마그램(Chromagram) 입니다.
 
-#### **(3) Mel spectrum**
+#### (3) Mel spectrum*
 
-↪ 오디오 신호(time domain)에 Fast Fourier Transform (FFT) -> Spectrum (frequency domain)  
+↪ 오디오 신호(Time Domain)에 Fast Fourier Transform(FFT)를 적용하여 얻은 주파수 영역(Frequency Domain)의 스펙트럼(Spectrum) 입니다.
 
-↪ Spectrum + 필터링 (Mel filter bank) -> Mel spectrum  
+↪ Mel Filter Bank를 사용한 필터링 과정을 거쳐 Mel 스펙트럼을 생성합니다.
 
-#### **(4) MFCC (Mel-Frequency Cepstral Coefficient)**
+#### (4) MFCC (Mel-Frequency Cepstral Coefficient)
 
-↪ Mel spectrum에서 Cepstral 분석을 통해 고유한 특성을 추출함
+↪ Mel 스펙트럼에서 Cepstral 분석을 통해 고유한 음향 특성을 추출한 지표입니다.
 
-#### **(5) RMS (Root Mean Square)**
+#### (5) RMS (Root Mean Square)
 
-↪ 오디오 평균 음량 측정
+↪ 오디오 평균 음량을 측정하는 데 사용되는 값입니다.
 
 ```python
 def extract_features(sample):
@@ -286,7 +285,7 @@ def extract_features(sample):
 &nbsp;
 &nbsp;
 
-- Noise 추가, time stretching, pitching 방법들을 통해 음성 데이터 하나 당 (1, 162) 크기의 feature를 (3, 162) 로 증강합니다.
+- Noise 추가, Time Stretching, Pitching 방법들을 통해 한 음성데이터 샘플 당 (1, 162) 크기의 Feature를 (3, 162) 로 증강(Augmentation) 합니다.
 
 ```python
 def get_features(path):
@@ -340,7 +339,7 @@ print("Shape of Y:", np.shape(Y))
 &nbsp;
 &nbsp;
 
-## Reference
+## **Reference**
 
 1. [Speech Emotion Recognition by SHIVAM BURNWAL](https://www.kaggle.com/code/shivamburnwal/speech-emotion-recognition)
 

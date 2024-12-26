@@ -2,19 +2,20 @@
 title: "[Dacon] 중고차 가격 예측 경진대회"
 date: 2022-06-02 20:00:00 +/-TTTT
 categories: [Extracurricular Activities, Competition]
-tags: [regression, catboost, randomforest, gradient-boosting, ensemble, pycaret, dacon, ai-competition]
+tags: [dacon, ai-competition, python, machine-learning, regression, feature-engineering, catboost, random-forest, gradient-boosting, ensemble, pycaret]
+math: true
+toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 image:
   path: 20220602-t.png
   alt: ""
-description: 중고차 가격 예측 | used car forecasting, catboost, random forest, gradient boosting
+description: 중고차 가격 예측 딥러닝, 중고차 가격 예측 머신러닝, 중고차 가격 예측 파이썬, Used Car Forecasting, Catboost, Random Forest, Gradient Boosting
 ---
 
 --------------
 
-
-> 데이콘의 중고차 가격 예측 문제에 대해 feature engineering과 ensemble (catboost, random forest, gradient boosting) 를 활용한 방법을 공유합니다. 
+> 데이콘의 "중고차 가격 예측 경진대회"에 참여하여 작성한 글이며, 정형데이터에 대한 Feature Engineering과 머신러닝 기반 앙상블을 적용한 실험을 공유합니다.
 {: .prompt-info }
 
 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
@@ -110,7 +111,7 @@ train.head()
 &nbsp;
 &nbsp;
 
-- 판다스 프로파일링 레포트 생성하기
+- Pandas Profiling Report 생성하기
 
 ```python
 pr = train.profile_report()
@@ -124,7 +125,7 @@ pr
 &nbsp;
 &nbsp;
 
-### Summary of Pandas profiling : Alert
+### **Summary of Pandas profiling : Alert**
 #### High correlation
 
 `odometer`-`year`-`target`-`paint`-`fuel`-`transmission`-`engine`
@@ -134,7 +135,7 @@ pr
 
 `title`, `paint`  
 
-↪ 중복도가 낮은 데이터
+↪ 중복도가 낮은 변수
 
 
 
@@ -163,7 +164,7 @@ Skewness of `year` : -21.68
 `fuel` : 연료 종류, `paint` : 페인트 색상, `year` : 제조년도, `target` : 자동차 가격
 
 
-### Data type
+### **Data type**
 
 - Numeric (4) : `id`, `odometer`, `year`, `target`
 
@@ -221,7 +222,7 @@ df_test = test.copy()
 &nbsp;
 &nbsp;
 
-### (1) Outliers
+### **(1) Outliers**
 
 ```python
 fig, ax = plt.subplots(1, 2, figsize=(18,5))
@@ -308,7 +309,7 @@ plt.show()
 
 ![dist2](20220602-3.png)
 
-- outlier 들을 제거하여 첨도가 감소했습니다.
+- 이상치(Outlier) 들을 제거하여 왜도(Skewness)가 감소했습니다.
 
 &nbsp;
 &nbsp;
@@ -328,9 +329,9 @@ print("# outliers to drop :", len(outlier_ind))
 
 ### (2) Correlation
 
-- 앞서 수행한 pandas profiling report의 alert를 참고하여 상관계수를 계산했습니다.  
+- 앞서 생성한 Pandas Profiling Report의 Alert 섹션을 참고하여 상관계수를 계산했습니다.  
 
-- Categorical 데이터를 라벨인코더를 통해 수치형으로 변환한 후 상관관계를 확인합니다.
+- 범주(Categorical) 데이터를 라벨 인코더(Label Encoder)를 통해 수치형(Numerical) 변수로 변환한 후 상관관계를 확인합니다.
 
 
 ```python
@@ -354,11 +355,11 @@ plt.show()
 &nbsp;
 
 ## **3. Feature Engineering**
-### (1) `company` 컬럼 생성
+### **(1) `company` 컬럼 생성**
 
-- `title` 변수 값들의 앞부분에는 공통적으로 자동차 회사의 이름이 오는것을 확인할 수 있습니다.
-- split 함수를 사용하여 첫번째 띄어쓰기를 기준으로 회사명 데이터를 추출하고 새 컬럼을 생성해주겠습니다.  
-- `company` 컬럼의 계급을 훈련 데이터의 `target`값 기준으로 나눠주겠습니다.  
+- `title` 변수 값들의 앞부분에는 공통적으로 자동차 회사의 이름이 위치합니다. (ex. Toyota)
+- `split` 함수를 사용하여 첫번째 띄어쓰기를 기준으로 회사명을 추출하고 새 컬럼을 생성해주겠습니다.  
+- `company` 컬럼의 계급을 학습 데이터의 `target`값 기준으로 나눠주겠습니다.  
 
 
 ```python
@@ -514,7 +515,7 @@ df_test['company'].unique()
 &nbsp;
 &nbsp;
 
-### (2) `paint`
+### (2) **`paint` 변수**
 
 - 뒤죽박죽인 `paint` 변수를 고쳐주겠습니다.
 
@@ -655,7 +656,7 @@ print(len(df_test['paint'].unique()))
 &nbsp;
 &nbsp;
 
-### (3) `location`
+### **(3) `location` 변수**
 
 - `location` 변수도 고쳐주겠습니다.
 
@@ -708,7 +709,7 @@ print(len(df_test['location'].unique()))
 &nbsp;
 &nbsp;
 
-### (4) `engine`
+### (4) **`engine` 변수**
 - `engine` 변수를 수치형으로 바꿔주겠습니다.
 
 ```python
@@ -795,9 +796,9 @@ print(len(df_test['engine'].unique()))
 &nbsp;
 &nbsp;
 
-### (5) dropping
+### (5) 특정 행 Drop하기
 
-- train과 test 데이터의 `title`, `location`, `paint` 변수의 값 종류 및 길이가 일치하지 않습니다.
+- Train과 Test 데이터의 `title`, `location`, `paint` 변수들의 종류 및 길이가 일치하지 않습니다.
 
 ```python
 cat_fts2 = ['title', 'location', 'isimported', 'transmission', 'fuel', 'paint']
@@ -959,7 +960,7 @@ for i in range(len(cat_fts2)):
 
 </pre>
 
-- One-hot encoding을 진행해줍니다
+- 원핫 인코딩(One-hot Encoding)을 적용합니다.
 
 ```python
 train_data = train_df.copy()
@@ -996,7 +997,7 @@ print(test_data.columns)
 </pre>
 
 
-- train 데이터의 target 컬럼을 제외하고는 train과 test의 열길이가 같도록 one-hot encoding이 잘 진행된것을 확인할 수 있습니다.
+- Train 데이터의 `target` 컬럼을 제외하고, Train과 Test의 열 길이가 일치하도록 원핫 인코딩이 잘 적용되었습니다.
 
 &nbsp;
 &nbsp;
@@ -1153,7 +1154,7 @@ gbr = create_model('gbr', verbose = False)
 &nbsp;
 &nbsp;
 
-- 상위 3개의 모델을 혼합한 모델을 생성합니다.
+- 상위 3개 모델을 혼합한 모델을 생성합니다.
 
 ```python
 blended_model = blend_models(estimator_list = [catboost, rf, gbr])
@@ -1180,7 +1181,7 @@ blended_model = blend_models(estimator_list = [catboost, rf, gbr])
 &nbsp;
 &nbsp;
 
-- 전체 데이터로 마지막 학습을 진행하고 test 예측을 생성합니다.
+- 전체 데이터로 마지막 학습을 진행하고 Test 데이터에 대한 예측을 생성합니다.
 
 
 ```python

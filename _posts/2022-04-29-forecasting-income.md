@@ -2,19 +2,20 @@
 title: "[Dacon] 인구 데이터 기반 소득 예측 경진대회"
 date: 2022-04-29 17:26:00 +/-TTTT
 categories: [Extracurricular Activities, Competition]
-tags: [classification, lightgbm, xgboost, ensemble, voting, dacon, ai-competition]
+tags: [dacon, ai-competition, python, machine-learning, classification, lightgbm, xgboost, ensemble, voting]
+math: true
+toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 image:
   path: 20220429-t.png
   alt: ""
-description: 인구 데이터 기반 소득 예측 | Forecasting Income, LightGBM, XGBoost, Ensemble
+description: 소득 예측 딥러닝, 소득 예측 머신러닝, 소득 예측 파이썬, Forecasting Income, LightGBM, XGBoost, Ensemble
 ---
 
-----------------
 
-
-> 데이콘의 "인구 데이터 기반 소득 예측 경진대회"에 참여하여 작성한 코드이며, 간단한 데이터 전처리 및 **EDA**, **LightGBM**과 **XGBoost**로 **Ensemble** 모델링 등의 내용을 설명합니다.
+----------------------
+> 데이콘의 "인구 데이터 기반 소득 예측 경진대회"에 참여하여 작성한 글이며, 간단한 데이터 전처리 및 **EDA**, **LightGBM**과 **XGBoost** 모델을 활용한 **Ensemble** 구현 코드를 소개합니다.
 {: .prompt-info }
 
 코드실행은 Google Colab의 GPU, Standard RAM 환경에서 진행했습니다.  
@@ -90,7 +91,7 @@ print("lightgbm version: {}". format(lgb.__version__))
 
 ```python
 # reproducibility
-seed_num = 42   ####
+seed_num = 42
 np.random.seed(seed_num)
 rn.seed(seed_num)
 os.environ['PYTHONHASHSEED']=str(seed_num)
@@ -101,10 +102,13 @@ os.environ['PYTHONHASHSEED']=str(seed_num)
 &nbsp;
 
 ## **1. Load and Check Dataset**
-### Variable Description
+### **Variable Description**
 
-|age|workclass|fnlwgt|education|education.num|marital.status|occupation|
-|나이|일 유형|CPS(Current Population Survey) 가중치|교육수준|교육수준 번호|결혼 상태|직업|
+|age|workclass|fnlwgt|education|
+|나이|일 유형|CPS(Current Population Survey) 가중치|교육수준|
+
+|education.num|marital.status|occupation|
+|교육수준 번호|결혼 상태|직업|
 
 |relationship|race|sex|capital.gain|capital.loss|hours.per.week|native.country|
 |가족관계|인종|성별|자본 이익|자본 손실|주당 근무시간|본 국적|
@@ -152,7 +156,7 @@ train.head()
 &nbsp;
 &nbsp;
 
-- 판다스 프로파일링 레포트 생성하기
+- Pandas Profiling Report 생성하기
 
 ```python
 pr=train.profile_report()
@@ -163,7 +167,7 @@ pr.to_file('/content/drive/MyDrive/Forecasting_income/pr_report.html')
 &nbsp;
 &nbsp;
 
-- Pandas profiling을 활용하면 아래와 같이 데이터 프레임을 쉽고 효율적으로 탐색할 수 있습니다. 
+- Pandas Profiling을 활용하면 아래와 같이 데이터 프레임을 쉽고 효율적으로 탐색할 수 있습니다. 
 
 ![pandas_profiling1](20220429-1.png)
 ![pandas_profiling2](20220429-2.png)
@@ -172,8 +176,10 @@ pr.to_file('/content/drive/MyDrive/Forecasting_income/pr_report.html')
 &nbsp;
 &nbsp;
 
-### Pandas profiling report의 Alert 활용하기
-#### High Correlation
+
+
+### **Pandas Profiling Report의 Alert 활용하기**
+#### Variable Pairs with the High Correlation
 
 1. `relationship` - `sex`
 2. `age` - `marital.status`
@@ -192,9 +198,9 @@ pr.to_file('/content/drive/MyDrive/Forecasting_income/pr_report.html')
   
 #### Note
 
-- `workclass`와 `occupation`이 같은 비율 (10.5%)의 missing value를 가지므로 확인해 볼 필요가 있습니다.
-- 또한, `native.country`는 583(3.3%) missing value를 가지므로 행을 삭제해주겠습니다.
-- `capital.gain`, `capital.loss`가 high skewness를 가집니다. outlier를 확인하고 필요시 transformation을 진행하겠습니다.
+- `workclass`와 `occupation`이 같은 비율 (10.5%)의 결측치(Missing Value)를 가집니다.
+- `native.country`는 583(3.3%)의 결측치(Missing Value)를 가지므로 해당 행(Row)을 삭제해주겠습니다.
+- `capital.gain`와 `capital.loss`는 높은 왜도(Skewness)를 가집니다. 이상치(Outlier)를 확인하고 필요시 제거하거나 변환 함수를 적용하겠습니다.
 
 &nbsp;
 &nbsp;
@@ -236,7 +242,7 @@ train.info()
 &nbsp;
 
 ## **2. Data Preprocessing**
-### (1) Missing Value
+### **(1) Missing Value**
 
 ```python
 train.columns[train.isnull().any()]
@@ -320,9 +326,9 @@ train['workclass'].unique()
           dtype=object)
 </pre>
 
-- `workclass`, `occupation` 컬럼의 결측치를 포함한 행은 삭제합니다.
-- 두 컬럼이 동시에 결측치를 갖는 경우가 대부분이었기에 `workclass`의 결측치만 'Never-worked'와 같은 이미 존재하는 특성으로 채우는것은 의미가 없습니다.
-- `workclass`와 `occupation`에 새 feature을 생성하여 넣는 방법도 시도했지만, one-hot encoding을 해서 생기는 test 데이터와의 컬럼 차이 때문에 다른 방법을 고려해볼 필요가 있다고 생각합니다 😔
+- `workclass`와 `occupation` 열(Column)에서 결측치가 포함된 행은 삭제합니다.
+- 두 열이 동시에 결측치를 갖는 경우가 대부분이므로, `workclass`의 결측치만 `Never-worked`와 같은 이미 존재하는 특성으로 채우는 것은 의미가 없습니다.
+- `workclass`와 `occupation`에 새로운 feature을 부여하는 방법도 시도하였지만, One-hot Encoding을 했을 때 생기는 테스트 데이터와의 값 차이 때문에 다른 방법을 고려해볼 필요가 있다고 생각합니다 😔
 
 &nbsp;
 &nbsp;
@@ -421,7 +427,7 @@ df_train
 &nbsp;
 &nbsp;
 
-### (2) Outlier
+### **(2) Outlier**
 
 ```python
 fig, ax = plt.subplots(1, 2, figsize=(12,3))
@@ -526,7 +532,7 @@ print(train_df['capital_gain'].skew(), train_df['capital_loss'].skew())
     12.004940559585881 4.607122286739042
 </pre>
 
-- Outlier들을 제거했음에도 두 변수는 여전히 high skewness를 가지고 있으므로 log transformation을 진행해보고자 합니다.
+- 이상치들을 제거하였음에도 두 변수는 여전히 높은 왜도를 보이고 있어, 로그 변환(Log Transformation)을 진행했습니다.
 
 ```python
 # log transformation
@@ -549,9 +555,9 @@ print(train_df['capital_gain'].skew(), train_df['capital_loss'].skew())
 &nbsp;
 
 ## **3. Feature Engineering**
-### (1) Correlation
+### **(1) Correlation**
 
-- Categorical 데이터를 라벨인코더를 통해 수치형으로 변환한 후 상관관계를 확인합니다.
+- 범주형(Categorical) 데이터를 라벨 인코더(Label Encoder)를 통해 수치형(Numerical)으로 변환한 후 상관관계를 확인합니다.
 - **Categorical** : `workclass`, `education`, `marital.status`, `occupation`, `relationship`, `race`, `sex`, `native.country`
 
 ```python
@@ -592,8 +598,8 @@ la_train.head()
 &nbsp;
 &nbsp;
 
-- 앞서 수행한 pandas profiling report의 alert를 참고하여 상관계수를 계산했습니다.
-- 꽤 유의미한 상관관계를 가지고 있다고 생각되는것은 `relationship`-`sex`, `occupation`-`workclass`, `education`-`education.num` 입니다.
+- 앞서 수행한 Pandas Profiling Report의 Alert 섹션을 참고하여 상관계수를 계산했습니다.
+- 유의미한 상관관계를 가지고 있다고 생각되는 변수 Pair는 `relationship`-`sex`, `occupation`-`workclass`, `education`-`education.num` 입니다.
 
 ```python
 # Pearson
@@ -634,8 +640,14 @@ la_train[['education', 'education_num', 'race', 'native_country']].corr()
 &nbsp;
 &nbsp;
 
-- Categorical 인 두 변수의 경우는 Cramer's V 공식을 활용하여 상관관계를 확인했습니다.
+- 범주형인 변수는 Cramer's V 공식을 활용하여 상관관계를 확인했습니다.
 
+  $$
+  V = \sqrt{\frac{\chi^2}{N \cdot \min(k-1, r-1)}}
+  $$
+  - $N$: 전체 관측값의 합
+  - $k$: 행의 개수
+  - $r$: 열의 개수
 
 
 ```python
@@ -652,13 +664,15 @@ print(V)
     0.11306993147326666
 </pre>
 
+
 &nbsp;
 &nbsp;
 &nbsp;
 
-### (2) String to numerical
 
-- Categorical 데이터를 모델에 넣기 위해서는 수치화 시킬 필요가 있습니다. LabelEncoder는 불필요한 상관관계를 만들 가능성이 있기에 OnehotEncoder를 사용했습니다.
+### **(2) String to numerical**
+
+- 범주형 데이터를 모델의 Input으로 사용하기 위해서는 수치형 데이터로 변환시킬 필요가 있습니다. 라벨 인코더는 불필요한 상관관계를 보일 가능성이 있기에 원핫 인코더(One-hot Encoder)를 사용했습니다.
 - Categorical : `workclass`, `education`, `marital.status`, `occupation`, `relationship`, `race`, `sex`, `native.country`
 
 
@@ -672,7 +686,7 @@ test_dataset = test.copy()
 &nbsp;
 &nbsp;
 
-- `get_dummies`를 사용하여 **one-hot encoding**을 진행했습니다.
+- `get_dummies`를 사용하여 원핫 인코딩을 진행했습니다.
 
 ```python
 train_dataset = pd.get_dummies(train_dataset)
@@ -709,7 +723,7 @@ print(test_dataset.columns)
 &nbsp;
 &nbsp;
 
-- train과 test의 열길이를 맞춰주는 작업을 합니다.
+- Train 데이터와 Test 데이터의 열 길이를 맞춰주는 작업을 합니다.
 
 
 
@@ -725,7 +739,7 @@ for j in train_dataset.columns:
 add_test.remove('target')
 ```
 
-- test 데이터의 `native.country` 컬럼에는 'Holand-Netherlands' 특성이 없는걸까요?
+- Test 데이터의 `native.country` 열에는 'Holand-Netherlands' 특성이 없는걸까요?
 
 ```python
 print(add_test)
@@ -770,7 +784,7 @@ print(test_dataset.columns)
           dtype='object', length=105)
 </pre>
 
-- Train의 target column을 제외하고 보면 열길이가 잘 맞춰진것을 확인할 수 있습니다.
+- Train 데이터의 Target 열을 제외하면, 열 길이가 잘 맞춰진것을 확인할 수 있습니다.
 
 &nbsp;
 &nbsp;
@@ -778,7 +792,7 @@ print(test_dataset.columns)
 
 ## **4. Modeling**
 
-- 먼저, train과 validation 데이터를 train_test_split 함수를 사용하여 나눠줍니다.
+- 먼저, Train과 Validation 데이터를 `train_test_split` 함수를 사용하여 만들어줍니다.
 
 ```python
 test_size =0.15
@@ -806,8 +820,8 @@ print(val_x.shape, val_y.shape)
 &nbsp;
 &nbsp;
 
-- LGBM과 XGboost를 Soft Voting하여 간단한 ensemble 모델을 제작했습니다.
-- Soft Voting은 LGBM, XGboost 모델의 예측 확률을 평균하여 최종 class를 결정합니다.
+- LGBM과 XGboost를 Soft Voting하여 간단한 앙상블(Ensemble) 파이프라인을 제작했습니다.
+- Soft Voting은 LGBM, XGboost 모델의 예측 확률을 평균 계산하여 최종 Class를 결정합니다.
 
 
 ```python
@@ -890,5 +904,5 @@ plt.show()
 &nbsp;
 
 - Soft Voting을 진행했음에도 성능이 향상되지 않았습니다.
-- 두 모델의 예측은 높은 상관관계를 가지고 있었기에 앙상블 이전보다 성능이 향상되지 않았다고 해석할 수 있습니다.  
+- 두 모델의 예측은 높은 상관관계를 가지기 때문에, 앙상블을 해도 성능이 향상되지 않는 것이라 예상해봅니다. 
 
