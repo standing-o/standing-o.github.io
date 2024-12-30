@@ -1,22 +1,20 @@
 ---
 title: "신뢰성 이해하기 | Reliability"
 date: 2022-07-14 17:00:00 +/-TTTT
-categories: [Domain knowledge]
+categories: [Domain Knowledge]
 tags: [lg-aimers, reliability]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 신뢰성, 신뢰성 척도, 보전도 | Reliability
+description: 신뢰성, 신뢰성 척도, 보전도, Reliability
 ---
-
-
 
 ---------------------
 
-> 신뢰성의 개념과 척도, 그리고 여러 분포들을 알아봅시다.
+> 신뢰성의 개념과 척도, 그리고 관련 분포들을 알아봅시다.
 {: .prompt-info }
 
-신뢰성은 제품 수명 주기 관리에 중요한 역할을 합니다. 
+신뢰성(Reliability)은 제품 수명 주기 관리에 중요한 역할을 합니다. 
 
 품질과 신뢰성은 시간적, 추진 방식, 데이터 등 다양한 측면에서 차이를 보이며, 신뢰성 공학은 시스템의 고장 및 안전을 이해하는데 필수적입니다.
 
@@ -27,15 +25,15 @@ description: 신뢰성, 신뢰성 척도, 보전도 | Reliability
 ## **신뢰성 <sup>Reliability</sup>**
 
 - 주어진 작동 환경에서 주어진 시간 동안 시스템이 고유의 기능을 수행할 확률
-- 중요성 : 제품 라이프 사이클 관점의 total cost 관리 필요
+- 제품 라이프 사이클 관점의 Total Cost 관리 필요
 
-➔ 품질 비용은 잠재 risk
+➔ 품질 비용은 잠재 Risk
 
-➔ 개발 단계에서 시장품질은 예측 가능하고 control 되어야함
+➔ 개발 단계에서 시장품질은 예측 가능하고 Control 되어야함
 
 
 
-### 품질 vs 신뢰성
+### **품질 vs 신뢰성**
 
 |   항목    |           **품질**           |                  **신뢰성**                  |
 | :-------: | :--------------------------: | :------------------------------------------: |
@@ -49,65 +47,65 @@ description: 신뢰성, 신뢰성 척도, 보전도 | Reliability
 
 
 
-### 신뢰성 분석
+### **신뢰성 분석**
 
-- 필요성 : 패러다임의 변화
-  - 고장의 원인 : 취약한 설계, 과부하, 강도와 부하의 산포, 마모, 시간 매커니즘, 잠재된 오작동, 오류
+- **필요성** ㅣ 패러다임의 변화
+  - **고장의 원인** ㅣ 취약한 설계, 과부하, 강도와 부하의 산포, 마모, 시간 매커니즘, 잠재된 오작동, 오류
 
 
 
-### 신뢰성 공학의 학문적 발전
+### **신뢰성 공학의 학문적 발전**
 
-- 1950년대 후반 ~ 1960년대
+- <u>1950년대 후반 ~ 1960년대</u>
   - 확률분포로 고장현상 모형화, 지수분포에 관한 통계적 분석법 개발, NASA 창설, FMEA/FTA 개발 및 활용
   - 국제전기기술위원회 내에 장치와 부품의 신뢰성 기술위원회 발족, 와이블 분포에 관한 통계적 분석법 개발, 신뢰성 샘플링 검사방식 개발
-- 1970년대
+- <u>1970년대</u>
   - 원자력 발전소를 비롯한 복합시스템에 초점을 맞춘 신뢰도와 안전을 고려한 위험분석
   - RCM을 비롯한 설비보전, 소프트웨어 신뢰도 분야 등으로 확대
   - FTA가 항공우주분야나 핵발전소 분야에서 활발히 연구되고 활용
   - 충격 모형의 연구와 네트워크 신뢰도 연구 시작
-- 1980년대
+- <u>1980년대</u>
   - 가속 수명 시험의 설계, 분석 방법론 연구 및 개발, 신뢰성 데이터 분석에서의 베이지안 방법론 응용, 네트워크 신뢰성 분야 연구
   - 공통원인 고장 모형 및 분석이 대형 복잡시스템에서 활발하게 연구
-- 1990년대
+- <u>1990년대</u>
   - 열화시험방법과 분석법 개발, 초가속수명시험과 강건설계, 실험계획법 도입, 부하분석 및 열화과정 해석을 통한 정확한 의사결정
-- 2000년대
+- <u>2000년대</u>
   - 고장물리 분야가 더욱 다양하게 연구, 대형 시스템 분석, 시뮬레이션 방법론의 응용, 안전성 및 위험분석과의 통합화
   - 재료, 부품, 장비 고장 예측진단 기술의 필요에 관한 PHM가 매우 크게 대두
-- 21세기
+- <u>21세기</u>
   - 기계학습과 강화학습 등을 통한 신뢰성 분석과 예측 연구가 활발
   - 신뢰성 공학의 대상이 거대한 네트워크 시스템으로 확대됨 
-    - 긴급회복성 <sup>resilience measure</sup>과 같은 일시적 돌발현상에서의 대응능력에 관한 지표들이 정의
+    - 긴급회복성 <sup>Resilience Measure</sup>과 같은 일시적 돌발현상에서의 대응능력에 관한 지표들이 정의
   - RAM ➔ RAMS 로 확대적용
-  - 기능안전성 <sup>Functional safety</sup> 
+  - 기능안전성 <sup>Functional Safety</sup> 
     - 위험사건을 예방하기 위해 매우 높은 안전 방호시스템이 요구되는 산업부분에서 일반화됨
 
 
 
-### 신뢰성 척도
+### **신뢰성 척도**
 
-- 신뢰도 <sup>Reliability</sup> : 부품, 제품, 시스템 등이 주어진 사용 조건에서 일정 기간동안 요구되는 기능을 고장 없이 수행할 확률
+- **신뢰도 <sup>Reliability</sup>** ㅣ 부품, 제품, 시스템 등이 주어진 사용 조건에서 일정 기간동안 요구되는 기능을 고장 없이 수행할 확률
 
 ➔ 시구간 $$[0, t]$$ 동안 고장나지 않을 확률
 
-- 고장률 <sup>Failure rate</sup>
-  - 순간 고장율 <sup>Instantaneous failure rate, hazard rate</sup> : 어떤 시점까지 동작하고 있는 시스템이 계속되는 단위시간 동안 고장을 일으킬 비율
-  - 평균 고장율 <sup>Average failure rate</sup> : 총 동작시간 동안의 고장개수
+- **<u>고장률</u>** <sup>Failure rate</sup>
+  - **순간 고장율 <sup>Instantaneous Failure Rate, Hazard Rate</sup>** ㅣ 어떤 시점까지 동작하고 있는 시스템이 계속되는 단위시간 동안 고장을 일으킬 비율
+  - **평균 고장율 <sup>Average Failure Rate</sup>** ㅣ 총 동작시간 동안의 고장개수
 
 ➔ 시점 t에서 작동하는 부품이 시구간 $$[t, t+\Delta]$$에서 고장날 확률
 
-- 평균 고장시간 <sup>Mean-time-to-failure</sup> : 수리불가시스템 <sup>Non-repairable system</sup>에서 고장이 발생하기 까지의 평균시간
-- 평균 고장간격 <sup>Mean-time-between-failure</sup> : 수리가능시스템 <sup>Repairable system</sup>에서 고장간격 간의 평균 동작시간
-- 평균 잔여수명 <sup>Mean residual life</sup> : 자동차, 선박, 항공기 등의 중고제품을 구입할 경우, 향후 얼마나 더 사용할 수 있는지 평가하는 척도
-- 보전도 <sup>Maintainability</sup> : 고장난 시스템이 주어진 조건 하에서 규정된 시간 내에 수리(보전)을 완료할 확률
-- 가용도 <sup>Availability</sup> : 수리 가능한 시스템이 어떤 특정 시점에 기능을 유지하고 있을 확률
+- **평균 고장시간 <sup>Mean Time to Failure</sup>** ㅣ 수리불가시스템 <sup>Non Repairable System</sup>에서 고장이 발생하기 까지의 평균시간
+- **평균 고장간격 <sup>Mean Time between Failure</sup>** ㅣ 수리가능시스템 <sup>Repairable System</sup>에서 고장간격 간의 평균 동작시간
+- **평균 잔여수명 <sup>Mean Residual Life</sup>** ㅣ 자동차, 선박, 항공기 등의 중고제품을 구입할 경우, 향후 얼마나 더 사용할 수 있는지 평가하는 척도
+- **보전도 <sup>Maintainability</sup>** ㅣ 고장난 시스템이 주어진 조건 하에서 규정된 시간 내에 수리(보전)을 완료할 확률
+- **가용도 <sup>Availability</sup>** ㅣ 수리 가능한 시스템이 어떤 특정 시점에 기능을 유지하고 있을 확률
 
 
 
-### 신뢰성 데이터
+### **신뢰성 데이터**
 
-- 수명데이터 : 의도된 기능을 제대로 수행하고 있거나 고장인지의 여부로 판정 (binary data)
-- 성능데이터 : 시간 경과에 따른 제품의 성능을 측정 (continuous data)
+- **수명데이터** ㅣ 의도된 기능을 제대로 수행하고 있거나 고장인지의 여부로 판정 (Binary Data)
+- **성능데이터** ㅣ 시간 경과에 따른 제품의 성능을 측정 (Continuous Data)
 
 &nbsp;
 &nbsp;
@@ -115,39 +113,41 @@ description: 신뢰성, 신뢰성 척도, 보전도 | Reliability
 
 ## **연속형 수명분포**
 
-- **지수 분포** <sup>Exponential distribution</sup>
+- **<u>지수 분포</u>** <sup>Exponential Distribution</sup>
 
   - $$f(t) = {\lambda}e^{-\lambda{t}}$$, $$F(t) = 1-e^{\lambda{t}}$$ (연속형)
-  - 시간 t에 관계없이 원래의 평균수명과 동일 ➔ 지수분포를 따르는 제품은 작동하는 동안에는 늘 새것과 같음 ➔ 망각성 <sup>memoryless property</sup>
-  - Relation to the poisson process : 지수분포는 일반적으로 사건이 1건 발생하는데 걸리는 시간에 대한 분포로 사용됨
+  - 시간 $t$에 관계없이 원래의 평균수명과 동일     
+  ➔ 지수분포를 따르는 제품은 작동하는 동안에는 늘 새것과 같음     
+  ➔ 망각성 <sup>Memoryless Property</sup>
+  - **Relation to the Poisson Process** ㅣ 지수분포는 일반적으로 사건이 1건 발생하는데 걸리는 시간에 대한 분포로 사용됨
   - 지수분포를 따르는 제품에 대한 고려사항
     - 사용된 제품은 확률적으로 새 것과 같기 때문에 작동하고 있는 부품을 예방보전의 목적으로 미리 교체할 아무런 이유가 없다.
     - 신뢰도 함수, 고장까지의 평균시간 등의 추정은 관측시점에서 부품들의 총 작동시간과 고장의 수에 대한 데이터를 수집하는것으로 충분
-    - Drenick thm : 복잡한 기기나 시스템의 수명분포는 비교적 넓은 조건하에서 근사적으로 지수분포를 따옴
 
-- **감마 분포** <sup>Erlang distribution</sup>
+- **<u>감마 분포</u>** <sup>Erlang Distribution</sup>
 
   - 서로 독립인 확률변수 $$X_1,...,X_k$$가 모수 $$\lambda>0$$인 지수분포를 따를때 $$Y = \sum{X_i}$$는 감마분포를 따른다.
-  - $$Y ~ Gamma(k, \lambda)$$ where K is positive integer, $$\lambda>0$$, $$f(y) = \frac{\lambda^k{y^{k-1}}e^{-\lambda{y}}}{(k-1)!}$$ if $$y>0$$; $$0{\quad}otherwise$$
+  - $$Y \sim Gamma(k, \lambda)$$ where K is positive integer, $$\lambda>0$$, $$f(y) = \frac{\lambda^k{y^{k-1}}e^{-\lambda{y}}}{(k-1)!}$$ if $$y>0$$; $$0{\quad}otherwise$$
 
-  - 지수분포의 일반화 형태 (poisson 분포를 따를때 연속적으로 k개의 사건이 발생할때까지 걸린 시간)
+  - 지수분포의 일반화 형태 (Poisson 분포를 따를때 연속적으로 k개의 사건이 발생할때까지 걸린 시간)
 
-- **와이블 분포** <sup>Weibull distribution</sup>
+- **<u>와이블 분포</u>** <sup>Weibull Distribution</sup>
 
-  - $$X ~ weibull(\alpha, \beta)$$, $$\alpha>0$$ and $$\beta>0$$, $$f(x) = \beta\alpha^{\beta}x^{\beta-1}e^{-(\alpha{x})^\beta}$$ if $$x>0$$, $$0{\quad}otherwise$$
+  - $$X \sim weibull(\alpha, \beta)$$, $$\alpha>0$$ and $$\beta>0$$, $$f(x) = \beta\alpha^{\beta}x^{\beta-1}e^{-(\alpha{x})^\beta}$$ if $$x>0$$, $$0{\quad}otherwise$$
   - If $$\beta=1$$, 지수분포와 동일
-  - Reliability information : 시간에 따른 제품의 동작확률을 와이블 분포로 모형화 함으로써 제품의 수명에 대한 다양한 정보를 획득
-  - 최약 연결 <sup>weakest link</sup> 의 법칙 : 독립적이고 동일한 분포를 따르는 여러 개의 비음의 확률변수들이 있을 때, 이 중 최소인 확률변수의 분포는 와이블 분포를 따름
-  - 부품 <sup>components or parts</sup>의 수명분포에 주로 사용됨
+  - **Reliability Information** ㅣ 시간에 따른 제품의 동작확률을 와이블 분포로 모형화 함으로써 제품의 수명에 대한 다양한 정보를 획득
+  - **최약 연결 <sup>Weakest Link</sup> 의 법칙** ㅣ 독립적이고 동일한 분포를 따르는 여러 개의 비음의 확률변수들이 있을 때, 이 중 최소인 확률변수의 분포는 와이블 분포를 따름
+  - 부품 <sup>Components or Parts</sup>의 수명분포에 주로 사용됨
 
-- **정규 분포** <sup>Normal distribution</sup>
+- **<u>정규 분포</u>** <sup>Normal Distribution</sup>
 
   - 중심이 &mu;이고 좌우대칭인 종모양의 형태, 분산 &sigma;<sup>2</sup>는 분포의 넓고 좁은 정도(산포)를 결정하는 모수
-  - 표준정규분포 : 평균이 0이고 분산이 1인 정규분포
-  - 정규분포를 따르는 n개의 표본으로부터 얻어진 평균의 분포는 평균 &mu;, 분산 &sigma;<sup>2</sup>/n인 정규분포를 따름 i.e., n개의 표본이 추출되는 데이터 분포가 정규분포가 아닌 다른 임의의 분포로 가정하여도 그 표본평균의 분포는 정규분포를 따름
+  - **표준정규분포** ㅣ 평균이 0이고 분산이 1인 정규분포
+  - 정규분포를 따르는 n개의 표본으로부터 얻어진 평균의 분포는 평균 &mu;, 분산 &sigma;<sup>2</sup>/n인 정규분포를 따름 i.e.,     
+  n개의 표본이 추출되는 데이터 분포가 정규분포가 아닌 다른 임의의 분포로 가정하여도 그 표본평균의 분포는 정규분포를 따름
   - 표본이 추출된 분포의 평균 &mu;, 분산 &sigma;<sup>2</sup>이 존재할 때, 표본 수 n이 충분히 크면 표본의 평균 또는 표본의 합은 근사적으로 정규분포를 따름
 
-- **대수정규 분포** <sup>Lognormal distribution</sup>
+- **<u>대수정규 분포</u>** <sup>Lognormal Distribution</sup>
 
   - 다양한 형태의 분포를 표현할 수 있기 때문에 고장 데이터 등을 모형화 하는 경험적 모형으로 폭넓게 사용됨
   - 곱셈형 충격의 누적효과로 인해 고장이 발생하는 현상에 대해서 대수 정규 분포가 유도됨을 보일 수 있음
@@ -158,10 +158,10 @@ description: 신뢰성, 신뢰성 척도, 보전도 | Reliability
 
 ## **이산형 분포**
 
-- **이항 분포** <sup>Binomial distribution</sup>
+- **<u>이항 분포</u>** <sup>Binomial Distribution</sup>
   - n개의 독립적인 베르누이 시행을 $$X_1,...,X_n$$라 하고, 각각 X가 1일 확률을 P라 하면, $$Y = X_1 + ... +  X_n$$은 모수 n과 p를 갖는 이항분포를 가짐
   - $$P(Y = y) = \binom{n}{y}{p^y}(1-p)^{n-y}$$, $$x = 0,1,2,...,n$$
-- **포아송 분포** <sup>Poisson distribution</sup>
+- **<u>포아송 분포</u>** <sup>Poisson Distribution</sup>
   - 단위시간동안 발생빈도가 &lambda;인 포아송 프로세스를 따르는 사건의 발생 횟수를 X, 주어진 t시간동안 발생하는 사건의 수는 평균 &mu; = &lambda;t인 포아송 분포를 따름
   - $$P(X = x) = \frac{\mu^{x}e^{-\mu}}{x!}$$, where $$x=1,2,...$$
 
@@ -171,18 +171,18 @@ description: 신뢰성, 신뢰성 척도, 보전도 | Reliability
 
 ## **보전도 <sup>Maintainability</sup>**
 
-- 보전의 목적 : 안전하고 경제적으로 운전될 수 있는 조건으로 장비유지
-- **사후보전** <sup>Breakdown maintenance</sup> : 점검 및 정기교환을 전혀 하지 않고 장비고장 후 수리
-- **시간 기준보전** <sup>Time based maintenance</sup> : 장비의 열화에 가장 비례하는 파라미터 (생산성, 작동회수 등)로서 수리주기 (이론값, 경험값)을 정하고 주기까지 사용 시 무조건 수리함
-- **상태 기반보전** <sup>Condition based maintenance</sup> : 장비 열화 상태를 각 측정 데이터와 그 해석에 따라서 오프라인 혹은 온라인 상태로 파악하며, 열화를 나타내는 값이 미리 정한 열화 기준에 달하면 수리
-  - 목적, 유닛/부품 단위 ➔ 성능열화상태 ➔ 파라미터 ➔ 파라미터 측정법 ➔ 정기적 장비 이상 측정 ➔ 파라미터 기능 열화간 상관관계 ➔ threshold 설정 ➔ 현물 분해조사 ➔ 상관관계 입증 ➔ 경향관리 시스템 구축
+- **보전의 목적** ㅣ 안전하고 경제적으로 운전될 수 있는 조건으로 장비유지
+- **사후보전** <sup>Breakdown Maintenance</sup> ㅣ 점검 및 정기교환을 전혀 하지 않고 장비고장 후 수리
+- **시간 기준보전** <sup>Time based Maintenance</sup> ㅣ 장비의 열화에 가장 비례하는 파라미터 (생산성, 작동회수 등)로서 수리주기 (이론값, 경험값)을 정하고 주기까지 사용 시 무조건 수리함
+- **상태 기반보전** <sup>Condition based Maintenance</sup> ㅣ 장비 열화 상태를 각 측정 데이터와 그 해석에 따라서 오프라인 혹은 온라인 상태로 파악하며, 열화를 나타내는 값이 미리 정한 열화 기준에 달하면 수리
+  - 목적, 유닛/부품 단위 ➔ 성능열화상태 ➔ 파라미터 ➔ 파라미터 측정법 ➔ 정기적 장비 이상 측정 ➔ 파라미터 기능 열화간 상관관계 ➔ Threshold 설정 ➔ 현물 분해조사 ➔ 상관관계 입증 ➔ 경향관리 시스템 구축
 
 
 &nbsp;
 &nbsp;
 &nbsp;
 
-## Reference
+## **Reference**
 > 본 포스팅은 LG Aimers 프로그램에서 학습한 내용을 기반으로 작성되었습니다. (전체 내용 X)
 {: .prompt-warning }
 

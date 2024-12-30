@@ -2,7 +2,7 @@
 title: "[Dacon] 음성 분류 경진대회"
 date: 2022-06-23 17:00:00 +/-TTTT
 categories: [Extracurricular Activities, Competition]
-tags: [dacon, ai-competition, python, deep-learning, speech, classification, data-augmentation, feature-engineering]
+tags: [dacon, ai-competition, python, deep-learning, speech, classification, data-augmentation, feature-engineering, spectrogram, fourier-transform]
 math: true
 toc: true
 author: seoyoung
@@ -62,7 +62,7 @@ test = pd.read_csv('/content/drive/MyDrive/Speech_classification/test.csv')
 &nbsp;
 &nbsp;
 
-- 한 음성의 waveplot을 확인해보겠습니다.
+- 한 음성의 Waveplot을 확인해보겠습니다.
 
 
 
@@ -236,11 +236,11 @@ def pitch(sample, sampling_rate, pitch_factor = 0.8):
 
 ↪ 특정 프레임에서 신호의 부호(Sign)가 변경되는 빈도입니다. (i.e., 신호의 부호 변화율)
 
-#### (2) Chroma Shift*
+#### (2) Chroma Shift
 
 ↪ 파형(Waveform) 또는 Power Spectrogram으로 생성한 크로마그램(Chromagram) 입니다.
 
-#### (3) Mel spectrum*
+#### (3) Mel spectrum
 
 ↪ 오디오 신호(Time Domain)에 Fast Fourier Transform(FFT)를 적용하여 얻은 주파수 영역(Frequency Domain)의 스펙트럼(Spectrum) 입니다.
 
