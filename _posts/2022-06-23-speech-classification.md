@@ -199,7 +199,7 @@ print("Min :", np.min(all_shape, axis = 0))
 &nbsp;
 &nbsp;
 
-## **2. Data augmentation**
+## **2. Data Augmentation**
 
 - 모델의 일반화 능력 향상을 위해, 기존의 음성데이터에 Perturbation을 추가하여 새 음성데이터를 생성합니다.
 
@@ -232,7 +232,7 @@ def pitch(sample, sampling_rate, pitch_factor = 0.8):
 
 - 모델링에 사용할 만한 몇가지 Feature Extraction 방법을 소개하겠습니다.
 
-#### (1) Zero Crossing Rate (ZCR)
+#### (1) ZCR <sup>Zero Crossing Rate</sup>
 
 ↪ 특정 프레임에서 신호의 부호(Sign)가 변경되는 빈도입니다. (i.e., 신호의 부호 변화율)
 
@@ -246,11 +246,11 @@ def pitch(sample, sampling_rate, pitch_factor = 0.8):
 
 ↪ Mel Filter Bank를 사용한 필터링 과정을 거쳐 Mel 스펙트럼을 생성합니다.
 
-#### (4) MFCC (Mel-Frequency Cepstral Coefficient)
+#### (4) MFCC <sup>Mel-Frequency Cepstral Coefficient</sup>
 
 ↪ Mel 스펙트럼에서 Cepstral 분석을 통해 고유한 음향 특성을 추출한 지표입니다.
 
-#### (5) RMS (Root Mean Square)
+#### (5) RMS <sup>Root Mean Square</sup>
 
 ↪ 오디오 평균 음량을 측정하는 데 사용되는 값입니다.
 
@@ -339,7 +339,7 @@ print("Shape of Y:", np.shape(Y))
 &nbsp;
 &nbsp;
 
-## **Reference**
+## Reference
 
 1. [Speech Emotion Recognition by SHIVAM BURNWAL](https://www.kaggle.com/code/shivamburnwal/speech-emotion-recognition)
 

@@ -6,152 +6,126 @@ tags: [lg-aimers, unsupervised-learning]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 비지도학습 | Unsupervised learning
+description: 비지도학습 이해, 비지도학습 개념, 머신러닝 비지도학습, 인공지능 비지도학습, 딥러닝 비지도학습, 비지도학습 알고리즘, 비지도학습이란, 비지도학습 예시
 ---
 
 
 
 ----------------
 
-> 인공지능의 비지도 학습 개념과 종류를 설명합니다.
+> 인공지능 비지도 학습(Unsupervised learning)의 간단한 개념과 전반적인 견해를 이야기합니다.
 {: .prompt-info }
 
-전통적인 머신러닝과 딥러닝에서의 특징 및 차이를 소개하면서 K-means, 계층적 클러스터링,밀도 추정과 같은 방법을 정리합니다.
+전통적인 머신러닝과 딥러닝에서의 비지도 학습 방법을 소개하면서 K-means, 계층적 클러스터링, 밀도 추정 기법을 설명합니다.
 
-딥러닝에서의 특성 공학과 표현 학습의 차이, 고차원 데이터 개념을 설명하면서 딥러닝의 표현은 설명하기 어려운 경우가 많다는 점을 이야기합니다.
-
-&nbsp;
-&nbsp;
-&nbsp;
-
-## **In Traditional Machine Learning**
-
-- K-means clustering
-- Hierarchical clustering
-- Density estimation
-- PCA
-
-#### 특징
-
-- Low dimensional data
-- Simple concepts
+딥러닝에서의 특성 공학(Feature Engineering)과 표현 학습의 차이, 고차원 데이터 개념을 설명하면서 딥러닝의 표현은 설명하기 어려운 경우가 많다는 점을 이야기합니다.
 
 &nbsp;
 &nbsp;
 &nbsp;
 
-## **In Deep Learing**
-
-### Feature Engineering vs. Representation Learning
-
-- **Feature engineering**
-  - By human
-  - Domain knowledge & Creactivity
-  - Brainstorming
-- **Representation learning**
-  - By machine
-  - Deep learning knowledge & coding skill
-  - Trial and error
+## **전통적인 머신러닝 비지도학습**
+- 전통적인 머신러닝의 비지도 학습은 주로 낮은 차원의 데이터를 다루고, 간단한 개념의 알고리즘으로 구성됩니다.
+- **<u>종류</u>**
+  - K-평균 군집화 (K-means Clustering)
+  - 계층적 군집화 (Hierarchical Clustering)
+  - 밀도 추정 (Density Estimation)
+  - 주성분 분석 (Principal Component Analysis, PCA)
 
 
+&nbsp;
+&nbsp;
+&nbsp;
 
-### Modern Unsupervised Learning
+## **딥러닝 비지도학습**
 
-- High dimensional data
-- Difficult concepts ➔ Not well understood, but surprisingly good performance
-- Deep learning
-- Unsupervised representation learning
+- **특성 공학(Feature Engineering)**
+  - 인간에 의해 이루어집니다.
+  - 데이터에 대한 도메인 지식(Domain Knowledge)과 창의성이 요구됩니다.
+  - Brainstorming...
 
-
-
-### Representation in Deep Learning
-
-- Deep learning representation is under constrained
-  - Simple SGD can find one of the useful networks
-  - Representation characteristics can be adjusted if needed
-  - Learned representation becomes difficult to understand
-
-- Disentangled representation
-  - Alinged
-  - Independent
-  - Subspaces
-  - Possible because severaly underconstrained
+- **표현 학습(Representation Learning)**
+  - 기계에 의해 이루어집니다.
+  - 딥러닝 지식과 코딩 기술이 요구됩니다.
+  - Trial and Error...
 
 
+### **딥러닝에서의 표현 <sup>Representation in Deep Learning</sup>**
+- 딥러닝에서의 표현은 제약이 적습니다.
+  - 간단한 SGD로 유용한 네트워크를 찾을 수 있습니다.
+  - 표현 특성은 필요에 따라 조정할 수 있습니다.
+  - 학습된 표현은 이해하기 어렵습니다.
 
-### Angle Information
-
-- 0 ~ 2&pi;
-  - Algorithm thinks : 0 and 2&pi; are different / 0 and 1.9&pi; are far
-- (x<sub>1</sub>, x<sub>2</sub>) = (cos(&theta;), sin(&theta;))
-  - 0 and 2&pi; are the same
-  - 0 and 1.9&pi; are close
+- 분리된(Disentangled) 표현
+  - 정렬됨(Aligned), 독립적(Independent), 부분공간(Subspaces)
+  - 제약이 많지 않아서 가능합니다.
 
 
+### **각도 정보 <sup>Angle Information</sup>**
 
-### Spatial Information
+- $0 \sim 2\pi$
+  - 알고리즘은...
+    - $0$과 $2\pi$는 다르다고 생각하면서, $0$과 $1.9\pi$는 멀다고 생각합니다.
+  - $(x_1, x_2) = (\cos \theta, \sin \theta)$
+    - $0$과 $2\pi$는 같으며, $0$과 $1.9\pi$은 가깝습니다.
 
-- Goal : Represent as mathematical object
+
+### **공간 정보 <sup>Spatial Information</sup>**
+
+- **목표** ㅣ 수학적 객체로 표현하기
 
 
 
-### Human Representation Problems
+### **인간의 표현 문제**
+- 인간은 이해할 수 있으며, 인간은 목표를 가지고 설계할 수 있습니다.
 
-- Human can understand
-- Human can design with a goal
-
-➔ Good representation in deep learning? : Useful and irrelevant
+> **딥러닝에서 좋은 표현이란? 유용하지만 관련없는 정보**
 
 
+### **잘 정의된 작업 <sup>A Well Defined Task</sup>**
 
-### A Well Defined Task
+- 일반적으로 관심 있는 속성만 $$y$$로 고려됩니다.
+  - Imagenet - 클래스 라벨
+  - $$y$$는 인간이 선택한 라벨로 단순히 정의되므로, Well Defined Task 라고 가정할 수 있습니다.
 
-- Typically, only on attribute of interest is considered as y
-  - Imagenet - class
-  - y is well defined because it is simply defined as human selected label
-- Good representation - a vague concept (Supervised)
-  - Even when y is well defined, what do we want for h<sub>i</sub> and h<sub>2</sub>?
-  - Simply say "representation learning successful"  if good performance?
-  - But then there is almost nothing we can sy about h<sub>i</sub> and h<sub>2</sub>
-  - Other than saying "useful information has been well curated"
-  - Is there anything we can say or pursue?
-  - For a general purpose, what is a good representation?
+- 좋은 표현이라는 모호한 개념 ➔ **지도학습**
+  - $$y$$가 잘 정의되어도 $$h_1$$과 $$h_2$$에서 무엇을 원할까?
+  - "표현 학습이 성공적이다"고 말할 수 있을까?
+  - "유용한 정보가 잘 정리되었다"고만 말할 수 있을 것입니다.
+  - 일반적인 목적에서 좋은 표현이란 무엇일까?
   
   
 
-### Information Bottleneck
+### **정보 병목 <sup>Information Bottleneck</sup>**
 
-- For a well defined supervised task, what should h<sub>i</sub> and h<sub>2</sub> satisfy?
-- Good representation - a vague concept (Unsupervised)
-  - For a general purpose, whawt is a good representation?
-  - General purpose often defined as a list of downstream tasks?
-  - So, we go back to good performance for the tasks of interest?
+- 잘 정의된 지도 학습 작업에서는 $$h_1$$과 $$h_2$$가 무엇을 만족해야 할까?
+- 좋은 표현이라는 모호한 개념 ➔ **지도학습**
+  - 일반적인 목적에서 좋은 표현이란 무엇일까?
+  - 일반적인 목적은 후속 작업들의 목록으로 정의될 수 있습니다.
+  - 관심 있는 작업의 성능이 좋다면 다시 돌아오게 될 것입니다.
 
 
+### **표현 <sup>Representation</sup>**
 
-### Representation
-
-- What we want: a formal definition and evaluation metrics for representation
-- Reality : No definition, task dependent evaluation methods
+- **우리가 원하는 것** ㅣ 표현에 대한 공식적인 정의와 평가 지표
+- **현실** ㅣ 정의가 없고 작업 의존적인 평가 방법들
 
 &nbsp;
 &nbsp;
 &nbsp;
 
-## **Unsupervised Representation Learning**
-
-- Unsupervised performance ≈ supervised performance
-  - For linear evaluation
-  - Thanks to instance discrimination, contrastive loss, and aggressive augmentation
-- As in supervised learning
-  - Performance metric can be unclear
-  - Design of surrogate loss is an art (some principled; some hueristics based)
-  - Training techinique development continuing (but augmentation methods are dominating)
-- NLP
-  - Masked language modeling
-  - What next?
-- Unsupervised representation learning
-  - Still a long way to go...
+## **비지도 표현 학습 <sup>Unsupervised Representation Learning</sup>**
+- **비지도 학습 성능 ~ 지도 학습 성능**
+  - 인스턴스 분별, 대조 손실, 공격적 증강 덕분..
+- 지도 학습과 마찬가지로..
+  - 성능 지표가 불분명할 수 있습니다.
+  - 대체 손실 설계는 훌륭합니다. (일부는 원칙에 기반, 일부는 경험적)
+  - 학습 기술 개발은 계속되고 있습니다. (하지만 증강 방법이 지배적)
+- 자연어 처리(NLP)
+  - 마스크된 언어 모델링
+  - 그 다음은?
+- 비지도 표현 학습
+  - 아직 갈 길이..
 
 
 &nbsp;

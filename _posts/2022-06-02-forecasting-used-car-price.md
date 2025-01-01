@@ -327,7 +327,7 @@ print("# outliers to drop :", len(outlier_ind))
 &nbsp;
 &nbsp;
 
-### (2) Correlation
+### **(2) Correlation**
 
 - 앞서 생성한 Pandas Profiling Report의 Alert 섹션을 참고하여 상관계수를 계산했습니다.  
 
@@ -515,7 +515,7 @@ df_test['company'].unique()
 &nbsp;
 &nbsp;
 
-### (2) **`paint` 변수**
+### **(2) `paint` 변수**
 
 - 뒤죽박죽인 `paint` 변수를 고쳐주겠습니다.
 
@@ -709,7 +709,7 @@ print(len(df_test['location'].unique()))
 &nbsp;
 &nbsp;
 
-### (4) **`engine` 변수**
+### **(4) `engine` 변수**
 - `engine` 변수를 수치형으로 바꿔주겠습니다.
 
 ```python
@@ -796,7 +796,7 @@ print(len(df_test['engine'].unique()))
 &nbsp;
 &nbsp;
 
-### (5) 특정 행 Drop하기
+### **(5) 특정 행 Drop하기**
 
 - Train과 Test 데이터의 `title`, `location`, `paint` 변수들의 종류 및 길이가 일치하지 않습니다.
 
