@@ -378,6 +378,7 @@ $$
 &nbsp;
 &nbsp;
 
+---------------------
 ## Reference
 > 본 포스팅은 LG Aimers 프로그램에서 학습한 내용을 기반으로 작성되었습니다. (전체 내용 X)
 {: .prompt-warning }

@@ -2,7 +2,7 @@
 title: "비지도학습과 딥러닝 | Unsupervised learning"
 date: 2022-07-17 17:00:00 +/-TTTT
 categories: [AI Theory, Machine Learning]
-tags: [lg-aimers, unsupervised-learning]
+tags: [lg-aimers, unsupervised-learning, clustering, feature-engineering]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
@@ -132,6 +132,8 @@ description: 비지도학습 이해, 비지도학습 개념, 머신러닝 비지
 &nbsp;
 &nbsp;
 
+
+------------------
 ## Reference
 > 본 포스팅은 LG Aimers 프로그램에서 학습한 내용을 기반으로 작성되었습니다. (전체 내용 X)
 {: .prompt-warning }
