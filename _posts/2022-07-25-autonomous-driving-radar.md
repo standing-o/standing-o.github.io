@@ -1,24 +1,24 @@
 ---
 title: "자율주행과 레이더센서 | Autonomous Driving"
 date: 2022-07-25 17:00:00 +/-TTTT
-categories: [Domain knowledge]
+categories: [Domain Knowledge]
 tags: [lg-aimers, radar, autonomous-driving]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 자율주행, Radar | Autonomous Driving, Radar
+description: 자율주행, 레이더센서, 자율주행 딥러닝, 자율주행 AI, 레이더센서 딥러닝, 레이더센서 AI, Autonomous Driving, Radar
 ---
 
 
 
 ------------------
 
-> 자율주행과 radar에 대한 기술과 동향을 소개합니다.
+> 자율주행과 레이더에 대한 기술과 최근 동향을 소개합니다.
 {: .prompt-info }
 
-미래 모빌리티는 자율주행, 연결성, 전기화를 중심으로 발전하고 있으며, 자율주행 시장은 센서 기술의 성장과 함께 미래 전망이 밝아지고 있습니다. 
+미래 모빌리티는 자율주행, 연결성, 전기화 기술을 중심으로 발전하고 있으며, 자율주행 시장은 센서 기술의 성장과 함께 미래 전망이 밝아지고 있습니다. 
 
-레이다 기술은 거리 및 속도 측정을 통해 차량 인식과 안전성을 향상시키는 중요한 기술로 발전하고 있습니다.
+레이더 기술은 거리 및 속도 측정을 통해 차량 인식과 안전성을 향상시키는 중요한 기술입니다.
 
 &nbsp;
 &nbsp;
@@ -26,22 +26,22 @@ description: 자율주행, Radar | Autonomous Driving, Radar
 
 ## **자율주행 시장동향**
 
-### 미래 모빌리티 메가 트렌드
+### **미래 모빌리티 메가 트렌드**
 
-- Autonomous driving ➔ 운전자 개입없이 스스로 안전하게 주행이 가능한 자율주행 고도화
+- Autonomous Driving ➔ 운전자의 개입없이 스스로 안전하게 주행이 가능한 자율주행 고도화
 - Connectivity ➔ 고도화된 연결형 자율주행을 통한 탑승자의 안전 및 교통관리 효과성 극대화
 - Electrification ➔ 높은 에너지 효율성 기반 1회 충전으로 최대 주행거리 확보
 
 
 
-### 자율주행 단계 고도화
+### **자율주행 단계 고도화**
 
-- 자율주행 단계
+- **자율주행 단계**
   - 수동운전 ➔ 주행보조 ➔ 부분적 자율주행 ➔ 조건적 자율주행 ➔ 고도 자율주행 ➔ 완전 자율주행
 
 
 
-### 자율주행 자동자 시장 동향
+### **자율주행 자동자 시장 동향 예측**
 
 - 2025년 시장 점유율
   - 부분 자율주행 : 12.4% / 완전 자율주행 : 0.5%
@@ -50,7 +50,7 @@ description: 자율주행, Radar | Autonomous Driving, Radar
 
 
 
-### 자율 주행 센서
+### **자율 주행 센서**
 
 - **Camera**
   - 장거리 및 인식률 개선을 위한 고화소화, 픽셀 사이즈 소형화, 저조도 개선
@@ -66,15 +66,15 @@ description: 자율주행, Radar | Autonomous Driving, Radar
 
 
 
-### 자율주행 SoC 동향
+### **자율주행 SoC 동향**
 
-- Tesla
+- **Tesla**
   - 카메라 2D 이미지만으로 실시간 3D 이미지 합성하는 기술
   - Edge case 중심의 서버를 통한 딥러닝과 시뮬레이션으로 정확도 향상
-- 엔디비아
+- **엔비디아**
   - ADAS 시스템에서 자율주행용 Hyperion 시스템 발전
   - 2D 카메라 중심에서 초음파, LiDAR, Radar 병행하는 3D 방식으로 전환
-- 모빌아이
+- **모빌아이**
   - 자율주행 EyeQ 시리즈 + 인포테인먼트 인텔 Atom C3000 솔루션
   - SD맵과 HD맵의 하이브리드 방식인 Autonomous vehicle 방식
 
@@ -101,21 +101,21 @@ description: 자율주행, Radar | Autonomous Driving, Radar
 
 
 
-### 거리 측정
+### **거리 측정**
 
 - Measure the time of flight (ToF) in order to calculate the distance : $$d = \frac{c_0t}{2}$$
 - With c<sub>0</sub> being the speed of light and t the ToF
 
 
 
-### 속도 측정
+### **속도 측정**
 
-- Pulsed radar : two succesive measurements
-- FMCW radar : exploit the Doppler shift
+- Pulsed radar ㅣ Two succesive measurements
+- FMCW radar ㅣ Exploit the Doppler shift
 
 
 
-### Radar 필요 기술
+### **Radar 필요 기술**
 
 - **Antenna**
   - High gain, 광각, 고해상도, peak gain, 방사패턴 최적화, array 안테나 설계
@@ -128,14 +128,14 @@ description: 자율주행, Radar | Autonomous Driving, Radar
 
 
 
-### Radar 기술 동향
+### **Radar 기술 동향**
 
 - 2D ADAS Basic (X, Y, Doppler) ➔ 2D ADAS improved (X, Y, Doppler) ➔ 3D (X, Y, Z, Doppler) ➔ 4D HR (High resolution; X, Y, Z, Doppler, depth)
  - 4D UHR (Ultra high resolution; X, Y, Z, Doppler, depth) ➔ Imaging (X, Y, Z, Doppler, depth, AI/Deeplearning)
 
 
 
-### Radar 시장 동향
+### **Radar 시장 동향**
 
 - 차량 제어를 위해 AEB 기능 채용 확대
 - Front radar의 고해상도로 채용률 성장
@@ -154,6 +154,8 @@ description: 자율주행, Radar | Autonomous Driving, Radar
 &nbsp;
 &nbsp;
 
+
+----------
 ## Reference
 > 본 포스팅은 LG Aimers 프로그램에서 학습한 내용을 기반으로 작성되었습니다. (전체 내용 X)
 {: .prompt-warning }

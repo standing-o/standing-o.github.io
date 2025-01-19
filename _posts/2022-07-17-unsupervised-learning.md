@@ -2,7 +2,7 @@
 title: "비지도학습과 딥러닝 | Unsupervised learning"
 date: 2022-07-17 17:00:00 +/-TTTT
 categories: [AI Theory, Machine Learning]
-tags: [lg-aimers, unsupervised-learning, clustering, feature-engineering]
+tags: [lg-aimers, unsupervised-learning, deep-learning, neural-network, clustering, feature-engineering]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/

@@ -2,7 +2,7 @@
 title: "지도학습이란? | Supervised Learning(Regression, Classification)"
 date: 2022-07-15 17:00:00 +/-TTTT
 categories: [AI Theory, Machine Learning]
-tags: [lg-aimers, supervised-learning, svm, neural-network, ensemble. optimization, regression, classification]
+tags: [lg-aimers, supervised-learning, deep-learning, neural-network, regression, classification, ensemble, optimization, svm]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/

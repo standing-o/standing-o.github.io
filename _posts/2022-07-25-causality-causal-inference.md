@@ -1,167 +1,174 @@
 ---
-title: "인과와 인과추론 | Causality and Causal inference"
+title: "인과와 인과추론 | Causality and Causal Inference"
 date: 2022-07-25 17:00:00 +/-TTTT
 categories: [AI Theory, Causal Inference]
-tags: [lg-aimers, causality, scm, back-door, do-calculus]
+tags: [lg-aimers, causality, causal-inference, machine-learning]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 인과, 인과추론 | Causality, SCM, Back-door, Do-calculus
+description: 인과, 인과추론, 구조적 인과모델, 인과추론 머신러닝, 인과추론 예시, 인과추론 AI, 인과추론 모델, 인과추론 방법론 | Causality, Causal Inference, SCM, Back-door, Do-calculus
 ---
 
 
 
 -----------------------
 
-> 인과, 인과추론의 개념과 관련 이론 (Back-door, Do-calculus) 들을 알아봅시다.
+> 인과와 인과추론의 개념과 Back-door, Do-calculus와 같은 인과추론 방법론들을 알아봅시다.
 {: .prompt-info }
 
-구조적 인과 모델(SCM)은 관측과 개입을 통해 인과 관계를 설명하는데 도움을 줍니다. 
+구조적 인과 모델(Structural Causal Model, SCM)은 관측과 개입을 통해 인과 관계를 설명하는데 도움을 줍니다. 
 
-Back-door 기준은 인과 관계를 확인하고 혼동을 줄이는 데 도움이 되며, Do-계산법은 확률을 처리하는 데 유용한 규칙을 제공합니다. 
+Back-door 기준은 인과 관계를 확인하고 혼동을 줄이는 데 도움이 되며, Do-계산법은 확률을 처리하는 데 유용한 규칙을 제공합니다.
 
 &nbsp;
 &nbsp;
 &nbsp;
+
+
 
 ## **Causality**
+- Causality는 한 사건, 과정, 상태, 또는 객체가 다른 사건, 과정, 상태, 또는 객체의 발생에 기여하는 영향을 의미하며, 원인은 결과에 일부 책임이 있고 결과는 원인에 일부 의존하다는 특징을 보여줍니다.
+- **다양한 학문 분야에서의 인과관계**
+  - **자연과학** ㅣ 물리학, 화학, 생물학, 기후과학
+  - **사회과학** ㅣ 심리학, 사회학, 경제학
+  - **보건학** ㅣ 역학, 공중보건
 
-- Influence by shich one event, process, state, or object a contributes to the production of another event, process, state, or object where the cause is partly responsible for the effect, and the effect is partly dependent on the cause.
-- Causality in various academic disciplines
-  - Physics, chemistry,biology, climate science
-  - Psychology, social science, economics
-  - Epidemiology, public health
-- Relation to AI, ML, DS
-  - AI : a rational agent performing actions to achieve a goal (reinforcement learning)
-  - ML : currently focused on learning correlations
-  - DS : capture, process, analyze, communicate with data
+- **AI, ML, Data Science와의 관련성**
+  - **AI** ㅣ 목표를 달성하기 위해 행동을 수행하는 합리적인 에이전트 (강화학습)
+  - **ML** ㅣ 현재는 주로 상관관계 학습에 초점
+  - **DS** ㅣ 데이터를 수집, 처리, 분석, 커뮤니케이션하는 과정
+
 
 &nbsp;
 &nbsp;
 &nbsp;
 
-## **Structural Causal Model (SCM)**
 
-- SCM $$M = <U,V,F,P(U)>$$ provides a formal framework.
-- SCM induces observational, interventional, and counterfactual distributions.
-- SCM induces a causal graph $$g$$, which implies conditional independencies testable via d-separation (blockage).
-- The underlying model $$M$$ is unknown but the causal graph $$g$$ can be given from common sense or domain knowledge.
-- Intervention do(X=x) as a submodel M<sub>x</sub>, which induces a manipulated causal graph $$g_\bar{x}$$.
-- Causal effect of $$X=x$$ on $$Y=y$$ is defined as $$P(y\mid{do(x)})$$.
+## **구조적 인과 모델 <sup>Structural Causal Model, SCM</sup>**
+
+- SCM $$M = <U,V,F,P(U)>$$는 인과관계를 형식적으로 설명할 수 있으며, 관찰(Observation), 개입(Intervention), 반사실 분포(Counteractual Distribution)를 유도합니다.
+- SCM은 인과 그래프 $g$를 유도하며, 이는 **d-분리(d-separation)**를 통해 조건부 독립성을 테스트할 수 있게 합니다.
+  - 모델 $M$ 자체는 알 수 없지만, 인과 그래프 $g$는 상식 또는 도메인 지식으로부터 주어질 수 있습니다.
+- 개입(Intervention) $do(X=x)$는 서브모델 $M_x$으로 표현되며, 조작된 인과 그래프 $g_{\bar{x}}$를 유도합니다.
+- $X=x$가 $Y=y$에 미치는 인과 효과(Causal Effect)는 $P(y\mid{do(x)})$로 정의합니다.
 
 
 
-### Remark
+#### **Remark**
 
-- Identifiability : causal effect may be computable from existing observational data for some causal graphs.
-- In a Markovian case an singleton X, a causal effect can be easily derivable by canceling output $$P(x\mid{pa_x})$$
+- **Identifiability** ㅣ 일부 인과 그래프에서는 기존 관찰 데이터로부터 인과 효과를 계산할 수 있습니다.
+- Markovian 경우 단일 $X$에서 인과 효과는 $P(x\mid{pa_x})$를 제거하여 쉽게 도출할 수 있습니다.
+
 
 &nbsp;
 &nbsp;
 &nbsp;
+
 
 ## **Back-door Criterion**
 
 - **<u>Definition</u>**ㅣ**Back-door**
 
-  - Find a set $$Z$$ s.t. it can sufficiently explain 'confounding' between $$X$$ and $$Y$$. Then, 
+  - 변수 $X$와 $Y$사이의 혼란(Confounding)을 충분히 설명할 수 있는 집합 $Z$를 찾는 것을 의미합니다.
+  - 이때, $Z$가 Back-door 기준을 만족하면:
 
   $$
   P(y|do(x))=\sum_Z{P(y|x,z)P(z)}
   $$
+  - $do(x)$는 $X$에 대한 개입(Intervention)을 나타냅니다.
+
 
 - **<u>Definition</u>ㅣBack-door criterion**
-  
-  - A set $$Z$$ satisfies the back-door criterion with respect to a pair of variables $$X, Y$$ in causal diagram $$g$$ if;
-    - (i) no node in $$Z$$ is a descendant of $$X$$; and
-    - (ii) $Z$ blocks every path between X ∈ $$X$$ and Y ∈ $$Y$$ that contains an arrow into X.
-- A back-door adjustment formula is simple and widely used but limited.
+  - 인과 그래프 $g$에서 변수 $X$와 $Y$의 쌍에 대하여, 집합 $Z$가 Back-door Criterion을 만족하려면
+    - (i) $Z$의 노드는 $X$의 하위 노드(Descendant)가 아니어야 하며,
+    - (ii) $Z$는 $X$로 들어오는 화살표를 포함한 모든 경로를 차단(Block)해야 합니다. 
+- 이 공식은 간단하고 널리 사용되지만, 모든 인과 그래프에 적용할 수는 없는 한계가 있습니다.
+  - Back-door Criterion이 만족되지 않는 복잡한 인과 그래프의 경우에는 Do-calculus 같은 추가적인 도구가 필요합니다.
 
 
+### **Back-door sets as substitutes of the direct parents of $X$**
 
-### Back-door sets as substitutes of the direct parents of X
-
-- Rain satisfies the back-door criterion relative to Sprinkler ans Wet:
-  - (i) Rain is not descendant of Sprinkler, and
-  - (ii) Rain blocks the only back-door path from Sprinkler to Wet.
-- Adjusting for the direct parents of Sprinkler, we have:
+- ex.  Rain은 Sprinkler와 Wet 사이에서 Back-door Criterion을 만족합니다.
+  - (i) Rain은 Sprinkler의 하위 노드가 아니며,
+  - (ii) Rain은 Sprinkler에서 Wet으로 향하는 유일한 Back-door 경로를 차단합니다.
+- 따라서, Sprinkler의 직접 부모(Direct Parent)를 조정하여 다음과 같이 계산이 가능합니다.
   
 $$
 P(\text{wt}|do(\text{sp}))=\sum_\text{sn}P(\text{wt}|\text{sp,sn})P(\text{sn})=\cdots=\sum_\text{rn}P(\text{wt}|\text{sp,rn})P(\text{rn})
 $$
 
+
+
 &nbsp;
 &nbsp;
 &nbsp;
+
+
 
 ## **Rules of Do-calculus**
 
-- Backdoor criterion results in a very specific form of indentification formula.
+- Back-door Criterion은 특정 상황에서 매우 구체적인 형태의 인과 효과 계산 공식을 보여줍니다.
 
-- Do-calculus (Pearl, 1995) provides general machinery to manipulate observational and interventional distributions.
+- Do-calculus(Pearl, 1995)는 관찰 분포와 개입 분포를 변환하거나 조작할 수 있는 일반화된 수학 공식입니다.
 
 - **<u>Theorem</u>ㅣRules of Do-calculus (simplified)**
 
-  - Rule 1 : Adding/removing observations
+  - **Rule 1** ㅣ Adding/Removing Observations
 
   $$
   P(y|do(x),z)=P(y|do(x))\,\,\,\text{if}\,\,(Z\perp{Y|X})\,\,\text{in}\,\,g_{\bar{X}}
   $$
 
-  - Rule 2 : Action/observation exchange
+  - **Rule 2** ㅣ Action/Observation Exchange
 
   $$
   P(y|do(x),do(z))=P(y|do(x),z)\,\,\,\text{if}\,\,(Z\perp{Y|X})\,\,\text{in}\,\,g_{\bar{X}\underline{Z}}
   $$
 
-  - Rule 3 : Adding/removing actions
+  - **Rule 3** ㅣ Adding/Removing Actions
 
   $$
   P(y|do(x),do(z))=P(y|do(x))\,\,\,\text{if}\,\,(Z\perp{Y|X})\,\,\text{in}\,\,g_{\bar{X}\bar{Z}}
   $$
 
-  
 
-- Do-calculus is sound and complete but it has no algorithmic insight
-- A graphical condition and an efficient algorithmic procedure have developed for identifiability.
+- Do-calculus는 **정확성(Soundness)**과 **완전성(Completeness)**을 가지지만, 알고리즘적인 통찰력을 보여주지는 않습니다.
 
-- Do-calculus is a set of rules to manipulate observational or interventional probabilites. (Do-calculus is complete)
+- 식별 가능성(Identifiability)을 위해 그래프 조건과 효율적인 알고리즘 절차가 개발되었습니다.
 
-
-&nbsp;
-&nbsp;
-&nbsp;
-
-## **Modern Identification Tasks**
-
-- Experimental conditions ➔ **Generalized identification**
-
-  - Combining datasets of different experimental conditions
-
-  - The identifiability of any expression of the form $$P(y\mid{do(x), z})$$ can be determined given any causal graph $$g$$ and an arbitrary combination of observational and experimental studies.
-  - If the query is identifiable, then its estimand can be derived in polynomial time.
-
-- Environmental conditions ➔ **Transportability**
-
-  - Combining datasets from different sources
-
-  - Non-parametric transportability can be determined provided that the problem instance is encoded in selection diagrams.
-  - When transportability is feasible, the transport formula can be derived in polynomial time.
-  - The causal calculus and the corresponding transportation algorithm are complete.
-
-- Sampling conditons ➔ Recovering from **selection bias**
-
-  - Nonparametric recoverability of selection bias from causal and statistical settings can be determined provided that an augmented causal graph is available.
-  - When recoverability is feasible, the estimated can be derived in polynomial time.
-  - The result is complete for pure recoverability, and sufficient for recoverability with external information.
-
-- Responding conditons ➔ Recovering from **missingness**
+- Do-calculus는 관찰적 확률(Observational Probability)과 개입적 확률(Interventional Probability)을 조작하기 위한 규칙의 집합입니다. (Do-calculus는 완전성을 보장합니다.)
 
 
 &nbsp;
 &nbsp;
 &nbsp;
 
+## **현대의 Identification 과제**
+- **실험적 조건 ➔ 일반화된 식별(Generalized Identification)**
+  - 서로 다른 실험 조건에서 얻게된 데이터셋을 결합합니다.
+  - $P(y\mid{do(x), z})$형태의 표현이 식별 가능한지 여부는, 주어진 인과 그래프 $g$와 관찰적 및 실험적 연구의 임의 조합을 통해 결정할 수 있습니다.
+  - 쿼리가 식별 가능하다면, 해당 추정량(Estimand)을 다항 시간(Polynomial Time) 내에 도출할 수 있습니다.
+
+- **환경적 조건 ➔ 전달 가능성(Transportability)**
+  - 서로 다른 소스에서 얻어진 데이터셋을 결합합니다.
+  - 비모수(Non-parametric) 전달 가능성은 문제 인스턴스가 선택 다이어그램(Selection Diagrams)으로 인코딩된 경우 결정할 수 있습니다.
+  - 전달 가능성이 가능하다면, 전달 공식(Transport Formula)을 다항 시간 내에 도출할 수 있습니다.
+  - 인과 계산법(Causal Calculus)과 해당 전달 알고리즘은 완전성을 보장합니다.
+
+- **샘플링 조건 ➔ 선택 편향(Selection Bias)으로부터의 복구**
+  - 인과 및 통계적 설정에서 선택 편향의 비모수적 복구 가능성은 확장된 인과 그래프가 제공된 경우 결정할 수 있습니다.
+  - 복구 가능성을 활용할 수 있다면, 추정값을 다항 시간 내에 도출할 수 있습니다.
+  - 결과는 순수 복구 가능성(Pure Recoverability)에서는 완전하며, 외부 정보를 포함한 복구 가능성에 대해서는 충분합니다.
+
+- **응답 조건(Responding Conditons) ➔ 결측(Missingness)으로부터의 복구**
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+-----------
 ## Reference
 > 본 포스팅은 LG Aimers 프로그램에서 학습한 내용을 기반으로 작성된것입니다. (전체 내용 X)
 {: .prompt-warning }
