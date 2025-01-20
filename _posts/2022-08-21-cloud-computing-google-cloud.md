@@ -2,14 +2,14 @@
 title: "클라우드 컴퓨팅과 구글 클라우드 | Cloud Computing and Google Cloud"
 date: 2022-08-21 17:00:00 +/-TTTT
 categories: [Cloud, Google Cloud Platform (GCP)]
-tags: [gcp, kubernetes, gke]
+tags: [gcp, kubernetes, gke, k8s]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
 image:
   path: 20220821-t.png
   alt: ""
-description: Google cloud, compute engine, resource, billing
+description: 구글 클라우드, 구글 클라우드 플랫폼, 구글 클라우드 API, Google Cloud, Compute Engine
 ---
 
 --------------------------
@@ -19,107 +19,111 @@ description: Google cloud, compute engine, resource, billing
 
 클라우드 컴퓨팅은 필요할 때 요청하여 사용하며, 사용한 만큼 비용을 지불하는 서비스를 말합니다. 
 
-구글 클라우드는 4가지의 컴퓨팅 서비스를 제공하며, 지역과 존으로 구성되어 있습니다. 
+구글 클라우드(Google Cloud)는 4가지의 컴퓨팅 서비스를 제공하며, 지역과 존으로 구성되어 있습니다. 
+
 
 &nbsp;
 &nbsp;
 &nbsp;
+
 
 ## **Cloud Computing and Google Cloud**
-- Computing resources가 On-demand self-service로 제공됨   
-➔ 사람 개입없이 필요한 처리 능력, 스토리지 네트워크 확보 가능
-- Broad network access
-- Resource pooling
-➔ 고객은 resource의 물리적 위치를 파악할 필요 없음
-- Rapid elasticity
-- Measured service
-➔ 사용한 만큼만 지불
+- 컴퓨팅 리소스가 온디맨드 셀프 서비스(On-demand Self-service)로 제공됩니다.    
+  ➔ 사람의 개입 없이 필요한 처리 능력, 스토리지, 네트워크를 확보할 수 있습니다.
+- 광범위한 네트워크 접근(Broad Network Access)을 제공합니다.
+- 리소스 풀링(Resource Pooling)을 지원하며, 고객은 리소스의 물리적 위치를 파악할 필요가 없습니다.
+- 빠른 확장성(Rapid Elasticity)을 제공합니다.
+- 사용량 기반 과금(Measured Service)을 지원하며, 말 그대로 사용한 만큼만 비용을 지불합니다.
 
 
 
-### Google cloud offers a range of services:
-- **Compute engine** : 클라우드에서 주문형 가상머신을 실행하게 해 주는 Google cloud infrastructure-as-a-service 솔루션
-- **Google Kubernetes engine (GKE)** : google이 관리하는 클라우드 환경에서 컨테이너화된 어플을 실행하며 사용자에게 관리 권한을 부여   
-➔ 컨테이너화 : 이동성을 극대화 하고 resource를 효율적으로 사용할 수 있도록 코드를 패키지화 하는 방식
-- **App engine** : GCP의 관리형 Platform-as-a-service 프레임워크, 인프라 걱정없이 클라우드에서 코드를 실행
-- **Cloud functions** : 서비스로서의 기능, 이벤트 발생 빈도에 상관없이 이벤트에 응답하여 코드를 실행
+### **Google Cloud가 제공하는 서비스**
+- **Compute Engine** ㅣ Google Cloud의 인프라 서비스(Infrastructure-as-a-service) 솔루션으로, 클라우드에서 주문형 가상 머신을 실행할 수 있게 해줍니다.
+- **Google Kubernetes Engine (GKE)** ㅣ Google이 관리하는 클라우드 환경에서 컨테이너화된 애플리케이션을 실행할 수 있으며, 사용자에게 관리 권한을 제공합니다.    
+  ➔ **컨테이너화** ㅣ 코드를 패키지화하여 이동성을 극대화하고 리소스를 효율적으로 사용할 수 있도록 하는 방식입니다.
+- **App Engine** ㅣ GCP의 관리형 플랫폼 서비스(Platform-as-a-Service) 프레임워크로, 인프라를 걱정하지 않고 클라우드에서 코드를 실행할 수 있습니다.
+- **Cloud Functions** ㅣ 서비스로서의 기능(Function-as-a-Service)으로, 이벤트 발생 빈도에 관계없이 이벤트에 응답하여 코드를 실행할 수 있습니다.
 
 
 
-### Build your own database solution
-- Compute engine, Google Kubernetes engine (GKE)
+### **데이터베이스 솔루션 구축 방법**
+- **직접 구축** ㅣ Compute Engine, Google Kubernetes Engine (GKE)을 사용하여 구성.
+- **관리형 서비스 사용** ㅣ 스토리지(Storage), Cloud Bigtable, Cloud Storage, Cloud SQL, Cloud Spanner, Datastore
 
 
 
-### Use a managed service
-- Storage : Cloud bigtable, cloud storage, cloud SQL, cloud spanner, datastore
-
-
-
-### Google cloud offers a range of services
-- Big data : Bigquery, pub/sub, dataflow, dataproc, AI platform notebooks
-- Machine learning : Vision API, AI platform, speech-to-text API, cloud translation API, cloud natural language API
+### **Google Cloud가 제공하는 추가 서비스**
+- **빅데이터(Big Data)** ㅣ BigQuery, Pub/Sub, Dataflow, Dataproc, AI Platform Notebooks.
+- **머신러닝(Machine Learning)** ㅣ Vision API, AI Platform, Speech-to-Text API, Cloud Translation API, Cloud Natural Language API
 
 &nbsp;
 &nbsp;
 &nbsp;
 
 ## **Resource Management**
-- Google cloud는 multi-region, region, zone을 통해 resource를 제공
-  - Multi-region : America, Europe, Asia-Pacific ➔ divided into regions
-  - Region : 같은 대륙 내에서 독립된 지리적 위치, region 내에서 네트워크 연결이 빠름   
-  ➔ divided into zones
-  - Zones : 집중된 지리적 위치 내에 있는 GCP resource의 배포 위치
-- 인터넷 사용자가 구글 resource로 트래픽을 전송하면, google은 지연시간이 가장 낮은 edge network 위치에서 응답함
+- Google Cloud는 멀티 리전(Multi-region), 리전(Region), 존(Zone)을 통해 리소스를 제공합니다.
+  - **멀티 리전(Multi-region)** ㅣ America, Europe, Asia-Pacific으로 나뉘며, 각 리전으로 세분화됩니다.
+  - **리전(Region)** ㅣ 같은 대륙 내에서 독립된 지리적 위치로 구성되며, 리전 내 네트워크 연결 속도가 빠릅니다.    
+    ➔ 리전은 여러 개의 존으로 나뉩니다.
+  - **존(Zone)** ㅣ 특정 지리적 위치 내에서 GCP 리소스가 배포되는 위치를 의미합니다.
+- 인터넷 사용자가 Google 리소스에 트래픽을 전송하면, Google은 지연 시간이 가장 낮은 엣지 네트워크(Edge Network) 위치에서 응답합니다.
 
 
 
-### Zonal resources operate exclusively in a single zone
-- GCP service와 resource를 이용하면 resource의 지리적 위치를 지정 가능
-- Zonal resource는 단일 영역 내에서 실행됨 ➔ 해당 영역이 사용 불가능해지면 resource 역시 사용 불가능
-  - Compute Engine Virtual Machine instance, 영구디스크, GKE의 노드
+### **Zonal Resources**
+- Zonal 리소스는 단일 존에서만 작동합니다.
+- GCP 서비스와 리소스를 사용할 때 리소스의 지리적 위치를 지정할 수 있습니다.
+- Zonal 리소스는 단일 존 내에서 실행되며, 해당 존이 사용할 수 없게 되면 리소스도 사용할 수 없게 됩니다.
+  - ex. Compute Engine 가상 머신 인스턴스(VM Instance), 영구 디스크(Persistent Disk), GKE의 노드(Node)
 
 
 
-### Regional resources span multiple zones
-- 하나의 region 내에 여러 영역에 걸쳐 실행됨 ➔ 중복배포가능
+### **Regional Resources**
+- Regional 리소스는 하나의 리전 내에서 여러 존에 걸쳐 실행됩니다.    
+➔ 중복 배포가 가능하여 가용성을 높일 수 있습니다.
 
 
 
-### Global resources
-- Multi-region을 통해 관리 가능
-  - HTTPS load balancers, VPC, Virtual Private Cloud networks
+### **Global Resources**
+- 글로벌 리소스는 멀티 리전을 통해 관리됩니다.
+  - ex. HTTPS 로드 밸런서(Load Balancers), VPC(Virtual Private Cloud) 네트워크
 
 
 
-### Resources sit in projects, Resources have hierarchy
-- 사용자가 사용하는 GCP resource는 위치와 상관없이 프로젝트에 속해야함
-  - 프로젝트 : 항목을 논리적으로 구성, 고유 ID와 번호로 식별, 폴더로 그룹핑 가능
-- GCP resource 계층 구조는 조직 내 여러 부서와 팀의 resource를 관리할 수 있도록 도와줌
-- Cloud IAM (Cloud identity and access management) : 사용자가 사용하는 모든 GCP resource에 세부적인 엑세스 제어를 가능케함
-- 사용자가 선택한 수준에서 적용한 정책은 낮은 수준으로 상속됨 (조직 ➔ 폴더 ➔ 프로젝트 ➔ 리소스).
-- 결제는 프로젝트 수준에서 누적됨
+### **Resources and Projects**
+- 사용자가 사용하는 GCP 리소스는 위치와 상관없이 반드시 프로젝트에 속해야 합니다.
+- **프로젝트(Project)** ㅣ 항목을 논리적으로 구성하며, 고유 ID와 번호로 식별됩니다.
+  - 폴더로 그룹화할 수 있습니다.
+- GCP 리소스 계층 구조는 조직 내 여러 부서와 팀의 리소스를 효과적으로 관리할 수 있도록 설계되었습니다.
+- **Cloud IAM (Cloud Identity and Access Management)** ㅣ 사용자가 사용하는 모든 GCP 리소스에 대해 세부적인 액세스 제어를 제공합니다.
+- 상위 수준에서 적용한 정책은 하위 수준으로 상속됩니다.
+  - ex. 조직 ➔ 폴더 ➔ 프로젝트 ➔ 리소스
+- 결제는 프로젝트 수준에서 누적됩니다.
 
 
 &nbsp;
 &nbsp;
 &nbsp;
+
 
 ## **Billing**
-- GCP 결제는 GCP 프로젝트 수준에서 설정함
-- 결제 계정은 하나 이상의 프로젝트에서 연결 가능
-- 결제 계정은 매월 또는 기준액 도달 시 자동으로 청구 및 invoice 되도록 설정가능
-- GCP service를 재판매하는 GCP 고객들은 하위 계정을 사용하기도함
-- How to keep your billing under control :
-  - Budgets and alerts, billing export, reports   
-  ➔ Budgets and alerts keep your billing under control; 결제 알림 기반으로 자동화 제어   
-  ➔ Billing export allows you to send your billing data to a BigQuery dataset; 결제 세부정보 저장   
-  ➔ Reports is a visual tool to monitor expenditure; 지출 모니터링   
-  ➔ Quotas are helpful limits; 할당량은 오류나 악성 공격으로 인해 resource를 과소비하는 것을 방지하기 위해 설계됨   
-  - **할당량** <sup>Quotas</sup>
-    - 비율 할당량 : 특정 시점을 기준으로 재설정, GKE 클러스터 자체에서 받는 호출을 제한하는 방식, 정기적으로 재설정
-    - 배정 할당량 : 프로젝트 내에서 보유할 수 있는 resource 수를 제어, 시간이 지나도 재설정X
-- 측정형 서비스 : 사용한 resource에 대해서만 비용 지불
+- GCP 결제는 GCP 프로젝트 수준에서 설정됩니다.
+- 결제 계정은 하나 이상의 프로젝트에서 연결할 수 있습니다.
+- 결제 계정은 매월 또는 기준액 도달 시 자동으로 청구되고 인보이스가 발행되도록 설정할 수 있습니다.
+- GCP 서비스를 재판매하는 GCP 고객들은 하위 계정을 사용할 수도 있습니다.
+
+### **How to Keep Your Billing Under Control**
+- **Budgets and Alerts, Billing Export, Reports**
+  - **Budgets and Alerts** ㅣ 결제 알림을 기반으로 자동으로 제어하여 예산을 관리합니다.
+  - **Billing Export** ㅣ 결제 데이터를 BigQuery 데이터셋으로 전송하여 결제 세부 정보를 저장할 수 있습니다.
+  - **Reports** ㅣ 지출을 모니터링하는 시각적 도구입니다.
+  - **Quotas** ㅣ 리소스를 과소비하는 것을 방지하기 위해 설계된 오류나 악성 공격에 대응하는 제한입니다.
+- **Quotas**
+  - **비율 할당량** ㅣ 특정 시점을 기준으로 재설정되며, 예를 들어 GKE 클러스터 자체에서 받는 호출을 제한하는 방식입니다. 
+    - 이 할당량은 정기적으로 재설정됩니다.
+  - **배정 할당량** ㅣ 프로젝트 내에서 보유할 수 있는 리소스의 수를 제어하며, 시간이 지나도 재설정되지 않습니다.
+- **측정형 서비스**
+  - 사용한 리소스에 대해서만 비용을 지불하는 방식입니다.
 
 
 &nbsp;
@@ -128,38 +132,30 @@ description: Google cloud, compute engine, resource, billing
 
 
 ## **Interacting with Google Cloud**
-- Google tools or interfaces : GCP resource를 관리하고 구성
+- **Google 도구 또는 인터페이스** ㅣ GCP 리소스를 관리하고 구성하는 데 사용됩니다.
 
 
 
-### Ways to interact with Google cloud
-- Google cloud console web user interface : GCP resource를 관리
-  - Web-based GUI to manage all google cloud resources
-  - Executes common tasks using simple mouse clicks
-  - Provides visibility into google cloud projects and resources
-  - Interacting with the Cloud console : `console.cloud.google.com` ➔ GCP console log-in 
-- Cloud SDK and cloud shell command-line interface
-  - Cloud SDK : gcloud, kubectl, gsutil, bq ➔ 주기적 업데이트를 위한 자동화 스크립트 작성
-  - Cloud shell : access directly, constant availability of gcloud, ephemeral compute engine virtual machine instance
-- Cloud console mobile app for iOS and android
-  - SSH to conneect to compute engine instances, up-to-date billing info and alerts, customizable graphs
-- REST-based API for custom applications
-
-
-
-### Google Cloud's choices for organizing compute workloads
-- Service name : description
-- Kubernetes engine : a managed environment for deploying containerized applications   
-➔ 컨테이너에 대한 기본적인 지원과 더불어 관리형 컴퓨팅 플랫폼을 제공
-- Compute engine : a managed environment for deploying virtual machines
-- App engine : a managed serverless platform for deploying applications
-- Cloud functions : a managed serverless platform for deploying event-driven functions
+### **Ways to Interact with Google Cloud**
+- **Google Cloud Console 웹 사용자 인터페이스** ㅣ GCP 리소스를 관리하는 웹 기반 GUI입니다.
+  - 모든 Google Cloud 리소스를 관리할 수 있는 웹 기반 GUI를 제공합니다.
+  - 간단한 마우스 클릭으로 일반적인 작업을 실행할 수 있습니다.
+  - Google Cloud 프로젝트와 리소스에 대한 가시성을 제공합니다.
+  - **Cloud Console 사용 방법** ㅣ console.cloud.google.com에 접속하여 GCP 콘솔에 로그인합니다.
+- **Cloud SDK 및 Cloud Shell 명령줄 인터페이스**
+  - **Cloud SDK** ㅣ gcloud, kubectl, gsutil, bq 등으로 주기적인 업데이트를 위한 자동화 스크립트를 작성할 수 있습니다.
+  - **Cloud Shell** ㅣ 직접 접근 가능하며, gcloud의 지속적인 사용과 임시 컴퓨팅 엔진 가상 머신 인스턴스를 제공합니다.
+- **Cloud Console 모바일 앱 (iOS 및 Android)**
+  - Compute Engine 인스턴스에 SSH로 연결할 수 있으며, 최신 결제 정보와 알림, 맞춤형 그래프를 제공합니다.
+- **REST 기반 API** ㅣ 사용자 정의 애플리케이션을 위한 REST API를 사용할 수 있습니다.
 
 
 &nbsp;
 &nbsp;
 &nbsp;
 
+
+---------------------
 ## Reference
 
 1. [Getting Started with Google Kubernetes Engine, Coursera](https://www.coursera.org/learn/google-kubernetes-engine)
