@@ -11,7 +11,7 @@ pin: false
 image:
   path: 20231113-t.png
   alt: ""
-description: Jekyll의 Chirpy Theme로 깃허브 블로그를 시작하는 방법 | Chirpy, Jekyll, Ruby, Github Blog
+description: 깃허브 블로그, Chirpy 블로그, Jekyll 블로그, Chirpy, Jekyll, Ruby, Github Blog
 ---
 
 > Jekyll의 Chirpy Theme로 깃허브 블로그를 시작하는 방법을 소개합니다. 
@@ -84,13 +84,13 @@ $font-family-heading: Lato, 'Microsoft Yahei', sans-serif !default;
 
 ### 4. Site Configuration을 설정합니다.
 - `_config.yml`{: .filepath} 파일을 수정합니다.
-  - `timezone`: Asia/Seoul
-  - `title`: 블로그 타이틀
-  - `tagline` : 왼쪽 타이틀 아래 부타이틀
-  - `description`: SEO 키워드
-  - `url`: 블로그 URL 주소
-  - `social`: 왼쪽 하단 아이콘 링크 및 이메일 등을 입력
-  - `avatar`: 왼쪽 상단의 아바타 이미지 설정
+  - `timezone` ㅣ Asia/Seoul
+  - `title` ㅣ 블로그 타이틀
+  - `tagline` ㅣ 왼쪽 타이틀 아래 부타이틀
+  - `description` ㅣ SEO 키워드
+  - `url` ㅣ 블로그 URL 주소
+  - `social` ㅣ 왼쪽 하단 아이콘 링크 및 이메일 등을 입력
+  - `avatar` ㅣ 왼쪽 상단의 아바타 이미지 설정
 
 &nbsp;
 &nbsp;
@@ -100,12 +100,12 @@ $font-family-heading: Lato, 'Microsoft Yahei', sans-serif !default;
 
 - [Ruby](https://www.ruby-lang.org/ko/documentation/installation/#rubyinstaller)를 설치하여 활용하면 사이트를 배포하기 전 로컬에서 테스트 해볼 수 있습니다.
 
-- 의존성 모듈 설치
+- **의존성 모듈 설치**
 
   ```shell
   bundle
   ```
-- 블로그 빌드
+- **블로그 빌드**
   - Localhost 4000 포트에서 실행됩니다.
   - `_config.yml`{: .filepath} 파일을 수정했을 경우 다시 실행해야 합니다.
 
@@ -166,14 +166,14 @@ $$ y = \frac{1}{x} $$
 
 - 이미지의 **위치**를 지정할 수 있으며, **다크/라이트 모드**와 **그림자 효과** 설정이 가능합니다.
 
-- 크기 및 캡션 설정
+- **크기 및 캡션 설정**
 
 ```markdown
 ![img-description](/path/to/image){: width="700" height="400" }
 _Image Caption_
 ```
 
-- 위치 설정
+- **위치 설정**
 
 ```markdown
 ![Desktop View](/assets/img/sample/mockup.png){: .normal }
@@ -181,14 +181,14 @@ _Image Caption_
 ![Desktop View](/assets/img/sample/mockup.png){: .right }
 ```
 
-- 다크/라이트 모드
+- **다크/라이트 모드**
 
 ```markdown
 ![Light mode only](/path/to/light-mode.png){: .light }
 ![Dark mode only](/path/to/dark-mode.png){: .dark }
 ```
 
-- 그림자 효과
+- **그림자 효과**
 
 ```markdown
 ![Desktop View](/assets/img/sample/mockup.png){: .shadow }
@@ -263,6 +263,7 @@ plugins:
 &nbsp;
 
 
+-------------------
 ## References
 1. [Github:chirpy-starter](https://github.com/cotes2020/chirpy-starter)
 2. [Github:jekyll-theme-chirpy](https://github.com/cotes2020/jekyll-theme-chirpy)

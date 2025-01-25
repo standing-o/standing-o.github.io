@@ -2,7 +2,7 @@
 title: "정형데이터에는 딥러닝이 부적절한 이유 | Tabular Data, Deep Learning"
 date: 2023-09-20 13:00:00 +/-TTTT
 categories: [AI Theory, Machine Learning]
-tags: [tabular, tree, random-forest, gradient-boosting, inductive-bias]
+tags: [machine-learning, deep-learning, tabular, random-forest, gradient-boosting]
 math: true
 toc: true
 author: seoyoung
@@ -11,7 +11,7 @@ pin: false
 image:
   path: 20230920-t.png
   alt: ""
-description: 정형 데이터에 딥러닝이 적절하지 않은 이유, 트리 모델 장점 | Tabular data, Tree-based model, Inductive bias
+description: 정형데이터 딥러닝, 정형데이터 특징, 정형데이터란, 정형데이터 모델, 정형데이터 딥러닝 모델, Tabular data, Tree-based model
 ---
 
 
@@ -34,9 +34,9 @@ description: 정형 데이터에 딥러닝이 적절하지 않은 이유, 트리
 | [Why do tree-based models still outperform deep learning on typical tabular data?](https://github.com/standing-o/Machine_Learning_Paper_Review/issues/19)
 
 ## **딥러닝과 Inductive Bias**
-- Inductive bias는 모델이 어떤 가정을 데이터로부터 학습할 것인지 결정하는 데 영향을 미치므로, 딥러닝은 데이터에 inductive bias를 부여하고 어떤식으로 학습할지에 대한 방향을 설정합니다.
-- 이미지 데이터를 딥러닝으로 다룰 때, 데이터의 locality를 모델에 반영하기 위해 convolution이나 ViT의 patch embedding과 같은 구조를 활용합니다. 반면, 정형 데이터는 feature 간의 차이가 크고 (Heterogeneous), 
-데이터 양도 적으며 Extreme value를 가지는 경우가 많기에 딥러닝으로 불변성 (Invariance)을 찾기가 힘듭니다.
+- Inductive bias는 모델이 어떤 가정을 데이터로부터 학습할 것인지 결정하는 데 영향을 미치므로, 딥러닝은 데이터에 Inductive Bias를 부여하고 어떤식으로 학습할지에 대한 방향을 설정합니다.
+- 이미지 데이터를 딥러닝으로 다룰 때, 데이터의 Locality를 모델에 반영하기 위해 Convolution이나 ViT의 Patch Embedding과 같은 구조를 활용합니다. 반면, 정형 데이터는 Feature 간의 차이가 크고(Heterogeneous), 
+데이터 양도 적으며 Extreme Value를 가지는 경우가 많기에 딥러닝으로 불변성(Invariance)을 찾기가 힘듭니다.
 - 논문에서는 Tabular 데이터에 대한 Inductive Bias는 Tree 기반 모델에 있다고 말합니다.
 
 &nbsp;
@@ -44,15 +44,15 @@ description: 정형 데이터에 딥러닝이 적절하지 않은 이유, 트리
 &nbsp;
 
 ## **Tree 기반 모델과 딥러닝 모델 비교 실험**
-- Deep Models: MLP, Resnet, FT_Transformer
-- Tree-based Models: Random Forest, Gradient Boosting Trees, XGBoost
+- **Deep Models** ㅣ MLP, Resnet, FT_Transformer
+- **Tree-based Models** ㅣ Random Forest, Gradient Boosting Trees, XGBoost
 - 저자는 총 45개의 Tabular 데이터로 구성된 Medium-size 데이터 셋으로 다양한 비교 실험을 진행했습니다.
 
 ![fig1](20230920-1.png)
 
 - 전반적으로 Tree 기반 모델들이 딥러닝 모델들에 비해 성능이 높습니다. 
 - 하이퍼 파라미터 튜닝은 신경망 기반 모델을 좋게 만들 수 없을 뿐더러, Tree 기반 모델들은 모든 Random Search 단계에서 좋은 성능을 보였습니다.
-- 또한, categorical 변수들 뿐만 아니라 Numerical 변수들도 신경망을 약화시킵니다. (Numerical 변수만 사용한 경우에도 tree 기반 모델이 뛰어남)
+- 또한, Categorical 변수들 뿐만 아니라 Numerical 변수들도 신경망을 약화시킵니다. (Numerical 변수만 사용한 경우에도 Tree 기반 모델이 뛰어남)
 - 이러한 원인은 오버피팅과 같은 단순한 문제에서 오는 것이 아닌, 딥러닝의 Inductive Bias가 Tabular 데이터에 적합하지 않기 때문입니다.
 
 &nbsp;
@@ -83,11 +83,11 @@ description: 정형 데이터에 딥러닝이 적절하지 않은 이유, 트리
 - Feature 들은 Random Forest로 계산된 Feature Importance를 기준으로 제거되며, `파란선`은 Importance가 낮은 Feature들을 먼저 제거한 경우이고 `빨간선`은 Importance가 높은 Feature들을 먼저 제거한 경우 입니다.
 - `파란선`을 보면 절반정도의 Feature를 제거해도 GBT의 성능은 크게 악화되지 않으며, `빨간선`을 보면 Importance가 낮은 Feature들로 학습한 경우 성능이 좋지 않음을 확인할 수 있습니다.
 
-- Tree 기반 모델 (Gradient Boosting Tree, Random Forest)과 딥러닝 모델 (FT Transformer, Resnet)을 비교합니다.
+- Tree 기반 모델(Gradient Boosting Tree, Random Forest)과 딥러닝 모델(FT Transformer, Resnet)을 비교합니다.
 
 ![fig4](20230920-4.png)
 
-- 좌측 그림은 정보량이 없는 (Importance가 낮은) Feature들을 순서대로 제거한 결과이며, 이때 MLP와 Tree 기반 모델들의 성능 차이가 줄어듭니다.
+- 좌측 그림은 정보량이 없는(Importance가 낮은) Feature들을 순서대로 제거한 결과이며, 이때 MLP와 Tree 기반 모델들의 성능 차이가 줄어듭니다.
 - 우측 그림은 정보량이 많은 Feature들을 순서대로 추가하여 학습하면 MLP와 Tree 기반 모델들의 성능 차이가 커집니다.
 - 따라서, MLP는 Tree 기반 모델들에 비해 과하게 Smoothing 되기 때문에 Heterogeneous 한 데이터에 적합하지 않아 성능이 저조하다는 사실을 알 수 있습니다.
 - 두 실험 모두 Tree 기반 모델들이 가장 좋은 성능을 보입니다.
@@ -97,7 +97,7 @@ description: 정형 데이터에 딥러닝이 적절하지 않은 이유, 트리
 &nbsp;
 
 ## **해석 3. 데이터는 회전 <sup>Rotation</sup> 에 Invariant 하지 않다.**
-- 딥러닝 모델은 학습 및 테스트 과정에서 데이터의 Feature에 회전을 적용해도 결과가 변경되지 않습니다 (Rotationally Invariant 함).
+- 딥러닝 모델은 학습 및 테스트 과정에서 데이터의 Feature에 회전을 적용해도 결과가 변경되지 않습니다(Rotationally Invariant 함).
 - 하지만 Tree 기반 모델들은 이러한 회전에 대해 Invariant 하지 않습니다. 즉, 데이터의 방향에 포함된 정보가 손실 될 가능성이 있습니다.
 - 아래 Figure를 보면, Feature들을 회전했을 때 딥러닝 모델들에 비해 Tree 기반 모델들의 성능이 더 크게 떨어집니다. 
 
@@ -114,3 +114,11 @@ description: 정형 데이터에 딥러닝이 적절하지 않은 이유, 트리
 
 ## **결론**
 - 딥러닝이 모든 데이터에 대해 항상 우월한 것은 아닙니다. 데이터 셋에 맞는 모델을 사용하는 것이 중요합니다. :)
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+---------------
+## Reference
+1. Grinsztajn, Léo, Edouard Oyallon, and Gaël Varoquaux. "Why do tree-based models still outperform deep learning on typical tabular data?." Advances in neural information processing systems 35 (2022): 507-520.

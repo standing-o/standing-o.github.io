@@ -2,7 +2,7 @@
 title: "음성 신호와 MFCC | Speech Signal and Spectral Features"
 date: 2023-10-31 17:00:00 +/-TTTT
 categories: [AI Theory, Audio]
-tags: [speech, audio, voice, filter-bank, mfcc, spectrogram, melspectrogram]
+tags: [python, machine-learning, deep-learning, feature-engineering, audio-signal-processing, mfcc, melspectrogram]
 math: true
 toc: true
 author: seoyoung
@@ -11,7 +11,7 @@ pin: false
 image:
   path: 20231103-t.jpg
   alt: ""
-description: 음성 신호의 개념과 MFCC 기법 | Speech, Filter Bank, MFCC, Power Spectrogram, Mel Spectrogram
+description: 음성 신호 처리, 음성 신호 디지털 변환, 음성신호 주파수, MFCC 추출, MFCC 특징 추출, MFCC Librosa, MFCC Mel Spectrogram, MFCC DCT
 ---
 
 
@@ -19,7 +19,7 @@ description: 음성 신호의 개념과 MFCC 기법 | Speech, Filter Bank, MFCC,
 > 음성 신호의 개념과 MFCC 기법을 자세히 알아봅시다.
 {: .prompt-info }
 
-Speech Emotion Recognition (SER)과 같은 task를 위해 머신러닝/딥러닝 모델을 개발하는 경우에, 일반적으로 음성 데이터를 MFCC와 같은 Feature로 변환하여 활용합니다.
+Speech Emotion Recognition(SER)과 같은 Task를 위해 머신러닝/딥러닝 모델을 개발하는 경우에, 일반적으로 음성 데이터를 MFCC와 같은 Feature로 변환하여 활용합니다.
 
 이는 음성 내용을 식별하는데 적합한 오디오 구성 요소를 강조하고 배경 소음과 같은 다른 항목들을 삭제하기 위함입니다.
 
@@ -31,9 +31,9 @@ Speech Emotion Recognition (SER)과 같은 task를 위해 머신러닝/딥러닝
 
 ## **음성 신호란? <sup>Audio Signal</sup>**
 - 음성 신호는 아래와 같이 시간, 진폭, 주파수 세가지 domain으로 이루어져 있습니다.
-  - **Time (시간) Domain**: 음성 신호는 연속적인 샘플 값으로 표현됩니다.
-  - **Amplitude (진폭) Domain**: 음성 신호의 강도를 나타냅니다.
-  - **Frequency (주파수) Domain**: 음성 신호 주파수의 크기와 분포를 나타냅니다.
+  - **Time(시간) Domain** ㅣ 음성 신호는 연속적인 샘플 값으로 표현됩니다.
+  - **Amplitude(진폭) Domain** ㅣ 음성 신호의 강도를 나타냅니다.
+  - **Frequency(주파수) Domain** ㅣ 음성 신호 주파수의 크기와 분포를 나타냅니다.
 
 ![fig1](20231031-0.jpg)
 
@@ -43,8 +43,8 @@ Speech Emotion Recognition (SER)과 같은 task를 위해 머신러닝/딥러닝
 &nbsp;
 
 
-- 음성 데이터는 샘플링 과정을 통해 소리로부터 수집되며 보통 sample rate와 data라는 두가지 요소로 구성됩니다. 
-- Sample rate는 초당 샘플링 횟수를 의미하며, 높은 sample rate 일수록 더 높은 음질의 음성 파일이 저장됩니다.
+- 음성 데이터는 샘플링 과정을 통해 소리로부터 수집되며 보통 Sample Rate와 데이터라는 두가지 요소로 구성됩니다. 
+- Sample Rate는 초당 샘플링 횟수를 의미하며, 높은 Sample Rate 일수록 더 높은 음질의 음성 파일이 저장됩니다.
 - 아래에서 불러온 `signal`은 158558의 길이를 가지며, `sample_rate`는 48000Hz 입니다.
   - 따라서 (3 x `sample_rate`)는 3초, 즉 처음 3초 동안의 음성만 인덱싱해서 처리하겠습니다.
 
@@ -63,10 +63,10 @@ signal = signal[0:int(3 * sample_rate)]
 
 
 ## **음성 분석을 위한 특성 추출 <sup>Feature Extraction</sup> | MFCC**
-- 사람의 내는 소리 및 음소 (phoneme) 는 혀, 치아 등의 성도 (vocal track) 에 따라 다르게 표현됩니다. 
-- 성도의 모양은 Short-time Power Spectrum의 포락선 (envelope) 으로 표현될 수 있으며, MFCC는 이 포락선을 정확하게 포함하기 위해서 생성됩니다.
+- 사람의 내는 소리 및 음소(Phoneme) 는 혀, 치아 등의 성도(Vocal Track) 에 따라 다르게 표현됩니다. 
+- 성도의 모양은 Short-time Power Spectrum의 포락선(Envelope) 으로 표현될 수 있으며, MFCC는 이 포락선을 정확하게 포함하기 위해서 생성됩니다.
   - 스펙트럼 포락선은 주파수-진폭 평면의 곡선입니다.
-- MFCC (Mel Frequency Cepstral Coefficents)는 1980년대에 소개되었으며
+- MFCC(Mel Frequency Cepstral Coefficents)는 1980년대에 소개되었습니다.
 - 이 외에도 아래의 특성들을 음성 데이터 분석에 활용할 수 있습니다.
   - Zero Cross Rate, Spectral Centroid, Spectral Spread, Spectral Entropy, Spectral Flux, Chroma Vector, Chroma Deviation
 
@@ -80,7 +80,7 @@ signal = signal[0:int(3 * sample_rate)]
 
 #### 1. Pre-emphasis Filter를 적용하여 고주파를 증폭하기
 - $y(t) = x(t) - \alpha x(t-1)$ where $\alpha = 0.95, 0.97$
-- 신호에 Pre-emphasis filter를 적용하여 고주파 대역의 진폭을 증가시키고 낮은 대역의 진폭은 감소시킵니다.
+- 신호에 Pre-emphasis Filter를 적용하여 고주파 대역의 진폭을 증가시키고 낮은 대역의 진폭은 감소시킵니다.
 - 제한된 컴퓨팅 자원으로 개발해야했던 과거에 보편적으로 사용되었습니다. 현대에서는 잘 사용하지 않으며 mean normalization 등으로 대체합니다.
 - 하지만 이 필터는 다음과 같은 장점을 가집니다.
   - 보통 고주파는 저주파에 비해 진폭이 작기 때문에 주파수 스펙트럼을 균형있게 유지합니다.
@@ -102,10 +102,10 @@ emphasized_signal = np.append(signal[0], signal[1:] - pre_emphasis * signal[:-1]
 
 
 #### 2. 신호를 프레임으로 분할 <sup>Framing</sup>
-- 신호는 short-time 프레임으로 분할합니다.
+- 신호는 Short-time 프레임으로 분할합니다.
 - 신호 내의 주파수는 시간에 따라 변하기 때문에, 신호 전체에 푸리에 변환을 사용하게 되면 시간에 따른 주파수 형태를 잃게 됩니다.
-  - 따라서, 신호 내 주파수가 short-time 동안 안정적이라고 가정합니다.
-  - short-time 프레임에 대해 푸리에 변환을 수행하여 인접한 프레임을 연결합니다.
+  - 따라서, 신호 내 주파수가 Short-time 동안 안정적이라고 가정합니다.
+  - Short-time 프레임에 대해 푸리에 변환을 수행하여 인접한 프레임을 연결합니다.
   - 이를 통해 전체 신호의 주파수 형태를 근사할 수 있습니다.
 - 음성 처리에서의 전형적인 프레임 크기는 20ms에서 40ms 입니다. 
   - 프레임이 이보다 짧으면 믿을만한 스펙트럼을 얻을 수 있는 샘플이 충분하지 않으며, 프레임이 길면 프레임 전체에서 신호가 너무 많이 변경됩니다.
@@ -148,7 +148,7 @@ $\text{N is the window length.}$
 frames *= np.hamming(frame_length)
 ```
 
-- FFT가 데이터가 무한하다고 가정하는 것을 보정하고 주파수 영역에서의 정보를 누출 (Leakage)을 줄입니다.
+- FFT가 데이터가 무한하다고 가정하는 점을 보정하고, 주파수 영역에서의 정보 누출(Leakage)을 줄입니다.
 
 &nbsp;
 &nbsp;
@@ -156,7 +156,7 @@ frames *= np.hamming(frame_length)
 
 #### 4. 각 프레임에 대해 Short-time Fourier Transform (STFT)를 수행하여 Power Spectrum을 계산합니다.
 - 귀에 들어오는 소리의 주파수에 따라 다양한 지점에서 달팽이관이 진동하며, 진동하는 달팽이관의 위치에 따라 여러 신경이 활성화되어 특정 주파수가 있다는 사실을 뇌에 알립니다.
-  - Power Spectrum은 이와 유사한 작업을 수행하여 각 프레임에 어떤 주파수가 있는지 식별합니다.
+  - Power Spectrum은 이를 흉내내면서 각 프레임에 어떤 주파수가 있는지 식별합니다.
 - 고속 푸리에 변환 (FFT, Fast Fourier Transform)을 통해 음성 신호를 주파수 도메인으로 변환하여 스펙트럼을 얻을 수 있습니다.
 - 각 프레임에 N-point FFT(Fast Fourier Transform) (=STFT) 를 수행하여 주파수 스펙트럼, 즉 Short-Time Fourier Transform (STFT)을 계산합니다.
   - 음성을 작게 자른 조각에 푸리에 변환을 적용하는 느낌입니다.
@@ -187,7 +187,7 @@ pow_frames = ((1.0 / NFFT) * ((mag_frames) ** 2))  # Power Spectrum
   - $m = 2595\log_{10}(a + \frac{f}{700})$ 
   - $f = 700(10^{m/2595}-1)$
 
-- Filter Bank 내 각 필터는 삼각형 모형이며, 중심 주파수에서의 response가 1이고 주변 두 필터의 중심 주파수에 도달할 때 까지 선형적으로 감소하여 response가 0이 됩니다.
+- Filter Bank 내 각 필터는 삼각형 모형이며, 중심 주파수에서의 Response가 1이고 주변 두 필터의 중심 주파수에 도달할 때 까지 선형적으로 감소하여 Response가 0이 됩니다.
 
 ![fig4](20231031-3.jpg)
 
@@ -240,7 +240,7 @@ filter_banks -= (numpy.mean(filter_banks, axis=0) + 1e-8)
   - 따라서, Filter Bank 계수의 상관관계를 제거하고 Filter Bank의 압축된 표현을 DCT를 통해 얻습니다.
   - DCT는 에너지를 역상관시킵니다.
 - Cepstral 계수 중 2에서 13까지의 계수를 보존하고 나머지는 버립니다.
-  - 더 높은 DCT 계수가 Filter Bank 에너지의 빠른 변화를 나타내고 이는 모델링 (ASR)의 성능을 저하시킵니다.
+  - 더 높은 DCT 계수가 Filter Bank 에너지의 빠른 변화를 나타내고 이는 모델링(ASR)의 성능을 저하시킵니다.
   - 주요 정보만을 보존하여 모델 성능을 향상시킬 수 있습니다.
 
 ```python
@@ -284,6 +284,8 @@ mfcc -= (np.mean(mfcc, axis=0) + 1e-8)
 &nbsp;
 &nbsp;
 
+
+----------------
 ## References
 
 1. @misc{fayek2016,    

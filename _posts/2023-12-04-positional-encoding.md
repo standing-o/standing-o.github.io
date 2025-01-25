@@ -2,13 +2,13 @@
 title: "Positional Encoding 이해하기"
 date: 2023-12-04 00:00:00 +/-TTTT
 categories: [AI Theory, Machine Learning]
-tags: [positional-encoding, transformer]
+tags: [deep-learning, positional-encoding, transformer, attention]
 math: true
 toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 pin: false
-description: Positional Encoding의 정의와 작동 방식, 예시 | Positional Encoding, Transformer, Embeddings
+description: Positional Encoding, 위치 임베딩, Positional Encoding 설명, Positional Embedding
 ---
 
 > Transformer 구조에 활용되는 Positional Encoding의 개념과 역할, 수식을 설명합니다. 
@@ -29,9 +29,9 @@ Transformer는 순차적인 구조를 사용하지 않기에 입력 시퀀스의
 - Vision Transformer (ViT)에는 RNN과 다르게 단어의 순서라는 개념이 존재하지 않습니다. 
   - 따라서 각 단어 임베딩에 위치/순서에 대한 신호를 추가하여, 모델이 단어의 순서 정보를 함께 포함시킬 수 있도록 도와줍니다. 이를 **Positional Encoding**이라고 부릅니다. 
 - 이는 다음과 같은 조건을 만족해야 합니다.
-  - 각 time step (문장 내 단어의 위치) 에 대해 고유한 인코딩을 출력해야 합니다.
-  - 두 time step 사이의 거리는 문장의 길이와 상관없이 일관되어야 합니다.
-  - 값들은 문장의 길이와 상관없이 bounded 되어야 합니다.
+  - 각 Time Step (문장 내 단어의 위치) 에 대해 고유한 인코딩을 출력해야 합니다.
+  - 두 Time Step 사이의 거리는 문장의 길이와 상관없이 일관되어야 합니다.
+  - 값들은 문장의 길이와 상관없이 Bounded 되어야 합니다.
 - **Positional Encoding**은 위 기준들을 충족하면서, 위치 정보를 포함하는 벡터로 정의됩니다.
   - 또한, 이 벡터는 모델 자체에 통합되지 않고 문장 내 각 단어의 위치에 대한 정보를 제공하는데 사용됩니다.
 
@@ -61,7 +61,7 @@ Transformer는 순차적인 구조를 사용하지 않기에 입력 시퀀스의
 &nbsp;
 &nbsp;
 
-  - 일반화 하여 Positional encoding을 표현하면 아래와 같습니다. $$i$$ 는 임베딩 차원의 인덱스를 의미합니다.
+  - 일반화 하여 Positional Encoding을 표현하면 아래와 같습니다. $$i$$ 는 임베딩 차원의 인덱스를 의미합니다.
 
   $$
   \text{PE}(pos, 2i) = \sin \left( \frac{pos}{10000^{2i/d_{\text{model}}}} \right),
@@ -166,10 +166,8 @@ _The 128-dimensional positonal encoding for a sentence with the maximum lenght o
 
 ## **한계점**
 - 픽셀 또는 패치의 위치에 따라 벡터의 크기가 달라집니다.
-- $$d_{\text{model}}$$ 이 커질수록 positional encoding의 벡터의 크기가 커집니다.
-- 개선하기 위해 다음과 같은 방법이 제안되었습니다.
-  - **Learned positional encoding**: Positional encoding을 학습 가능한 벡터로 대체합니다.
-  - **Relative positional encoding**: 픽셀 또는 패치의 상대적인 위치 정보를 입력 데이터에 추가합니다.
+- $$d_{\text{model}}$$ 이 커질수록 Positional Encoding의 벡터의 크기가 커집니다.
+
 
 &nbsp;
 &nbsp;
