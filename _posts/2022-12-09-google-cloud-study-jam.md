@@ -89,7 +89,7 @@ description: 2022 구글 클라우드 스터디잼, 구글 클라우드 스터�
 - 세 개의 코세라 강좌 [Architecting with Google Kubernetes Engine: Foundations](https://www.cloudskillsboost.google/course_templates/32), 
 [Architecting with Google Kubernetes Engine: Workloads](https://www.cloudskillsboost.google/course_templates/34), 
 [Architecting with Google Kubernetes Engine: Production](https://www.cloudskillsboost.google/course_templates/33)를 수강하고, 
-[Kubernetes Solutions]() Qwiklabs 실습을 완료하는것이 수료 조건입니다. 
+Kubernetes Solutions Qwiklabs 실습을 완료하는것이 수료 조건입니다. 
 
   - 초반 Foundation 강의에는 중급반 강의와 겹치는 내용이 있었고, 후반에는 Role-based access control, GKE Networking, Persistent storage, Secrets and Configmaps 등 심화적인 내용들이 포함됩니다.
 
