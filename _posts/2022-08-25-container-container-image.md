@@ -2,7 +2,7 @@
 title: "컨테이너와 이미지 | Container and Container Image"
 date: 2022-08-25 17:00:00 +/-TTTT
 categories: [Cloud, Google Cloud Platform (GCP)]
-tags: [gcp, kubernetes, k8s, container, container-image]
+tags: [gcp, kubernetes, k8s]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/

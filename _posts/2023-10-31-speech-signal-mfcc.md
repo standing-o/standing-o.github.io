@@ -2,7 +2,7 @@
 title: "음성 신호와 MFCC | Speech Signal and Spectral Features"
 date: 2023-10-31 17:00:00 +/-TTTT
 categories: [AI Theory, Audio]
-tags: [python, machine-learning, deep-learning, feature-engineering, audio-signal-processing, mfcc, melspectrogram]
+tags: [python, machine-learning, deep-learning, feature-engineering, audio-signal-processing, mfcc, melspectrogram, speech]
 math: true
 toc: true
 author: seoyoung

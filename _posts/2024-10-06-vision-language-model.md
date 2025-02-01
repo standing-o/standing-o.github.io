@@ -2,7 +2,7 @@
 title: "Vision Language Model (VLM) 이란? | Vision-Language Model"
 date: 2024-10-06 00:00:00 +/-TTTT
 categories: [AI Theory, NLP and LLM]
-tags: [llm, prompt, vision-transformer, transformer, vit]
+tags: [llm, prompt-engineering, vision-transformer, transformer, vlm]
 math: true
 toc: true
 author: seoyoung
@@ -11,7 +11,7 @@ pin: false
 image:
   path: 20241006-t.jpg
   alt: ""
-description: Vision Language Model (VLM) 이란? | Vision-Language Model
+description: VLM 모델, VLM 이란, VLM 모델 종류, VLM SOTA, VLM Survey, Vision Transformer
 ---
 
 > "An introduction to vision-language modeling. (Bordes, Florian, et al.)" 을 요약한 글이며, Vision Language Model의 개념과 장점들을 소개합니다. [^ref1]
@@ -21,7 +21,7 @@ description: Vision Language Model (VLM) 이란? | Vision-Language Model
 
 VLM은 다양한 훈련 방식으로 발전해 왔으며, 대표적으로 대조적 학습, 마스킹 기법, 생성적 모델들이 있습니다. 
 
-최근 모델들은 Pre-trained Backbone ex. CLIP) 을 이용해 훈련 속도와 효율성을 높이며, 빠르게 다양한 작업에 적응할 수 있습니다. 
+최근 모델들은 Pre-trained Backbone (ex. CLIP) 을 이용해 훈련 속도와 효율성을 높이며, 빠르게 다양한 작업에 적응할 수 있습니다. 
 
 
 &nbsp;
@@ -34,7 +34,7 @@ VLM은 다양한 훈련 방식으로 발전해 왔으며, 대표적으로 대조
 
 ## **Abstract**
 
-- **Vision-Language Models (VLMs)**은 텍스트 데이터와 함께 시각 정보를 통합하여 대형 언어 모델(LLMs)을 확장합니다.
+- **Vision-Language Models(VLMs)**은 텍스트 데이터와 함께 시각 정보를 통합하여 대형 언어 모델(LLMs)을 확장합니다.
 - VLMs는 고수준 텍스트 설명을 바탕으로 이미지를 생성할 수 있습니다.
 - **Challenges**
   - VLMs의 신뢰성을 개선하는 데는 상당한 어려움이 존재합니다.
@@ -64,12 +64,12 @@ VLM은 다양한 훈련 방식으로 발전해 왔으며, 대표적으로 대조
 
 
 ## **The families of VLMs**
-- **VLMs (Vision-Language Models)**는 컴퓨터 비전과 자연어 처리를 연결하기 위해 Transformer 구조를 주로 활용합니다.
+- **VLMs(Vision-Language Models)**는 컴퓨터 비전과 자연어 처리를 연결하기 위해 Transformer 구조를 주로 활용합니다.
 
 ### **Training Paradigms**
-1. **대조 학습 (Contrastive Training)** ㅣ 긍정 및 부정 예시 Pair을 사용하여 모델이 긍정 Pair에는 유사한 표현을, 부정 Pair에는 다른 표현을 학습하도록 합니다.
-2. **마스킹 (Masking)** ㅣ 데이터의 마스킹된 부분을 재구성하는 방식입니다.
-3. **생성형 (Generative)** ㅣ `VLMs`는 스스로 이미지나 텍스트(캡션)를 생성할 수 있으며, 이러한 모델은 기능이 복잡하여 일반적으로 학습 비용이 더 많이 듭니다.
+1. **대조 학습(Contrastive Training)** ㅣ 긍정 및 부정 예시 Pair을 사용하여 모델이 긍정 Pair에는 유사한 표현을, 부정 Pair에는 다른 표현을 학습하도록 합니다.
+2. **마스킹(Masking)** ㅣ 데이터의 마스킹된 부분을 재구성하는 방식입니다.
+3. **생성형(Generative)** ㅣ `VLMs`는 스스로 이미지나 텍스트(캡션)를 생성할 수 있으며, 이러한 모델은 기능이 복잡하여 일반적으로 학습 비용이 더 많이 듭니다.
 
 
 
@@ -85,7 +85,7 @@ _The training paradigms of VLMs_
 
 
 ### **Pretrained Backbones**
-- 주로 기존 대형 언어 모델(예: Llama)을 사용하여 이미지 인코더와 텍스트 인코더 간의 연결을 만듭니다.
+- 주로 기존 대형 언어 모델(ex. Llama)을 사용하여 이미지 인코더와 텍스트 인코더 간의 연결을 만듭니다.
 - 이 방법은 모델을 처음부터 학습시키는 것보다 일반적으로 자원 소모가 적습니다.
 
 
@@ -112,22 +112,22 @@ _The training paradigms of VLMs_
 ## **1. Contrastive-based VLMs**
 
 ### **Energy-Based Models (EBMs)**
-- EBMs train a model $E_\theta$ that assigns low energy to observed data and high energy to unseen data.
-- The goal is to differentiate between real data (which should have low energy) and noise or unobserved data (which should have higher energy).
-- The **energy function** is defined as $E_\theta (x)$, where $x$ is the input data and $\theta$ are the parameters of the model.
+- EBM은 모델 $E_\theta$를 학습하여 관측된 데이터에는 낮은 에너지를, 보지 못한 데이터에는 높은 에너지를 할당합니다.
+- 목표는 실제 데이터(낮은 에너지)와 노이즈 또는 관측되지 않은 데이터(높은 에너지)를 구분하는 것입니다.
+- 에너지 함수는 $E_\theta (x)$로 정의되며, 여기서 $x$는 입력 데이터, $\theta$는 모델의 파라미터입니다.
 
 
 
 #### **Boltzmann Distribution**
 
-- The probability density function (the probability of the input $x$ under the model) is given by
+- 모델에서 입력 $x$에 대한 **확률 밀도 함수(Probability Density Function)**는 다음과 같습니다.
   $$
   p_\theta (x) = \frac{e ^{- E_\theta (x)}}{Z_\theta},
   $$
   
   - where
-    - $E_\theta (x)$: the energy of input $x$.
-    - $Z_\theta = \sum_x e^{-E_\theta (x)}$: the normalization factor ensuring $p_\theta (x)$ sums to 1 over all $x$.
+    - $E_\theta (x)$ ㅣ the energy of input $x$.
+    - $Z_\theta = \sum_x e^{-E_\theta (x)}$ ㅣ the normalization factor ensuring $p_\theta (x)$ sums to 1 over all $x$.
 
 
 &nbsp;
@@ -137,14 +137,14 @@ _The training paradigms of VLMs_
 
 ### **Maximum Likelihood Objective**
 
-- The training objective is to minimize the discrepancy between model predictions and real data
+- 학습 목표는 모델 예측과 실제 데이터 간의 **불일치(Discrepancy)**를 최소화하는 것입니다.
 $arg \min_\theta E_{x \sim P_D} (x) [- \log p_\theta (x)]$
 
 
 
-#### **Gradient of the gradient**
+#### **Gradient of the Gradient**
 
-- The gradient of the objective is computed as follows
+- 목표 함수의 Gradient는 다음과 같이 계산됩니다.
 $$
  \frac{\partial E_{x \sim P_D}(x)[-\log p_\theta(x)]}{\partial \theta} = E_{x^+ \sim P_D}(x) \frac{\partial E_\theta(x^+)}{\partial \theta} - E_{x^- \sim P_\theta}(x) \frac{\partial E_\theta(x^-)}{\partial \theta},
 $$
@@ -162,7 +162,7 @@ $$
 
 ### **Noise Contrastive Estimation (NCE)**
 
-- 모델 분포를 근사하기 위해 노이즈 분포에서 샘플링을 사용합니다:
+- 모델 분포를 근사하기 위해 노이즈 분포에서 샘플링을 사용합니다.
 - **NCE는 이진 분류 문제로 정의됩니다.**
   
   - 실제 데이터는 $C=1$, 노이즈는 $C=0$으로 예측합니다.
@@ -171,7 +171,7 @@ $$
     L_{NCE}(\theta) := - \sum_{i} \log P(C_i = 1 | x_i; \theta) - \sum_{j} \log P(C_j = 0 | x_j; \theta),
     $$
     
-  - where $x_i$ = samples from real data distribution.
+    - where $x_i$ = samples from real data distribution.
   - $x_j \sim p_n (x)$ 는 노이즈 분포에서 추출한 샘플로, 일반적으로 무작위 노이즈 프로세스에서 생성됩니다.
 
 
@@ -180,7 +180,7 @@ $$
 &nbsp;
 
 
-### **Contrastive Language–Image Pre-training (CLIP)**
+### **Contrastive Language–Image Pre-training(CLIP)**
 
 - 이미지와 해당 텍스트(캡션)의 공통 표현을 학습하기 위함입니다.
 - **<u>훈련 방법</u>**
@@ -266,8 +266,8 @@ $$
   L = - \sum_{x \in D} E_{p(f)} p(Z|f(x)) [\log q(z) + \beta \cdot \log q(x|z)],
   $$
   - where
-    - $q(z)$ = 학습된 표현의 분포.
-    - $D$ = 표현을 생성하기 위해 사용되는 데이터셋.
+    - $q(z)$ = 학습된 표현의 분포
+    - $D$ = 표현을 생성하기 위해 사용되는 데이터셋
 - 이 방정식은 의미 있는 표현을 얻는 것과 원래 입력에서 중요한 세부 정보를 유지하는 것 사이의 균형을 강조합니다.
 
 
@@ -292,7 +292,7 @@ $$
 
 ### **CM3Leon**
 - 텍스트-이미지 및 이미지-텍스트 생성을 위한 기초 모델.
-- **Tokenization**: 텍스트와 이미지의 교차 처리를 가능하게 하는 특수 토큰을 사용합니다.
+- **Tokenization** ㅣ 텍스트와 이미지의 교차 처리를 가능하게 하는 특수 토큰을 사용합니다.
 - **Training Process**
   - **1단계 (Retrieval-Augmented Pretraining)** ㅣ CLIP 기반 인코더를 사용해 입력 시퀀스에 관련된 multi-modal 문서를 추가하고 다음 토큰 예측을 통해 학습을 수행합니다.
   - **2단계 (Supervised Fine-tuning)** ㅣ 다중 작업 지시 조정을 통해 모달리티 간 콘텐츠 생성 및 처리를 가능하게 하여 다양한 작업에서 성능을 향상시킵니다.
@@ -312,7 +312,7 @@ $$
 &nbsp;
 
 
-### **Using generative text-to-image models for downstream vision-language tasks**
+### **Using Generative Text-to-image Models for Downstream Vision-language Tasks**
 - Stable Diffusion과 Imagen 같은 최근 모델의 발전으로 이 시스템들은 텍스트 프롬프트에 따라 이미지를 생성할 수 있습니다.
 
 - 일반적으로 이미지 생성 모델로 알려져있으며, 별도의 재학습 없이도 분류와 캡션 예측 작업을 수행할 수 있습니다.
@@ -324,13 +324,13 @@ $$
     $$
     
   - where
-    - $p (c_i)$: 클래스 $c_i$의 Prior probability.
+    - $p (c_i)$ ㅣ 클래스 $c_i$의 Prior probability.
     - 분모는 모든 클래스에 대한 Likelihood을 합산하여 확률을 정규화합니다.
   
 
 - **Generative Classifiers**
-  - **Analysis by synthesis**으로 알려진 이 접근법은 나이브 베이즈와 선형 판별 분석과 같은 생성 모델을 기반으로 한 초기 기법과 연결됩니다.
-  - 계산 비용이 많이 들지만 생성 분류기는 더 큰 **effective robustness**을 제공하여, CLIP과 같은 판별 모델보다 out-of-distribution 시나리오에서 더 잘 작동합니다.
+  - **Analysis by Synthesis**으로 알려진 이 접근법은 나이브 베이즈와 선형 판별 분석과 같은 생성 모델을 기반으로 한 초기 기법과 연결됩니다.
+  - 계산 비용이 많이 들지만 생성 분류기는 더 큰 **Effective Robustness**을 제공하여, CLIP과 같은 판별 모델보다 Out-of-distribution 시나리오에서 더 잘 작동합니다.
   - 이러한 분류기는 모양 편향이 증가하고 인간의 판단과 더 잘 일치합니다.
   - 또한, 라벨이 없는 테스트 데이터만을 사용해 판별 모델과 공동으로 적응할 수 있어 다양한 작업에서 성능이 향상됩니다.
 
@@ -341,15 +341,15 @@ $$
 
 
 ## **VLMs from Pretrained Backbones**
-- Vision-Language Models (VLMs)의 학습에는 매우 비용이 많이 들며, 방대한 계산 자원(수백에서 수천 개의 GPU)과 대규모 데이터셋(수억 개의 이미지와 텍스트 쌍)이 필요합니다.
-- 비용을 줄이기 위해 연구자들은 VLMs를 처음부터 구축하는 대신, 기존의 LLMs과 visual feature extractor를 활용하는 데 집중하고 있습니다.
+- Vision-Language Models(VLMs)의 학습에는 매우 비용이 많이 들며, 방대한 계산 자원(수백에서 수천 개의 GPU)과 대규모 데이터셋(수억 개의 이미지와 텍스트 쌍)이 필요합니다.
+- 비용을 줄이기 위해 연구자들은 VLMs를 처음부터 구축하는 대신, 기존의 LLMs과 Visual Feature Extractor를 활용하는 데 집중하고 있습니다.
 - 학습된 모델을 활용함으로써 연구자들은 텍스트와 이미지 모달리티 간의 매핑을 학습하려고 하며, 이를 통해 LLMs가 시각적 질문에 적은 계산 자원으로 응답할 수 있게 됩니다.
 
 ### **Frozen**
 - **Frozen**은 **시각적 특징을 텍스트 임베딩으로 변환하는 경량화된 매핑 네트워크**를 통해 비전 인코더와 LLM을 연결하는 선도적인 모델입니다.
 - **<u>Architectures</u>**
   - **Vision Encoder** ㅣ NF-ResNet-50을 처음부터 학습시킵니다.
-  - **Language Model** ㅣ 사전 학습된 Transformer (70억 개의 파라미터)를 "frozen" 시켜 미리 학습된 특징을 보존합니다.
+  - **Language Model** ㅣ 사전 학습된 Transformer (70억 개의 파라미터)를 "Frozen" 시켜 미리 학습된 특징을 보존합니다.
   - **Training Objective** ㅣ Conceptual Captions 데이터셋을 기반으로 간단한 텍스트 생성 목표를 사용합니다.
 - **기능**
   - 시각적 및 언어적 요소의 빠른 작업 적응과 효율적인 결합을 보여주며, Multi-modal LLMs의 중요한 발전을 나타냅니다.
@@ -358,17 +358,17 @@ $$
 &nbsp;
 &nbsp;
 
-### **The example of MiniGPT**
+### **The Example of MiniGPT**
 
-- **MiniGPT-4**는 텍스트와 이미지 입력을 모두 받아들이며, **단순한 linear projection layer**을 통해 이미지와 텍스트 표현을 정렬하여 텍스트 출력을 생성합니다.
+- **MiniGPT-4**는 텍스트와 이미지 입력을 모두 받아들이며, **단순한 Linear Projection Layer**을 통해 이미지와 텍스트 표현을 정렬하여 텍스트 출력을 생성합니다.
 - 대규모 데이터셋 (500만 개의 이미지-텍스트 쌍)을 사용하여 4개의 A100 GPU로 짧은 시간(10시간) 내에 학습됩니다.
-- **Instruction-tuning phase**에서는 고도로 선별된 데이터로 400번의 training step을 거칩니다.
+- **Instruction-tuning Phase**에서는 고도로 선별된 데이터로 400번의 Training Step을 거칩니다.
 
 &nbsp;
 &nbsp;
 &nbsp;
 
-### **Other popular models using pretrained backbones**
+### **Other Popular Models using Pretrained Backbones**
 
 - **Qwen-VL 및 Qwen-VL-Chat**은 비전 표현을 LLM 입력 공간에 정렬하며, 압축을 위한 Transformer 층을 사용합니다.
 - 이미지를 처리하여 텍스트를 생성하는 비전-언어 모델 **BLIP-2**는 이미지와 텍스트 임베딩을 매핑하는 경량화된 컴포넌트(Q-Former)를 사용하며, 훈련 속도를 높이기 위해 사전 학습된 모델을 활용합니다.
@@ -378,7 +378,7 @@ $$
 &nbsp;
 &nbsp;
 
-
-## **References**
+-----------------
+## Reference
 
 [^ref1]: [Bordes, Florian, et al. "An introduction to vision-language modeling." *arXiv preprint arXiv:2405.17247* (2024).](https://arxiv.org/pdf/2405.17247)

@@ -2,7 +2,7 @@
 title: "[Dacon] 음성 분류 경진대회"
 date: 2022-06-23 17:00:00 +/-TTTT
 categories: [Extracurricular Activities, Competition]
-tags: [dacon, ai-competition, python, deep-learning, speech, classification, data-augmentation, feature-engineering, spectrogram, fourier-transform]
+tags: [dacon, ai-competition, python, deep-learning, classification, feature-engineering, spectrogram, fourier-transform, mfcc, melspectrogram, speech]
 math: true
 toc: true
 author: seoyoung

@@ -2,7 +2,7 @@
 title: "LLM 및 Gen AI 프로젝트 입문"
 date: 2024-04-01 00:00:00 +/-TTTT
 categories: [AI Theory, NLP and LLM]
-tags: [llm, gen-ai, generative-ai, prompt, in-context-learning, transformer]
+tags: [llm, generative-ai, prompt-engineering, attention, transformer]
 math: true
 toc: true
 author: seoyoung
@@ -11,7 +11,7 @@ pin: false
 image:
   path: 20240401-t.jpg
   alt: ""
-description: LLM 입문, 생성 AI 입문 | LLM, Generative AI, Prompt Engineering, Zero-shot Learning, Generative Configuration
+description: LLM, LLM 딥러닝, LLM 이란, LLM 인공지능 뜻, LLM 생성형 ai, Generative AI, Generative AI LLM, Prompt Engineering
 ---
 
 > LLM과 Transformer의 구조, Prompt Engineering과 Inference 파라미터 설정에 대한 개념을 소개합니다.
@@ -29,18 +29,18 @@ Prompt와 Completion을 통해 모델을 조작하고 다양한 작업을 수행
 
 
 ## **Large Language Model, LLM 이란?**
-- **LLM (Large Language Model)** 은 수십조가 넘는 단어 데이터로 수개월동안 대규모 컴퓨팅 파워를 통해 학습된 AI 언어 모델입니다.
+- **LLM(Large Language Model)** 은 수십조가 넘는 단어 데이터로 수개월동안 대규모 컴퓨팅 파워를 통해 학습된 AI 언어 모델입니다.
 - LLM은 자연어나 인간이 작성한 지시를 이해하고, 인간이 하는 것과 유사하게 작업을 수행할 수 있습니다.
 - 수십억개의 파라미터를 가진 **Foundation 모델**은 언어뿐만 아니라 다양한 도메인에서 새로운 특성을 보여주고 있으며, 여러 분야에서 복잡한 작업을 분해하고 추론하는데 활용되고 있습니다.
 - 모델의 파라미터가 많을수록 필요한 메모리도 많아지며, 모델이 수행 가능한 작업도 더욱 정교해집니다.
 - LLM을 사용하여 정보 검색과 같은 작고 집약적인 작업을 수행할 수 있습니다.
   - 모델에 프롬프트를 기반으로 글을 쓰도록 요청하거나, 대화를 요약할 수 있도록 대화 일부를 프롬프트에 제공하고 모델은 이 데이터와 자연어에 대한 이해력을 바탕으로 요약을 생성합니다.
   - 다양한 번역 작업에 모델을 활용할 수 있습니다.
-  - 그 외 개체명 인식 <sup>Named entity recognition</sup>, 단어 분류 등에도 활용 가능합니다.
+  - 그 외 개체명 인식(Named Entity Recognition), 단어 분류 등에도 활용 가능합니다.
     - 모델에게 뉴스 기사에서 식별된 모든 사람과 장소를 식별하도록 요청합니다.
 
 - 모델의 파라미터에 인코딩된 지식을 이해하면 위 작업을 잘 수행하고 요청된 정보를 반환할 수 있습니다.
-- 또한, LLM을 외부 데이터 소스에 연결하거나 외부 API를 활용하여 **증강 <sup>Augmenting</sup>** 할 수 있습니다.
+- 또한, LLM을 외부 데이터 소스에 연결하거나 외부 API를 활용하여 **증강(Augmenting)** 할 수 있습니다.
 
 
 ![fig1](20240401-1.png){: width="600"}
@@ -68,14 +68,14 @@ Prompt와 Completion을 통해 모델을 조작하고 다양한 작업을 수행
 - 입력에 상관없이 모델이 각 단어에 대한 다른 모든 단어와의 관련성을 학습할 수 있도록 가중치를 적용합니다.
 
 ### **Transformer 이전의 텍스트 생성 <sup>Text Generation</sup>**
-- **RNN<sup>Recurrent Neural Network</sup>** 구조를 바탕으로 텍스트에서 이전 단어들을 더 많이 참고하도록 설계할 때, 모델이 사용하는 리소스를 크게 확장해야 했습니다.
+- **RNN(Recurrent Neural Network)** 구조를 바탕으로 텍스트에서 이전 단어들을 더 많이 참고하도록 설계할 때, 모델이 사용하는 리소스를 크게 확장해야 했습니다.
   - 모델을 확장해도 여전히 충분한 입력을 제공할 수 없었기에 좋은 예측을 할 수 없었습니다.
   - 다음 단어를 성공적으로 예측하려면 모델이 이전 몇 단어보다 더 많은 정보를 보아야 하며, 모델은 문장 전체를 이해할 필요성이 대두됐습니다.
-  - 하지만 **언어는 복잡**하다는 이유로 이를 극복하기는 힘들었고, 이때 **트랜스포머<sup>Transformer</sup>** 가 등장했습니다.
+  - 하지만 **언어는 복잡**하다는 이유로 이를 극복하기는 힘들었고, 이때 **트랜스포머(Transformer)** 가 등장했습니다.
     - 한 단어는 여러 의미를 가질 수 있고, 문장 구조 내의 단어 및 문법은 문법적으로 모호할 수 있습니다.
 
 - 트랜스포머는 멀티 코어 GPU를 효율적으로 사용하여 확장될 수 있으며, 입력 데이터를 병렬로 처리할 수 있어 훨씬 더 큰 규모의 학습 데이터를 사용할 수 있습니다.
-  - 또한, 처리 중인 단어의 의미에 **주의 <sup>Attention</sup>** 를 기울일 수 있다는 장점이 있습니다.
+  - 또한, 처리 중인 단어의 의미에 **주의(Attention)** 를 기울일 수 있다는 장점이 있습니다.
 
 &nbsp;
 &nbsp;
@@ -142,15 +142,15 @@ Prompt와 Completion을 통해 모델을 조작하고 다양한 작업을 수행
 - **Decoder** ㅣ 입력 토큰을 받아 새 토큰을 생성합니다.
 
 #### 유형
-- **인코더 전용 모델 <sup>Encoder only Model</sup>**
+- **인코더 전용 모델(Encoder Only Model)**
   - Sequence-to-sequence 모델로 작동하지만, 추가적인 수정 없이 입력 시퀀스와 출력 시퀀스가 동일한 길이입니다.
   - 아키텍처에 추가적인 레이어를 추가하여 인코더 전용 모델을 감정 분석과 같은 분류 작업을 수행하도록 학습 가능합니다. 
   - ex. BERT
-- **인코더-디코더 모델 <sup>Encoder-Decoder Model</sup>**
+- **인코더-디코더 모델(Encoder-Decoder Model)**
   - 번역과 같은 Sequence-to-sequence 작업에서 잘 수행되며, 입력 시퀀스와 출력 시퀀스의 길이가 다를 수 있습니다.
   - 모델 Scale을 늘려서 학습하여 일반적인 텍스트 생성작업을 수행할 수 있습니다. 
   - ex. BART
-- **디코더 전용 모델 <sup>Decoder only Model</sup>**
+- **디코더 전용 모델(Decoder Only Model)**
   - Scale이 커짐에 따라 그 기능이 향상되었습니다. 대부분의 작업에 일반화 가능합니다. 
   - ex. GPT, BLOOM Jurassic, LLaMA
 
@@ -162,7 +162,7 @@ Prompt와 Completion을 통해 모델을 조작하고 다양한 작업을 수행
 
 ### **Transformer를 활용한 텍스트 생성 <sup>Text Generation</sup>**
 
-#### 번역 <sup>Translation</sup>: Sequence-to-sequence task
+#### 번역 <sup>Translation</sup>: Sequence-to-sequence Task
 1. 네트워크를 훈련하는 데 사용된 동일한 Tokenizer를 사용하여 입력 단어를 토큰화합니다.
 2. 이러한 토큰은 네트워크의 인코더 부분에 입력으로 추가되고, 임베딩 레이어를 통과한 다음, Multi-Head Self-Attention 레이어로 전달됩니다.
 3. Multi-Head Self-Attention 레이어의 출력은 Fully-Connected Feed Forward Network를 통해 인코더의 출력에 전달됩니다.
@@ -186,9 +186,9 @@ Prompt와 Completion을 통해 모델을 조작하고 다양한 작업을 수행
 
 ## **프롬프트 엔지니어링 <sup>Prompt Engineering</sup>**
 ### **Prompt와 Completion**
-- LLM에게 전달되는 텍스트를 **프롬프트 <sup>Prompt</sup>** 라고 합니다.
-  - 프롬프트에 사용가능한 공간 또는 메모리를 **컨텍스트 창 <sup>Context Window</sup>** 라고 하며, 보통 수천 단어 정도의 공간을 가지고 있지만 모델마다 상이합니다.
-- 모델의 출력물을 **컴플리션 <sup>Completion</sup>** 라고 하며, 모델을 사용하여 텍스트를 생성하는 행위를 **추론 <sup>Inference</sup>** 라고 합니다.
+- LLM에게 전달되는 텍스트를 **프롬프트(Prompt)** 라고 합니다.
+  - 프롬프트에 사용가능한 공간 또는 메모리를 **컨텍스트 창(Context Window)** 라고 하며, 보통 수천 단어 정도의 공간을 가지고 있지만 모델마다 상이합니다.
+- 모델의 출력물을 **컴플리션(Completion)** 라고 하며, 모델을 사용하여 텍스트를 생성하는 행위를 **추론(Inference)** 라고 합니다.
   - 사용자가 모델에게 질문을 한다면, 프롬프트가 모델에 전달되고 모델은 다음 단어를 예측합니다.
   - 사용자의 프롬프트에 질문이 포함되어 있으므로, 모델은 답변을 생성합니다.
   - 컴플리션은 원래 프롬프트에 포함된 텍스트를 따르고, 그 뒤에 생성된 텍스트가 포함됩니다.
@@ -309,7 +309,7 @@ Prompt와 Completion을 통해 모델을 조작하고 다양한 작업을 수행
 #### 1. 사용 사례 정의
 - 가능한 한 정확하고 좁은 범위로 정의합니다.
 - LLMs는 다양한 작업을 수행할 수 있지만, 그 능력은 모델의 크기와 구조에 강하게 의존합니다.
-- ex. long-form text generation, high degree of capability, specific (entity recognition)
+- ex. Long-form Text Generation, High Degree of Capability, Specific (Entity Recognition)
 
 
 #### 2. 기존 모델 선택 또는 자체 사전 훈련
@@ -330,6 +330,8 @@ Prompt와 Completion을 통해 모델을 조작하고 다양한 작업을 수행
 &nbsp;
 &nbsp;
 
+
+---------------------------
 
 ## Reference
 1. [Generative AI with Large Language Models, Coursera](https://www.coursera.org/learn/generative-ai-with-llms)

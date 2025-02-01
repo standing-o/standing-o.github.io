@@ -2,7 +2,7 @@
 title: "정형데이터에는 딥러닝이 부적절한 이유 | Tabular Data, Deep Learning"
 date: 2023-09-20 13:00:00 +/-TTTT
 categories: [AI Theory, Machine Learning]
-tags: [machine-learning, deep-learning, tabular, random-forest, gradient-boosting]
+tags: [machine-learning, deep-learning, tabular, random-forest, gradient-boosting, tree]
 math: true
 toc: true
 author: seoyoung

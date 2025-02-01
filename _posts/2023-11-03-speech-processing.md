@@ -2,7 +2,7 @@
 title: "파이썬 라이브러리로 음성 데이터 전처리 하기 | Audio Feature Extraction"
 date: 2023-11-03 17:00:00 +/-TTTT
 categories: [AI Theory, Audio]
-tags: [python, machine-learning, deep-learning, feature-engineering, audio-signal-processing, mfcc, melspectrogram]
+tags: [python, machine-learning, deep-learning, feature-engineering, audio-signal-processing, mfcc, melspectrogram, speech]
 math: true
 toc: true
 author: seoyoung

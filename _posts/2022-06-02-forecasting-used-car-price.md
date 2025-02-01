@@ -2,7 +2,7 @@
 title: "[Dacon] 중고차 가격 예측 경진대회"
 date: 2022-06-02 20:00:00 +/-TTTT
 categories: [Extracurricular Activities, Competition]
-tags: [dacon, ai-competition, python, machine-learning, regression, feature-engineering, catboost, random-forest, gradient-boosting, ensemble, pycaret]
+tags: [dacon, ai-competition, python, machine-learning, regression, feature-engineering, catboost, random-forest, gradient-boosting, ensemble]
 math: true
 toc: true
 author: seoyoung
