@@ -213,5 +213,3 @@ toc: true
 - [x] [Convex Optimization](https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf) <sup>book</sup>
 - [x] [Partial Differential Equations for Scientists and Engineers](https://www.maa.org/publications/maa-reviews/partial-differential-equations-for-scientists-and-engineers) <sup>book</sup>
 - [x] [Differential Equations, Dynamical Systems, and an Introduction to Chaos](https://math.as.uky.edu/sites/default/files/MA%20481.Differential%20Equations.SP2018.Prosper.pdf) <sup>book</sup>
-
-
