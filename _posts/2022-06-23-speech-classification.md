@@ -1,13 +1,13 @@
 ---
-title: "[Dacon] 음성 분류 경진대회"
+title: "음성 데이터 분류하기 | 데이콘"
 date: 2022-06-23 17:00:00 +/-TTTT
-categories: [Extracurricular Activities, Competition]
+categories: [리뷰]
 tags: [dacon, ai-competition, python, deep-learning, classification, feature-engineering, spectrogram, fourier-transform, mfcc, melspectrogram, speech]
 math: true
 toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 음성 데이터 전처리, 음성 데이터 딥러닝, 음성 데이터 분석, 음성 데이터 Data Augmentation, 음성 데이터 증강, 음성 데이터 Feature Extraction, 음성 데이터 분류
+description: 📢 음성 데이터를 분석하고 데이터 증강 기법과 Feature Engineering을 적용하는 방법을 공유합니다.
 ---
 
 ------------------

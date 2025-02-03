@@ -1,22 +1,19 @@
 ---
 title: "신뢰성 이해하기 | Reliability"
 date: 2022-07-14 17:00:00 +/-TTTT
-categories: [Domain Knowledge]
+categories: [도메인 지식 | Domain Knowledge]
 tags: [lg-aimers, reliability]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 신뢰성, 신뢰성 척도, 보전도, Reliability
+description: 🌟 제품 수명 주기 관리에 중요한 역할을 하는 신뢰성(Reliability)이라는 개념을 알아봅시다.
 ---
 
 ---------------------
 
-> 신뢰성의 개념과 척도, 그리고 관련 분포들을 알아봅시다.
+> 신뢰성의 개념과 척도, 그리고 관련 분포들을 알아보고, 시스템의 고장을 이해하는데 필수적인 신뢰성 공학을 이해해봅시다.
 {: .prompt-info }
 
-신뢰성(Reliability)은 제품 수명 주기 관리에 중요한 역할을 합니다. 
-
-품질과 신뢰성은 시간적, 추진 방식, 데이터 등 다양한 측면에서 차이를 보이며, 신뢰성 공학은 시스템의 고장 및 안전을 이해하는데 필수적입니다.
 
 &nbsp;
 &nbsp;

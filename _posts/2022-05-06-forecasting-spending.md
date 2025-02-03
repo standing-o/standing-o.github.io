@@ -1,13 +1,13 @@
 ---
-title: "[Dacon] 소비자 데이터 기반 소비 예측 경진대회"
+title: "소비자 데이터 기반 소비 예측하기 | 데이콘"
 date: 2022-05-06 16:00:00 +/-TTTT
-categories: [Extracurricular Activities, Competition]
+categories: [리뷰]
 tags: [dacon, ai-competition, python, machine-learning, regression, lightgbm, xgboost, elasticnet, ensemble]
 math: true
 toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 소비 예측 딥러닝, 소비 예측 머신러닝, 소비 예측 파이썬, Forecasting Spending, Elasticnet, LightGBM, XGBoost
+description: 💸 소비자 데이터를 분석하고 Elasticnet, LightGBM, XGBoost와 같은 머신러닝 회귀 모델을 활용하여 소비를 예측하는 방법을 소개합니다.
 ---
 
 --------------------------------
