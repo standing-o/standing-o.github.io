@@ -1,7 +1,7 @@
 ---
 title: "소프트맥스 신뢰도와 딥러닝 예측의 불확실성 | Softmax Confidence and Uncertainty"
 date: 2024-08-10 00:00:00 +/-TTTT
-categories: [인공지능 | AI, XAI]
+categories: [인공지능 | AI, AI 이론]
 tags: [python, deep-learning, softmax, neural-network, uncertainty, calibration]
 math: true
 toc: true
@@ -14,7 +14,7 @@ description: ➗ Softmax Calibration의 개념과 수학적 정의를 자세히 
 --------------------
 
 > **<u>KEYWORDS</u>**         
-> 딥러닝 해석, 소프트맥스 확률, 딥러닝 불확실성, 딥러닝, 캘리브레이션, Softmax Confidence and Uncertainty, Calibration, Histogram Binning, Isotonic Regression, Platt Scaling
+> 딥러닝 해석, 소프트맥스 확률, 딥러닝 불확실성, 딥러닝, 캘리브레이션, Softmax Calibration, Histogram Binning, Isotonic Regression, Platt Scaling
 {: .prompt-info }
 
 --------------------

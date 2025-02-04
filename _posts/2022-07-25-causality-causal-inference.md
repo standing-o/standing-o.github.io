@@ -1,7 +1,7 @@
 ---
 title: "인과와 인과추론 | Causality and Causal Inference"
 date: 2022-07-25 17:00:00 +/-TTTT
-categories: [인공지능 | AI, 머신러닝 | Machine Learning]
+categories: [인공지능 | AI, AI 이론]
 tags: [lg-aimers, causality, causal-inference, machine-learning]
 math: true
 author: seoyoung

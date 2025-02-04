@@ -7,7 +7,7 @@ math: true
 toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 🎙️ 음성데이터에 대한 기본적인 전처리와 특성 추출, 데이터 증강 기술들을 정리했습니다.
+description: 🎙️ 음성 데이터에 대한 기본적인 전처리와 특성 추출, 데이터 증강 기술들을 정리했습니다.
 ---
 
 

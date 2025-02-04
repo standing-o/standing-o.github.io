@@ -1,7 +1,7 @@
 ---
 title: "의료 인공지능의 모든 것 | Medical AI"
 date: 2024-06-04 00:00:00 +/-TTTT
-categories: [인공지능 | AI, Medical AI]
+categories: [인공지능 | AI, 의료 | Medical AI]
 tags: [survey, medical-ai, classification, clustering, detection, segmentation, registration, supervised-learning, unsupervised-learning, weakly-supervised-learning, svm, tree, random-forest, xai, voting, ]
 math: true
 toc: true

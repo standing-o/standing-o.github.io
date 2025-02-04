@@ -1,5 +1,5 @@
 ---
-title: "LLM과 GenAI 프로젝트 입문하기"
+title: "LLM과 GenAI 훑어보기"
 date: 2024-04-01 00:00:00 +/-TTTT
 categories: [인공지능 | AI, 자연어 | NLP]
 tags: [llm, generative-ai, prompt-engineering, attention, transformer]
