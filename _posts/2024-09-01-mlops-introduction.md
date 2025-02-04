@@ -1,22 +1,23 @@
 ---
-title: "MLOps 공부 시작하기 | Introduction to MLOps"
+title: "MLOps 공부 시작하기"
 date: 2024-09-01 00:00:00 +/-TTTT
-categories: [AI Engineering, MLOps]
+categories: [AI 엔지니어링 | AI Engineering, MLOps]
 tags: [mlops, machine-learning, deep-learning]
 math: true
 toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 pin: false
-description: MLOps란, MLOps 프레임워크, MLOps 파이프라인, MLOps 예시, MLOps 입문, MLOps, Machine Learning Operation
+description: ♻️ MLOps의 정의와 전체 Workflow를 설명하고, MLOps에 대한 개발 원칙을 소개합니다.
 ---
 
-> MLOps의 정의와 전체 Workflow를 설명하고, MLOps에 대한 개발 원칙을 소개합니다.
+--------------------
+
+> **<u>KEYWORDS</u>**         
+> MLOps란, MLOps 프레임워크, MLOps 파이프라인, MLOps 예시, MLOps 입문, MLOps, Machine Learning Operation
 {: .prompt-info }
 
-MLOps는 머신러닝 모델의 개발, 배포, 모니터링을 자동화하고 최적화하는 DevOps 확장 개념입니다.
-
-ML 프로젝트는 데이터 수집, 모델 학습, 코드 엔지니어링을 거쳐 Production 환경에서의 활용을 목표로 합니다.
+--------------------
 
 
 &nbsp;

@@ -1,24 +1,30 @@
 ---
 title: "깃허브 블로그에서 구글 검색 엔진 최적화 하기 | Jekyll Google SEO"
 date: 2023-12-13 00:00:00 +/-TTTT
-categories: [Programming, Blogging]
+categories: [개발, 블로그]
 tags: [jekyll, chirpy, ruby, seo, github-blog]
 math: true
 toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 pin: false
-description: 깃허브 블로그 검색, 깃허브 블로그 검색 최적화, Jekyll Google SEO, Search Engine Optimization, Github Blog
+description: 🔤 구글의 검색 엔진 최적화(Google SEO)의 개념과 활용 방법을 공유합니다.
 ---
 
-> 구글 검색 엔진 최적화 (Google SEO) 의 개념과 활용법을 소개합니다.
+--------------
+> **<u>KEYWORDS</u>**     
+> 깃허브 블로그 검색, 깃허브 블로그 검색 최적화, Jekyll Google SEO, Search Engine Optimization, Github Blog
 {: .prompt-info }
+--------------
 
-개인 깃허브 블로그를 운영한다면 내 게시글이 구글 검색에 효율적으로 노출되도록 하여 더 많은 사람들이 블로그에 접속하도록 하는 것이 중요합니다.
+&nbsp;
+&nbsp;
+&nbsp;
 
-검색창에서 특정 키워드를 검색했을 때 내 게시글이 고정적으로 상위에 노출된다면, 안정적인 조회수를 확보할 수 있습니다.
-
-Search Engine Optimization (SEO)는 검색 엔진에서 게시글이 상위에 노출될 수 있도록 사이트를 최적화 하는 방법입니다.
+## **Introduction**
+- 개인 깃허브 블로그를 운영한다면 내 게시글이 구글 검색에 효율적으로 노출되도록 하여 더 많은 사람들이 블로그에 접속하도록 하는 것이 중요합니다.
+- 검색창에서 특정 키워드를 검색했을 때 내 게시글이 고정적으로 상위에 노출된다면, 안정적인 조회수를 확보할 수 있습니다.
+- Search Engine Optimization(SEO)는 검색 엔진에서 게시글이 상위에 노출될 수 있도록 사이트를 최적화 하는 방법입니다.
 
 &nbsp;
 &nbsp;

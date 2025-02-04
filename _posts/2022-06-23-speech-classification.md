@@ -1,7 +1,7 @@
 ---
 title: "음성 데이터 분류하기 | 데이콘"
 date: 2022-06-23 17:00:00 +/-TTTT
-categories: [리뷰]
+categories: [리뷰, 대회]
 tags: [dacon, ai-competition, python, deep-learning, classification, feature-engineering, spectrogram, fourier-transform, mfcc, melspectrogram, speech]
 math: true
 toc: true
@@ -11,12 +11,17 @@ description: 📢 음성 데이터를 분석하고 데이터 증강 기법과 Fe
 ---
 
 ------------------
-
-> 데이콘의 "음성 분류 경진대회"에 참여하여 작성한 글이며, 음성 데이터에 대한 데이터 증강(Data Augmentation)과 음성 특성 추출(Feature Extraction) 구현 방법을 서술합니다.
+> **<u>KEYWORDS</u>**    
+> 음성 데이터 전처리, 음성 데이터 딥러닝, 음성 데이터 증강, 음성 데이터 분석, 음성 데이터 분류, Audio Feature Extraction
 {: .prompt-info }
+------------------
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 
-코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
+데이콘의 "음성 분류 경진대회"에 참여하여 작성한 글이며, 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
 
 ➔ [데이콘에서 읽기](https://dacon.io/competitions/official/235905/codeshare/5209)
 

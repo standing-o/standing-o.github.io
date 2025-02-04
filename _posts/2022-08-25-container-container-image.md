@@ -1,7 +1,7 @@
 ---
-title: "컨테이너와 이미지 | Container and Container Image"
+title: "구글 클라우드 컨테이너와 컨테이너 이미지 | Container and Container Image"
 date: 2022-08-25 17:00:00 +/-TTTT
-categories: [Cloud, Google Cloud Platform (GCP)]
+categories: [클라우드 | Cloud, 구글 클라우드 플랫폼 | GCP]
 tags: [gcp, kubernetes, k8s]
 math: true
 author: seoyoung
@@ -9,17 +9,16 @@ img_path: /assets/img/for_post/
 image:
   path: 20220825-t.png
   alt: ""
-description: 컨테이너, 컨테이너 이미지, 구글 클라우드 컨테이너, 도커 컨테이너, 구글 클라우드 도커, Container, Container Image
+description: 🐳 구글 클라우드 플랫폼에서의 컨테이너(Container)와 이미지(Image)에 대한 개념을 정리합니다.
 ---
 
 ---------------------------
 
-> 구글 클라우드 플랫폼에서의 Container와 Container Image에 대한 개념을 정리합니다.
+> **<u>KEYWORDS</u>**     
+> 컨테이너, 컨테이너 이미지, 구글 클라우드 컨테이너, 도커 컨테이너, 구글 클라우드 도커, Container, Container Image
 {: .prompt-info }
 
-컨테이너는 가상 머신과 달리 사용자 공간만 가상화하여 가볍고, 빠르게 생성 및 실행할 수 있으며, 독립된 환경에서 앱을 실행할 수 있는 기술입니다.
-
-Docker와 같은 소프트웨어를 사용하여 컨테이너 이미지를 빌드하고, 컨테이너 레지스트리에서 이미지를 다운로드하여 사용할 수 있습니다.
+---------------------------
 
 &nbsp;
 &nbsp;
@@ -98,14 +97,14 @@ Docker와 같은 소프트웨어를 사용하여 컨테이너 이미지를 빌�
 
 
 
-### Containers Promote Smaller Shared Images
+### **Containers Promote Smaller Shared Images**
 - 여러 컨테이너가 동일한 기본 이미지에 접근 권한을 공유하면서 자체 데이터 상태를 보유합니다.
 - 컨테이너를 실행하면 컨테이너 런타임에서 필요한 레이어를 가져옵니다.     
   ➔ 업데이트 시 차이 나는 항목만 복사합니다.
 
 
 
-### How Can You Get Containers?
+### **How Can You Get Containers?**
 - 컨테이너화된 소프트웨어를 컨테이너 레지스트리에서 다운로드합니다. 
   - ex. gcr.io
   - 공개 오픈소스 이미지가 다수 포함되어 있으며, 구글 클라우드 고객은 이를 사용하여 비공개 이미지를 클라우드 IAM과 잘 통합되는 방식으로 저장할 수 있습니다.

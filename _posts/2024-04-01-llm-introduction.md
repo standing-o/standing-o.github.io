@@ -1,7 +1,7 @@
 ---
-title: "LLM 및 Gen AI 프로젝트 입문"
+title: "LLM과 GenAI 프로젝트 입문하기"
 date: 2024-04-01 00:00:00 +/-TTTT
-categories: [AI Theory, NLP and LLM]
+categories: [인공지능 | AI, 자연어 | NLP]
 tags: [llm, generative-ai, prompt-engineering, attention, transformer]
 math: true
 toc: true
@@ -11,16 +11,16 @@ pin: false
 image:
   path: 20240401-t.jpg
   alt: ""
-description: LLM, LLM 딥러닝, LLM 이란, LLM 인공지능 뜻, LLM 생성형 ai, Generative AI, Generative AI LLM, Prompt Engineering
+description: 🔠 LLM과 Transformer의 구조, Prompt Engineering과 Inference 파라미터 설정에 대한 개념을 소개합니다.
 ---
 
-> LLM과 Transformer의 구조, Prompt Engineering과 Inference 파라미터 설정에 대한 개념을 소개합니다.
+--------------------
+
+> **<u>KEYWORDS</u>**         
+> LLM, LLM 딥러닝, LLM 이란, LLM 인공지능 뜻, Generative AI, Generative AI LLM, Prompt Engineering
 {: .prompt-info }
 
-LLM은 대규모 데이터와 컴퓨팅 파워를 이용해 학습된 언어 모델로, 자연어 이해와 유사한 작업 수행이 가능합니다. 
-
-Prompt와 Completion을 통해 모델을 조작하고 다양한 작업을 수행할 수 있으며, Prompt Engineering과 Inference Parameter 설정을 통해 모델의 출력을 조절할 수 있습니다.
-
+-------------
 
 &nbsp;
 &nbsp;

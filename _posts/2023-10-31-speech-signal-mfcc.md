@@ -1,7 +1,7 @@
 ---
-title: "음성 신호와 MFCC | Speech Signal and Spectral Features"
+title: "음성 신호로 MFCC 만들기"
 date: 2023-10-31 17:00:00 +/-TTTT
-categories: [AI Theory, Audio]
+categories: [인공지능 | AI, 오디오 | Audio]
 tags: [python, machine-learning, deep-learning, feature-engineering, audio-signal-processing, mfcc, melspectrogram, speech]
 math: true
 toc: true
@@ -11,23 +11,32 @@ pin: false
 image:
   path: 20231103-t.jpg
   alt: ""
-description: 음성 신호 처리, 음성 신호 디지털 변환, 음성신호 주파수, MFCC 추출, MFCC 특징 추출, MFCC Librosa, MFCC Mel Spectrogram, MFCC DCT
+description: 🗣️ 음성 신호의 개념과 MFCC 기법을 자세히 알아봅시다.
 ---
 
-
 ------------------------
-> 음성 신호의 개념과 MFCC 기법을 자세히 알아봅시다.
+
+> **<u>KEYWORDS</u>**        
+> 음성 신호 처리, 음성 신호 디지털 변환, 음성신호 주파수, MFCC 추출, MFCC 특징 추출, MFCC Librosa, MFCC Mel Spectrogram, MFCC DCT
 {: .prompt-info }
 
-Speech Emotion Recognition(SER)과 같은 Task를 위해 머신러닝/딥러닝 모델을 개발하는 경우에, 일반적으로 음성 데이터를 MFCC와 같은 Feature로 변환하여 활용합니다.
+------------------------
 
-이는 음성 내용을 식별하는데 적합한 오디오 구성 요소를 강조하고 배경 소음과 같은 다른 항목들을 삭제하기 위함입니다.
-
-음성 데이터에 대한 Feature Extraction 기법 중 주요 개념을 소개하겠습니다.
 
 &nbsp;
 &nbsp;
 &nbsp;
+
+
+## **Introduction**
+- Speech Emotion Recognition(SER)과 같은 Task를 위해 머신러닝/딥러닝 모델을 개발하는 경우에, 일반적으로 음성 데이터를 MFCC와 같은 Feature로 변환하여 활용합니다.
+- 이는 음성 내용을 식별하는데 적합한 오디오 구성 요소를 강조하고 배경 소음과 같은 다른 항목들을 삭제하기 위함입니다.
+- 음성 데이터에 대한 Feature Extraction 기법 중 주요 개념을 소개하겠습니다.
+
+&nbsp;
+&nbsp;
+&nbsp;
+
 
 ## **음성 신호란? <sup>Audio Signal</sup>**
 - 음성 신호는 아래와 같이 시간, 진폭, 주파수 세가지 domain으로 이루어져 있습니다.
@@ -79,13 +88,13 @@ signal = signal[0:int(3 * sample_rate)]
 - 먼저 Filter Bank를 계산한 뒤 몇가지 추가 단계를 거쳐 MFCC를 얻을 수 있습니다.
 
 #### 1. Pre-emphasis Filter를 적용하여 고주파를 증폭하기
-- $y(t) = x(t) - \alpha x(t-1)$ where $\alpha = 0.95, 0.97$
+- $$y(t) = x(t) - \alpha x(t-1)$$ where $$\alpha = 0.95, 0.97$$
 - 신호에 Pre-emphasis Filter를 적용하여 고주파 대역의 진폭을 증가시키고 낮은 대역의 진폭은 감소시킵니다.
 - 제한된 컴퓨팅 자원으로 개발해야했던 과거에 보편적으로 사용되었습니다. 현대에서는 잘 사용하지 않으며 mean normalization 등으로 대체합니다.
 - 하지만 이 필터는 다음과 같은 장점을 가집니다.
   - 보통 고주파는 저주파에 비해 진폭이 작기 때문에 주파수 스펙트럼을 균형있게 유지합니다.
   - 푸리에 변환 중 수치적인 문제들을 피하게 해줍니다.
-  - SNR (Signal-to-Noise Ratio) 를 개선할 수 있습니다. 
+  - SNR(Signal-to-Noise Ratio) 를 개선할 수 있습니다. 
   
 
 ```python
@@ -141,8 +150,9 @@ print("Shape of Frames:", np.shape(frames))
 #### 3. Window 함수 적용
 - Hamming Window 함수 적용
 
-$w[x] = 0.54 - 0.46 \cos (\frac{w\pi n}{N-1})$ where $0<=n<=N-1,$
-$\text{N is the window length.}$
+$$w[x] = 0.54 - 0.46 \cos (\frac{w\pi n}{N-1}) \,\, \text{where} \,\, 0<=n<=N-1,$$
+    
+$$\text{N is the window length.}$$
 
 ```python
 frames *= np.hamming(frame_length)
@@ -161,8 +171,8 @@ frames *= np.hamming(frame_length)
 - 각 프레임에 N-point FFT(Fast Fourier Transform) (=STFT) 를 수행하여 주파수 스펙트럼, 즉 Short-Time Fourier Transform (STFT)을 계산합니다.
   - 음성을 작게 자른 조각에 푸리에 변환을 적용하는 느낌입니다.
 - N은 일반적으로 256, 512 값을 세팅합니다.
-- Power Spectrum (Periodogram)은  다음과 같이 계산됩니다.
-  - $P = \frac{\| \text{FFT} (x_i) \| ^2}{N}$
+- Power Spectrum (Periodogram)은  다음과 같이 계산됩니다.    
+  - $$P = \frac{\| \text{FFT} (x_i) \| ^2}{N}$$
 
 ```python
 NFFT = 256
@@ -184,8 +194,8 @@ pow_frames = ((1.0 / NFFT) * ((mag_frames) ** 2))  # Power Spectrum
 - Filter Bank를 추출하기 위해 주로 Mel Scale에서 파생된 40개의 삼각형 필터를 Power Spectrum에 적용합니다.
 
 - 헤르츠(Hertz, f)와 멜(Mel, m) 사이의 변환은 다음과 같은 방정식을 사용하여 수행할 수 있습니다:
-  - $m = 2595\log_{10}(a + \frac{f}{700})$ 
-  - $f = 700(10^{m/2595}-1)$
+  - $$m = 2595\log_{10}(a + \frac{f}{700})$$
+  - $$f = 700(10^{m/2595}-1)$$
 
 - Filter Bank 내 각 필터는 삼각형 모형이며, 중심 주파수에서의 Response가 1이고 주변 두 필터의 중심 주파수에 도달할 때 까지 선형적으로 감소하여 Response가 0이 됩니다.
 

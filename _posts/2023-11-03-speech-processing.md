@@ -1,21 +1,29 @@
 ---
-title: "파이썬 라이브러리로 음성 데이터 전처리 하기 | Audio Feature Extraction"
+title: "파이썬 라이브러리로 음성 데이터 전처리 하기"
 date: 2023-11-03 17:00:00 +/-TTTT
-categories: [AI Theory, Audio]
+categories: [인공지능 | AI, 오디오 | Audio]
 tags: [python, machine-learning, deep-learning, feature-engineering, audio-signal-processing, mfcc, melspectrogram, speech]
 math: true
 toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 음성 신호 처리, 음성 신호 디지털 변환, 음성신호 주파수, MFCC 추출, MFCC 특징 추출, MFCC Librosa, MFCC Mel Spectrogram, MFCC DCT, Trimming, Padding
+description: 🎙️ 음성데이터에 대한 기본적인 전처리와 특성 추출, 데이터 증강 기술들을 정리했습니다.
 ---
 
 
 ------------------------
 
-> 음성데이터에 대한 전처리, 특성 추출 및 증강 기법을 정리합니다.
+> **<u>KEYWORDS</u>**        
+> 음성 신호 처리, 음성 신호 디지털 변환, 음성신호 주파수, MFCC 추출, MFCC 특징 추출, MFCC Librosa, MFCC Mel Spectrogram, MFCC DCT, Trimming, Padding
 {: .prompt-info }
 
+-----------------------
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## **Introduction**
 - 음성 데이터에 대한 Feature Extraction은 음성 관련 모델링에서 중요한 과정 중 하나입니다. 
 - Feature Extraction 에는 여러 기법이 사용되며, 음성 신호를 효율적으로 표현하고 노이즈를 감소시켜 머신러닝/딥러닝 모델링에 적합한 형태로 변환시켜 줍니다.
 - 파이썬 라이브러리를 통해 간단하게 음성의 특성을 추출하는 방법 및 여러 전처리 방식들을 소개하겠습니다.

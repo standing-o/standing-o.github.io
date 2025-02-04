@@ -1,25 +1,23 @@
 ---
-title: "Positional Encoding 이해하기"
+title: "Positional Encoding은 무엇일까?"
 date: 2023-12-04 00:00:00 +/-TTTT
-categories: [AI Theory, Machine Learning]
+categories: [인공지능 | AI, AI 이론]
 tags: [deep-learning, positional-encoding, transformer, attention]
 math: true
 toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 pin: false
-description: Positional Encoding, 위치 임베딩, Positional Encoding 설명, Positional Embedding
+description: ➕ Transformer 구조에 활용되는 위치 인코딩(Positional Encoding)을 자세히 설명합니다. 
 ---
 
-> Transformer 구조에 활용되는 Positional Encoding의 개념과 역할, 수식을 설명합니다. 
+------------------
+
+> **<u>KEYWORDS</u>**       
+> Positional Encoding, 위치 임베딩, Positional Encoding 설명, Positional Embedding
 {: .prompt-info }
 
-
-Positional encoding은 Transformer 에서 사용되는 중요한 요소 중 하나입니다. 
-
-Transformer는 순차적인 구조를 사용하지 않기에 입력 시퀀스의 각 위치에 대한 정보를 인코딩하는 방법이 필요합니다.
-
-따라서 Transformer에서는 입력 토큰의 위치 정보를 임베딩에 직접 추가하여 모델에게 위치 정보를 제공하는 Positional Encoding 방식을 활용합니다. 
+------------------
 
 &nbsp;
 &nbsp;

@@ -1,7 +1,7 @@
 ---
-title: "클라우드 컴퓨팅과 구글 클라우드 | Cloud Computing and Google Cloud"
+title: "클라우드 컴퓨팅과 구글 클라우드 살펴보기 | Cloud Computing and Google Cloud"
 date: 2022-08-21 17:00:00 +/-TTTT
-categories: [Cloud, Google Cloud Platform (GCP)]
+categories: [클라우드 | Cloud, 구글 클라우드 플랫폼 | GCP]
 tags: [gcp, kubernetes, gke, k8s]
 math: true
 author: seoyoung
@@ -9,25 +9,23 @@ img_path: /assets/img/for_post/
 image:
   path: 20220821-t.png
   alt: ""
-description: 구글 클라우드, 구글 클라우드 플랫폼, 구글 클라우드 API, Google Cloud, Compute Engine
+description: 💽 클라우드 컴퓨팅 플랫폼인 구글 클라우드(Google Cloud)를 소개하고, 그 서비스들을 정리했습니다.
 ---
 
 --------------------------
 
-> Compute Engine, Resource, 그리고 GCP Billing에 대한 내용을 포함합니다.
+> **<u>KEYWORDS</u>**     
+> 구글 클라우드, 구글 클라우드 플랫폼, 구글 클라우드 API, Google Cloud, Compute Engine
 {: .prompt-info }
 
-클라우드 컴퓨팅은 필요할 때 요청하여 사용하며, 사용한 만큼 비용을 지불하는 서비스를 말합니다. 
-
-구글 클라우드(Google Cloud)는 4가지의 컴퓨팅 서비스를 제공하며, 지역과 존으로 구성되어 있습니다. 
-
+---------------------------
 
 &nbsp;
 &nbsp;
 &nbsp;
 
 
-## **Cloud Computing and Google Cloud**
+## **클라우드 컴퓨팅: 구글 클라우드(Google Cloud)**
 - 컴퓨팅 리소스가 온디맨드 셀프 서비스(On-demand Self-service)로 제공됩니다.    
   ➔ 사람의 개입 없이 필요한 처리 능력, 스토리지, 네트워크를 확보할 수 있습니다.
 - 광범위한 네트워크 접근(Broad Network Access)을 제공합니다.
@@ -52,7 +50,7 @@ description: 구글 클라우드, 구글 클라우드 플랫폼, 구글 클라�
 
 
 
-### **Google Cloud가 제공하는 추가 서비스**
+### **Google Cloud 추가 서비스**
 - **빅데이터(Big Data)** ㅣ BigQuery, Pub/Sub, Dataflow, Dataproc, AI Platform Notebooks.
 - **머신러닝(Machine Learning)** ㅣ Vision API, AI Platform, Speech-to-Text API, Cloud Translation API, Cloud Natural Language API
 

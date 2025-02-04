@@ -1,21 +1,21 @@
 ---
-title: "구글 쿠버네티스 워크로드 | Google Kubernetes Workload"
+title: "구글 쿠버네티스 워크로드 이해하기 | Google Kubernetes Workload"
 date: 2022-12-06 17:00:00 +/-TTTT
-categories: [Cloud, Google Cloud Platform (GCP)]
+categories: [클라우드 | Cloud, 구글 클라우드 플랫폼 | GCP]
 tags: [gcp, kubernetes, gke, k8s]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: Kubernetes 배포, 쿠버네티스 배포, 쿠버네티스 포드 네트워킹, Kubernetes, GKE
+description: 🕸️ 구글 쿠버네티스(Kubernetes)의 배포와 포드 네트워킹, 볼륨에 대한 내용을 공부합니다.
 ---
+
 ------------------------
 
-> Kubernetes의 배포와 포드 네트워킹, 볼륨에 대한 내용을 공부합니다.
+> **<u>KEYWORDS</u>**     
+> Kubernetes 배포, 쿠버네티스 배포, 쿠버네티스 포드 네트워킹, Kubernetes, GKE
 {: .prompt-info }
 
-kubectl은 Kubernetes 클러스터를 관리할 때 사용되는 유틸리티로, 명령어를 API 호출로 변환하여 클러스터의 상태를 제어합니다.
-
-Deployment는 Pod의 상태를 관리하는데, Pod 간 네트워킹은 IP 주소를 기반으로 하면서 Volumes를 통해 Pod에 저장 공간을 제공합니다.
+------------------------
 
 &nbsp;
 &nbsp;

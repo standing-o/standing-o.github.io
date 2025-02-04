@@ -1,24 +1,20 @@
 ---
 title: "자율주행과 레이더센서 | Autonomous Driving"
 date: 2022-07-25 17:00:00 +/-TTTT
-categories: [Domain Knowledge]
+categories: [도메인 지식 | Domain Knowledge]
 tags: [lg-aimers, radar, autonomous-driving]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 자율주행, 레이더센서, 자율주행 딥러닝, 자율주행 AI, 레이더센서 딥러닝, 레이더센서 AI, Autonomous Driving, Radar
+description: 🚘 자율주행과 레이더에 대한 기술과 최근 동향을 소개합니다.
 ---
 
-
-
 ------------------
-
-> 자율주행과 레이더에 대한 기술과 최근 동향을 소개합니다.
+> **<u>KEYWORDS</u>**     
+> 자율주행, 레이더센서, 자율주행 딥러닝, 자율주행 AI, 레이더센서 딥러닝, 레이더센서 AI, Autonomous Driving, Radar
 {: .prompt-info }
 
-미래 모빌리티는 자율주행, 연결성, 전기화 기술을 중심으로 발전하고 있으며, 자율주행 시장은 센서 기술의 성장과 함께 미래 전망이 밝아지고 있습니다. 
-
-레이더 기술은 거리 및 속도 측정을 통해 차량 인식과 안전성을 향상시키는 중요한 기술입니다.
+------------------
 
 &nbsp;
 &nbsp;
@@ -104,7 +100,7 @@ description: 자율주행, 레이더센서, 자율주행 딥러닝, 자율주행
 ### **거리 측정**
 
 - Measure the time of flight (ToF) in order to calculate the distance : $$d = \frac{c_0t}{2}$$
-- With c<sub>0</sub> being the speed of light and t the ToF
+- With $$c_0$$ being the speed of light and t the ToF
 
 
 

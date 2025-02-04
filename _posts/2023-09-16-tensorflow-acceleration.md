@@ -1,20 +1,21 @@
 ---
-title: "텐서플로우 가속 | Tensorflow Acceleration"
+title: "텐서플로우 가속 쉽게 적용하기 | Tensorflow Acceleration"
 date: 2023-09-16 13:00:00 +/-TTTT
-categories: [AI Framework, Tensorflow]
+categories: [AI 엔지니어링 | AI Engineering, AI 프레임워크]
 tags: [tensorflow, python, distributed-training, gpu-acceleration]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 텐서플로우, Tensorflow 가속기, 텐서플로우 가속기, Tensorflow Acceleration, Tensorflow Accelerate, Distributed Training, GPU Acceleration
+description: ⏩ GPU 환경에서 Tensorflow 가속기를 활용하는 방법들을 정리했습니다.
 ---
 
-
 ------------------------
-> GPU 환경에서 Tensorflow 가속기를 활용하는 방법들을 정리합니다.
+
+> **<u>KEYWORDS</u>**        
+> 텐서플로우, Tensorflow 가속기, 텐서플로우 가속기, Tensorflow Acceleration, Distributed Training, GPU Acceleration
 {: .prompt-info }
 
-TensorFlow는 기본적으로 CPU를 사용하여 수치 연산을 처리하지만 대규모 데이터나 복잡한 모델을 다룰 때는 GPU, TPU와 같은 가속기를 활용하여 연산을 가속할 수 있습니다.
+------------------------
 
 &nbsp;
 &nbsp;

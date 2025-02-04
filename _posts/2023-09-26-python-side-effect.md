@@ -1,24 +1,23 @@
 ---
 title: "파이썬의 부작용 | Side Effect in Python"
 date: 2023-09-26 13:00:00 +/-TTTT
-categories: [Programming, Python]
+categories: [개발, 파이썬 | Python]
 tags: [python]
 math: true
 toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 파이썬, Python, 파이썬의 부작용, Python Side Effect
+description: 👀 파이썬의 부작용(Side Effect in Python)을 알아봅시다.
 ---
-
 
 ------------------------
 
-> 파이썬의 부작용(Side Effect in Python)을 알아봅시다.
+> **<u>KEYWORDS</u>**        
+> 파이썬, Python, 파이썬의 부작용, Python Side Effect
 {: .prompt-info }
 
-파이썬의 부작용은 함수가 값을 리턴하는 대신 외부 세계의 어떤 State를 수정하거나 상호작용을 할 때 발생합니다.
+------------------------
 
-이런 변화는 코드를 이해하기 어렵게 만들고 버그의 발생 가능성을 높일 수도 있습니다. 
 
 &nbsp;
 &nbsp;

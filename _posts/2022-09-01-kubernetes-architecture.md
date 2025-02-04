@@ -1,32 +1,27 @@
 ---
-title: "구글 쿠버네티스의 구조 | Google Kubernetes Architecture"
+title: "구글 쿠버네티스의 구조에 대하여 | Google Kubernetes Architecture"
 date: 2022-09-01 17:00:00 +/-TTTT
-categories: [Cloud, Google Cloud Platform (GCP)]
+categories: [클라우드 | Cloud, 구글 클라우드 플랫폼 | GCP]
 tags: [gcp, kubernetes, gke, k8s]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: Object Management, Kubernetes, GKE, Object Management, Kubernetes Controller, Kubernetes Cluster
+description: 🚂 구글 쿠버네티스 엔진(GKE)의 구조와 Object Management를 알아봅시다.
 ---
-
-
 
 -------------------------
 
-> GKE의 구조와 Object Management를 알아봅시다.
+> **<u>KEYWORDS</u>**     
+> Object Management, Kubernetes, GKE, Object Management, Kubernetes Controller, Kubernetes Cluster
 {: .prompt-info }
 
-Kubernetes Controller는 Cluster의 상태를 원하는 상태와 일치시킵니다.
-
-Kubernetes는 컨트롤 플레인과 노드에서 실행되는 컨트롤 플레인 컴포넌트의 집합으로 이루어져 있습니다.
-
-GKE는 컨트롤 플레인을 추상화하여 감추어줍니다. manifest 파일을 사용하여 원하는 상태를 선언할 수 있습니다.
+-------------------------
 
 &nbsp;
 &nbsp;
 &nbsp;
 
-## **Kubernetes Architecture**
+## **쿠버네티스 구조**
 - **Kubernetes Objects** ㅣ 클러스터 상태를 나타내는 지속적인 엔티티
   - **Object Spec** ㅣ 만들려는 각 객체에 대해 객체 사양을 Kubernetes에 제공
   - **Object Status** ㅣ Kubernetes가 설명하는 현재 상태

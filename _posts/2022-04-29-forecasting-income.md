@@ -1,7 +1,7 @@
 ---
 title: "인구 데이터 기반 소득 예측하기 | 데이콘"
 date: 2022-04-29 17:26:00 +/-TTTT
-categories: [리뷰]
+categories: [리뷰, 대회]
 tags: [dacon, ai-competition, python, machine-learning, classification, lightgbm, xgboost, ensemble, voting]
 math: true
 toc: true
@@ -15,10 +15,16 @@ description: 👨‍👧‍👧 인구 데이터를 EDA하고 LightGBM과 XGBoos
 
 
 ----------------------
-> 데이콘의 "인구 데이터 기반 소득 예측 경진대회"에 참여하여 작성한 글이며, 간단한 데이터 전처리 및 **EDA**, **LightGBM**과 **XGBoost** 모델을 활용한 **Ensemble** 구현 코드를 소개합니다.
+> **<u>KEYWORDS</u>**    
+> 소득 예측 머신러닝, 소득 예측 딥러닝, 소득 예측 파이썬, Forecasting Income, LightGBM, XGBoost, Ensemble
 {: .prompt-info }
+----------------------
 
-코드실행은 Google Colab의 GPU, Standard RAM 환경에서 진행했습니다.  
+&nbsp;
+&nbsp;
+&nbsp;
+
+데이콘의 "인구 데이터 기반 소득 예측 경진대회"에 참여하여 작성한 글이며, 코드실행은 Google Colab의 GPU, Standard RAM 환경에서 진행했습니다.  
 
 ➔ [데이콘에서 읽기](https://dacon.io/competitions/official/235892/codeshare/4865?page=1&dtype=recent)
 

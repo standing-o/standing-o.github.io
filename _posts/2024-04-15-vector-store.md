@@ -1,24 +1,23 @@
 ---
-title: "벡터 스토어와 LLM 활용하기 | Vector Store"
+title: "벡터 스토어와 LLM 함께 활용하기 | Vector Store"
 date: 2024-04-15 00:00:00 +/-TTTT
-categories: [AI Theory, NLP and LLM]
+categories: [인공지능 | AI, 자연어 | NLP]
 tags: [python, llm, generative-ai, vector-store, vector-db, pinecone, weaviate, faiss, qdrant]
 math: true
 toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 pin: false
-description: 벡터 스토어 종류, 벡터 스토어란, Vector Store, Vector Store 종류, Vector Store LLM, Vector Store란, Vector Database, LLM
+description: 🏬 벡터 스토어(Vector Store)의 정의를 소개하고, 파이썬 구현 방법을 공유합니다.
 ---
 
-> 벡터 스토어의 정의와 기능, 파이썬 실습 및 설명을 포함합니다.
+--------------------
+
+> **<u>KEYWORDS</u>**         
+> 벡터 스토어 종류, 벡터 스토어란, Vector Store, Vector Store 종류, Vector Store LLM, Vector Store란, Vector Database, LLM
 {: .prompt-info }
 
-벡터 데이터베이스는 벡터 임베딩을 색인화하고 저장하여 유사성 검색을 빠르게 수행하는 데이터베이스 유형입니다. 
-
-ChromaDB, Weaviate, Qdrant, Pinecone, Faiss 등 다양한 벡터 데이터베이스가 있습니다.
-
-챗봇 AI에서는 벡터 DB를 통해 외부 지식과 LLM 상태를 제공하며, 유사성 검색 및 RAG를 통한 정확한 결과 생성이 가능합니다.
+--------------------
 
 
 &nbsp;
@@ -26,7 +25,7 @@ ChromaDB, Weaviate, Qdrant, Pinecone, Faiss 등 다양한 벡터 데이터베이
 &nbsp;
 
 
-## **Vector Store, Vector Database란?**
+## **벡터 스토어란? <sup>Vector Store, Vector Database</sup>**
 
 -  빠르게 유사성 검색을 하기 위해 벡터 임베딩을 색인화하고 저장하는 특정 유형의 데이터베이스를 뜻합니다.
   - **벡터 임베딩** ㅣ 다차원 공간에서 객체 또는 데이터를 수학적으로 표현한 것입니다.

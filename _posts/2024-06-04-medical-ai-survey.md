@@ -1,8 +1,8 @@
 ---
 title: "의료 인공지능의 모든 것 | Medical AI"
 date: 2024-06-04 00:00:00 +/-TTTT
-categories: [AI Theory, Medical AI]
-tags: [medical-ai, classification, clustering, detection, segmentation, registration, supervised-learning, unsupervised-learning, weakly-supervised-learning, svm, tree, random-forest, xai, voting, ]
+categories: [인공지능 | AI, Medical AI]
+tags: [survey, medical-ai, classification, clustering, detection, segmentation, registration, supervised-learning, unsupervised-learning, weakly-supervised-learning, svm, tree, random-forest, xai, voting, ]
 math: true
 toc: true
 author: seoyoung
@@ -11,20 +11,16 @@ pin: false
 image:
   path: 20240604-t.jpg
   alt: ""
-description: 의료 인공지능, 의료 인공지능 사례, 의료 인공지능 전망, 헬스케어 인공지능, 헬스케어 인공지능 사례, Medical AI, Medical AI Challenge
+description: 🦠 의료 분야 인공지능 기술과 최신 동향을 정리했습니다.
 ---
 
-> 의료 분야 인공지능에 대한 설명과 관련 기술 및 최신 동향을 설명합니다.
+--------------------
+
+> **<u>KEYWORDS</u>**        
+> 의료 인공지능, 의료 인공지능 사례, 의료 인공지능 전망, 헬스케어 인공지능, 헬스케어 인공지능 사례, Medical AI, Medical AI Challenge
 {: .prompt-info }
 
-AI를 활용한 의료 이미지 분석 분야에서는 머신러닝 및 딥러닝을 활용한 이미지/영상 분류(Classification), 객체 탐지(Object Detection),  분할(Segmentation), 정합(Registration) 등의 방법론들이 널리 활용되고 있습니다.
-
-머신러닝 기법들 중 특히 서포트 벡터 머신, 군집화, 결정 트리 및 랜덤 포레스트를 통해 암, 유전 데이터를 포함한 다양한 의학 데이터를 예측하는 연구가 많이 있습니다.
-
-딥러닝을 기반으로 적은 데이터셋에 효과적인 모델 학습 방식을 적용하기 위해 Self-supervised Learning, Multi-instance Learning, Inductive Learning 및 Transfer Learning 방법들이 고려됩니다.
-
-이처럼 다양한 AI 기법들이 신경(Neruo), 망막(Retinal), 폐(Pulmonary), 병리학(Pathology), 유방(Breast), 심장(Cardiac), 근골격계(Musculoskeletal) 등의 의료 분야에 적용될 수 있습니다.
-
+--------------------
 
 &nbsp;
 &nbsp;

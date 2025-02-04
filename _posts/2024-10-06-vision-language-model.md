@@ -1,7 +1,7 @@
 ---
-title: "Vision Language Model (VLM) 이란? | Vision-Language Model"
+title: "VLM 이해해보기 | Vision-Language Model"
 date: 2024-10-06 00:00:00 +/-TTTT
-categories: [AI Theory, NLP and LLM]
+categories: [인공지능 | AI, 컴퓨터 비전 | Computer Vision]
 tags: [llm, prompt-engineering, vision-transformer, transformer, vlm]
 math: true
 toc: true
@@ -11,18 +11,16 @@ pin: false
 image:
   path: 20241006-t.jpg
   alt: ""
-description: VLM 모델, VLM 이란, VLM 모델 종류, VLM SOTA, VLM Survey, Vision Transformer
+description: 😎 Vision Language Model(VLM)의 개념과 장점들을 소개합니다.
 ---
 
-> "An introduction to vision-language modeling. (Bordes, Florian, et al.)" 을 요약한 글이며, Vision Language Model의 개념과 장점들을 소개합니다. [^ref1]
+--------------------
+
+> **<u>KEYWORDS</u>**         
+> VLM 모델, VLM 이란, VLM 모델 종류, VLM SOTA, VLM Survey, Vision Transformer
 {: .prompt-info }
 
-비전-언어 모델(VLMs)은 텍스트와 이미지를 함께 처리할 수 있는 모델로, 최근에는 기존의 대형 언어 모델(LLMs)과 시각적 특징 추출기를 활용하여 훈련 비용을 절감하는 방법이 주목받고 있습니다. 
-
-VLM은 다양한 훈련 방식으로 발전해 왔으며, 대표적으로 대조적 학습, 마스킹 기법, 생성적 모델들이 있습니다. 
-
-최근 모델들은 Pre-trained Backbone (ex. CLIP) 을 이용해 훈련 속도와 효율성을 높이며, 빠르게 다양한 작업에 적응할 수 있습니다. 
-
+--------------------
 
 &nbsp;
 &nbsp;
@@ -30,6 +28,10 @@ VLM은 다양한 훈련 방식으로 발전해 왔으며, 대표적으로 대조
 
 `Original Paper Review` 
 | [An introduction to vision-language modeling](https://github.com/standing-o/Machine_Learning_Paper_Review/issues/39)
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 
 ## **Abstract**

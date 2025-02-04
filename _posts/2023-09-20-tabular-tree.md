@@ -1,7 +1,7 @@
 ---
 title: "정형데이터에는 딥러닝이 부적절한 이유 | Tabular Data, Deep Learning"
 date: 2023-09-20 13:00:00 +/-TTTT
-categories: [AI Theory, Machine Learning]
+categories: [인공지능 | AI, AI 이론]
 tags: [machine-learning, deep-learning, tabular, random-forest, gradient-boosting, tree]
 math: true
 toc: true
@@ -11,20 +11,16 @@ pin: false
 image:
   path: 20230920-t.png
   alt: ""
-description: 정형데이터 딥러닝, 정형데이터 특징, 정형데이터란, 정형데이터 모델, 정형데이터 딥러닝 모델, Tabular data, Tree-based model
+description: 📊 정형 데이터에 딥러닝이 적절하지 않은 이유와 Tree 기반 모델의 장점을 알아봅시다. 
 ---
-
 
 ------------------------
 
-> 정형 데이터에 딥러닝이 적절하지 않은 이유와 Tree 기반 모델의 장점을 알아봅시다. 
+> **<u>KEYWORDS</u>**        
+> 정형데이터 딥러닝, 정형데이터 특징, 정형데이터란, 정형데이터 모델, 정형데이터 딥러닝 모델, Tabular Data, Tree-based Model
 {: .prompt-info }
 
-이미지나 텍스트와 같은 비정형 데이터에는 CNN, RNN, Transformer, ... 과 같은 딥러닝 모델이 다양하게 활용되고 있으며 이들은 강력한 성능을 보입니다.
-
-하지만 여러 AI 대회나 논문에서 알 수 있듯, Tabular 데이터 (표 형태 데이터) 분석/예측에 딥러닝을 사용하는 경우는 매우 드물며 Tree 기반 모델들이 SOTA를 달성하는 경우가 많습니다. 
-
-이번 포스팅에서는 정형 데이터에서 Tree 기반 모델이 딥러닝 모델에 비해 월등한 성능을 내는 이유를 분석한 논문을 살펴보고자 합니다.
+------------------------
 
 &nbsp;
 &nbsp;
@@ -32,6 +28,20 @@ description: 정형데이터 딥러닝, 정형데이터 특징, 정형데이터�
 
 `Original Paper Review` 
 | [Why do tree-based models still outperform deep learning on typical tabular data?](https://github.com/standing-o/Machine_Learning_Paper_Review/issues/19)
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+## **Introduction**
+- 이미지나 텍스트와 같은 비정형 데이터에는 CNN, RNN, Transformer, ... 과 같은 딥러닝 모델이 다양하게 활용되고 있으며 이들은 강력한 성능을 보입니다.
+- 하지만 여러 AI 대회나 논문에서 알 수 있듯, Tabular 데이터 (표 형태 데이터) 분석/예측에 딥러닝을 사용하는 경우는 매우 드물며 Tree 기반 모델들이 SOTA를 달성하는 경우가 많습니다.
+- 이번 포스팅에서는 정형 데이터에서 Tree 기반 모델이 딥러닝 모델에 비해 월등한 성능을 내는 이유를 분석한 논문을 살펴보고자 합니다.
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ## **딥러닝과 Inductive Bias**
 - Inductive bias는 모델이 어떤 가정을 데이터로부터 학습할 것인지 결정하는 데 영향을 미치므로, 딥러닝은 데이터에 Inductive Bias를 부여하고 어떤식으로 학습할지에 대한 방향을 설정합니다.

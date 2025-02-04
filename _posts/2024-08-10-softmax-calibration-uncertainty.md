@@ -1,33 +1,38 @@
 ---
-title: "Softmax 함수 신뢰도와 딥러닝 예측의 불확실성 | Softmax Confidence and Uncertainty"
+title: "소프트맥스 신뢰도와 딥러닝 예측의 불확실성 | Softmax Confidence and Uncertainty"
 date: 2024-08-10 00:00:00 +/-TTTT
-categories: [AI Theory, XAI]
+categories: [인공지능 | AI, XAI]
 tags: [python, deep-learning, softmax, neural-network, uncertainty, calibration]
 math: true
 toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 pin: false
-description: 딥러닝 해석, 소프트맥스 확률, 딥러닝 불확실성, 딥러닝, 캘리브레이션, Softmax Confidence and Uncertainty, Calibration, Histogram Binning, Isotonic Regression, Platt Scaling
+description: ➗ Softmax Calibration의 개념과 수학적 정의를 자세히 알아봅시다.
 ---
 
-> Softmax Calibration의 개념을 소개하고 수학적 정의를 설명하며, 방법론의 설명과 실습 코드를 제공합니다.
+--------------------
+
+> **<u>KEYWORDS</u>**         
+> 딥러닝 해석, 소프트맥스 확률, 딥러닝 불확실성, 딥러닝, 캘리브레이션, Softmax Confidence and Uncertainty, Calibration, Histogram Binning, Isotonic Regression, Platt Scaling
 {: .prompt-info }
 
-최근 딥러닝 모델은 예측 시 과도한 확신을 가지는 경향이 있으며, 이는 모델의 신뢰도를 왜곡할 수 있다고 알려져 있습니다.
-
-특히, Softmax 예측값은 실제 가능성을 정확히 반영하지 못해 Calibration 문제를 야기하며, 이는 자율주행차나 의료 진단 등에서 위험을 야기할 수 있습니다.
-
-효과적인 Calibration 방법론으로는 Histogram Binning, Isotonic Regression, Platt Scaling 등이 있으며, 이를 통해 예측의 신뢰도를 향상시킬 수 있다.
-
-
+--------------------
 
 &nbsp;
 &nbsp;
 &nbsp;
+
 
 `Original Paper Review` 
 | [Understanding softmax confidence and uncertainty](https://github.com/standing-o/Machine_Learning_Paper_Review/issues/38)
+
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+
 
 ## **Introduction**
 

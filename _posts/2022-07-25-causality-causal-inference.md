@@ -1,29 +1,25 @@
 ---
 title: "인과와 인과추론 | Causality and Causal Inference"
 date: 2022-07-25 17:00:00 +/-TTTT
-categories: [AI Theory, Causal Inference]
+categories: [인공지능 | AI, 머신러닝 | Machine Learning]
 tags: [lg-aimers, causality, causal-inference, machine-learning]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 인과, 인과추론, 구조적 인과모델, 인과추론 머신러닝, 인과추론 예시, 인과추론 AI, 인과추론 모델, 인과추론 방법론 | Causality, Causal Inference, SCM, Back-door, Do-calculus
+description: ❓ 인과추론(Causal Inference)의 기본 이론과 Back-door, Do-calculus와 같은 방법론들을 소개합니다.
 ---
-
-
 
 -----------------------
 
-> 인과와 인과추론의 개념과 Back-door, Do-calculus와 같은 인과추론 방법론들을 알아봅시다.
+> **<u>KEYWORDS</u>**     
+> 인과, 인과추론, 인과추론 머신러닝, 인과추론 예시, 인과추론 AI, 인과추론 모델, Causality, Causal Inference, SCM, Back-door, Do-calculus
 {: .prompt-info }
 
-구조적 인과 모델(Structural Causal Model, SCM)은 관측과 개입을 통해 인과 관계를 설명하는데 도움을 줍니다. 
-
-Back-door 기준은 인과 관계를 확인하고 혼동을 줄이는 데 도움이 되며, Do-계산법은 확률을 처리하는 데 유용한 규칙을 제공합니다.
+-----------------------
 
 &nbsp;
 &nbsp;
 &nbsp;
-
 
 
 ## **Causality**
@@ -47,17 +43,17 @@ Back-door 기준은 인과 관계를 확인하고 혼동을 줄이는 데 도움
 ## **구조적 인과 모델 <sup>Structural Causal Model, SCM</sup>**
 
 - SCM $$M = <U,V,F,P(U)>$$는 인과관계를 형식적으로 설명할 수 있으며, 관찰(Observation), 개입(Intervention), 반사실 분포(Counteractual Distribution)를 유도합니다.
-- SCM은 인과 그래프 $g$를 유도하며, 이는 **d-분리(d-separation)**를 통해 조건부 독립성을 테스트할 수 있게 합니다.
-  - 모델 $M$ 자체는 알 수 없지만, 인과 그래프 $g$는 상식 또는 도메인 지식으로부터 주어질 수 있습니다.
-- 개입(Intervention) $do(X=x)$는 서브모델 $M_x$으로 표현되며, 조작된 인과 그래프 $g_{\bar{x}}$를 유도합니다.
-- $X=x$가 $Y=y$에 미치는 인과 효과(Causal Effect)는 $P(y\mid{do(x)})$로 정의합니다.
+- SCM은 인과 그래프 $$g$$를 유도하며, 이는 **d-분리(d-separation)**를 통해 조건부 독립성을 테스트할 수 있게 합니다.
+  - 모델 $$M$$ 자체는 알 수 없지만, 인과 그래프 $$g$$는 상식 또는 도메인 지식으로부터 주어질 수 있습니다.
+- 개입(Intervention) $$do(X=x)$$는 서브모델 $$M_x$$으로 표현되며, 조작된 인과 그래프 $$g_{\bar{x}}$$를 유도합니다.
+- $$X=x$$가 $$Y=y$$에 미치는 인과 효과(Causal Effect)는 $$P(y\mid{do(x)})$$로 정의합니다.
 
 
 
 #### **Remark**
 
 - **Identifiability** ㅣ 일부 인과 그래프에서는 기존 관찰 데이터로부터 인과 효과를 계산할 수 있습니다.
-- Markovian 경우 단일 $X$에서 인과 효과는 $P(x\mid{pa_x})$를 제거하여 쉽게 도출할 수 있습니다.
+- Markovian 경우 단일 $$X$$에서 인과 효과는 $$P(x\mid{pa_x})$$를 제거하여 쉽게 도출할 수 있습니다.
 
 
 &nbsp;
@@ -69,26 +65,26 @@ Back-door 기준은 인과 관계를 확인하고 혼동을 줄이는 데 도움
 
 - **<u>Definition</u>**ㅣ**Back-door**
 
-  - 변수 $X$와 $Y$사이의 혼란(Confounding)을 충분히 설명할 수 있는 집합 $Z$를 찾는 것을 의미합니다.
-  - 이때, $Z$가 Back-door 기준을 만족하면:
+  - 변수 $$X$$와 $$Y$$사이의 혼란(Confounding)을 충분히 설명할 수 있는 집합 $$Z$$를 찾는 것을 의미합니다.
+  - 이때, $$Z$$가 Back-door 기준을 만족하면:
 
   $$
   P(y|do(x))=\sum_Z{P(y|x,z)P(z)}
   $$
-  - $do(x)$는 $X$에 대한 개입(Intervention)을 나타냅니다.
+  - $$do(x)$$는 $$X$$에 대한 개입(Intervention)을 나타냅니다.
 
 
 - **<u>Definition</u>ㅣBack-door criterion**
-  - 인과 그래프 $g$에서 변수 $X$와 $Y$의 쌍에 대하여, 집합 $Z$가 Back-door Criterion을 만족하려면
-    - (i) $Z$의 노드는 $X$의 하위 노드(Descendant)가 아니어야 하며,
-    - (ii) $Z$는 $X$로 들어오는 화살표를 포함한 모든 경로를 차단(Block)해야 합니다. 
+  - 인과 그래프 $$g$$에서 변수 $$X$$와 $$Y$$의 쌍에 대하여, 집합 $$Z$$가 Back-door Criterion을 만족하려면
+    - (i) $$Z$$의 노드는 $$X$$의 하위 노드(Descendant)가 아니어야 하며,
+    - (ii) $$Z$$는 $$X$$로 들어오는 화살표를 포함한 모든 경로를 차단(Block)해야 합니다. 
 - 이 공식은 간단하고 널리 사용되지만, 모든 인과 그래프에 적용할 수는 없는 한계가 있습니다.
   - Back-door Criterion이 만족되지 않는 복잡한 인과 그래프의 경우에는 Do-calculus 같은 추가적인 도구가 필요합니다.
 
 
-### **Back-door sets as substitutes of the direct parents of $X$**
+### **Back-door sets as substitutes of the direct parents of $$X$$**
 
-- ex.  Rain은 Sprinkler와 Wet 사이에서 Back-door Criterion을 만족합니다.
+- ex. Rain은 Sprinkler와 Wet 사이에서 Back-door Criterion을 만족합니다.
   - (i) Rain은 Sprinkler의 하위 노드가 아니며,
   - (ii) Rain은 Sprinkler에서 Wet으로 향하는 유일한 Back-door 경로를 차단합니다.
 - 따라서, Sprinkler의 직접 부모(Direct Parent)를 조정하여 다음과 같이 계산이 가능합니다.
@@ -146,7 +142,7 @@ $$
 ## **현대의 Identification 과제**
 - **실험적 조건 ➔ 일반화된 식별(Generalized Identification)**
   - 서로 다른 실험 조건에서 얻게된 데이터셋을 결합합니다.
-  - $P(y\mid{do(x), z})$형태의 표현이 식별 가능한지 여부는, 주어진 인과 그래프 $g$와 관찰적 및 실험적 연구의 임의 조합을 통해 결정할 수 있습니다.
+  - $$P(y\mid{do(x), z})$$형태의 표현이 식별 가능한지 여부는, 주어진 인과 그래프 $$g$$와 관찰적 및 실험적 연구의 임의 조합을 통해 결정할 수 있습니다.
   - 쿼리가 식별 가능하다면, 해당 추정량(Estimand)을 다항 시간(Polynomial Time) 내에 도출할 수 있습니다.
 
 - **환경적 조건 ➔ 전달 가능성(Transportability)**

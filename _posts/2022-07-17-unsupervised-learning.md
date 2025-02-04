@@ -1,24 +1,19 @@
 ---
-title: "비지도학습과 딥러닝 | Unsupervised learning"
+title: "비지도학습과 딥러닝 알아보기 | Unsupervised Learning"
 date: 2022-07-17 17:00:00 +/-TTTT
-categories: [AI Theory, Machine Learning]
+categories: [인공지능 | AI, AI 이론]
 tags: [lg-aimers, unsupervised-learning, deep-learning, neural-network, clustering, feature-engineering]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 비지도학습 이해, 비지도학습 개념, 머신러닝 비지도학습, 인공지능 비지도학습, 딥러닝 비지도학습, 비지도학습 알고리즘, 비지도학습이란, 비지도학습 예시
+description: ‼️ 인공지능 비지도 학습(Unsupervised learning)의 기본 개념과 전반적인 견해를 간단히 정리합니다.
 ---
 
-
-
 ----------------
-
-> 인공지능 비지도 학습(Unsupervised learning)의 간단한 개념과 전반적인 견해를 이야기합니다.
+> **<u>KEYWORDS</u>**   
+> 비지도학습 이해, 비지도학습 개념, 머신러닝 비지도학습, 인공지능 비지도학습, 딥러닝 비지도학습, 비지도학습 알고리즘, 비지도학습이란, 비지도학습 예시
 {: .prompt-info }
-
-전통적인 머신러닝과 딥러닝에서의 비지도 학습 방법을 소개하면서 K-means, 계층적 클러스터링, 밀도 추정 기법을 설명합니다.
-
-딥러닝에서의 특성 공학(Feature Engineering)과 표현 학습의 차이, 고차원 데이터 개념을 설명하면서 딥러닝의 표현은 설명하기 어려운 경우가 많다는 점을 이야기합니다.
+----------------
 
 &nbsp;
 &nbsp;
@@ -63,11 +58,10 @@ description: 비지도학습 이해, 비지도학습 개념, 머신러닝 비지
 
 ### **각도 정보 <sup>Angle Information</sup>**
 
-- $0 \sim 2\pi$
-  - 알고리즘은...
-    - $0$과 $2\pi$는 다르다고 생각하면서, $0$과 $1.9\pi$는 멀다고 생각합니다.
-  - $(x_1, x_2) = (\cos \theta, \sin \theta)$
-    - $0$과 $2\pi$는 같으며, $0$과 $1.9\pi$은 가깝습니다.
+- $$0 \sim 2\pi$$
+  - 모델은 $$0$$과 $$2\pi$$는 다르다고 생각하면서, $$0$$과 $$1.9\pi$$는 멀다고 생각합니다.
+  - $$(x_1, x_2) = (\cos \theta, \sin \theta)$$
+    - $$0$$과 $$2\pi$$는 같으며, $$0$$과 $$1.9\pi$$은 가깝습니다.
 
 
 ### **공간 정보 <sup>Spatial Information</sup>**
@@ -116,7 +110,7 @@ description: 비지도학습 이해, 비지도학습 개념, 머신러닝 비지
 
 ## **비지도 표현 학습 <sup>Unsupervised Representation Learning</sup>**
 - **비지도 학습 성능 ~ 지도 학습 성능**
-  - 인스턴스 분별, 대조 손실, 공격적 증강 덕분..
+  - 인스턴스 분별, 대조 손실, 공격적 증강 덕분
 - 지도 학습과 마찬가지로..
   - 성능 지표가 불분명할 수 있습니다.
   - 대체 손실 설계는 훌륭합니다. (일부는 원칙에 기반, 일부는 경험적)

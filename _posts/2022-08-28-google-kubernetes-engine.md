@@ -1,7 +1,7 @@
 ---
-title: "구글 쿠버네티스 엔진이란? | Google Kubernetes Engine (GKE)"
+title: "구글 쿠버네티스 튜토리얼 | Google Kubernetes Engine (GKE)"
 date: 2022-08-28 17:00:00 +/-TTTT
-categories: [Cloud, Google Cloud Platform (GCP)]
+categories: [클라우드 | Cloud, 구글 클라우드 플랫폼 | GCP]
 tags: [gcp, kubernetes, gke, k8s]
 math: true
 author: seoyoung
@@ -9,24 +9,24 @@ img_path: /assets/img/for_post/
 image:
   path: 20220828-t.png
   alt: ""
-description: 구글 쿠버네티스, 쿠버네티스, 쿠버네티스 컨테이너, k8s, 쿠버네티스 시작하기, 쿠버네티스 도커, Google Kubernetes, Cloud Function, Cloud Run
+description: ☁️ 구글 쿠버네티스(Google Kubernetes)의 기본 개념과 Cloud Function/Run을 설명합니다.
 ---
 
 
 
 --------------------------
 
-> 구글 쿠버네티스(Google Kubernetes)와 Cloud Function 및 Cloud Run을 설명합니다.
+> **<u>KEYWORDS</u>**     
+> 구글 쿠버네티스, 쿠버네티스, 쿠버네티스 컨테이너, k8s, 쿠버네티스 엔진, 쿠버네티스 도커, Google Kubernetes, Cloud Function, Cloud Run
 {: .prompt-info }
 
-쿠버네티스와 구글 쿠버네티스 엔진(GKE)의 기능을 비교하면서, 
-앱 배포 시 리소스를 효율적으로 활용하고 이동성이 우수한 독립적이고 경량화된 패키지 형태로 컨테이너를 선택하는 방법을 소개합니다.
+---------------------------
 
 &nbsp;
 &nbsp;
 &nbsp;
 
-## **Kubernetes**
+## **쿠버네티스 <sup>Kubernetes</sup>**
 - 컨테이너 인프라를 더 효과적으로 관리하기 위해 사용합니다.
 - 컨테이너 인프라를 온프레미스(on-premise) 또는 클라우드에서 조정하고 관리할 수 있습니다.
 - 컨테이너 중심의 관리 환경을 제공합니다.

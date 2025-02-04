@@ -1,7 +1,7 @@
 ---
 title: "Chirpy Theme로 Jekyll 기반 깃허브 블로그 시작하기"
 date: 2023-11-13 00:00:00 +/-TTTT
-categories: [Programming, Blogging]
+categories: [개발, 블로그]
 tags: [jekyll, chirpy, ruby, github-blog]
 math: true
 toc: true
@@ -11,15 +11,27 @@ pin: false
 image:
   path: 20231113-t.png
   alt: ""
-description: 깃허브 블로그, Chirpy 블로그, Jekyll 블로그, Chirpy, Jekyll, Ruby, Github Blog
+description: 📚 Jekyll의 Chirpy Theme로 깃허브 블로그를 시작하는 방법을 공유합니다. 
 ---
 
-> Jekyll의 Chirpy Theme로 깃허브 블로그를 시작하는 방법을 소개합니다. 
+--------------------
+
+> **<u>KEYWORDS</u>**         
+> 깃허브 블로그, Chirpy 블로그, Jekyll 블로그, Chirpy, Jekyll, Ruby, Github Blog
 {: .prompt-info }
 
-Jekyll는 Ruby 언어로 개발된 정적 사이트 생성기 입니다. HTML 기반으로 커스텀이 용이하며 다양한 템플릿이 있습니다.
+--------------------
 
-그중에서도 [`Chirpy`](https://chirpy.cotes.page/) 템플릿은 기능이 풍부하고 미니멀한 오픈소스 테마입니다. 깔끔하고 사용하기 쉬운 디자인이며 다양한 기능들을 제공하기에 이 템플릿을 선택했습니다.
+
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+## **Introduction**
+- Jekyll는 Ruby 언어로 개발된 정적 사이트 생성기 입니다. HTML 기반으로 커스텀이 용이하며 다양한 템플릿이 있습니다.
+
+- 그중에서도 [`Chirpy`](https://chirpy.cotes.page/) 템플릿은 기능이 풍부하고 미니멀한 오픈소스 테마입니다. 깔끔하고 사용하기 쉬운 디자인이며 다양한 기능들을 제공하기에 이 템플릿을 선택했습니다.
 
 &nbsp;
 &nbsp;

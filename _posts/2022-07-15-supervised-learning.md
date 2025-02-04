@@ -1,24 +1,19 @@
 ---
 title: "지도학습이란? | Supervised Learning(Regression, Classification)"
 date: 2022-07-15 17:00:00 +/-TTTT
-categories: [AI Theory, Machine Learning]
+categories: [인공지능 | AI, AI 이론]
 tags: [lg-aimers, supervised-learning, deep-learning, neural-network, regression, classification, ensemble, svm]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
-description: 지도학습 이해, 지도학습 개념, 머신러닝 지도학습, 인공지능 지도학습, 딥러닝 지도학습, 지도학습 알고리즘, 지도학습이란, 지도학습 예시
+description: ✏️ 인공지능의 지도학습(Supervised Learning) 이론과 관련 모델을 정리하며, 모델의 편향과 분산, 오버피팅/언더피팅 개념을 배워봅시다.
 ---
 
-
-
---------------------------
-
-> 인공지능의 지도학습(Supervised Learning) 개념과 관련 모델을 정리하며, 모델의 편향과 분산, 오버피팅/언더피팅의 중요성을 강조합니다.
+---------------------
+> **<u>KEYWORDS</u>**   
+> 지도학습이란, 지도학습 이해, 지도학습 개념, 머신러닝 지도학습, 인공지능 지도학습, 딥러닝 지도학습, 오버피팅, 언더피팅, 교차검증
 {: .prompt-info }
-
-지도학습에 대한 데이터 크기, 모델 복잡성, 일반화 등의 주제를 다룹니다. 
-
-또한 모델의 편향과 분산, 오버피팅/언더피팅에 대한 이해와 교차 검증의 중요성을 강조합니다.
+---------------------
 
 &nbsp;
 &nbsp;
@@ -49,7 +44,7 @@ description: 지도학습 이해, 지도학습 개념, 머신러닝 지도학습
 ### **모델 일반화 <sup>Model Generalization</sup>**
 - **학습(Learning)**은 본질적으로 불완전한 **Ill-posed Problem**이며, 데이터가 제한적이기 때문에 유일한 해(Unique Solution)을 찾기 어렵습니다.
 - **일반화(Generalization)**는 보지 못한(Unseen) 데이터에 대해 잘 동작하도록 하는 것을 의미합니다.
-  - 일반화 오류(Generalization Error) E<sub>gen</sub>; 해당 오류를 최소화하는 것이 목표이지만 Real World에서 이를 계산하기는 어렵습니다.
+  - 일반화 오류(Generalization Error) $$E_{gen}$$ ㅣ 해당 오류를 최소화하는 것이 목표이지만 Real World에서 이를 계산하기는 어렵습니다.
   - 대신, 학습(Train)/검증(Validation)/테스트(Test) 오류를 사용하여 근사합니다.
 
 

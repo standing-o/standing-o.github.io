@@ -1,7 +1,7 @@
 ---
 title: "중고차 가격 예측하기 | 데이콘"
 date: 2022-06-02 20:00:00 +/-TTTT
-categories: [리뷰]
+categories: [리뷰, 대회]
 tags: [dacon, ai-competition, python, machine-learning, regression, feature-engineering, catboost, random-forest, gradient-boosting, ensemble]
 math: true
 toc: true
@@ -14,11 +14,17 @@ description: 🚗 중고차 정형 데이터를 분석하고, Feature Engineerin
 ---
 
 --------------
-
-> 데이콘의 "중고차 가격 예측 경진대회"에 참여하여 작성한 글이며, 정형데이터에 대한 Feature Engineering과 머신러닝 기반 앙상블을 적용한 실험을 공유합니다.
+> **<u>KEYWORDS</u>**    
+> 중고차 가격 예측 딥러닝, 중고차 가격 예측 머신러닝, 중고차 가격 예측 파이썬, Used Car Price Forecasting, Random Forest, Gradient Boosting
 {: .prompt-info }
+----------------------
 
-코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
+&nbsp;
+&nbsp;
+&nbsp;
+
+
+데이콘의 "중고차 가격 예측 경진대회"에 참여하여 작성한 글이며, 코드실행은 Google Colab의 CPU, Standard RAM 환경에서 진행했습니다.  
 
 ➔ [데이콘에서 읽기](https://dacon.io/competitions/official/235901/codeshare/5089?page=1&dtype=recent)
   

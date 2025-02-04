@@ -1,7 +1,7 @@
 ---
 title: "2022 데이터 크리에이터 캠프 최우수상 수상 후기 | Data Creator Camp"
 date: 2022-12-06 17:00:00 +/-TTTT
-categories: [Extracurricular Activities, Review]
+categories: [리뷰, 대회]
 tags: [data-creator-camp, ai-competition]
 math: true
 author: seoyoung
@@ -9,16 +9,20 @@ img_path: /assets/img/for_post/
 image:
   path: 20221206-t.png
   alt: ""
-description: 2022 데이터 크리에이터 캠프, 데이터 크리에이터 캠프 후기, 데이터 캠프 후기, 2022 Data Creator Camp
+description: ⛺ 2022 데이터 크리에이터 캠프에 참가하여 배운 내용과 느낀 점을 정리한 글입니다.
 ---
-
-
 
 ------------------------
 
-> 2022 데이터 크리에이터 캠프에 참가하여 배운 내용과 느낀 점을 정리한 글입니다.
+> **<u>KEYWORDS</u>**     
+> 2022 데이터 크리에이터 캠프, 데이터 크리에이터 캠프 후기, 데이터 캠프 후기, 2022 Data Creator Camp
 {: .prompt-info }
 
+------------------------
+
+&nbsp;
+&nbsp;
+&nbsp;
 
 ![data_creator_award](20221206-2.png){: width="450"}
 
