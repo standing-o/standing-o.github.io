@@ -117,12 +117,13 @@ search {
     }
 
     > p {
-      @extend %text-ellipsis;
-
-      white-space: break-spaces;
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
+//       @extend %text-ellipsis;
+//
+//       white-space: break-spaces;
+//       display: -webkit-box;
+//       -webkit-line-clamp: 30;
+//       -webkit-box-orient: vertical;
+      display: none;
     }
   }
 }
