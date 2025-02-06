@@ -2,16 +2,17 @@
 
 .tag {
   border-radius: 0.7em;
-  padding: 6px 8px 7px;
+  padding: 6px 12px 7px;
   margin-right: 0.8rem;
   line-height: 3rem;
   letter-spacing: 0;
   border: 1px solid var(--tag-border) !important;
   box-shadow: 0 0 3px 0 var(--tag-shadow);
+  font-size: 0.9em;
 
   span {
     margin-left: 0.6em;
-    font-size: 0.7em;
+    font-size: 0.9em;
     font-family: Oswald, sans-serif;
   }
 }
