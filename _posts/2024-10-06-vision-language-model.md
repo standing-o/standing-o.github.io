@@ -2,7 +2,7 @@
 title: "VLM 이해해보기 | Vision-Language Model"
 date: 2024-10-06 00:00:00 +/-TTTT
 categories: [인공지능 | AI, 컴퓨터 비전 | Computer Vision]
-tags: [llm, prompt-engineering, vision-transformer, transformer, vlm]
+tags: [llm, prompt-engineering, vision-transformer, transformer, vlm, foundation-model]
 math: true
 toc: true
 author: seoyoung
