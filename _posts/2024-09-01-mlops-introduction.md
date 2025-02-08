@@ -1,5 +1,5 @@
 ---
-title: "MLOps 공부 시작하기"
+title: "MLOps 공부 시작해보기"
 date: 2024-09-01 00:00:00 +/-TTTT
 categories: [AI 엔지니어링 | AI Engineering, MLOps]
 tags: [mlops, machine-learning, deep-learning]
