@@ -195,6 +195,10 @@ _A comparison of a whole slide image and the detection of white background areas
 ![fig4](20250128-4.png){: width="600"}
 _Example of a heatmap for a normal whole slide image and for a tumour whole slide image [^ref1]_
 
+&nbsp;
+&nbsp;
+&nbsp;
+
 
 ## **WSI와 Foundation Model**
 - 최근에는 WSI 데이터에 대한 Foundation Model을 개발하려는 연구가 활발하게 진행되고 있습니다.
