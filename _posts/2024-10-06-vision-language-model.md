@@ -78,7 +78,7 @@ description: 😎 Vision Language Model(VLM)의 개념과 장점들을 소개합
 ![fig2](20241006-1.png){: width="600"}
 
 ![fig2](20241006-2.png){: width="600"}
-_The training paradigms of VLMs_
+_The training paradigms of VLMs [^ref1]_
 
 
 &nbsp;
