@@ -2,7 +2,7 @@
 title: "텐서플로우 가속 쉽게 적용하기 | Tensorflow Acceleration"
 date: 2023-09-16 13:00:00 +/-TTTT
 categories: [AI 엔지니어링 | AI Engineering, AI 프레임워크]
-tags: [tensorflow, python, distributed-training, gpu-acceleration]
+tags: [tensorflow, python, distributed-training, gpu, gpu-acceleration]
 math: true
 author: seoyoung
 img_path: /assets/img/for_post/
