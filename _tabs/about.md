@@ -8,7 +8,7 @@ toc: true
 
 # [**오서영 | Seoyoung Oh**](https://special-grip-6f7.notion.site/Seoyoung-Oh-2a6b295b15b4435bb7b945bb07a572ae)       
 안녕하세요, 오서영입니다.       
-**데이터 사이언티스트, 머신러닝 엔지니어** 2년차로 꾸준히 공부하고 있습니다.      
+데이터를 6년째 경험하고, **데이터 사이언티스트, 머신러닝 엔지니어** 3년차로 꾸준히 공부하고 있습니다.      
 
 - 꾸준히 공부하고 블로그에 기록합니다.
 - AI 논문을 읽고 종종 [**여기**](https://github.com/standing-o/Machine_Learning_Paper_Review)에 정리합니다.
@@ -21,7 +21,7 @@ toc: true
 ## <u>Information</u>
 👶 1998-09-08 | 🏠 South Korea, Busan       
 📧 osyoung540@gmail.com | eileen1426@naver.com  
-💻 [**Github**](https://github.com/standing-o) | 👩‍💻 [**Linkedin**](https://www.linkedin.com/in/seoyoung-oh-309a24200/) | 🎨 [**Instagram**](https://www.instagram.com/grim_540/) |
+💻 [**Github**](https://github.com/standing-o) | 👩‍💻 [**Linkedin**](https://www.linkedin.com/in/%EC%84%9C%EC%98%81-%EC%98%A4-309a24200/) | 🎨 [**Instagram**](https://www.instagram.com/grim_540/) |
 
 ## <u>Interests</u>
 - **Artificial Intelligence (ML/DL)**    
@@ -156,7 +156,7 @@ toc: true
 - [x] [그림으로 배우는 클라우드](https://books.google.co.kr/books?id=6aa_zQEACAAJ&dq=%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C+%EB%B0%B0%EC%9A%B0%EB%8A%94+%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C&hl=ko&sa=X&redir_esc=y) <sup>book</sup>
 
 
-#### <u>Google Cloud Platform (GCP)</u>
+#### <u>Google Cloud Platform(GCP)</u>
 - [x] [Google Cloud Essentials](https://www.cloudskillsboost.google/quests/23) <sup>qwiklabs</sup>
 - [x] [Advanced ML: ML Infrastructure](https://www.cloudskillsboost.google/quests/84) <sup>qwiklabs</sup>
 - [x] [Intermediate ML: TensorFlow on Google Cloud](https://www.cloudskillsboost.google/quests/83) <sup>qwiklabs</sup>
@@ -173,7 +173,7 @@ toc: true
 | [`Certificate`](https://coursera.org/share/027f7bade94a22c62c207624449964cb)
 
 
-#### <u>Amazon Web Services (AWS)</u>
+#### <u>Amazon Web Services(AWS)</u>
 - [x] [아마존 웹 서비스 AWS Discovery Book](https://g.co/kgs/eBFdWmZ) <sup>book</sup>
 - [x] [AWS 배포 완벽가이드 (feat. Lightsail, Docker, ECS)](https://inf.run/phU7u) <sup>inflearn</sup>
  | [`Certificate`](https://www.inflearn.com/certificate/1411281-331548-12961928)
@@ -201,7 +201,8 @@ toc: true
 - [x] [누구나 쉽게 이해할 수 있는 Git 입문](https://backlog.com/git-tutorial/kr/) <sup>book</sup>
 - [x] [모두를 위한 파이썬 : 필수 문법 배우기 Feat. 오픈소스 패키지 배포](https://inf.run/gbBi) <sup>inflearn</sup>
  | [`Certificate`](https://www.inflearn.com/certificate/1184905-325780-11897998)
-- [ ] [고수가 되는 파이썬 : 동시성과 병렬성 문법 배우기 Feat. 멀티스레딩 vs 멀티프로세싱](https://inf.run/GpVZ) <sup>inflearn</sup>
+- [x] [고수가 되는 파이썬 : 동시성과 병렬성 문법 배우기 Feat. 멀티스레딩 vs 멀티프로세싱](https://inf.run/GpVZ) <sup>inflearn</sup>
+ | [`Certificate`](https://www.inflearn.com/certificate/1184905-326329-11935819)
 - [ ] [운영체제와 시스템 프로그래밍 by 널널한 개발자 TV](https://www.youtube.com/playlist?list=PLXvgR_grOs1DGFOeD792kHlRml0PhCe9l) <sup>youtube</sup>
 - [ ] [객체지향 프로그래밍과 디자인 패턴 by 널널한 개발자 TV](https://www.youtube.com/playlist?list=PLXvgR_grOs1CTu1t6_0C40SEF61Vv08s5) <sup>youtube</sup>
 - [ ] [네트워크 기초 이론 by 널널한 개발자 TV](https://www.youtube.com/playlist?list=PLXvgR_grOs1BFH-TuqFsfHqbh-gpMbFoy) <sup>youtube</sup>
