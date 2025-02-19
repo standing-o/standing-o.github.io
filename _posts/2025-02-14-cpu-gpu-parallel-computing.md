@@ -1,7 +1,7 @@
 ---
 title: "CPU와 GPU의 병렬처리 | Parallel Processing"
 date: 2025-02-14 00:00:00 +/-TTTT
-categories: [개발, 운영체제 | OS]
+categories: [개발, 시스템 | System]
 tags: [python, cpu, gpu, multi-processing, multi-threading, gpu-acceleration, parallel-computing]
 math: true
 toc: true
