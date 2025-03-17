@@ -35,7 +35,7 @@ toc: true
 | Topological Data Analysis, Mathematical Data Science, Graph Theory
 
 ## <u>Working</u>
-- **Terenz Co., Ltd. (주식회사 테렌즈)** | 2023.02 - 2025.05        
+- **Terenz Co., Ltd. (주식회사 테렌즈)** | 2023.02 - 2025.02        
   ➔ AI Team Senior Researcher | AI팀 선임연구원       
   ➔ Data Scientist, Machine Learning Engineer 직무        
 
