@@ -1,5 +1,5 @@
 ---
-title: "의료 AI에서의 Whole Slide Image와 인공지능"
+title: "의료에서의 Whole Slide Image와 인공지능"
 date: 2025-01-28 00:00:00 +/-TTTT
 categories: [인공지능 | AI, 의료 | Medical AI]
 tags: [python, medical-ai, deep-learning, transformer, supervised-learning, unsupervised-learning, weakly-supervised-learning, foundation-model, vision-transformer, llm, vlm]
