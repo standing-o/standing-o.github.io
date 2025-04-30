@@ -116,20 +116,20 @@ _The training paradigms of VLMs [^ref1]_
 ### **Energy-Based Models (EBMs)**
 - EBM은 모델 $$E_\theta$$를 학습하여 관측된 데이터에는 낮은 에너지를, 보지 못한 데이터에는 높은 에너지를 할당합니다.
 - 목표는 실제 데이터(낮은 에너지)와 노이즈 또는 관측되지 않은 데이터(높은 에너지)를 구분하는 것입니다.
-- 에너지 함수는 $E_\theta (x)$로 정의되며, 여기서 $x$는 입력 데이터, $\theta$는 모델의 파라미터입니다.
+- 에너지 함수는 $$E_\theta (x)$$로 정의되며, 여기서 $$x$$는 입력 데이터, $$\theta$$는 모델의 파라미터입니다.
 
 
 
 #### **Boltzmann Distribution**
 
-- 모델에서 입력 $x$에 대한 **확률 밀도 함수(Probability Density Function)**는 다음과 같습니다.
+- 모델에서 입력 $$x$$에 대한 **확률 밀도 함수(Probability Density Function)**는 다음과 같습니다.
   $$
   p_\theta (x) = \frac{e ^{- E_\theta (x)}}{Z_\theta},
   $$
   
   - where
-    - $E_\theta (x)$ ㅣ the energy of input $x$.
-    - $Z_\theta = \sum_x e^{-E_\theta (x)}$ ㅣ the normalization factor ensuring $p_\theta (x)$ sums to 1 over all $x$.
+    - $$E_\theta (x)$$ ㅣ the energy of input $$x$$.
+    - $$Z_\theta = \sum_x e^{-E_\theta (x)}$$ ㅣ the normalization factor ensuring $$p_\theta (x)$$ sums to 1 over all $$x$$.
 
 
 &nbsp;
@@ -140,7 +140,7 @@ _The training paradigms of VLMs [^ref1]_
 ### **Maximum Likelihood Objective**
 
 - 학습 목표는 모델 예측과 실제 데이터 간의 **불일치(Discrepancy)**를 최소화하는 것입니다.
-$arg \min_\theta E_{x \sim P_D} (x) [- \log p_\theta (x)]$
+$$arg \min_\theta E_{x \sim P_D} (x) [- \log p_\theta (x)]$$
 
 
 
@@ -152,8 +152,8 @@ $$
 $$
 
 - where
-  - $x^{+} \sim P_D (x)$ = samples from the real data distribution.
-  - $x^{-} \sim P_D (x)$ = samples from the model's distribution.
+  - $$x^{+} \sim P_D (x)$$ = samples from the real data distribution.
+  - $$x^{-} \sim P_D (x)$$ = samples from the model's distribution.
   - 첫 번째 항은 모델이 실제 데이터에 적합하도록 조정하고, 두 번째 항은 부정 샘플과 구분하는 데 도움을 줍니다.
 
 
@@ -167,14 +167,14 @@ $$
 - 모델 분포를 근사하기 위해 노이즈 분포에서 샘플링을 사용합니다.
 - **NCE는 이진 분류 문제로 정의됩니다.**
   
-  - 실제 데이터는 $C=1$, 노이즈는 $C=0$으로 예측합니다.
+  - 실제 데이터는 $$C=1$$, 노이즈는 $$C=0$$으로 예측합니다.
   - **NCE 손실 함수**    
     $$
     L_{NCE}(\theta) := - \sum_{i} \log P(C_i = 1 | x_i; \theta) - \sum_{j} \log P(C_j = 0 | x_j; \theta),
     $$
     
-    - where $x_i$ = samples from real data distribution.
-  - $x_j \sim p_n (x)$ 는 노이즈 분포에서 추출한 샘플로, 일반적으로 무작위 노이즈 프로세스에서 생성됩니다.
+    - where $$x_i$$ = samples from real data distribution.
+  - $$x_j \sim p_n (x)$$ 는 노이즈 분포에서 추출한 샘플로, 일반적으로 무작위 노이즈 프로세스에서 생성됩니다.
 
 
 &nbsp;
@@ -259,8 +259,8 @@ $$
   \text{arg min}_{p(z|x)} I(f(X); Z) + \beta \cdot H(X|Z),
   $$
   - where
-    - $I(f(X); Z)$ = 입력 데이터 $f(X)$와 표현 $Z$ 간의 관련성을 측정하는 상호 정보.
-    - $\beta$ = 두 번째 항의 영향을 결정하는 trade-off parameter.
+    - $$I(f(X); Z)$$ = 입력 데이터 $$f(X)$$와 표현 $$Z$$ 간의 관련성을 측정하는 상호 정보.
+    - $$\beta$$ = 두 번째 항의 영향을 결정하는 trade-off parameter.
 
 
 - 위 목표를 bound하는 또 다른 방정식은 다음과 같습니다.    
@@ -268,8 +268,8 @@ $$
   L = - \sum_{x \in D} E_{p(f)} p(Z|f(x)) [\log q(z) + \beta \cdot \log q(x|z)],
   $$
   - where
-    - $q(z)$ = 학습된 표현의 분포
-    - $D$ = 표현을 생성하기 위해 사용되는 데이터셋
+    - $$q(z)$$ = 학습된 표현의 분포
+    - $$D$$ = 표현을 생성하기 위해 사용되는 데이터셋
 - 이 방정식은 의미 있는 표현을 얻는 것과 원래 입력에서 중요한 세부 정보를 유지하는 것 사이의 균형을 강조합니다.
 
 
@@ -320,13 +320,13 @@ $$
 - 일반적으로 이미지 생성 모델로 알려져있으며, 별도의 재학습 없이도 분류와 캡션 예측 작업을 수행할 수 있습니다.
 
 - **<u>Classification via Bayes' Theorem</u>**
-  - 이미지 $x$ 와 텍스트 클래스 집합 $(c_i)^n _{i=1}$이 주어졌을 때, 모델은 베이즈 정리를 사용해 이미지를 분류할 수 있습니다.    
+  - 이미지 $$x$$ 와 텍스트 클래스 집합 $$(c_i)^n _{i=1}$$이 주어졌을 때, 모델은 베이즈 정리를 사용해 이미지를 분류할 수 있습니다.    
     $$
     p_\theta(c_i | x) = \frac{p(c_i) p_\theta(x | c_i)}{\sum_{j} p(c_j) p_\theta(x | c_j)},
     $$
     
   - where
-    - $p (c_i)$ ㅣ 클래스 $c_i$의 Prior probability.
+    - $$p (c_i)$$ ㅣ 클래스 $$c_i$$의 Prior probability.
     - 분모는 모든 클래스에 대한 Likelihood을 합산하여 확률을 정규화합니다.
   
 

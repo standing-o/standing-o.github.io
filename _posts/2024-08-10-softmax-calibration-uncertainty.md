@@ -59,7 +59,7 @@ _Softmax activation function [^ref12]_
 
 - **분류 Task**를 위한 딥러닝 모델의 경우 최종 출력으로 **Softmax 활성화 함수**를 사용합니다.
 
-  - Softmax는 신경망 모델의 출력 $z_i$ 을 0과 1사이의 값으로 변환하여 각 클래스에 대한 확률로 해석할 수 있도록 합니다.
+  - Softmax는 신경망 모델의 출력 $$z_i$$ 을 0과 1사이의 값으로 변환하여 각 클래스에 대한 확률로 해석할 수 있도록 합니다.
 
   - 이 중 가장 높은 확률 값을 가지는 클래스가 신경망의 **예측 클래스**이며, 해당 클래스에 대한 예측 확률을 **신뢰도(Confidence)**라 정의합니다.
 
@@ -118,12 +118,12 @@ $$
   $$
   h(X) = (Y, P),
   $$
-  - where $\hat{Y}$ is a class prediction and $\hat{P}$ is its associated confidence (probability of correctness).
+  - where $$\hat{Y}$$ is a class prediction and $$\hat{P}$$ is its associated confidence (probability of correctness).
 
 
 #### **Calibrated Confidence**
 
-- $\hat{P}$가 진정한 확률을 나타내도록 추정하는 것을 의미합니다.
+- $$\hat{P}$$가 진정한 확률을 나타내도록 추정하는 것을 의미합니다.
 - 100개의 예측이 있고 Confidence가 0.8이라면, 이 중 80개가 정확히 분류될 것으로 예상합니다.
 - 연속적인 확률 값인 $\hat{P}$를 유한한 데이터로 계산하는 것은 불가능하므로 근사적으로 추정하는 것이 적절합니다.
 
@@ -222,11 +222,11 @@ $$
 
 - Non-parametric 방식으로 예측된 확률을 여러 구간으로 나누고 각 구간에 Calibration을 더합니다.
 
-- 모든 예측값 $\hat{p_i}$를 Mutually Exclusive한 구간 $B_1, ..., B_M$으로 나누고, 각 $B_m$에 점수 $\theta_m$을 할당합니다.
-  - $\hat{p}_i$가 $B_m$에 속하면, Calibration이 적용된 예측값 $\hat{q}_i$는 $\theta_m$.
-- **테스트 시 예측** ㅣ 만약 $\hat{p}_{te}$가 $B_m$에 속하면, Calibration이 적용된 예측값 $\hat{q}_{te} = \theta_m$이 됩니다.
+- 모든 예측값 $$\hat{p_i}$$를 Mutually Exclusive한 구간 $$B_1, ..., B_M$$으로 나누고, 각 $$B_m$$에 점수 $$\theta_m$$을 할당합니다.
+  - $$\hat{p}_i$$가 $$B_m$$에 속하면, Calibration이 적용된 예측값 $$\hat{q}_i$$는 $$\theta_m$$.
+- **테스트 시 예측** ㅣ 만약 $$\hat{p}_{te}$$가 $$B_m$$에 속하면, Calibration이 적용된 예측값 $$\hat{q}_{te} = \theta_m$$이 됩니다.
 - **목표**
-  - Bin-wise 제곱 오차 최소화. 아래를 최소화하여 적절한 $\theta_m$을 선택합니다.
+  - Bin-wise 제곱 오차 최소화. 아래를 최소화하여 적절한 $$\theta_m$$을 선택합니다.
     $$
     \min_{\theta_1,...,\theta_M} \sum^M_{m=1}\sum^n_{i=1} 1 (a_m \leq \hat{p_i} < a_{m+1})(\theta_m - y_i)^2, \\
     $$
@@ -250,7 +250,7 @@ $$
 
 - **<u>목표</u>**
 
-  - 입력된 예측값 $\hat{p}_i$를 사용하여 정규화된 확률 $\hat{q}_i = f(\hat{p}_i)$를 얻습니다.
+  - 입력된 예측값 $$\hat{p}_i$$를 사용하여 정규화된 확률 $$\hat{q}_i = f(\hat{p}_i)$$를 얻습니다.
     $$
     \min_{\substack{\theta_1,...,\theta_M \\ a_1,...,a_{M+1}}} \sum^M_{m=1}\sum^n_{i=1} 1 (a_m \leq \hat{p_i} < a_{m+1})(\theta_m - y_i)^2,
     $$
@@ -266,9 +266,9 @@ $$
 
 - Parametric 방식으로 로지스틱 회귀를 통해 예측 확률을 Calibration합니다.
 
-- 분류기의 비 확률적 예측값을 로지스틱 회귀 모델의 입력으로 사용하며, 두 개의 스칼라 파라미터 $a$와 $b$를 학습합니다.
+- 분류기의 비 확률적 예측값을 로지스틱 회귀 모델의 입력으로 사용하며, 두 개의 스칼라 파라미터 $$a$$와 $$b$$를 학습합니다.
 
-  - 이러한 파라미터들은 비확률적 출력 $z$를 확률값으로 변환하는 데 사용되며, NLL 손실에 의해 검증 데이터셋에서 최적화됩니다.
+  - 이러한 파라미터들은 비확률적 출력 $$z$$를 확률값으로 변환하는 데 사용되며, NLL 손실에 의해 검증 데이터셋에서 최적화됩니다.
   - Platt Scaling이 적용되는 동안 신경망의 다른 파라미터들은 고정되어 변경되지 않습니다.
   $$
   \hat{q}_i = \sigma(az_i + b).
@@ -290,8 +290,8 @@ $$
 
 - **Binary Calibration으로 전환**
 
-  - 각 클래스 $k$에 대하여 One-vs-all 문제를 형성합니다.
-    - $y_i = k$인 경우 1, 아닌 경우 0
+  - 각 클래스 $$k$$에 대하여 One-vs-all 문제를 형성합니다.
+    - $$y_i = k$$인 경우 1, 아닌 경우 0
     - **예측 확률**    
       $$
       \sigma_{\text{SM}}(z_i)^{(k)}
@@ -299,7 +299,7 @@ $$
 
 - **Calibration 적용**
   - 각 클래스에 대해 Binary Calibration 모델 $K$개 생성합니다.
-  - 테스트 시, $[\hat{q}_i^{(1)}, ..., \hat{q}_i^{(K)}]$ 의 비정규화 확률 벡터 획득할 수 있습니다.
+  - 테스트 시, $$[\hat{q}_i^{(1)}, ..., \hat{q}_i^{(K)}]$$ 의 비정규화 확률 벡터 획득할 수 있습니다.
     - **새로운 클래스 예측**    
       $$
       \hat{y}_i ' = \text{argmax}_k \,\,\hat{q}_i ^{(k)}.
@@ -319,7 +319,7 @@ $$
 #### **Platt Scaling을 다중 클래스로 확장하기**
 
 - **Matrix Scaling**
-  - 로그 벡터 $z_i$에 선형 변환 $W z_i + b$를 적용합니다.    
+  - 로그 벡터 $$z_i$$에 선형 변환 $$W z_i + b$$를 적용합니다.    
     $$
     \hat{q}_i = \max_k \sigma _{\text{SM}} (W z_i + b) ^{(k)}.
     $$
@@ -330,30 +330,28 @@ $$
     $$
 
   - W와 b는 검증 데이터에 대한 NLL 최소화로 최적화합니다.
-    - 파라미터 수는 클래스 수 $K$에 따라 증가합니다.
+    - 파라미터 수는 클래스 수 $$K$$에 따라 증가합니다.
 
 - **Vector Scaling**
-  - Matrix scaling의 변형이며, $W$를 대각 행렬로 제한합니다.
+  - Matrix scaling의 변형이며, $$W$$를 대각 행렬로 제한합니다.
 
 - **Temperature Scaling**
 
-  - 모든 클래스에 대해 단일 스칼라 파라미터 $T>0$ 을 사용합니다.
-  - 주어진 로그 벡터 $z_i$에 대해 새로운 Confidence 예측을 적용합니다.
-  - T는 검증 데이터에서 NLL을 기준으로 최적화되며 이는 Softmax 함수의 최대값을 변경하지 않으므로 클래스 예측 $\hat{y}_i '$ 는 변경되지 않아 모델의 정확도에 아무 영향도 주지 않습니다.
+  - 모든 클래스에 대해 단일 스칼라 파라미터 $$T > 0$$ 을 사용합니다.
+  - 주어진 로그 벡터 $$z_i$$에 대해 새로운 Confidence 예측을 적용합니다.
+  - T는 검증 데이터에서 NLL을 기준으로 최적화되며 이는 Softmax 함수의 최대값을 변경하지 않으므로 클래스 예측 $$\hat{y}_i$$ 는 변경되지 않아 모델의 정확도에 아무 영향도 주지 않습니다.
   - **<u>목표</u>**
     - 주어진 제약 조건에서 로그 벡터에 대한 출력 확률 분포의 엔트로피를 최대화 하는 것입니다.
       $$
       \hat{q}_i = \max_k \sigma _{\text{SM}} (\frac{z_i}{T})_k,
       $$
-      $$
-      \text{where $\sigma_{\text{SM}}$ is a softmax function and $k$ is an index of class.}
-      $$
+    - where $$\sigma_{\text{SM}}$$ is a softmax function and $$k$$ is an index of class.
 
   - **T 해석**
     - `T > 1` ㅣ Softmax Output을 부드럽게하여 엔트로피를 증가시킵니다.
-    - `T -> inf` ㅣ Confidence $\hat{q}_i$가 1/K 에 가까워지며, 이는 최대 불확실성을 의미합니다.
-    - `T = 1` ㅣ 원래의 Confidence $\hat{q}_i$를 복원합니다.
-    - `T -> 0` ㅣ Confidence $\hat{q}_i$가 하나의 점(확률 질량)으로 축소됩니다 ($\hat{q}_i$ = 1).
+    - `T -> inf` ㅣ Confidence $$\hat{q}_i$$가 $1/K$ 에 가까워지며, 이는 최대 불확실성을 의미합니다.
+    - `T = 1` ㅣ 원래의 Confidence $$\hat{q}_i$$를 복원합니다.
+    - `T -> 0` ㅣ Confidence $$\hat{q}_i$$가 하나의 점(확률 질량)으로 축소됩니다 ($$\hat{q}_i = 1$$).
 
   - **<u>구현 예시</u>**
 
@@ -461,17 +459,17 @@ Calibrated probabilities:
 
 - **유효한 OOD 영역(Valid OOD Region)**
 
-  - **학습 분포(Training Distribution)** ㅣ $x \sim D_{in}$는 학습된 데이터 분포를 나타냅니다.
-  - **OOD 분포(또는 Outlier)** ㅣ $x \sim D_{out}$은 학습 분포 밖의 데이터를 의미하며, 모델이 접하지 않은 데이터 분포입니다.
+  - **학습 분포(Training Distribution)** ㅣ $$x \sim D_{in}$$는 학습된 데이터 분포를 나타냅니다.
+  - **OOD 분포(또는 Outlier)** ㅣ $$x \sim D_{out}$$은 학습 분포 밖의 데이터를 의미하며, 모델이 접하지 않은 데이터 분포입니다.
 
-  - $U(z')$을 z'에 대한 $U_{\text{max}}, U_{\text{entropy}}$ 와 같은 불확실성 지표(Uncertainty Estimator) 라고 했을 때, **유효한 OOD 영역** $R$은 다음과 같이 정의될 수 있습니다.
+  - $$U(z')$$을 $$z'$$에 대한 $$U_{\text{max}}, U_{\text{entropy}}$$ 와 같은 불확실성 지표(Uncertainty Estimator) 라고 했을 때, **유효한 OOD 영역** $R$은 다음과 같이 정의될 수 있습니다.
 
   $$
   R: \{ z' \in \mathbb{R}^H | \mathbb{E}_{z \sim D_{in}} [\mathbb{I}(U(z')>U(z))] > 1 - \epsilon \}
   $$
 
-  - 해당 정의는 점 $z'$가 $(1-\epsilon) \%$의 학습 데이터보다 불확실해야 하는 영역을 나타냅니다.
-  - $U_{\text{max}}, U_{\text{entropy}}$의 경우, 학습 분포의 95% 보다 Decision Boundary에 가까워 져야 OOD 데이터가 유효한 OOD 영역에 포함됩니다.
+  - 해당 정의는 점 $$z'$$가 $$(1-\epsilon) \%$$의 학습 데이터보다 불확실해야 하는 영역을 나타냅니다.
+  - $$U_{\text{max}}, U_{\text{entropy}}$$의 경우, 학습 분포의 95% 보다 Decision Boundary에 가까워 져야 OOD 데이터가 유효한 OOD 영역에 포함됩니다.
     - 이는 OOD 데이터가 Decision Boundary 가까이 있도록 불확실성을 많이 가져야한다는 의미입니다.
 
 
@@ -525,7 +523,7 @@ _Activation patterns of the last layer form trained Lenet. OOD show the abnormal
     \text{The absolute value of} \,\, z \,\, \text{plays the same role as the temperature parameter in Platt scaling.}
     $$
 
-  - Softmax 신뢰도에 대해 $z$ 와 $\cos \theta_{i, z}$가 주는 효과를 분석할 수 있습니다.
+  - Softmax 신뢰도에 대해 $z$ 와 $$\cos \theta_{i, z}$$가 주는 효과를 분석할 수 있습니다.
   - 최적의 Decision Boundary 구조와 결합될 때, **낮은 친숙도는 신뢰도를 감소**시킵니다.
 
   
@@ -533,7 +531,7 @@ _Activation patterns of the last layer form trained Lenet. OOD show the abnormal
   - 고차원에서 Softmax 신뢰도의 동작을 이해하기 위한 모델입니다.
   - **<u>전제 조건</u>**
     - 네트워크의 Decision Boundary 구조가 최적화되어 있다고 가정합니다.
-    - 대부분의 각도에 대하여, $\cos \theta_{i,z} = - \frac{1}{K-1}$ 라고 가정합니다.
+    - 대부분의 각도에 대하여, $$\cos \theta_{i,z} = - \frac{1}{K-1}$$ 라고 가정합니다.
   - 이 모델은 학습 데이터의 특징의 강도와 친숙도가 모두 감소할 때 불확실성이 증가함을 설명하고 있습니다.
     $$
     U_{\text{max mental}} (z) = - \frac{1}{1 + (K-1) \exp (- ||z|| (\frac{1}{K-1} + \max \cos \theta_{i,z}))},
