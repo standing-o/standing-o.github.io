@@ -44,11 +44,14 @@ description: 🎨 생성 모델의 기본 개념과 다양한 학습 방법을 �
 &nbsp;
 
 
-- 데이터 $$x \in X$$에 대한 생성 모델이 정의하는 확률 분포 $$q_{\theta}(\mathbf{x})$$는 다음과 같습니다.
+- 데이터 $$\mathbf{x} \in X$$에 대한 생성 모델이 정의하는 확률 분포 $$q_{\theta}(\mathbf{x})$$는 다음과 같습니다.
 
   $$
-  q_\theta(\mathbf{x}) = \gamma_{\theta}(\mathbf{x})/Z(\theta), \\
-  Z(\theta) = \int_{\mathbf{x}' \in X} \gamma_{\theta}(\mathbf{x}' d \mathbf{x}').
+  q_\theta(\mathbf{x}) = \gamma_{\theta}(\mathbf{x})/Z(\theta),
+  $$
+  
+  $$
+  Z(\theta) = \int_{\mathbf{x}' \in X} \gamma_{\theta}(\mathbf{x}') d \mathbf{x}'.
   $$
 
   - where $$\gamma_{\theta}(\mathbf{x}) \geq 0$$ is an unnormalized probability density function(PDF) and $$Z(\theta) > 0$$ is a partition function(normalization constant).
@@ -67,7 +70,10 @@ description: 🎨 생성 모델의 기본 개념과 다양한 학습 방법을 �
 
   - i.e.,
     $$
-    q_\theta(\mathbf{x}) = \exp(-f_{\theta}(\mathbf{x}))/Z(\theta), \\
+    q_\theta(\mathbf{x}) = \exp(-f_{\theta}(\mathbf{x}))/Z(\theta),
+    $$
+    
+    $$
     Z(\theta) = \int_{\mathbf{x}' \in X} \exp(-f_{\theta}(\mathbf{x}')) d\mathbf{x}'.
     $$
 
@@ -105,14 +111,20 @@ description: 🎨 생성 모델의 기본 개념과 다양한 학습 방법을 �
 - **<u>Likelihood-based Model</u>**
   - Likelihood-based 모델은 데이터 $$\mathbf{x}$$의 Likelihood $$q_\theta(\mathbf{x})$$를 명시적(Explicit)으로 정의하고, 그 확률 분포의 Log Likelihood를 최대화하여 파라미터 $$\theta$$를 추정합니다.
 
-  - N개의 학습 데이터 $$D = \{ \mathbf{x}^{(1)}, \dots, \mathbf{x}^{(N)} \}$$는 서로 독립적으로 추출되었기에, D의 우도는 다음과 같이 각 데이터 우도의 곱으로 정의됩니다.
+  - N개의 학습 데이터 $$D = \{ \mathbf{x}^{(1)}, \dots, \mathbf{x}^{(N)} \}$$는 서로 독립적으로 추출되었기에, $$D$$의 Likelihood는 다음과 같이 각 데이터 Likelihood의 곱으로 정의됩니다.
+    
     $$
     q_\theta(D) = \Pi_i q_\theta(\mathbf{x}^{(i)}).
     $$
 
   - Log Likelihood는 다음과 같습니다.
+    
     $$
-    xL(\theta) = \frac{1}{N} \log q_\theta(D) = \frac{1}{N} \sum_i \log q_\theta(\mathbf{x}^{(i)}).
+    L(\theta) = \frac{1}{N} \log q_\theta(D)
+    $$
+    
+    $$
+    = \frac{1}{N} \sum_i \log q_\theta(\mathbf{x}^{(i)}).
     $$
 
   - 대표적인 Likelihood-based 생성모델로는 VAE, Auto-regressive Model, Energy-based 모델이 있습니다.
@@ -181,7 +193,7 @@ description: 🎨 생성 모델의 기본 개념과 다양한 학습 방법을 �
 
 #### 2. Implicit Generative Model
 
--  명시적인(Explicit) 확률 분포 $$q_\theta(\mathbf{x}))$$를 정의하지 않고, 데이터를 직접 생성하는 생성 함수만을 통해 데이터를 모델링 하는 방식입니다.
+-  명시적인(Explicit) 확률 분포 $$q_\theta(\mathbf{x})$$를 정의하지 않고, 데이터를 직접 생성하는 생성 함수만을 통해 데이터를 모델링 하는 방식입니다.
   - i.e., 샘플을 생성하는 과정은 존재하지만 그에 대한 명시적인 Likelihood 함수는 정의되지 않으며, 모델이 나타내는 분포는 암묵적(Implicit)으로 표현됩니다.
    - ex. 정규 분포로부터 추출된 잠재변수 $$\mathbf{z}$$를 신경망과 같은 결정론적 함수 $$g_\theta(\mathbf{z})$$에 통과시켜 $$\mathbf{x}$$를 생성하는 방식입니다.
      - 이와 같은 분포를 Push-forward Distribution이라 하며, GAN이 대표적인 사례입니다.
@@ -231,7 +243,11 @@ description: 🎨 생성 모델의 기본 개념과 다양한 학습 방법을 �
 - Since $$\nabla_\mathbf{x} \log Z(\theta) = 0$$,
   
   $$
-  \nabla_{\mathbf{x}} \log q_\theta(\mathbf{x}) = - \nabla_\mathbf{x} f_\theta(\mathbf{x}) - \nabla_\mathbf{x} \log Z(\theta) \\= - \nabla_\mathbf{x} f_\theta(\mathbf{x})
+  \nabla_{\mathbf{x}} \log q_\theta(\mathbf{x}) = - \nabla_\mathbf{x} f_\theta(\mathbf{x}) - \nabla_\mathbf{x} \log Z(\theta)
+  $$
+  
+  $$
+  = - \nabla_\mathbf{x} f_\theta(\mathbf{x})
   $$
 
   - i.e., Score는 에너지 함수의 입력에 대한 음의 기울기와 같습니다.
