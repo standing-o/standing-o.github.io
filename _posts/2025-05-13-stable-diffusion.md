@@ -430,7 +430,7 @@ description: 🎨 생성 모델의 기본 개념과 다양한 학습 방법을 �
 
 
 --------------
-## Reference
+## References
 1. 오카노하라 다이스케. (2024). 확산 모델의 수학 (손민규 옮김).
 
 2. Vincent, Pascal. "A connection between score matching and denoising autoencoders." Neural computation 23.7 (2011): 1661-1674.
