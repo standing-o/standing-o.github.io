@@ -418,7 +418,7 @@ description: 🎨 생성 모델의 기본 개념과 다양한 학습 방법을 �
 - 최종적으로, **Denoising Score Matching**의 학습 목적 함수는 다음과 같습니다.
   
   $$
-  J_{DSM_{p_\theta}} (\theta) = \frac{1}{2} \mathbb{E}_{\epsilon \sim \mathcal{N}(0, sigma^2 I), \mathbf{x} \sim p(\mathbf{x})} \big[ \| -\frac{1}{\sigma^2} \epsilon - \mathbf{s}_\theta (\mathbf{x} + \epsilon, \sigma) \|^2 \big].
+  J_{DSM_{p_\theta}} (\theta) = \frac{1}{2} \mathbb{E}_{\epsilon \sim \mathcal{N}(0, \sigma^2 I), \mathbf{x} \sim p(\mathbf{x})} \big[ \| -\frac{1}{\sigma^2} \epsilon - \mathbf{s}_\theta (\mathbf{x} + \epsilon, \sigma) \|^2 \big].
   $$
   
   - $$J_{DSM_{p_{\sigma}}} (\theta)$$는 노이즈를 추가한 데이터로부터 추가한 노이즈를 제거하는 방향을 예측하도록 학습하는 것이며, 데이터 분포의 Score를 효과적으로 추정할 수 있습니다.
