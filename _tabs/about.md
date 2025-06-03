@@ -69,12 +69,9 @@ toc: true
 - [x] [Interpretable Machine Learning](https://christophm.github.io/interpretable-ml-book/) <sup>book</sup>
 - [x] [Introduction to Responsible AI](https://www.cloudskillsboost.google/course_templates/554) <sup>qwiklabs</sup>
  | [`Certificate`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5305970?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
+- [x] [Forecasting: Principles and Practice](https://otexts.com/fppkr/) <sup>book</sup>
 - [ ] [Pattern Recognition & Machine Learning](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/) <sup>book</sup>
 
-
-## <u>Time-series Forecasting</u>
-- [x] [Forecasting: Principles and Practice](https://otexts.com/fppkr/) <sup>book</sup>
-- [ ] [Time Series Analysis Handbook](https://phdinds-aim.github.io/time_series_handbook/Preface/Preface.html) <sup>book</sup>
 
 
 ## <u>Deep Learning</u>
@@ -89,24 +86,29 @@ toc: true
 - [x] [Sequence Models](https://www.coursera.org/learn/nlp-sequence-models) <sup>coursera</sup>
  | [`Certificate`](https://coursera.org/share/c5c85b0292eb38960f887346325cd0dc)
 - [x] [Dive into Deep Learning](https://d2l.ai/) <sup>book</sup>
+- [x] [Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning](https://www.coursera.org/learn/introduction-tensorflow) <sup>coursera</sup>
+ | [`Certificate`](https://coursera.org/share/83a78fa9bb5d35b175da2c16be04105b)
+- [x] [Convolutional Neural Networks in TensorFlow](https://www.coursera.org/learn/convolutional-neural-networks-tensorflow) <sup>coursera</sup>
+ | [`Certificate`](https://coursera.org/share/ed196f996dc3a4b244c3b791dbc28f0a)
 - [x] [Transformer Models and BERT Model](https://www.cloudskillsboost.google/course_templates/538) <sup>qwiklabs</sup>
- | [`Certificate`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306816?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
+ | [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306816)
+
+
+## <u>Generative AI</u>
 - [x] [Introduction to Large Language Models](https://www.cloudskillsboost.google/course_templates/539) <sup>qwiklabs</sup>
- | [`Certificate`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5305927?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
+ | [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5305927)
 - [x] [Introduction to Image Generation](https://www.cloudskillsboost.google/course_templates/541) <sup>qwiklabs</sup>
- | [`Certificate`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306679?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
-- [x] [Introduction to Generative AI Studio](https://www.cloudskillsboost.google/course_templates/552) <sup>qwiklabs</sup>
- | [`Certificate`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306909?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
+ | [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306679)
 - [x] [Introduction to Generative AI](https://www.cloudskillsboost.google/course_templates/536) <sup>qwiklabs</sup>
- | [`Certificate`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5305558?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
+ | [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5305558)
 - [x] [Generative AI Fundamentals](https://www.cloudskillsboost.google/course_templates/556) <sup>qwiklabs</sup>
- | [`Certificate`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306109?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
+ | [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306109)
 - [x] [Encoder-Decoder Architecture](https://www.cloudskillsboost.google/course_templates/543) <sup>qwiklabs</sup>
- | [`Certificate`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306738?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
+ | [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306738)
 - [x] [Create Image Captioning Models](https://www.cloudskillsboost.google/course_templates/542) <sup>qwiklabs</sup>
- | [`Certificate`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306870?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
+ | [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306870)
 - [x] [Attention Mechanism](https://www.cloudskillsboost.google/course_templates/537) <sup>qwiklabs</sup>
- | [`Certificate`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306768?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
+ | [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5306768)
 - [x] [Generative AI with Large Language Models](https://www.coursera.org/learn/generative-ai-with-llms) <sup>coursera</sup>
  | [`Certificate`](https://coursera.org/share/f20799e05ed70337fd920ff323966808)
 - [x] [Deep Learning: GANs and Variational Autoencoders](https://www.udemy.com/course/deep-learning-gans-and-variational-autoencoders/) <sup>udemy</sup>
@@ -114,16 +116,6 @@ toc: true
 - [x] [딥러닝 차세대 혁신기술 - 물리 정보 신경망 입문과 Pytorch 실습](https://inf.run/UYvUz) <sup>inflearn</sup>
  | [`Certificate`](https://www.inflearn.com/certificate/1411281-333480-12961930)
 
-
-## <u>Deep Learning Framework</u>
-- [x] [Introduction to TensorFlow for Artificial Intelligence, Machine Learning, and Deep Learning](https://www.coursera.org/learn/introduction-tensorflow) <sup>coursera</sup>
- | [`Certificate`](https://coursera.org/share/83a78fa9bb5d35b175da2c16be04105b)
-- [x] [Convolutional Neural Networks in TensorFlow](https://www.coursera.org/learn/convolutional-neural-networks-tensorflow) <sup>coursera</sup>
- | [`Certificate`](https://coursera.org/share/ed196f996dc3a4b244c3b791dbc28f0a)
-- [ ] [Custom Models, Layers, and Loss Functions with TensorFlow](https://www.coursera.org/learn/custom-models-layers-loss-functions-with-tensorflow?specialization=tensorflow-advanced-techniques) <sup>coursera</sup>
-- [ ] [Custom and Distributed Training with TensorFlow](https://www.coursera.org/learn/custom-distributed-training-with-tensorflow?specialization=tensorflow-advanced-techniques) <sup>coursera</sup>
-- [ ] [Advanced Computer Vision with TensorFlow](https://www.coursera.org/learn/advanced-computer-vision-with-tensorflow?specialization=tensorflow-advanced-techniques) <sup>coursera</sup>
-- [ ] [Generative Deep Learning with TensorFlow](https://www.coursera.org/learn/generative-deep-learning-with-tensorflow?specialization=tensorflow-advanced-techniques) <sup>coursera</sup>
 
 
 ## <u>MLOps</u>
@@ -139,30 +131,34 @@ toc: true
  | [`Certificate`](https://www.udemy.com/certificate/UC-d34cf66b-dc89-49b4-a522-a51d5243f504/)
 - [x] [실전도커: 도커로 나만의 딥러닝 클라우드 컴퓨터 만들기](https://inf.run/LnAFh) <sup>inflearn</sup>
  | [`Certificate`](https://www.inflearn.com/certificate/1411281-332626-12961929)
-- [ ] [Python Essentials for MLOps](https://www.coursera.org/learn/python-mlops-duke) <sup>coursera</sup>
-- [ ] [DevOps, DataOps, MLOps](https://www.coursera.org/learn/devops-dataops-mlops-duke) <sup>coursera</sup>
-- [ ] [MLOps Platforms: Amazon SageMaker and Azure ML](https://www.coursera.org/learn/mlops-aws-azure-duke) <sup>coursera</sup>
-- [ ] [MLOps Tools: MLflow and Hugging Face](https://www.coursera.org/learn/mlops-mlflow-huggingface-duke) <sup>coursera</sup>
-- [ ] [Machine Learning in Production](https://www.coursera.org/learn/introduction-to-machine-learning-in-production) <sup>coursera</sup>
+- [x] [Python Essentials for MLOps](https://www.coursera.org/learn/python-mlops-duke) <sup>coursera</sup>
+ | [`Certificate`](https://www.coursera.org/account/accomplishments/verify/QQ08ZMHFG9IF)
+- [x] [Vector Search and Embeddings](https://www.cloudskillsboost.google/paths/183/course_templates/939) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/16257284)
+- [x] [Machine Learning Operations (MLOps) for Generative AI](https://www.cloudskillsboost.google/paths/183/course_templates/927) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/16300685)
 - [ ] [Machine Learning Engineering Open Book](https://github.com/stas00/ml-engineering/tree/master) <sup>post</sup>
 
 
-## <u>Database</u>
+## <u>DB and Cloud</u>
 - [x] [처음하는 MongoDB(몽고DB) 와 NoSQL(빅데이터) 데이터베이스 부트캠프 [입문부터 활용까지]](https://inf.run/rnmn) <sup>inflearn</sup>
  | [`Certificate`](https://drive.google.com/file/d/1I6uyWLyZYYElNazvgpNNSHu5ws0-3iES/view?usp=drivesdk)
-
-
-## <u>Cloud</u>
 - [x] [그림으로 배우는 클라우드](https://books.google.co.kr/books?id=6aa_zQEACAAJ&dq=%EA%B7%B8%EB%A6%BC%EC%9C%BC%EB%A1%9C+%EB%B0%B0%EC%9A%B0%EB%8A%94+%ED%81%B4%EB%9D%BC%EC%9A%B0%EB%93%9C&hl=ko&sa=X&redir_esc=y) <sup>book</sup>
 
 
 #### <u>Google Cloud Platform(GCP)</u>
-- [x] [Google Cloud Essentials](https://www.cloudskillsboost.google/quests/23) <sup>qwiklabs</sup>
-- [x] [Advanced ML: ML Infrastructure](https://www.cloudskillsboost.google/quests/84) <sup>qwiklabs</sup>
-- [x] [Intermediate ML: TensorFlow on Google Cloud](https://www.cloudskillsboost.google/quests/83) <sup>qwiklabs</sup>
-- [x] [Baseline: Infrastructure](https://www.cloudskillsboost.google/quests/33) <sup>qwiklabs</sup>
-- [x] [Kubernetes in Google Cloud](https://www.cloudskillsboost.google/quests/29) <sup>qwiklabs</sup>
-- [x] [Kubernetes Solutions](https://www.cloudskillsboost.google/quests/45) <sup>qwiklabs</sup>
+- [x] [Google Cloud Essentials](https://www.cloudskillsboost.google/course_templates/621) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/1826423)
+- [x] [Advanced ML: ML Infrastructure](https://www.cloudskillsboost.google/course_templates/666) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/1940006)
+- [x] [Intermediate ML: TensorFlow on Google Cloud](https://www.cloudskillsboost.google/course_templates/738) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/2241460)
+- [x] [Baseline: Infrastructure](https://www.cloudskillsboost.google/course_templates/620) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/2253604)
+- [x] [Kubernetes in Google Cloud](https://www.cloudskillsboost.google/course_templates/744) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/2474581)
+- [x] Deprecated Kubernetes Solutions <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/2765947)
 - [x] [Getting Started with Google Kubernetes Engine](https://www.coursera.org/learn/google-kubernetes-engine-ko) <sup>coursera</sup> 
 | [`Certificate`](https://coursera.org/share/ec42173d691612e333237b015335bb3f)
 - [x] [Architecting with Google Kubernetes Engine: Foundations](https://www.coursera.org/learn/foundations-google-kubernetes-engine-gke) <sup>coursera</sup> 
@@ -171,6 +167,9 @@ toc: true
 | [`Certificate`](https://coursera.org/share/dcda2d05a091ccf354a08e911e227afe)
 - [x] [Architecting with Google Kubernetes Engine: Production](https://www.coursera.org/learn/deploying-secure-kubernetes-containers-in-production) <sup>coursera</sup> 
 | [`Certificate`](https://coursera.org/share/027f7bade94a22c62c207624449964cb)
+- [x] [Build Real World AI Applications with Gemini and Imagen]() <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/16300932)
+
 
 
 #### <u>Amazon Web Services(AWS)</u>
@@ -183,8 +182,7 @@ toc: true
 
 ## <u>Data Engineering</u>
 - [x] [DE4E: Data Engineering for Everybody](https://pseudo-lab.github.io/data-engineering-for-everybody/intro.html#) <sup>post</sup>
-- [ ] [Introduction to Data Engineering](https://www.coursera.org/learn/introduction-to-data-engineering) <sup>coursera</sup>
-- [ ] [Cookbook by andkret](https://github.com/andkret/Cookbook) <sup>post</sup>
+- [ ] [The Data Engineering Cookbook by andkret](https://github.com/andkret/Cookbook) <sup>post</sup>
 
 
 ## <u>Algorithms & Data Structures</u>
@@ -214,3 +212,4 @@ toc: true
 - [x] [Convex Optimization](https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf) <sup>book</sup>
 - [x] [Partial Differential Equations for Scientists and Engineers](https://www.maa.org/publications/maa-reviews/partial-differential-equations-for-scientists-and-engineers) <sup>book</sup>
 - [x] [Differential Equations, Dynamical Systems, and an Introduction to Chaos](https://math.as.uky.edu/sites/default/files/MA%20481.Differential%20Equations.SP2018.Prosper.pdf) <sup>book</sup>
+- [x] [확산 모델의 수학](https://www.google.co.kr/books/edition/%ED%99%95%EC%82%B0_%EB%AA%A8%EB%8D%B8%EC%9D%98_%EC%88%98%ED%95%99/xU8gEQAAQBAJ?hl=ko&gbpv=0) <sup>book</sup>
