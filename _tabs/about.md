@@ -169,7 +169,8 @@ toc: true
 | [`Certificate`](https://coursera.org/share/027f7bade94a22c62c207624449964cb)
 - [x] [Build Real World AI Applications with Gemini and Imagen](https://www.cloudskillsboost.google/course_templates/1076) <sup>qwiklabs</sup>
 | [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/16300932)
-
+- [x] [Develop GenAI Apps with Gemini and Streamlit](https://www.cloudskillsboost.google/paths/236/course_templates/978) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/16317840)
 
 
 #### <u>Amazon Web Services(AWS)</u>
