@@ -38,7 +38,7 @@ toc: true
 <br>
 
 ## <u>Working</u>
-- **Visual Reactor** | 2025.03 -
+- **Visual Reactor** | 2025.03 - 재직중       
   ➔ AI Team Senior Researcher | AI팀 선임연구원       
   ➔ Data Scientist, Machine Learning Engineer 직무
 
