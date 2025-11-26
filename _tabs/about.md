@@ -14,19 +14,20 @@ toc: true
 - AI 논문을 읽고 종종 [**여기**](https://github.com/standing-o/Machine_Learning_Paper_Review)에 정리합니다.
 - 한번씩 [**AI 대회**](https://github.com/standing-o/my_DACON)에 참여하여 새로운 도메인을 공부하곤 합니다.
 
-&nbsp;
-&nbsp;
-&nbsp;
+<br>
 
 ## <u>Information</u>
 👶 1998-09-08 | 🏠 South Korea, Busan       
-📧 osyoung540@gmail.com | eileen1426@naver.com  
+📧 osyoung540@gmail.com
 💻 [**Github**](https://github.com/standing-o) | 👩‍💻 [**Linkedin**](https://www.linkedin.com/in/%EC%84%9C%EC%98%81-%EC%98%A4-309a24200/) | 🎨 [**Instagram**](https://www.instagram.com/grim_540/) |
+
+<br>
 
 ## <u>Interests</u>
 - **Artificial Intelligence (ML/DL)**    
-| **Medical AI** <sup> Histo/Cyto Pathology </sup>, Computer Vision <sup>ViT, VLM</sup>, Time-series Forecasting <sup>LSTM, Transformer</sup>    
-| NLP <sup>LLM, SLM</sup>, Audio (Speech), OOD Detection, XAI
+| Multi-LLM/Agent System, Multimodal Content AI, Manufacturing AI, Medical AI <sup>Histo/Cyto Pathology</sup>    
+| Generative AI <sup>SD, SDXL, LoRA</sup>, Text-to-Image/Video, Time-series Forecasting <sup>LSTM, Transformer</sup>    
+| Computer Vision <sup>ViT, VLM</sup>, NLP <sup>LLM, SLM</sup>, Audio (Speech), OOD Detection, XAI
 
 - **MLops**    
 | Kafka, FastAPI, Docker, GCP, AWS
@@ -34,10 +35,18 @@ toc: true
 - **Mathematical Modelling** <sup>Dynamics of ODE, PDEs</sup>    
 | Topological Data Analysis, Mathematical Data Science, Graph Theory
 
+<br>
+
 ## <u>Working</u>
+- **Visual Reactor** | 2025.03 -
+  ➔ AI Team Senior Researcher | AI팀 선임연구원       
+  ➔ Data Scientist, Machine Learning Engineer 직무
+
 - **Terenz Co., Ltd. (주식회사 테렌즈)** | 2023.02 - 2025.02        
   ➔ AI Team Senior Researcher | AI팀 선임연구원       
   ➔ Data Scientist, Machine Learning Engineer 직무        
+
+<br>
 
 ## <u>Education</u>
 - `석사` :: **경상국립대학교 대학원 수학과 - 해석학 및 응용수학 전공**
@@ -48,9 +57,7 @@ toc: true
  | 2017.03 - 2021.02    
   ➔ Pattern Formation in PDEs, Neural Networks, Feature Engineering, Segmentation  
 
-&nbsp;
-&nbsp;
-&nbsp;
+<br>
 
 --------------------------------
 # 🛣️ **Study Roadmap**
@@ -70,7 +77,7 @@ toc: true
 - [x] [Introduction to Responsible AI](https://www.cloudskillsboost.google/course_templates/554) <sup>qwiklabs</sup>
  | [`Certificate`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/5305970?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share)
 - [x] [Forecasting: Principles and Practice](https://otexts.com/fppkr/) <sup>book</sup>
-- [ ] [Pattern Recognition & Machine Learning](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/) <sup>book</sup>
+- [x] [Pattern Recognition & Machine Learning](https://www.microsoft.com/en-us/research/people/cmbishop/prml-book/) <sup>book</sup>
 
 
 
