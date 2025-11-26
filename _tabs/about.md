@@ -174,9 +174,26 @@ toc: true
 | [`Certificate`](https://coursera.org/share/dcda2d05a091ccf354a08e911e227afe)
 - [x] [Architecting with Google Kubernetes Engine: Production](https://www.coursera.org/learn/deploying-secure-kubernetes-containers-in-production) <sup>coursera</sup> 
 | [`Certificate`](https://coursera.org/share/027f7bade94a22c62c207624449964cb)
-- [x] [Build Real World AI Applications with Gemini and Imagen]() <sup>qwiklabs</sup>
+- [x] [Build Real World AI Applications with Gemini and Imagen](https://www.cloudskillsboost.google/course_templates/1076) <sup>qwiklabs</sup>
 | [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/16300932)
-
+- [x] [Develop GenAI Apps with Gemini and Streamlit](https://www.cloudskillsboost.google/paths/236/course_templates/978) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/16317840)
+- [x] [Store, Process, and Manage Data on Google Cloud - Command Line](https://www.cloudskillsboost.google/course_templates/659) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/18749762)
+- [x] [Prompt Design in Vertex AI](https://www.cloudskillsboost.google/paths/118/course_templates/976) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/18718407)
+- [x] [Modernize Infrastructure and Applications with Google Cloud](https://www.cloudskillsboost.google/course_templates/265) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/18717675)
+- [x] [Inspect Rich Documents with Gemini Multimodality and Multimodal RAG](https://www.cloudskillsboost.google/paths/183/course_templates/981) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/18717858)
+- [x] [Digital Transformation with Google Cloud](https://www.cloudskillsboost.google/course_templates/266) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/18695034)
+- [x] [Detect Manufacturing Defects Using Visual Inspection AI](https://www.cloudskillsboost.google/course_templates/644) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/18721644)
+- [x] [Build Generative AI Agents with Vertex AI and Flutter](https://www.cloudskillsboost.google/course_templates/1162) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/18693749)
+- [x] [Build Infrastructure with Terraform on Google Cloud](https://www.cloudskillsboost.google/course_templates/636) <sup>qwiklabs</sup>
+| [`Badge`](https://www.cloudskillsboost.google/public_profiles/452eafd4-bcd2-4583-84e7-543b3c72fb91/badges/18751340)
 
 
 #### <u>Amazon Web Services(AWS)</u>
