@@ -1,6 +1,6 @@
 ---
 title: "우도와 확률 이론 | Likelihood and Probability Theory"
-date: 2025-12-21 00:00:00 +/-TTTT
+date: 2026-12-21 00:00:00 +/-TTTT
 categories: [인공지능 | AI, AI 이론]
 tags: [deep-learning, generative-ai, llm, neural-network, probability, bayesian]
 math: true
