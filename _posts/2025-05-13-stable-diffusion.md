@@ -137,6 +137,7 @@ description: 🎨 생성 모델의 기본 개념과 다양한 학습 방법을 �
 - **<u>Maximum Likelihood Estimation(MLE)</u>**
 
   - MLE에서는 아래와 같이 Log Likelhood를 최대화하는 파라미터 $$\theta^{*}_{ML}$$를 구합니다.
+
     $$
     \theta^{*}_{ML} := arg\max_\theta L(\theta)
     $$

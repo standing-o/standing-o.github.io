@@ -145,7 +145,7 @@ $$
 ![fig2](20251221-2.png){: width="600"}
 _An illustration of a distribution over two variables [^ref1]_
 
-#### **1. 상자 선택 확률 <sup>Probability of Selecting Boxes</sup>**
+#### 1. 상자 선택 확률 | Probability of Selecting Boxes
 
 $$
 p(B = r) = \frac{4}{10} \\
@@ -160,7 +160,7 @@ $$
 
 
 
-####  **2. 과일 유형에 대한 조건부 확률 <sup>Conditional Probabilities for Fruit Types</sup>**
+####  2. 과일 유형에 대한 조건부 확률 | Conditional Probabilities for Fruit Types
 
 - 파란 상자가 선택되었을 때, 사과를 선택할 확률은 다음과 같습니다:
 
@@ -202,7 +202,7 @@ p(F = a | B = b) + p(F = o | B = b) = 1
 $$
 
 
-#### **3. 전체 확률 계산: 합의 법칙과 곱의 법칙 적용 <sup>Calculating Overall Probability</sup>**
+#### 3. 전체 확률 계산: 합의 법칙과 곱의 법칙 적용 | Calculating Overall Probability
 - 사과를 선택할 전체 확률은 다음과 같이 계산됩니다:
 
 $$
@@ -221,7 +221,7 @@ $$
 
 
 
-#### **4. 베이즈 정리 적용: 역조건부 확률 <sup>Applying Bayes' Theorem</sup>**
+#### 4. 베이즈 정리 적용: 역조건부 확률 | Applying Bayes' Theorem
 - 오렌지가 선택되었을 때, 그것이 빨간 상자에서 왔을 확률을 계산합니다:
 
 $$
@@ -240,13 +240,13 @@ $$
 
 
 
-#### **5. 사전 확률과 사후 확률: 해석 <sup>Prior and Posterior Probabilities</sup>**
+#### 5. 사전 확률과 사후 확률: 해석 | Prior and Posterior Probabilities
 - 확률 $$p(B)$$는 과일의 정체를 관찰하기 전의 **사전 확률(Prior Probability)**을 나타냅니다.
 - $$p(BㅣF)$$는 선택된 과일이 오렌지임을 관찰한 후의 **사후 확률(Posterior Probability)**로, 갱신된 믿음을 나타냅니다.
 - 이는 특정 결과를 관찰하면 사전 믿음이 크게 영향받을 수 있음을 보여줍니다. 과일 유형이 알려지면 빨간 상자의 가능성이 높아지는 것이 그 예입니다.
 
 
-#### **6. 변수의 독립성: 독립 개념 <sup>Independence of Variables</sup>**
+#### 6. 변수의 독립성: 독립 개념 | Independence of Variables
 - 두 확률 변수 $$X$$와 $$Y$$가 $$p(X, Y) = p(X) p(Y)$$를 만족하는 결합 분포를 가지면 **독립(Independent)**입니다.
 - 과일 상자 예제에서, 두 상자 모두 사과와 오렌지의 비율이 같다면 $$p(F ㅣ B) = p(F)$$임을 의미하여, 상자 선택이 사과를 선택할 가능성에 영향을 미치지 않습니다.
 
