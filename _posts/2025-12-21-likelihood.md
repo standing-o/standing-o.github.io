@@ -525,5 +525,5 @@ $$
 
 
 --------------
-## References
+## Reference
 [^ref1]: Bishop, Christopher M., and Nasser M. Nasrabadi. Pattern recognition and machine learning. Vol. 4. No. 4. New York: springer, 2006.
