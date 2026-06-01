@@ -8,7 +8,7 @@ toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 pin: false
-description: ➗ Softmax Calibration의 개념과 수학적 정의를 자세히 알아봅시다.
+description: ➗ Softmax Calibration을 자세히 알아봅시다.
 ---
 
 --------------------

@@ -8,7 +8,7 @@ toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 pin: false
-description: 🏬 벡터 스토어(Vector Store)의 정의를 소개하고, 파이썬 구현 방법을 공유합니다.
+description: 🏬 벡터 스토어(Vector Store)를 소개합니다.
 ---
 
 --------------------

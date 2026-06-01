@@ -8,7 +8,7 @@ toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 pin: false
-description: 📚 Distributed Representation에서 Transformer, RLHF까지 현재의 LLM을 만든 연구들을 순서대로 살펴봅니다.
+description: 📚 Distributed Representation에서 Transformer, RLHF까지 현재의 LLM을 만든 연구들을 순서대로 소개합니다.
 ---
 
 

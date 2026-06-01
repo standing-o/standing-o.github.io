@@ -8,7 +8,7 @@ toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 pin: false
-description: ⏰ 순환 신경망(RNN)을 통해 Attention 알고리즘을 해석하고 개선하려는 논문을 소개하겠습니다.
+description: ⏰ 순환 신경망(RNN)을 통해 Attention 알고리즘을 해석하려는 논문을 소개하겠습니다.
 ---
 
 --------------------
