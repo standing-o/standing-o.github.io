@@ -8,6 +8,9 @@ toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 pin: false
+image:
+  path: 20251221-t.png
+  alt: ""
 description: 🎲 Likelihood(우도/가능도), 확률 이론, 베이즈 정리와 가우시안 분포를 살펴봅니다.
 ---
 
