@@ -8,7 +8,7 @@ toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 pin: false
-description: 🖥️ CPU/GPU의 구조와 병렬처리 개념을 자세히 공부하고, 파이썬 멀티스레딩과 멀티프로세싱을 간단히 구현해봅니다.
+description: 🖥️ CPU/GPU의 구조와 병렬처리 개념을 요약합니다.
 ---
 
 

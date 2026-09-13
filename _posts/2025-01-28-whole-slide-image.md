@@ -8,7 +8,7 @@ toc: true
 author: seoyoung
 img_path: /assets/img/for_post/
 pin: false
-description: 🧫 병리학(Pathology)에서의 Whole Slide Image(WSI)가 무엇인지 알아보고, 전처리 방법과 관련 AI 연구 동향을 공부해봅시다.
+description: 🧫 병리학(Pathology)에서의 Whole Slide Image(WSI)를 알아봅시다.
 ---
 
 
