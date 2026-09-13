@@ -44,7 +44,7 @@ Gems included by the bundle:
   * jekyll-sass-converter (3.0.0)
   * jekyll-seo-tag (2.8.0)
   * jekyll-sitemap (1.4.0)
-  * jekyll-theme-chirpy (7.2.4)
+  * jekyll-theme-chirpy (7.6.0)
   * jekyll-watch (2.2.1)
   * json (2.9.1)
   * kramdown (2.5.1)

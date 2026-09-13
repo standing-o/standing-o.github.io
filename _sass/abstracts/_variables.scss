@@ -1,8 +1,5 @@
 @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css');
 
-/* theme */
-$theme: 'light' !default;
-
 /* sidebar */
 
 $sidebar-width: 260px !default; /* the basic width */
@@ -35,3 +32,9 @@ $code-icon-width: 1.75rem !default;
 $font-family-base: 'Pretendard Variable', 'Source Sans Pro', 'Microsoft Yahei', sans-serif !default;
 // 타이틀 폰트
 $font-family-heading: 'Pretendard Variable', 'Source Sans Pro', 'Microsoft Yahei', sans-serif !default;
+
+/* Theme mode settings */
+
+$theme-attr: 'data-bs-theme'; /* the attribute used to indicate the resolved theme */
+$theme-options: light, dark;
+$theme: null !default; /* set by Jekyll site configuration */
