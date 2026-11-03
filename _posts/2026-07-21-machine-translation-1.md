@@ -24,7 +24,7 @@ description: 🔤 Noisy Channel부터 Transformer까지, 통계 기계번역과 
 <br>
 
 
-> [(2)편 ㅣ LLM을 번역기로 쓰기](https://standing-o.github.io/posts/2026-08-18-machine-translation-2/)
+> [(2)편 ㅣ LLM을 번역기로 쓰기](https://standing-o.github.io/posts/machine-translation-2/)
 {: .prompt-tip }
 
 
