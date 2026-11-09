@@ -92,7 +92,7 @@ $$
 - 정렬은 비대칭적입니다. 
   - $$e \to f$$ 방향과 $$f \to e$$ 방향을 각각 학습하면 서로 다른 정렬이 산출됩니다.
 - 두 방향 정렬의 교집합은 정밀도가 높고, 합집합은 재현율이 높습니다. 
-  - 그래서 교집합에서 출발해 합집합 쪽으로 이웃을 조금씩 붙여 가는 **grow-diag-final** 같은 대칭화 휴리스틱(Symmetrization Heuristic)이 표준 절차로 쓰입니다.
+  - 그래서 교집합에서 출발해 합집합 쪽으로 이웃을 조금씩 붙여 가는 **grow-diag-final** 같은 대칭화 휴리스틱(Symmetrization Heuristic)이 표준 절차로 쓰입니다 [^ref3].
 
 
 <br>
@@ -100,7 +100,7 @@ $$
 
 ## **IBM 모델 1부터 5까지 <sup>IBM Models</sup>**
 
-- IBM 모델 1부터 5는 $$P(f, a \mid e)$$ 에 두는 가정을 단계적으로 완화하는 다섯 모델의 집합입니다. 
+- IBM 모델 1부터 5는 $$P(f, a \mid e)$$ 에 두는 가정을 단계적으로 완화하는 다섯 모델의 집합입니다 [^ref1]. 
   - 각 모델이 새로 도입하는 가정이 다음 모델의 초기값으로 전달됩니다.
 
 | 모델 | 추가되는 가정 | 정렬 확률 |
@@ -201,7 +201,7 @@ $$
 
 - 모델 1부터 5는 단어 단위 정렬만 다룹니다. 
   - 그런데 번역에서는 `take off` 같이 여러 단어가 묶여야 의미가 성립하는 구문이 많고, 어순이 크게 달라지는 언어쌍도 많습니다. 
-  - 이 한계를 넘기 위해 **구문 기반 번역(Phrase-Based Translation)** 이 도입됩니다.
+  - 이 한계를 넘기 위해 **구문 기반 번역(Phrase-Based Translation)** 이 도입됩니다 [^ref4].
 
 
 ### **일관된 구문 쌍 추출**
@@ -220,7 +220,7 @@ $$
 
 - 잡음 채널의 두 항($$P(f \mid e)$$ 와 $$P(e)$$)만으로는 구문 기반 번역을 다루기에 부족합니다. 
   - 여러 Feature을 동시에 고려해야 합니다.
-- 각 자질에 가중치를 곱해 지수 함수로 묶는 **로그선형 모형(Log-linear Model)** 을 사용합니다.
+- 각 자질에 가중치를 곱해 지수 함수로 묶는 **로그선형 모형(Log-linear Model)** 을 사용합니다 [^ref5].
 
 $$
 P(e \mid f) = \frac{1}{Z(f)}\exp\Big(\sum_{m=1}^{M} \lambda_m\, h_m(e, f)\Big)
@@ -241,7 +241,7 @@ $$
 
 ### **MERT: 지표에 직접 최적화**
 
-- 로그선형 가중치 $$\lambda$$ 를 BLEU 같은 자동 지표에 직접 맞추는 방법이 **최소 오류율 학습(Minimum Error Rate Training, MERT)** 입니다.
+- 로그선형 가중치 $$\lambda$$ 를 BLEU 같은 자동 지표에 직접 맞추는 방법이 **최소 오류율 학습(Minimum Error Rate Training, MERT)** 입니다 [^ref6].
 
 $$
 \hat{\lambda} = \arg\max_{\lambda} \sum_{s} \text{BLEU}\Big(\arg\max_{e \in \mathcal{H}_s} \sum_m \lambda_m h_m(e, f^{(s)}),\; e^{*(s)}\Big)
@@ -260,7 +260,7 @@ $$
   - 각 스택에서 점수 상위 가설만 남깁니다.
 - 가설 재결합(같은 언어 모델 상태와 커버리지면 하나로 합침)과 미래 비용 추정(Future Cost Estimation)이 함께 적용됩니다.
 
-- **계층적 구문 모형(Hierarchical Phrase-Based Translation, Hiero)** 은 구문에 비종단 기호를 넣어 동기 문맥자유문법(Synchronous Context-Free Grammar, SCFG)으로 확장합니다. 
+- **계층적 구문 모형(Hierarchical Phrase-Based Translation, Hiero)** 은 구문에 비종단 기호를 넣어 동기 문맥자유문법(Synchronous Context-Free Grammar, SCFG)으로 확장합니다 [^ref7]. 
   - 예를 들어 다음 규칙은 장거리 재배열을 담을 수 있습니다.
 
 ```
@@ -281,7 +281,7 @@ X → ⟨ne X pas, do not X⟩
 
 ### **1. n-gram 정밀도**
 
-- BLEU는 **n-gram 정밀도의 기하평균에 길이 벌점을 곱한** 지표입니다.
+- BLEU는 **n-gram 정밀도의 기하평균에 길이 벌점을 곱한** 지표입니다 [^ref8].
 
 $$
 p_n = \frac{\sum_{C \in \text{cand}} \sum_{g \in n\text{-gram}(C)} \text{Count}_{\text{clip}}(g)}{\sum_{C \in \text{cand}} \sum_{g \in n\text{-gram}(C)} \text{Count}(g)}
@@ -316,7 +316,7 @@ $$
 
 ### **다른 지표와의 관계**
 
-- **chrF** 는 문자 단위 n-gram의 F-score입니다. 
+- **chrF** 는 문자 단위 n-gram의 F-score입니다 [^ref9]. 
   - 단어 분절에 의존하지 않기 때문에 형태가 복잡한 교착어에서 BLEU보다 덜 불리합니다.
 
 $$
@@ -436,7 +436,7 @@ _Bahdanau Attention [^ref11]_
 | 일반(General)       | $$s^{\top} W h$$ | 곱셈에 사영을 추가 |
 | 축척 내적(Scaled Dot) | $$s^{\top} h / \sqrt{d}$$ | 차원이 커질 때 Softmax 포화를 방지 |
 
-- 원논문은 가산 형태를 사용했습니다. Luong et al. (2015)이 곱셈과 일반 형태를 제시하며 비교했고, 축척 내적은 Transformer에서 다시 등장합니다.
+- 원논문은 가산 형태를 사용했습니다. Luong et al. (2015)이 곱셈과 일반 형태를 제시하며 비교했고 [^ref13], 축척 내적은 Transformer에서 다시 등장합니다.
 
 
 ### **정렬의 연속 완화**
@@ -551,7 +551,7 @@ $$
   - 저차원은 파장이 짧아 가까운 위치를 구분하고, 고차원은 파장이 길어 멀리 떨어진 위치까지 담습니다.
 - 이 설계의 수학적 성질은 **선형 변환으로 상대 위치를 표현**할 수 있다는 점입니다. 
 - 두 위치 $$pos$$ 와 $$pos + k$$ 의 PE 값은 삼각함수 덧셈 정리로 선형 관계로 묶이기 때문에, Attention 내부에서 상대 위치 정보를 추출할 수 있습니다.
-- 이후 상대 위치 표현(Shaw et al. 2018), 회전 위치 부호화(RoPE)가 제안되었고, RoPE는 LLaMA와 Qwen 계열의 사실상 표준이 되었습니다.
+- 이후 상대 위치 표현(Shaw et al. 2018), 회전 위치 부호화(RoPE)가 제안되었고, RoPE는 LLaMA와 Qwen 계열의 사실상 표준이 되었습니다 [^ref14].
 
 
 
@@ -605,7 +605,7 @@ $$
 
 ### **BPE 알고리즘**
 
-- **BPE(Byte-Pair Encoding)** 는 문자 단위에서 시작해 **가장 빈번한 인접 쌍을 반복 병합**하는 탐욕 알고리즘입니다. 
+- **BPE(Byte-Pair Encoding)** 는 문자 단위에서 시작해 **가장 빈번한 인접 쌍을 반복 병합**하는 탐욕 알고리즘입니다 [^ref15]. 
   - 병합 횟수가 어휘 크기를 결정합니다.
 
 ```
@@ -645,7 +645,7 @@ $$
 
 ### **SentencePiece**
 
-- **SentencePiece** 는 BPE나 Unigram을 쓰는 토크나이저 라이브러리인데, 중요한 설계 결정이 있습니다. 
+- **SentencePiece** 는 BPE나 Unigram을 쓰는 토크나이저 라이브러리인데, 중요한 설계 결정이 있습니다 [^ref16]. 
   - **공백을 특수 문자 `▁` 로 바꿔 어휘에 포함**시킵니다.
 - 이 결정의 효과는 **사전 토큰화(Pre-tokenization)를 제거할 수 있다**는 것입니다. 
   - 공백 기준 분할이라는 전처리가 사라지므로, 중국어나 일본어처럼 공백이 없는 언어와 영어가 같은 파이프라인을 사용할 수 있습니다.
@@ -676,7 +676,6 @@ $$
 ## References
 
 [^ref1]: Brown, Peter F., et al. "The Mathematics of Statistical Machine Translation: Parameter Estimation." *Computational Linguistics* 19.2 (1993): 263-311.
-[^ref2]: Vogel, Stephan, Hermann Ney, and Christoph Tillmann. "HMM-Based Word Alignment in Statistical Translation." *COLING* (1996).
 [^ref3]: Och, Franz Josef, and Hermann Ney. "A Systematic Comparison of Various Statistical Alignment Models." *Computational Linguistics* 29.1 (2003): 19-51.
 [^ref4]: Koehn, Philipp, Franz Josef Och, and Daniel Marcu. "Statistical Phrase-Based Translation." *NAACL* (2003).
 [^ref5]: Och, Franz Josef, and Hermann Ney. "Discriminative Training and Maximum Entropy Models for Statistical Machine Translation." *ACL* (2002).
